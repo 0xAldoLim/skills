@@ -92,6 +92,7 @@ shodan host <ip>
 - Google Lens (crop to region of interest), Google Images, TinEye, Yandex (faces). Check corners for visual stego. Twitter strips EXIF. See [geolocation-and-media.md](geolocation-and-media.md).
 - **Cropped region search:** Isolate distinctive elements (shop signs, building facades) and search via Google Lens for better results than full-scene search. See [geolocation-and-media.md](geolocation-and-media.md).
 - **Reflected text:** Flip mirrored/reflected text (water, glass) horizontally; search partial text with quoted strings. See [geolocation-and-media.md](geolocation-and-media.md).
+- **Companion-photo correlation:** For transit/vehicle OSINT, source-specific IDs (`busid`, `photoid`, CDN asset names) beat same-vehicle or same-route guesses. Confirm the exact companion photo before using an exterior destination display. See [geolocation-and-media.md](geolocation-and-media.md#companion-photo-and-vehicle-id-correlation).
 
 ## Geolocation
 
