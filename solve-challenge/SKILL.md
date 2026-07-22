@@ -196,3 +196,58 @@ $ARGUMENTS
 - For binaries and APKs that look too small or too trivial, check for nested payloads, tail-appended blobs, packed secondary artifacts, or delimiter-encoded data in slack space before spending time on the visible wrapper logic.
 - In hybrid web-plus-crypto challenges, treat auth tokens and signature wrappers as data-leak surfaces, not just things to forge at the end. Source review and sample collection often reveal that one verifier ignores fields that another verifier depends on.
 - In kernel or low-level targets, classify the primitive before committing to exploitation. A suspicious ioctl may be a fixed-path disclosure with clamped output semantics rather than a corruption bug.
+
+## Append-only Evidence-First Optimization Layer
+
+### Phase 1: Establish facts
+
+Record the title, description, expected flag format, supplied files, detected file types, architecture, protections, URLs or hosts, ports, hints, visible strings, metadata, obvious flag candidates, and environmental constraints. Inspect available evidence before selecting a category. Search for an obvious flag before deep analysis.
+
+### Phase 2: Classify
+
+Select one primary category, up to two secondary categories, a confidence level, and the evidence supporting each choice. Use `$solve-challenge` when the route is unknown or mixed. When the route is already clear, invoke `$ctf-reverse`, `$ctf-forensics`, `$ctf-web`, `$ctf-pwn`, `$ctf-crypto`, `$ctf-osint`, `$ctf-malware`, `$ctf-misc`, or `$ctf-ai-ml` directly. `scripts/classify_challenge.py` provides a deterministic starting classification but does not replace evidence review.
+
+### Phase 3: Build hypotheses
+
+Maintain no more than three active hypotheses. For each, record the hypothesis, supporting evidence, contradicting evidence, cheapest discriminating test, expected result, and pivot condition. Prefer the cheapest high-information test; do not run every tool merely because it is documented.
+
+### Phase 4: Execute
+
+Inspect local artifacts first, preserve generated outputs, and prefer reproducible commands or solve scripts. Use remote interaction only when required, begin with replay-safe baseline requests, and avoid broad or destructive probing. Pivot categories when observed evidence contradicts the current route. After classification, open the category `INDEX.md` and only the supporting references matching the current hypothesis.
+
+### Phase 5: Verify and report
+
+A solution requires a flag that matches the expected format or challenge semantics, has a known derivation, is not an obvious decoy, and can be reproduced. Use this final contract:
+
+```text
+Status: solved | partially solved | unsolved
+
+Flag:
+<verified flag or "not recovered">
+
+Category:
+<primary category and secondary categories>
+
+Evidence:
+<concise proof path>
+
+Commands or solve script:
+<reproducible commands or path>
+
+Uncertainty:
+<unresolved detail>
+
+Human review:
+<include only when evidence supports it>
+
+New reusable learning:
+<captured, inboxed, duplicate, or none>
+```
+
+### Phase 6: Learn
+
+After a verified solve, capture only techniques that materially contributed, generalize beyond the challenge, are reproducible, have high category confidence, and are not equivalent to existing knowledge. Do not learn failed guesses, unverified payloads, accidental behavior, flag text, or speculation. Submit a complete record to `scripts/capture_learning.py --auto`; uncertain, related, or semantically similar records go to `knowledge/inbox/`.
+
+### Human-comprehension gate
+
+Never recommend human review because the first approach failed, a tool is absent, a script errored, classification changed, or machine analysis remains. First record the attempted methods, mark machine analysis exhausted, identify the exact artifact and recognized comprehension limitation, list conflicting candidates, state that no machine options remain, and ask one narrow question. Validate the structured status with `scripts/human_review_gate.py`.

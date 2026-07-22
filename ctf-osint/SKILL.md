@@ -191,3 +191,7 @@ Lookup usernames across gaming platforms (Steam, Xbox, PSN, MMOs) for character 
 - **VirusTotal** - File/URL reputation
 - **WHOIS** - Domain registration
 - **Wayback Machine** - Historical snapshots
+
+## Append-only Retrieval and Learning Layer
+
+After confirming this category, read [INDEX.md](INDEX.md) and open only references matching the public clue type. Maintain at most three hypotheses, distinguish observations from inference, retain source attribution, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge. Gate any manual image-recognition request with `../scripts/human_review_gate.py`.

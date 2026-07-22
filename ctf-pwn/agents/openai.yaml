@@ -1,0 +1,6 @@
+interface:
+  display_name: "CTF Binary Exploitation"
+  short_description: "Exploit native CTF targets safely"
+  default_prompt: "Use $ctf-pwn after confirming the vulnerability, build a reproducible exploit, and recover a verified flag."
+policy:
+  allow_implicit_invocation: true

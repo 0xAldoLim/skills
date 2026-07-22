@@ -441,3 +441,7 @@ echo "hexstring" | xxd -r -p
 ## Local Learnings Appended 2026-05-19
 
 - **SQLite WAL plus thumbnail-cache AES-GCM:** In mobile app snapshots, preserve SQLite `-wal` sidecars before opening the database. Deleted WAL rows may contain decoy flags plus split key fragments, while thumbnail-cache images may carry LSB JSON with `nonce`, `tag`, `ciphertext`, and `aad`. If a clue provides a thumbnail salt, test derivations such as `sha256(K1 || K2 || "thumb-salt:<salt>")` and decrypt with AES-GCM using the embedded AAD.
+
+## Append-only Retrieval and Learning Layer
+
+After confirming this category, read [INDEX.md](INDEX.md) and open only references whose artifact and symptom signals match the active hypothesis. Maintain at most three hypotheses, preserve derived output, verify the flag, and run the learning pipeline only for reproducible solve-derived knowledge. Use `../scripts/human_review_gate.py` before recommending manual visual or auditory interpretation.

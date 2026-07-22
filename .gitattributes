@@ -1,0 +1,7 @@
+# Protected pre-existing files with historical whitespace. Keep bytes immutable.
+ctf-crypto/exotic-crypto-2.md whitespace=-blank-at-eof
+ctf-forensics/stego-advanced.md whitespace=-blank-at-eof
+ctf-misc/pyjails.md whitespace=-trailing-space
+ctf-reverse/field-notes.md whitespace=-trailing-space
+ctf-reverse/patterns-ctf-3.md whitespace=-trailing-space
+ctf-reverse/tools-dynamic.md whitespace=-blank-at-eof

@@ -325,3 +325,7 @@ Divide-and-conquer SPN key recovery: attack each S-box position independently, i
 - **Decorative signature wrapper plus real MAC:** In hybrid web/crypto auth challenges, treat fake or user-visible signature objects as potential leakage channels for secret material reused by a stronger verifier. Confirm what each verifier really checks, and whether canonical serialized secret material is hashed into an HMAC or secondary token signer.
 - **Noisy monoalphabetic substitution:** If IC still indicates monoalphabetic substitution but the best plaintext has isolated nonsense letters, keep the recovered key and treat the remaining errors as sparse channel noise. Rebuild the n-gram scorer for the real language and finish with context-aware correction instead of restarting the solve from scratch.
 - **Toy Ring-LWE factor saturation:** When a small-field RLWE instance factorizes nicely, test whether each factor-coordinate image of the claimed small-coefficient distribution already saturates the base field. If it does, factorwise MITM will not prune the secret directly, so shift effort toward protocol flaws, deterministic public-only derivations, or transcript incompleteness.
+
+## Append-only Retrieval and Learning Layer
+
+After confirming this category, read [INDEX.md](INDEX.md) and open only references whose signals match the active hypothesis. Maintain at most three hypotheses, test the cheapest discriminator, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate.

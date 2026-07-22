@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CTF unsolved status",
+  "type": "object",
+  "required": ["status", "machine_analysis_exhausted", "human_review_recommended", "human_review_reason", "artifact", "specific_question", "candidate_values", "remaining_machine_options"],
+  "properties": {
+    "status": {"const": "unsolved"},
+    "machine_analysis_exhausted": {"type": "boolean"},
+    "human_review_recommended": {"type": "boolean"},
+    "human_review_reason": {"type": ["string", "null"]},
+    "artifact": {"type": ["string", "null"]},
+    "specific_question": {"type": ["string", "null"]},
+    "candidate_values": {"type": "array", "items": {"type": "string"}},
+    "remaining_machine_options": {"type": "array", "items": {"type": "string"}},
+    "attempted_machine_methods": {"type": "array", "items": {"type": "string"}}
+  }
+}

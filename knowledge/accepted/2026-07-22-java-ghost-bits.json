@@ -1,0 +1,29 @@
+{
+  "title": "Java char-to-byte narrowing as a normalization bypass",
+  "category": "ctf-web",
+  "subcategories": ["waf-bypass", "java", "parser-differential"],
+  "trigger_conditions": [
+    "A Java component validates a Unicode string before writing it through an API that keeps only each character's low byte.",
+    "A filter blocks literal ASCII separators, metacharacters, or control bytes but the downstream parser still receives them."
+  ],
+  "challenge_context": "External enrichment review of parser and WAF differential techniques.",
+  "observed_problem": "The repository covered Unicode confusion but not loss of the high byte at a Java string-to-protocol boundary.",
+  "technique": "Trace the value from validation to serialization. If a cast, low-byte mask, write(int), or writeBytes-style path truncates UTF-16 code units, generate Unicode candidates whose low byte equals the required ASCII byte. Confirm the exact normalization locally before sending one minimal authorized probe.",
+  "core_insight": "Validation and execution can see different bytes when a Java UTF-16 code unit is narrowed without an explicit charset conversion. The bypass is the representation disagreement, not the downstream injection family itself.",
+  "commands_or_code": "def low_byte_char(target, high=1):\n    value = ((high & 0xff) << 8) | (target & 0xff)\n    if 0xd800 <= value <= 0xdfff:\n        raise ValueError('avoid surrogate code units')\n    return chr(value)",
+  "verification_evidence": "Pinned source methodology was compared against the full local Markdown corpus; searches found Unicode cases but no low-byte narrowing route. The distilled generator follows the byte identity low_byte(chr((k << 8) | target)) == target.",
+  "resulting_primitive": "A filtered ASCII byte appears after a Java string-to-byte boundary, enabling a separately verified injection primitive.",
+  "flag_verified": false,
+  "failure_modes": ["UTF-8 encoding is applied correctly before the sink.", "The chosen code point is normalized, rejected, or is a surrogate.", "The downstream parser never interprets the reconstructed byte as syntax."],
+  "when_not_to_use": ["The backend is not Java or there is no narrowing boundary.", "A literal payload already works.", "The only evidence is a generic WAF block with no representation mismatch."],
+  "related_existing_techniques": ["ctf-web/sql-injection.md charset mismatches", "ctf-pwn UTF-8 case-conversion expansion"],
+  "source_type": "external_enrichment",
+  "source_reference": "yaklang/hack-skills@c9a4b9ee8645eb60763eb4eef172f1ecb0a5b3e8:skills/ghost-bits-cast-attack/SKILL.md (MIT)",
+  "confidence": "high",
+  "date_added": "2026-07-22",
+  "materially_contributed": false,
+  "reusable": true,
+  "reproducible": true,
+  "category_confidence": "high",
+  "manual_review_status": "accepted during repository enrichment audit"
+}

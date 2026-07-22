@@ -167,3 +167,7 @@ Use [field-notes.md](field-notes.md) once you have confirmed the challenge is tr
 - **Same-request transport can differ from cross-request memory:** A live object may survive through a later stock-shaped block in the same interpreter pass while all cross-request `$N` state resets on the next HTTP request. Test both scopes separately.
 - **Reference-resolved operators may be trusted:** If an operator slot is populated from a previously resolved live reference and still executes like stock vocabulary, treat slot position as part of the trust boundary rather than only the literal string value.
 - **Decorative signature plus real MAC:** When a token contains a flashy signature wrapper and a plain MAC, confirm which verifier enforces what. The decorative signature field can leak or carry material later reused by an HMAC-based admin or backend verifier.
+
+## Append-only Retrieval and Learning Layer
+
+After confirming this category, read [INDEX.md](INDEX.md) and open only references matching the framework, trust boundary, and candidate bug family. Maintain at most three hypotheses, begin with a baseline request and the smallest replay-safe proof, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate. Curated external additions live in [LEARNED.md](LEARNED.md).

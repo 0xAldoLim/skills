@@ -178,3 +178,7 @@ Use [field-notes.md](field-notes.md) after the first round of triage when you kn
 - **PNG `LSB0` resource fragments:** For Android resource PNGs, convert to RGB, flatten channel bytes, read bit 0 of each byte, and pack bits MSB-first. A common container shape is `b"LSB0"` followed by a 4-byte big-endian payload length and a labeled payload such as `LABEL:fragment`; use the label as metadata and the suffix as key material.
 - **Native split XOR marker fragments:** For architecture splits, search native libraries and companion source for markers that disclose a byte mask, such as `ORACLE_MASK_XOR_0x37`. XOR either the declared byte array or the full `.so` by that mask, then search the decoded stream for fragment-looking strings.
 - **Hash-derived BLAKE2s stream decryptors:** When recovered fragments are readable but not flag-shaped, concatenate them exactly, hash with SHA-256, and test custom stream ciphers that derive blocks from `BLAKE2s(key || label || counter_be32)`. XOR the generated stream with ciphertext fields stored in metadata.
+
+## Append-only Retrieval and Learning Layer
+
+After confirming this category, read [INDEX.md](INDEX.md) and open only references matching the artifact, architecture, runtime, or obfuscation symptom. Maintain at most three hypotheses, test the cheapest discriminator, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate.

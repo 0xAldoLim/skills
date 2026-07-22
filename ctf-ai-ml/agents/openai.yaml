@@ -1,0 +1,6 @@
+interface:
+  display_name: "CTF AI and ML"
+  short_description: "Attack CTF models and AI systems"
+  default_prompt: "Use $ctf-ai-ml to inspect the challenge files, test the cheapest model-security hypothesis, and recover a verified flag."
+policy:
+  allow_implicit_invocation: true

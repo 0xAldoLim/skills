@@ -115,3 +115,7 @@ print(f'Shape: {img.shape}, Range: [{img.min():.3f}, {img.max():.3f}]')
 
 - **Gradient-based input recovery:** Using model gradients to reconstruct private training data from shared gradients (federated learning attacks). See [model-attacks.md](model-attacks.md#ml-model-inversion-via-gradient-descent-bsidessf-2025).
 - **Activation maximization:** Optimizing input to maximize a specific neuron's activation, revealing what the network has learned.
+
+## Append-only Retrieval and Learning Layer
+
+After confirming this category, read [INDEX.md](INDEX.md) and open only references whose signals match the active hypothesis. Maintain at most three hypotheses, test the cheapest discriminator, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate.

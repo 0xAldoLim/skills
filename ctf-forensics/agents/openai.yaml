@@ -1,0 +1,6 @@
+interface:
+  display_name: "CTF Forensics"
+  short_description: "Analyze forensic and signal artifacts"
+  default_prompt: "Use $ctf-forensics to triage the supplied evidence, preserve outputs, and recover a verified flag."
+policy:
+  allow_implicit_invocation: true

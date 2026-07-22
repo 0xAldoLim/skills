@@ -1,0 +1,6 @@
+interface:
+  display_name: "CTF Web Exploitation"
+  short_description: "Solve HTTP and browser challenges"
+  default_prompt: "Use $ctf-web to map the application trust boundary, prove the smallest primitive, and recover a verified flag."
+policy:
+  allow_implicit_invocation: true

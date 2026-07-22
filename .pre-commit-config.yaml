@@ -1,0 +1,23 @@
+repos:
+  - repo: local
+    hooks:
+      - id: append-only
+        name: verify protected prefixes
+        entry: python3 scripts/verify_append_only.py
+        language: system
+        pass_filenames: false
+      - id: validate-skills
+        name: validate skill discovery and links
+        entry: python3 scripts/validate_skills.py
+        language: system
+        pass_filenames: false
+      - id: generated-indexes
+        name: verify generated category indexes
+        entry: python3 scripts/rebuild_indexes.py --check
+        language: system
+        pass_filenames: false
+      - id: repository-safety
+        name: scan added and appended material
+        entry: python3 scripts/check_repository_safety.py
+        language: system
+        pass_filenames: false
