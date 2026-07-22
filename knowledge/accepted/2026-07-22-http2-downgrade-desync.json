@@ -1,0 +1,29 @@
+{
+  "title": "HTTP/2 downgrade desynchronization as a request-smuggling variant",
+  "category": "ctf-web",
+  "subcategories": ["request-smuggling", "http2", "proxy-parser-differential"],
+  "trigger_conditions": [
+    "The edge accepts HTTP/2 while the origin receives reconstructed HTTP/1.1.",
+    "Header normalization, duplicate handling, pseudo-header mapping, or body framing differs across the downgrade boundary."
+  ],
+  "challenge_context": "External enrichment review found HTTP/1 desync knowledge but no H2-to-H1 translation variant.",
+  "observed_problem": "Testing only Content-Length versus Transfer-Encoding in raw HTTP/1 misses defects introduced while translating HTTP/2 fields into HTTP/1 syntax.",
+  "technique": "Establish a normal H2 request and compare what the origin receives. Test one controlled discrepancy at a time: duplicate length metadata, forbidden hop-by-hop fields, pseudo-header ordering, or abnormal path translation. Confirm a boundary disagreement with isolated requests before attempting any chain.",
+  "core_insight": "HTTP/2 has different framing and header rules; a proxy that reconstructs HTTP/1 can create a second parser view even when the client never sent an HTTP/1 request.",
+  "commands_or_code": "# Use an isolated lab or challenge instance.\n# Capture one baseline H2 request, then vary a single translation input.\ncurl --http2-prior-knowledge -i https://target.example/",
+  "verification_evidence": "The local corpus includes an HTTP/1 cache-proxy desync technique but contains no H2.CL, H2.TE, pseudo-header, or downgrade-smuggling entry. The pinned source explicitly separates this variant from classical CL.TE/TE.CL.",
+  "resulting_primitive": "A request-boundary disagreement between the edge and origin during H2-to-H1 translation.",
+  "flag_verified": false,
+  "failure_modes": ["The edge and origin both enforce strict H2 translation.", "The connection is not reused.", "Observed errors come from ordinary header rejection rather than boundary disagreement."],
+  "when_not_to_use": ["The service is HTTP/1 end to end.", "The challenge provides no proxy or translation layer.", "Testing could affect unrelated users; use an isolated instance or do not proceed."],
+  "related_existing_techniques": ["ctf-web/client-side.md HTTP request smuggling via cache proxy"],
+  "source_type": "external_enrichment",
+  "source_reference": "yaklang/hack-skills@c9a4b9ee8645eb60763eb4eef172f1ecb0a5b3e8:skills/request-smuggling/SKILL.md (MIT)",
+  "confidence": "high",
+  "date_added": "2026-07-22",
+  "materially_contributed": false,
+  "reusable": true,
+  "reproducible": true,
+  "category_confidence": "high",
+  "manual_review_status": "accepted during repository enrichment audit"
+}

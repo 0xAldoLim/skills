@@ -213,3 +213,7 @@ Use [field-notes.md](field-notes.md) once you have confirmed the challenge is tr
 
 - **Kernel ioctl disclosure before corruption:** When a misc device ioctl takes a small userspace struct like `{ size, ptr }`, do not assume the attacker-controlled size means an overflow. Reconstruct the full dispatcher first, identify the real ioctl command, and check whether helpers read from a fixed privileged path and return a filtered slice or selected line instead of raw file contents.
 - **Clamp semantics matter:** If the returned length is clamped to a post-processed line or helper-selected slice, classify the primitive as disclosure rather than memory corruption. That changes the workflow from exploit-building to controlled extraction and proof of reachability.
+
+## Append-only Retrieval and Learning Layer
+
+After confirming an exploitation primitive, read [INDEX.md](INDEX.md) and open only references matching the architecture, mitigation, and primitive. Maintain at most three hypotheses, reproduce locally before remote use when feasible, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate.

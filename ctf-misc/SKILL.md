@@ -536,3 +536,7 @@ Oracle returns edit distance between guess and secret. Determine length from emp
 ## Local Learnings Appended 2026-05-08
 
 - **Zero-width Unicode hidden text/key carrier:** When text looks normal but has odd spacing, line behavior, or a suspicious byte length, scan for zero-width codepoints such as `U+200B` and `U+200C`. Preserve the original file, count/remove them for visible-text triage, and try a ZWSP/ZWNJ stego decoder before overfitting custom bit grouping; the hidden payload may be a password, Vigenere key, or final flag fragment.
+
+## Append-only Retrieval and Learning Layer
+
+Use this category only after more specific routes are unsupported by the evidence. Read [INDEX.md](INDEX.md), open only matching references, maintain at most three hypotheses, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate.

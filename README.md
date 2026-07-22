@@ -18,3 +18,7 @@ To install somewhere else:
 ```sh
 SKILLS_DIR=/path/to/skills ./install.sh
 ```
+
+## Append-only Optimization Layer
+
+Routing, prompt generation, integrity guarantees, indexes, learning review, enrichment provenance, and Kali operations are documented in [docs/OPERATIONS.md](docs/OPERATIONS.md). Existing knowledge remains protected by `knowledge/integrity-manifest.json` and `scripts/verify_append_only.py`.

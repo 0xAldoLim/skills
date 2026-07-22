@@ -1,0 +1,12 @@
+version: 1
+sources:
+  - id: ljagiello-ctf-skills
+    repository: https://github.com/ljagiello/ctf-skills
+    commit: d19f35fd3dd2e126108752aee84c657c888126d3
+    license: MIT
+    purpose: concept and overlap comparison
+  - id: yaklang-hack-skills
+    repository: https://github.com/yaklang/hack-skills
+    commit: c9a4b9ee8645eb60763eb4eef172f1ecb0a5b3e8
+    license: MIT
+    purpose: conservative gap discovery

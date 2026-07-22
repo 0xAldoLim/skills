@@ -1,0 +1,62 @@
+[
+  {
+    "source_technique": "RSA attack catalog",
+    "source_repository": "https://github.com/ljagiello/ctf-skills",
+    "source_commit": "d19f35fd3dd2e126108752aee84c657c888126d3",
+    "source_path": "ctf-crypto/rsa-attacks.md",
+    "candidate_category": "ctf-crypto",
+    "existing_overlap": "ctf-crypto/rsa-attacks.md is byte-identical at the pinned commit",
+    "duplicate_score": 1.0,
+    "decision": "skipped",
+    "reason": "Exact knowledge already exists; alternate naming is not a gap.",
+    "destination_file": null
+  },
+  {
+    "source_technique": "Anti-analysis taxonomy",
+    "source_repository": "https://github.com/ljagiello/ctf-skills",
+    "source_commit": "d19f35fd3dd2e126108752aee84c657c888126d3",
+    "source_path": "ctf-reverse/anti-analysis.md",
+    "candidate_category": "ctf-reverse",
+    "existing_overlap": "ctf-reverse/anti-analysis.md is byte-identical at the pinned commit",
+    "duplicate_score": 1.0,
+    "decision": "skipped",
+    "reason": "Exact knowledge already exists.",
+    "destination_file": null
+  },
+  {
+    "source_technique": "Java Ghost Bits char-to-byte normalization bypass",
+    "source_repository": "https://github.com/yaklang/hack-skills",
+    "source_commit": "c9a4b9ee8645eb60763eb4eef172f1ecb0a5b3e8",
+    "source_path": "skills/ghost-bits-cast-attack/SKILL.md",
+    "candidate_category": "ctf-web",
+    "existing_overlap": "Unicode techniques exist, but no Java low-byte narrowing trust-boundary technique was found.",
+    "duplicate_score": 0.24,
+    "decision": "added",
+    "reason": "Distinct trigger, primitive, and constraints; distilled without copying payload tables.",
+    "destination_file": "ctf-web/LEARNED.md"
+  },
+  {
+    "source_technique": "HTTP/2 to HTTP/1 downgrade desynchronization",
+    "source_repository": "https://github.com/yaklang/hack-skills",
+    "source_commit": "c9a4b9ee8645eb60763eb4eef172f1ecb0a5b3e8",
+    "source_path": "skills/request-smuggling/SKILL.md",
+    "candidate_category": "ctf-web",
+    "existing_overlap": "HTTP/1 cache-proxy desync exists; H2 downgrade boundary disagreement does not.",
+    "duplicate_score": 0.43,
+    "decision": "added",
+    "reason": "Meaningful protocol/version variant with a different parser boundary.",
+    "destination_file": "ctf-web/LEARNED.md"
+  },
+  {
+    "source_technique": "Classical CL.TE and TE.CL request smuggling",
+    "source_repository": "https://github.com/yaklang/hack-skills",
+    "source_commit": "c9a4b9ee8645eb60763eb4eef172f1ecb0a5b3e8",
+    "source_path": "skills/request-smuggling/SKILL.md",
+    "candidate_category": "ctf-web",
+    "existing_overlap": "ctf-web client-side and field notes already cover request-boundary desynchronization.",
+    "duplicate_score": 0.82,
+    "decision": "skipped",
+    "reason": "The concept is already represented; payload-list expansion would be redundant and noisy.",
+    "destination_file": null
+  }
+]

@@ -1,0 +1,6 @@
+interface:
+  display_name: "CTF OSINT"
+  short_description: "Research public clues and geolocation"
+  default_prompt: "Use $ctf-osint to investigate the public clues with attributable evidence and recover a verified flag."
+policy:
+  allow_implicit_invocation: true
