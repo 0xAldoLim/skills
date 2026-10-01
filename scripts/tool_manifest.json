@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "tiers": {
+    "core": {
+      "apt": {
+        "file": "file",
+        "binutils": "readelf",
+        "git": "git",
+        "curl": "curl",
+        "jq": "jq",
+        "ripgrep": "rg",
+        "python3-venv": "python3",
+        "pipx": "pipx"
+      },
+      "python": {}
+    },
+    "web": {
+      "apt": {
+        "sqlmap": "sqlmap",
+        "ffuf": "ffuf"
+      },
+      "python": {
+        "requests": "requests",
+        "httpx": "httpx",
+        "flask-unsign": "flask_unsign"
+      }
+    },
+    "pwn": {
+      "apt": {
+        "gdb": "gdb",
+        "checksec": "checksec",
+        "gcc": "gcc",
+        "g++": "g++",
+        "cmake": "cmake",
+        "pkg-config": "pkg-config",
+        "make": "make"
+      },
+      "python": {
+        "pwntools": "pwn",
+        "ropper": "ropper",
+        "ROPgadget": "ropgadget"
+      }
+    },
+    "crypto": {
+      "apt": {},
+      "python": {
+        "pycryptodome": "Crypto",
+        "sympy": "sympy",
+        "gmpy2": "gmpy2",
+        "fpylll": "fpylll",
+        "cysignals": "cysignals",
+        "z3-solver": "z3"
+      }
+    },
+    "reverse": {
+      "apt": {
+        "binutils": "objdump",
+        "gdb": "gdb",
+        "gcc": "gcc",
+        "g++": "g++",
+        "make": "make",
+        "cmake": "cmake",
+        "pkg-config": "pkg-config",
+        "radare2": "r2",
+        "apktool": "apktool",
+        "jadx": "jadx",
+        "wabt": "wasm2wat"
+      },
+      "python": {
+        "capstone": "capstone",
+        "unicorn": "unicorn",
+        "keystone-engine": "keystone",
+        "z3-solver": "z3"
+      }
+    },
+    "forensics": {
+      "apt": {
+        "tshark": "tshark",
+        "tcpdump": "tcpdump",
+        "libimage-exiftool-perl": "exiftool",
+        "sleuthkit": "fls",
+        "ffmpeg": "ffmpeg",
+        "sox": "sox",
+        "poppler-utils": "pdftotext",
+        "7zip": "7z"
+      },
+      "python": {
+        "scapy": "scapy",
+        "Pillow": "PIL",
+        "oletools": "oletools",
+        "volatility3": "volatility3"
+      }
+    },
+    "osint": {
+      "apt": {
+        "whois": "whois",
+        "dnsutils": "dig",
+        "tesseract-ocr": "tesseract",
+        "libimage-exiftool-perl": "exiftool"
+      },
+      "python": {}
+    },
+    "malware": {
+      "apt": {
+        "yara": "yara",
+        "binutils": "objdump"
+      },
+      "python": {
+        "pefile": "pefile",
+        "dnfile": "dnfile",
+        "oletools": "oletools",
+        "capstone": "capstone",
+        "pycryptodome": "Crypto"
+      }
+    },
+    "misc": {
+      "apt": {
+        "zbar-tools": "zbarimg",
+        "7zip": "7z"
+      },
+      "python": {
+        "z3-solver": "z3",
+        "numpy": "numpy",
+        "scipy": "scipy"
+      }
+    },
+    "ai-ml": {
+      "apt": {},
+      "python": {
+        "safetensors": "safetensors",
+        "numpy": "numpy",
+        "h5py": "h5py"
+      }
+    },
+    "heavy": {
+      "apt": {
+        "sagemath": "sage",
+        "ghidra": "ghidra",
+        "qemu-system-x86": "qemu-system-x86_64",
+        "gnuradio": "gnuradio-config-info"
+      },
+      "python": {
+        "angr": "angr",
+        "torch": "torch",
+        "transformers": "transformers",
+        "tensorflow": "tensorflow"
+      }
+    }
+  }
+}

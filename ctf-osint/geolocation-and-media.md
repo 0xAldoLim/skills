@@ -130,23 +130,23 @@ mediainfo video.mp4          # Video metadata
 2. **Narrow the region:** Use visual clues to identify country/region (e.g., Greenland landscape, specific road infrastructure)
 3. **Compile candidate panoramas:** Use Google Street View coverage maps to find panoramas in the identified region
 4. **Feature matching:** Compare challenge image features against candidate panoramas:
-   ```python
-   import cv2
-   import numpy as np
+```python
+import cv2
+import numpy as np
 
-   # Load challenge image and candidate panorama
-   challenge = cv2.imread('challenge.jpg')
-   candidate = cv2.imread('panorama.jpg')
+# Load challenge image and candidate panorama
+challenge = cv2.imread('challenge.jpg')
+candidate = cv2.imread('panorama.jpg')
 
-   # ORB feature detection and matching
-   orb = cv2.ORB_create(nfeatures=5000)
-   kp1, des1 = orb.detectAndCompute(challenge, None)
-   kp2, des2 = orb.detectAndCompute(candidate, None)
+# ORB feature detection and matching
+orb = cv2.ORB_create(nfeatures=5000)
+kp1, des1 = orb.detectAndCompute(challenge, None)
+kp2, des2 = orb.detectAndCompute(candidate, None)
 
-   bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-   matches = bf.match(des1, des2)
-   score = sum(1 for m in matches if m.distance < 50)
-   ```
+bf = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
+matches = bf.match(des1, des2)
+score = sum(1 for m in matches if m.distance < 50)
+```
 5. **Ranking systems:** Use multiple scoring methods (global feature match, local patch comparison, color histogram analysis) and combine rankings
 6. **API submission:** Submit panorama ID with coordinates in required format (e.g., `lat/lng/sessionId/nonce`)
 

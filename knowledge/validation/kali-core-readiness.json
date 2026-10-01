@@ -1,0 +1,11 @@
+{
+  "tiers": [
+    "core"
+  ],
+  "missing_apt": [],
+  "missing_python": [],
+  "commands": [],
+  "venv": "/tmp/ctf-tools",
+  "heavy_explicit": false,
+  "required_tools_setup": []
+}

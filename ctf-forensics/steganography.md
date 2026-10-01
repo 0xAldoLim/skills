@@ -133,15 +133,15 @@ deconv = wiener(img_arr, gaussian_psf(3.0), balance=0.003, clip=False)
 - **rdctd 3:** LSB stego in Blue channel, **bit plane 5** (not bit 0!). Use `zsteg` with all planes: `zsteg -a extracted.ppm | grep ENO`
 - **rdctd 4:** QR code hidden under black redaction box. Use Master PDF Editor to remove the box, scan QR
 - **rdctd 5:** Flag in FlateDecode compressed stream (not visible with `strings`):
-  ```python
-  import re, zlib
-  pdf = open('file.pdf', 'rb').read()
-  for s in re.findall(b'stream[\r\n]+(.*?)[\r\n]+endstream', pdf, re.S):
-      try:
-          dec = zlib.decompress(s)
-          if b'ENO{' in dec: print(dec)
-      except: pass
-  ```
+```python
+import re, zlib
+pdf = open('file.pdf', 'rb').read()
+for s in re.findall(b'stream[\r\n]+(.*?)[\r\n]+endstream', pdf, re.S):
+    try:
+        dec = zlib.decompress(s)
+        if b'ENO{' in dec: print(dec)
+    except: pass
+```
 - **rdctd 6:** Flag in `/Producer` metadata field
 
 **Comprehensive PDF flag hunt checklist:**

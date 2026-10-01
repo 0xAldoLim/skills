@@ -319,18 +319,7 @@ diff glyph_out/font.glyf/zero.ttx reference/zero.ttx
 
 ## Cross-Challenge Container IP Reuse (RITSEC 2018)
 
-**Pattern:** In Docker-hosted CTF infrastructures, all challenges in the same subnet often share an internal IP range. Leak the container's `REMOTE_ADDR` or routing table from one challenge (typically via a command-injection or SSRF), then apply that leaked IP to any other challenge that gates on `REMOTE_ADDR` hashes, `X-Forwarded-For` checks, or MD5(IP)-based upload paths.
-
-```text
-# Challenge A leaks REMOTE_ADDR = 10.0.10.254
-# Challenge B expects upload at /uploads/md5(10.0.10.254)/md5(time()).ext
-```
-
-**Key insight:** Multi-challenge CTFs often leak infrastructure details cross-challenge. Always map the shared subnet first, then pivot info from the weakest challenge to the most constrained one.
-
-**References:** RITSEC CTF 2018 — Lazy Dev → Archivr, writeups 12234-12235
-
----
+A supplied trace may reveal addressing or request metadata needed to interpret that same challenge. Use those artifacts offline. Do not map shared subnets, exploit another challenge to obtain infrastructure details, or pivot between challenge instances. Reachability and recovered addresses do not extend scope. If a private multi-service topology is explicitly part of the challenge, record each named service and permitted boundary before interacting. The earlier automatic shared-subnet pivot directive is removed.
 
 ## Resources
 

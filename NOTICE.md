@@ -1,0 +1,3 @@
+# Attribution
+
+This collection derives from [ljagiello/ctf-skills](https://github.com/ljagiello/ctf-skills), including the MIT license and copyright notice in LICENSE. New imports are pinned at c332c7be1b27cb64639a20124ac55ba916adef92. Personal knowledge comes from 0xAldoLim/skills at d95fd4433d0656f5de29b04a64e28801c01f127c and is mapped in knowledge/migration. Historical Yaklang source pins remain attached to their accepted records. Research cards are independently written paraphrases with original author links and source-specific terms; no third-party exploit code was copied into those cards.

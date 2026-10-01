@@ -1,7 +1,7 @@
 repos:
   - repo: local
     hooks:
-      - id: append-only
+      - id: knowledge preservation
         name: verify protected prefixes
         entry: python3 scripts/verify_append_only.py
         language: system

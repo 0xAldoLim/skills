@@ -1,0 +1,2144 @@
+[
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "a9ead4e6ac957050631aeddd1a708effed670c3eeecee5b22e305f4b5556be25",
+    "normalized_content_sha256": "c5c4025ad52caa00f2cf9a4802b19840c330d052b81780ab7924a750f9e34dc2"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "b7569121bc5d2523550728ab3572609b7dcf619b88d7b5e80950655374154543",
+    "normalized_content_sha256": "0a65eccbf7a35c091796fd8d6c1f928d69ddb56099c1547b922f6cadadaf1c67"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "4400b4b690ef0a98b927a62e38d86896198a6031d2cc92ecdd869bb698e3fcdd",
+    "normalized_content_sha256": "bfcd1baf9abe549f743ba23c70ad5b8e1232068116bf0c290bfb8b6ef25fa799"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "corrected",
+    "destination": "ctf-ai-ml/triage-reference.md",
+    "reason": "Made model deserialization prerequisites explicit; original retained in baseline archive.",
+    "original_text_sha256": "509b70486565059fc9658a4ff3d8ae9cf7550bcbf35f1f25d1b042e95b02611c",
+    "normalized_content_sha256": "3add680f35f6e8d606c679e10718d1fbb894de0f276888891dc89174ac929781"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Model Weight Analysis",
+    "status": "relocated",
+    "destination": "ctf-ai-ml/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "04e6dd3405befda9499e9e175c6aebfa127a48f901432f823fbd562082541df7",
+    "normalized_content_sha256": "b3071ced174ee1ca50ee26ee2fa5d210d8b595dfd126539d1bb467ed54327fe9"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Adversarial Examples",
+    "status": "relocated",
+    "destination": "ctf-ai-ml/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "e927d0e7b2f0c34e59032f9a83c01882d255782b173b9a13af7cbdc5a2c8c7c6",
+    "normalized_content_sha256": "a674429278fdad2d58e81803fd073545d6d181933885dbcbbdb3a4273de1d6da"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## LLM Attacks",
+    "status": "relocated",
+    "destination": "ctf-ai-ml/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "06ef5d9ff13c906e8812110141828b1cb413952e297a8208647328604bd2a677",
+    "normalized_content_sha256": "152c6a4ee88690ce47b1d6695116e1f8a1e84d1f47283e11c94e4bc3ba4878b6"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Model Extraction & Inference",
+    "status": "relocated",
+    "destination": "ctf-ai-ml/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "f4ac9b05b05f705ee9931d2b7718c3d04f62f3f2b79be1433027a223b35290ff",
+    "normalized_content_sha256": "cccac2a195be7a7f7f280026950bd1116c319849243c98d08fb82c98e3e6f815"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Gradient-Based Techniques",
+    "status": "relocated",
+    "destination": "ctf-ai-ml/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0e9374109203d905a1cb6fa777ad0cd925fbaf5d9ca0c3dcf0304fe22b188e38",
+    "normalized_content_sha256": "843c0be954d6fb3d27d6b8ecab642a4cabbbf4415f6c4c40a825ff0fbf9e9a87"
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "04c3b7e038eb3b64cbca9172edb8ef8590b3df25285f95d12d98b77c9ca9ff88",
+    "normalized_content_sha256": "b36d1e0ac291dea4083b7b88035b04d85cabadcac628fe02a246f85cc0947d84"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "fb52d7e3a823c8c7a72cea1700742da2cbdc6bab9632639d100d45d7c0b69b4d",
+    "normalized_content_sha256": "f0a32058772f767c0cc5c780ea18acc3bfa0929d253f76f7a22ff9f1f2ef6ae2"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "d1aac37e223bc00b702ef81087578fe5ebb552832ff06cf1cdab139bee7ccd13",
+    "normalized_content_sha256": "cb572f9838c98b6160f985942144497bfdd63bee3d06660d86c3887008c382aa"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "3fbd35e8011f5389c6a6cab60eca21277460abbb453ea14cd3bf45158d624d51",
+    "normalized_content_sha256": "51065146f3eb22feffb8c419d603b853094839b1139011adb9d90dcafd9856e8"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "47828e83dc0f596cdcb82a9ac410f1e640349654325bcaeb1a13e490063a7753",
+    "normalized_content_sha256": "9b6cdea9f650746fc7b8a408614c780c3b607354713ae8faa21ffbfdd55fe0a3"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Classic Ciphers",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "516c4adff2904cb2d8b515e688721d7ff4799b7237c11586179baf5ebac5a62a",
+    "normalized_content_sha256": "f32c1269cbb1dae24f2614af7937ab7cc81cf14d3a66b9a834d7abb9836f5e1e"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Modern Cipher Attacks",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "6ed09708b86ecf9caf80115715b32970a861ae8a572cf8b080f5a51d123d9bb0",
+    "normalized_content_sha256": "e5df742d2777256b6f11b80ecfe6046aa527a5c35cd2c296fa46bf72d2ac010c"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## RSA Attacks",
+    "status": "corrected",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Removed misleading Manger binary-search and fixed-query summaries; preserved threshold-oracle family with corrected modular interval method.",
+    "original_text_sha256": "16b83128fec3db56b80e0b5ca01113129430d3dcec5d2c624c1e2d322234ea8b",
+    "normalized_content_sha256": "3c7404596e0e212f0a656ccd2cdecf5f5bcf1e8a2ce5bbf7387235a32c28f6f3"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Elliptic Curve Attacks",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4a4c910f9e4bd6824d14910954027442f45771555454a348c63ff0b1c5cccbab",
+    "normalized_content_sha256": "7eaf2d4474ab9be081477a41ff8aa79a542a422b26aeafce628189d61586e41d"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Lattice / LWE Attacks",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "1002cae0dec095e5543710c3c8c46ebaff839f66b7ff6426380aa68e80cff325",
+    "normalized_content_sha256": "896198054a3b069c1b42f6debb71be6b3485d109052aa4c9cb30cab52b236d23"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## ZKP & Constraint Solving",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "b931398b6d4dc6b16fc27cf8752aeffe51ab08dd7ae5a16f9cf2effbeb6a13ae",
+    "normalized_content_sha256": "3205569bc58d66c6468848b0845a5e29d37a1a1dd37b7cc0efbf31650d0ab5c2"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Modern Cipher Attacks (Additional)",
+    "status": "corrected",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Removed misleading Manger binary-search and fixed-query summaries; preserved threshold-oracle family with corrected modular interval method.",
+    "original_text_sha256": "d7c46ca2833b23b9d05b7dfd94f6afd1088519e3c4eb366b0e49de10ec25e200",
+    "normalized_content_sha256": "ac24fc308ccf080ded258f962bfedd9a766c5b9847418b072d494a40db618467"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Introspective CRC via GF(2) Linear Algebra",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4c4b7423c31f368ab602d97edda9c90fcfd04ff5665b3741c8dba91e1f251863",
+    "normalized_content_sha256": "56cc05f46d89d4eafec788eff8f9b468bda7c4904ba32b94be2432b04c70e3c6"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## CBC Padding Oracle Attack",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8e34e3d1f62922751fa3bdc5c18f81248e2b5b8aa3a8ba3410249cdba791bb30",
+    "normalized_content_sha256": "d2ffeaf9f53b9a60b8663ae5664ec4f094b149d456925b7353e065baabc63c25"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Bleichenbacher RSA Padding Oracle (ROBOT)",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "b28bf2bbcd61f280653ea62655d452f7623d4a834eba162267e30d4bf58d37ef",
+    "normalized_content_sha256": "6cc92e49610256477e669519e2c23816e9f00fdb1519c4b4ba1704db2b812f0c"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Birthday Attack / Meet-in-the-Middle",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0ea6755e61fae5e62c76d4f1b0b1a050872b8a25433f6a9baf68e77f0a38f297",
+    "normalized_content_sha256": "0f10fcf0c7f7af8801b231d9ab12fcba91e9a654d6864741f09bd0d7deab41cc"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## CRC32 Collision-Based Signature Forgery (iCTF 2013)",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "401e6182b1320fea4dab7c33ee656b89ee0e923ce407be0301ec1207f00494b5",
+    "normalized_content_sha256": "bc09ab14f99b72b400d9d4e41b751fc1355f7253b5652a8cba9461d2eb0ae608"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Blum-Goldwasser Bit-Extension Oracle (PlaidCTF 2013)",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0fe356ca08bda380b2f7d3f64cbf9c4aa57d30eb2fb44c2971765b67f1989ed3",
+    "normalized_content_sha256": "4777ae92043a24041b1a1c3f6cf078b71627523bc2aabd74d7e09870b793d46c"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Hash Length Extension Attack",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8d398d058dff4f99046dce0dbbea1cf7a993070231f1431cd89ce758fa2e7b8e",
+    "normalized_content_sha256": "c7054660887df57d86c309ecc87e4d70554d13d00908f19298908b14986c642e"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Compression Oracle (CRIME-Style)",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "ab500786339410be02f08f51f31e7db7e41698c5c713650488b7b9d515971124",
+    "normalized_content_sha256": "b3bb4e01dd05e0516ac305330b0cef824f1744935912f52f2fb06a543ffcd7c2"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## RC4 Second-Byte Bias",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "a0d8ec67197d8c7748c7b291592f7de86f5ee9aa190b4169cf0e962dc670aa0f",
+    "normalized_content_sha256": "12de224de0c42a4bcac186e4b59751af8dff0c04e30194c265421762e37e3ce9"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## RSA Multiplicative Homomorphism Signature Forgery",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "d3c09e6006236072de8990172771aacca927b1877ce95e372555957ec841716d",
+    "normalized_content_sha256": "6c6982a649b78cc8fcbe951373b536f561fbeb87e0cfa364684ffa12f631e6bb"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Common Patterns",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "635a9e019ed281ec6933f7f8491a7688782ce77e00025e6ee18cdea3cc05b74f",
+    "normalized_content_sha256": "d3ddf9c11be62a61d024549252f56847a935d531195ca4ed03a43b343a3ebc69"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## C srand/rand Prediction via ctypes (L3akCTF 2024, MireaCTF)",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "d4a33c0ac5a31f05ff5a386f5d0325b542dde8d224935e5ea9b889550ab04d57",
+    "normalized_content_sha256": "63103948ae26b5565f7a0e7a240a8f1079ba501e734ced4a062282d2805b22b4"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## V8 XorShift128+ (Math.random) State Recovery",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "26bc109b41d085f474f6dd171ec3fb5432eed5b47dd4e416d92403353695a795",
+    "normalized_content_sha256": "32c8e72f8f3cd0c3d1daa761b4a7c77f4dbefbbe89794d6c7e38059747cf5945"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## MT State Recovery from Float Outputs (PHD CTF Quals 2012)",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "97823990a9d0d73e21b96224d81617e22402e40a8bc724ffa410b57d757f26bc",
+    "normalized_content_sha256": "f87c086318e8041349654b497ae44888ac6ba0c6d6ef7c8b4ff16d5622464fb5"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Chaotic PRNG (Logistic Map)",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "5b7a51443bf0ffcc3fc6ef2df3e85ccb8d51dbbc27f45d22c1f7ab44e992dd79",
+    "normalized_content_sha256": "a88ff7017000809762b108a7a07665b110bff15c643798d0a3fd0eb136589e3e"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## SPN S-box Intersection Attack",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "becfaa918861e57652920c60bca2d9a5734d07f6d6c321cce84bb8793a9aeb33",
+    "normalized_content_sha256": "8a6d7ceef5741449f2c2f7d21130afafd96e945996069faccb15592eab64e86e"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Useful Tools",
+    "status": "relocated",
+    "destination": "ctf-crypto/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4b089c6e593439a53ae48c994b2cb9ad5013fdd4f0b98eff4557cdcbd21aa39d",
+    "normalized_content_sha256": "a216a4a0b031f91b298439cb616fffdc5bdb04f0792323c4472f65cec26c729f"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-19",
+    "status": "relocated",
+    "destination": "ctf-crypto/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "7c34f98f343dc323e606adf943e0ba8591a56406bcef0467d20b0a9ac18f9f10",
+    "normalized_content_sha256": "b05b0912a2af341885e33352867715b8f5dc0be360d026254e26705a906654e0"
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "04c3b7e038eb3b64cbca9172edb8ef8590b3df25285f95d12d98b77c9ca9ff88",
+    "normalized_content_sha256": "b36d1e0ac291dea4083b7b88035b04d85cabadcac628fe02a246f85cc0947d84"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "d6886430cc6d5330b617e1f60d45e39bf529fea09fa677668c8d25d8cef50256",
+    "normalized_content_sha256": "54e75a72ad527d52f7b3f211f55303841ad041bd247886330385a1bc7d134c9c"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "47f8d50451052ea23eea4aab83581c06020704750dd82c63a9cbad7798728af1",
+    "normalized_content_sha256": "6f9277a53bd9cc8d8dcab1e2d54ccb2e8d291bcfa96a0d1447eac488fdf25f95"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "99ae692326a4dccd7cbf6301ad11ff5fd6a8c041145b5b53989207b102b3a05a",
+    "normalized_content_sha256": "8d2887177d72c630a235802c9aaa261a7f108ae56d78eec683e35969a2dd9aae"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4cf61f8ce17252f10911b429591f84f4e2bd4cfa0b4a0767fe201caec3f933cd",
+    "normalized_content_sha256": "a92c7664abda32c51110e3e06953b2d029e165bced9baed38c002e6f8a148469"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Log Analysis",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "daf9ca30522c959986d0cdefbedf1a96a370d03ed3a0c7bc75c0037d161c6bf5",
+    "normalized_content_sha256": "b1514107480eb33693d2a1e262faeee39b02cb7036fa1380132daaba90e38821"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Windows Event Logs (.evtx)",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4645cefaa1ba5c17e9be393780e59efb48543f8e4970bbecbd1a92c002c51789",
+    "normalized_content_sha256": "62e2e0369c340f15bd8dac6953b290a3d6cb145a2f909ad0a4d5ab7b66968e9a"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## When Logs Are Cleared",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0b4524ef092a6bee7abde92e48c994a06fba5d7531773f48d3b5510720b9c599",
+    "normalized_content_sha256": "c6e8649d4453c7950e4451ef5c14a5d966b99016ef32676f12b744a15bff3c0b"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Steganography",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "53297627e239beb59c1983cd54403bb410899f3812a91a2a9754448923b2f168",
+    "normalized_content_sha256": "46fb68dea52b1b6a5fa7415c9d387c3391620a5a3cf2247375a5b69f33d6d835"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## PDF Analysis",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "fb39ccf383478717c96febbb867e1fc60d6a80a52b34769e7375ef00798d2683",
+    "normalized_content_sha256": "53806c5b3cd50849f44c66d73b1c977c550d13955180946c99bd951d5ab37e95"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Disk / VM / Memory Forensics",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "1a5f3d7161d47bef3ee3882a407b41f14c98dcf99a467e7a5c8e38be65f93e90",
+    "normalized_content_sha256": "88669c9b9fa02067554da301a654f8b3232897b786a1e67f19cfe5523187886f"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Windows Password Hashes",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "92ac55b3a8c7244e293ff38ac37564e40d1002b1a51f3a1bace425acfedfba98",
+    "normalized_content_sha256": "a369ef3250876f14ec7c7ab4623a3750d2ee9b061adcac21bd4e240e48e5a226"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Bitcoin Tracing",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "716a4020a9346f6d00c74fa5ac2baeead919784b35f08fc4cc49af409ac183c7",
+    "normalized_content_sha256": "37b5dc1979cb59a811e7ef36639a2fc198a4f20583348b30adf010e52288affb"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Uncommon File Magic Bytes",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "ab67fe5df82874a29fbc03ca99005efdc8f8611e5a31347a9813d98230160f2b",
+    "normalized_content_sha256": "60f4c369fd215eae6e01fd456628a575039423670acb2ef24faa6b2b2dc1a03d"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Common Flag Locations",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "44eeec9c93cb657a84b98a0e0b6f699eda12c99aa3d0626bdd65ff5689cb4796",
+    "normalized_content_sha256": "3e65a5ce69effb126963d9c4c51a68b646f0f2d77073462b1e83eac9365c3629"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## WMI Persistence Analysis",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8eedbb8fd75a64ab489a0ddbbfd7e0621ee89a0e415fd4f8c55887bdc95451a6",
+    "normalized_content_sha256": "7db847419cffda7b9ed52f12288b866f4ced6291a291ea8134b328f701268268"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Network Forensics Quick Reference",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "bc636b91e6bf14d405ad6cc964632fb3d755d786bb47abb407a84fcd461afdbf",
+    "normalized_content_sha256": "94329ee3bba14936130846d2986cefb3c163fc55d16304b95c4453da6d887737"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Browser Forensics",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "04c8306ac4b23353b9610d474472acaeed9b88a7fdc3c8942fcb684eb5724ae3",
+    "normalized_content_sha256": "879742e4007456ac038ef8af806a07189581be3663b8b620f408f50144ade0c7"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Additional Technique Quick References",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "c6110881c02759fa3dd22bb21be5ad0c9e49383d0c15d09dd8172c644a34ed4d",
+    "normalized_content_sha256": "9b880ad09a42d5bcc9c790575b9c232e05fcd3e646e2eca7cc1d4f9d69b4334d"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## SMB RID Recycling via LSARPC (Midnight 2026)",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "a7e1fb6091c6f6807eb47eeea03b32247389af6a90afab23532feaae32bf74d2",
+    "normalized_content_sha256": "a57ef17dd45a0336036130870b75cccc999cc31d76c34c7ab60061e2803a1b60"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Timeroasting / MS-SNTP Hash Extraction (Midnight 2026)",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "2e9b249b5eef8e8b5116badb9e2ec6f8766ffbeafa0343062a607d27a73e765b",
+    "normalized_content_sha256": "88545859225a146fb2d61a9864f95d8c99f78add1e6961456313165ae27921bb"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## HTTP Exfiltration in PCAP",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "96c83ebd1bc6ea3613a90a5fb01350a441efe04b01811d9ac6cf8a02948edc83",
+    "normalized_content_sha256": "7005e81a694d8e5e517dbf80d522ee95ab6a6f5ca86aab006c4bdd77fd5c4672"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Common Encodings",
+    "status": "relocated",
+    "destination": "ctf-forensics/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "917d62d73b79d3ff64f89ec4f095d80d920af59f98187fa69879311aeb1515c1",
+    "normalized_content_sha256": "4a6b089f2dbdd574482240ce9d6ffeef91d4c3bea4314bb46fa8f63871be1776"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-19",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "6fb957e8dac512e87955fdfc0c704c779cccd8ca38ea78e84993414a1464a737",
+    "normalized_content_sha256": "7699d74e3fde2c1a3a7933502c02ddbd8b841ee2890daed71da18e85f11b3701"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-23",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "48d78541608db5deee28ac74625b0c32fe16d3bed022fb8bdcd33a8271a4fb53",
+    "normalized_content_sha256": "f1c65fabdad097dfd6e2875025cbeef1694d48c6de023c2d5e355bef6f553fdf"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-24",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "b92748d54223afdc4a2cd5bf680702e58cd571f8dea4898f71eb49444dca03bd",
+    "normalized_content_sha256": "45a91d3d812b3e8773cf77e4ca6d9a3580c1115b53b10510cf95fe87a7a395ff"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-28",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "834b698f951f698c60e2b7aad67439c4883a449c881cb3c430f4c4617c90cfcd",
+    "normalized_content_sha256": "39cae61911556e078ba41ddcb9e13014acdbd70c59135a85e4a5f6bf6799e3db"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-30",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "6f81ac7af7ded8c2637a66b01fb67dde57301c0f2a94da868419088f629ab77d",
+    "normalized_content_sha256": "d308686f1d2f8f33d1b59664e66d8929b8f5a551ce34ee9311386f9cb20a4d31"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-30",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "acfe66a1a7e1c70ae202f80885288ab71dfd6b1957c325bff04870235856834d",
+    "normalized_content_sha256": "b9bf111f591f136c9799817d37fd49a1c842ea0e9aa54e5f25658bd451aadf2e"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-05-06",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "4878ae732aab13fa6047ae7aa243440bc376330c9f3e0083d407d81804383c5e",
+    "normalized_content_sha256": "4c84084d635678866b8107a2d2da66a85134cc0f82f53e9cd6075da2eddb6447"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-05-19",
+    "status": "relocated",
+    "destination": "ctf-forensics/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "d690b88922cf0d66e33fd4a4ad2ec40e33e47b474003e3da4d213b74e991e0d6",
+    "normalized_content_sha256": "0b4afb6ae89a058b10499360d36cf9380d1ae3c97b99965b3e7bbd9271286c24"
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "3ff2bc328124e51ef96609f875b88a25c934e2e63d3d038688de54cf43851b37",
+    "normalized_content_sha256": "b8430c5cb58d5ce9f66b0a85c66a6d370f86aba83d288af92f99df1d0856e73b"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "2158a82ba2dc421680c60943f712c9f99c39d7011a40189bc0fab95e3167ebac",
+    "normalized_content_sha256": "47220fdf9cc388e2968d51623de10ad1860b59b72e7f921ab3b5cca09e2b3605"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "4a9b4258a4eb88186b3b05e18f69408491645d47ab5394db646f287d08ad1733",
+    "normalized_content_sha256": "40b6c9fb992c751e35d6dec272b3585d314fa75a8cbeeb61c2323b6255a6110e"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "328d2f0dbf54b2bbc1f8dcf061e6c483e45a8546657441f86ba7112ac0e31643",
+    "normalized_content_sha256": "8ea3de88fd1f15f8ee0a78bd94887a91f7d0a8deeb6e9c16210654431474a9a9"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "12a52d45186975b5e7abb435413158a23967a4a4928f7944c2a92741e5a33d90",
+    "normalized_content_sha256": "6f0d1c3b7cc1dedd9ef61bb768a6afd7189524ccc41ae6e479755eda9a778765"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Obfuscated Scripts",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "38b53aab7b52dc9c8e2df48d0b47c24986c6e361ccb443634aae358a98b6ef8a",
+    "normalized_content_sha256": "44fbd51879aab27726c9c2191a97b98f2341fe609862f8fa9dc0a96f653d4116"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## JavaScript & PowerShell Deobfuscation",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "807e88a44868d1cfe5e68f14716bc7f69c21483c179cab69588f6a8a1bbfff5f",
+    "normalized_content_sha256": "327cab9a3446f277fe3997d614cdda1b892ffe83e7a4bb4e7bdb3cd1515c8814"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Junk Code Detection",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0d3d984a759c02a4c6b6a1335935bf1794a7773bf98e96463cd29d43fcd34633",
+    "normalized_content_sha256": "fbd24a848b9cee9a9d6446893ca5aac406dd24bad8e2d9b603945a09101aafaa"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## PCAP & Network Analysis",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "7dc5e7616f59d0e3ce3f10e620135aaeaa01b816f11a7ce79c98f0d46d612a4b",
+    "normalized_content_sha256": "e0643266bd3620ce2b31043c2c9e2bf7a8b6487d006132528be0eff353042d28"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Custom Crypto Protocols",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "e7c3e029ff5bd6d8ef0e9bb30525ed3535c486aa000a59e5895b15b4427df59a",
+    "normalized_content_sha256": "9ccd899675e27089d806b84b356bb02c2b1e2d7af3ae125e5c9b7e7e42bda2de"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## C2 Traffic Patterns",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "ad5bcf1da37c4b9d9f436578fd22cc2f26f1800e139fcecb70d3decf202059c8",
+    "normalized_content_sha256": "282719576a5ce29521a86fa1eb1a4df4e7da20c71ea979fb72cc2bec1dd485c7"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## RC4-Encrypted WebSocket C2",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "757735574d5745ac5cceb2af8af229f4c2131120188f768dc905cc6ef3dc3b82",
+    "normalized_content_sha256": "c16952de74e5e2cb4cea84acc403d6f1fc5b4ee6e1a69da0f8a514039c6a9b5a"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Identifying Encryption Algorithms",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "43970e120482a97153e3a68299a7b2fcd5931207fe237affb7df5fe928b05e98",
+    "normalized_content_sha256": "31ab9040440be9ff1c6620df7a3e8f2ffc3166ad7269909e02ded3cdebbe659f"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## AES-CBC in Malware",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "44341c30f692c1158b9491d1fc7e2673d95887c01f6e36b33396c8422c999178",
+    "normalized_content_sha256": "eddb828936095a0eca89aef5d0b23c1753ada04b2ccda1471163f37d0543745d"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## PE Analysis",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "87a657298c810895e9e3256b08360a1d1c6a3a7c8f466149654c378300639162",
+    "normalized_content_sha256": "acd03fbaf63faff0d45ab4cdfc2d65cfc903f1bbfa60bf8389c3619b87838d8f"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## .NET Malware Analysis",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0419cfed8f88d5196daa214419af1646229a3d51ba8ed7a139faf3cea35f183b",
+    "normalized_content_sha256": "388ad3a4ff315cca660fb75e9368dd2476cfb5d65b1a5aa4e0ae5b2d5075bbbf"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Malware Configuration Extraction",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "491156a37198b01b33406b2cb74623476b62e1400ad93e7a0962295f044b8487",
+    "normalized_content_sha256": "defd269bdbd9dad6245a4bdc7c9cbe03dbc5adf36f36d646f411856889c165b2"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Sandbox Evasion Checks",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "e069427ddc72645c951f0ec0039a3d994f854363585067192cf0d223e7e1c580",
+    "normalized_content_sha256": "6129ec0df004b6dcd2052392be3974b3f086b7a9163b8709c6f536b76c0f6f2c"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Anti-Analysis Techniques",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "05a7de27977f52b1c08dd9277348dd8be991c128d8411cde7b80541ae7d94e23",
+    "normalized_content_sha256": "8c154eca5d80382e50c86841cfc9139704a88049092fa9d950619164b9685f2c"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Trojanized Plugin Analysis",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "1e93c30743d8aa7e7eb1888e885cab4c62de6189eb5f4a14b395a5362dbcdb4b",
+    "normalized_content_sha256": "852a4f505ec64da6a8856e69829dc9e6eeea7b686be7ca2ac7cba848a943a040"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## PyInstaller + PyArmor Unpacking",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "1ba5d090643c86c64c319e6460061a500f8d9c73d2c4e3f677c0769a34c4e3a7",
+    "normalized_content_sha256": "46297e8bc84da5125b59111cd8e41d43179204b66b0b07ad370d2078737cf5af"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Telegram Bot Evidence Recovery",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "9f3c6414891b2622722c4f539d443eda6a88d4c971236d04eb37aa401794697e",
+    "normalized_content_sha256": "b293c3c11d4653cc054fdaa57409d77579fc241ec1a91f91fbb5a968cf165ef0"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Debian Package Analysis",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "3e0191ccd5c9bad38c4389255bddc64e8c34f3166d55a6bf5769f147e8fa60cd",
+    "normalized_content_sha256": "1f86807c3ed6feccef67f8d331b2b922b748819759cfe9962e785274809d3b6e"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## YARA Rules for Malware Detection",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "fb39a5b56fe876ba6856447a4dbe93e359bbe08ca651c16534422f28b7d12702",
+    "normalized_content_sha256": "dd8ab9c488ce7258fe9128df4ab4feb50d8a4ecdfb52a83afedb7eae7a1fc630"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Shellcode Analysis",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "dd471e7f051253fa56e92acb0242dccc89542ef8dce2aabd772aeaf399020026",
+    "normalized_content_sha256": "af0dd33194b2f4556a8d7280633470409788e519d3c864555a068ef930144dff"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Memory Forensics for Malware",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "370919f9c4685be42f06f1af2d148300c1d00b2ee89d39ea707d422836dc91c5",
+    "normalized_content_sha256": "c16161bf87a5577195a962cfddc12d244a4bbc9732e8da3014161ec7d554f6b3"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Network Indicators Quick Reference",
+    "status": "relocated",
+    "destination": "ctf-malware/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0b40b14a39823eac53b997f074b0b58f56f3dce50278806a533cceb7037763ff",
+    "normalized_content_sha256": "ae1382f1793dc32e7411995ad96d0e0d7bde268ef2b43ba536ec6db123f7354d"
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "056787373af105d13f9cd1c3d31520dac38551c209b394029b359c9acbeed2c7",
+    "normalized_content_sha256": "a9ca6693a7c2ffcad2a73e2ef49edc806317f0c693eaf94cb40bdf58ac8dac32"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "b4446d7fb31e5df44e4730cc63c394a23486acc03df3586dd1614e1bd645831d",
+    "normalized_content_sha256": "779b264bd5adb1db0eae9fcf3bdfbca59a6001baf3df9a5778ec611d5d222f7e"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "d3b3e824b9720dc64523dbd86c85172136e48d1924e95a369565c01604a89349",
+    "normalized_content_sha256": "4ca0d67b0bf923d7bfd066bd3b2a5c2bf4e68e0fb5ff43c503042cae2f02ed90"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "89fd0eb00d19f0e6f4bf147ece95814f40052ffeafb095e869be7f5f4f837a3a",
+    "normalized_content_sha256": "953d010e271662b9fa9828bd59245e3ad10e137c37b2113abc872f46041ca498"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "fcf91434c630c142f5936ecdc770d1bfbf03c91faf1b66f3d8349e0faf8ebf28",
+    "normalized_content_sha256": "3eaf3e6f0516f2e05652078b87c6c61162f3b7819526dc547fc72c996b6b468e"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## General Tips",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "a9e634facf24d4b28458cb888d5036cd72e7f501a8d4d064710bbacb4f1480d6",
+    "normalized_content_sha256": "77140a763a61ba86648a105e674fde21f81033f556e59ac5ffe5caa1737d577f"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Common Encodings",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "7122455452068f2d464d5432be936681829af0359e2f46f3027a29f0ad38ff39",
+    "normalized_content_sha256": "ad5e8086693d78672f0b6adae966706c1fec80f581856cdfaccdaf87cd78a18e"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## IEEE-754 Float Encoding (Data Hiding)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "a3d71262bb8a70bb86f5acc3443fabd549bd76cd300edc85a3ba50bdcbe07a04",
+    "normalized_content_sha256": "ceadb8b64a4338a17bc5dfd07d3561acbead05c6613221b918c48a09f9fbe1d5"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## USB Mouse PCAP Reconstruction",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "2afceb9d401b2be6adf89d0e36d1ab81e1dc45c4c1170732a4b2e78968fcbcf1",
+    "normalized_content_sha256": "536628681e7e52858ba2ebc85e94384897de3993bd42356b634415cd37531fc5"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## File Type Detection",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4bab5f6df4e3778346bbce0b7a8ee4f9d3fe8075088f91116eade1dda01a5c69",
+    "normalized_content_sha256": "12acf3e7c50ffea73692681491003dbf35caa71da39a8a0b4cf246c125f35ffd"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Archive Extraction",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "dcf272893fc1132d22d28334eaacc1189ffdb47dd6c2d88dfe114c62869b95f2",
+    "normalized_content_sha256": "7d5253896de38c787724cf47daa3569adad207d58eb6342f55468df80cc04898"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## QR Codes",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "68cf9a87093407643548e254fc1461ba4354de33dec7642e8a6a8e4d6611e516",
+    "normalized_content_sha256": "6013bd519e01aba049368e1b2895d599ba2b7713e9ce90bbdd49b1baa23365d7"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Audio Challenges",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "16be806458ff3a18cb3a5eece15156cbb8e250b4e8a019bb714184ee09a7d9bd",
+    "normalized_content_sha256": "6bd916bda5970916a648e753f2b993cae5832e8d3c967695a4ec75dcfecf224d"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## RF / SDR / IQ Signal Processing",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "334a3173c8dcd05abd9fcee75678cd2e60858a3dd0ebc6576c95fdb80b4800c1",
+    "normalized_content_sha256": "2e16ba3086fc452aca696e23269d0eda023966e482d07fbe66b76c01f90ca0fc"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## pwntools Interaction",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "d6510f64a2f2f0158ed354a25b7e5e608915acc332cf874cd987af59ac76db0f",
+    "normalized_content_sha256": "b1256a81730de7d95a359b518afa13c80b10476975e693773f47233597a2db20"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Python Jail Quick Reference",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "ff37df41be02bc023b3ac9a722e2881d74551afc165de3d2cecf8b2e3b87da43",
+    "normalized_content_sha256": "406aa53e1e54b0eaa3f50fefc2274884ee79e8160d4d88f64010bbe6f7388168"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Z3 / Constraint Solving",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "b653b987e53176ae9a02f744dd891dfdcff16ced70eb4a75f89e0308e707177a",
+    "normalized_content_sha256": "029887a8fae3ec0dd5a121676955dd7ce10f33e2bd793bd4011409efc0cf37bd"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Hash Identification",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0baded647380e86e588126eb97d6b7fb8f30485f5faca04390015437d58de236",
+    "normalized_content_sha256": "54ecf2992f2f78ba497d5300df1ef1572c0113bb0b597a9ed94a60d48b8e4f27"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## SHA-256 Length Extension Attack",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4773d7578daa30572c2bffdb0924a676d527ce293dd2ac72317d62fd3e829273",
+    "normalized_content_sha256": "da4c78c3a3d8a6caad3f6041269da3606f9bd130b9b3627e36fe3ba9fb4447bd"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Technique Quick References",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "669a3081b4de305da5ebca4af598eb83fabfd5c1d8e68b57ee446a46dab5adc3",
+    "normalized_content_sha256": "0d84880ce5085229ee54e0cd7d74d29443a15fef3d0a69385cc2a575c5a60782"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## 3D Printer Video Nozzle Tracking (LACTF 2026)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "78d37dd8540f5ca11d19fc4d608dbcf2e9175f8eca88c1b3bb966dda96b1d865",
+    "normalized_content_sha256": "3bb89e96441b34e93ce429fbca752226f0cf82508e154f86e3a40282bc87eb02"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Discord API Enumeration (0xFun 2026)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "713778e68aa2e1241f26ecefae21bc768b3d8157a111c28c96538aac32548dbe",
+    "normalized_content_sha256": "ad315db361d076fa053430796a6fecae1d13b42aa0c865c3979f0e3dc3447dbe"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## SUID Binary Exploitation (0xFun 2026)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "46335bd3ba3f01fb30fd7f3cfb54681cfa60a03882f80d4535a1e3f20878ebdf",
+    "normalized_content_sha256": "3b98ba056c814668f3e9f3bde7fad7f9a05438158b29225de2b8e344636046cf"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Linux Privilege Escalation Quick Checks",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "75b267ff49a550a930da9afedf96d77b471eb76012a83b3d2dc09c587f6e8150",
+    "normalized_content_sha256": "edb10a1543ceab2117a9087bff85360d233740c12e47e0e4ea6542cd7a91b501"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Docker Group Privilege Escalation (H7CTF 2025)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8adbc5cd66997de5ba7621fc65d404532f3e3cb529348e870d0c51c1463b4b39",
+    "normalized_content_sha256": "56ebaba557e7de22347a42d101f9e1e4302a928980413ae7c1fa3c5f9975fc47"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Sudo Wildcard Parameter Injection (Dump HTB)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8a9177225404497c4178d49cb5b96cf500080e0eba3b75c208ed08f7deb2ba7d",
+    "normalized_content_sha256": "588bc8173860b0f8ac5650fcdb6b434b8f390d58a086d3ddaa6778cf5d0702e8"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Monit Process Command-Line Injection (Zero HTB)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "756cbf4e2aad560b00efa4be07515161fbff96bfdc1526c1c4fe87354309dec3",
+    "normalized_content_sha256": "f11c5e31f731feb04b74a5bdf390007ffcc6fd6b600caf8e44d12e97f3dc30b5"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## PostgreSQL RCE and File Read (Slonik HTB)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "2910042d9b09c88213138ed5e16fe3df3ae416f30e44e7d66034c5c7c96dfeb2",
+    "normalized_content_sha256": "6cb83c58954ae11d0c2631827e23f74439d78101b34ca352046693e5c7eec3e5"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Backup Cronjob SUID Abuse (Slonik HTB)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "6e427784a39b0f6cf255c36b8fb88ec7e84befd52891d0e66828f20bae4368d5",
+    "normalized_content_sha256": "31cbc888baeec29bfc1cd60ad9e8c1e8bf4d4d16a08846d9803b335dc3c94efd"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## PaperCut Print Deploy Privesc (Bamboo HTB)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8bf3121761df062842a45c6967bc6b02a7211eabcd1b80315a929705f0f09891",
+    "normalized_content_sha256": "c22d33c6364c1f5b53ba01b061fde0614a18b9815a35d22804843447cec9f78c"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## CTFd Platform Navigation (No Browser)",
+    "status": "corrected",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "User explicitly excludes platform navigation and automatic submission; original retained in inactive baseline archive.",
+    "original_text_sha256": "2c7243ecb8c37ffe2fd08faaff6666c6226aabbe7f762454ac5e9fdf20feef5a",
+    "normalized_content_sha256": "60d14b2e3d1444a7222030666b31260afd8b576187156cd74ef00e37e065536e"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Useful One-Liners",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "1ac2426af1610faee8c00b873c96fae93e133b992f2ca5607ccd37b50263c850",
+    "normalized_content_sha256": "cef2426ae8702fbff70ea44ac818e06da4ed0173bb1994e76e99c65311bd08a4"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Keyboard Shift Cipher",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "784ae3bf82102418b54e0dc262bca7ad292da45ead9a9cb7f65adccb4818cd71",
+    "normalized_content_sha256": "e2c01ee28d3811a88a19560997763b6a9e6ff040176d0432f5b10d719149dbaf"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Pigpen / Masonic Cipher",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "3e63baaa6d84cee6f783131db700790896e2d99921ecf30a9552edeebaa267c9",
+    "normalized_content_sha256": "d93b82f694c8eaf15fc2f3a12f58b10804355533fc29ee5caa46982d99b47f64"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## ASCII in Numeric Data Columns",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "51205205f10e71c0f96e880412939f9c53c6fd61d196ffa2bec798fb20116ea1",
+    "normalized_content_sha256": "7b955b442b653c590b6d9f2a0ecd2be8d577391383efc1b635f666fe9175aa61"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Backdoor Detection in Source Code",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8ed7e0a4456daeaac32e1ce695e0e8e07d2da138cbe6a20481ef658e169c3cce",
+    "normalized_content_sha256": "a8c19011d6760aff19f3bd44004b3cf9c53cd1d05784ebbc39e382e804bbce51"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## DNS Exploitation Techniques",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "75370fc0afbbb804cb6fda45fdace87e6d8ac34cc7c862219db7d59c2e83c466",
+    "normalized_content_sha256": "1d5897e65e15a44476d421fe261bf240d2fc5025f835fd9095e0ff3d2f09e75f"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Unicode Steganography",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8d1f8329354db761bd2c0e9ce147325d7bcfd4dbdc6fd3e894333a00382a29f4",
+    "normalized_content_sha256": "c0c86d291e1d42b099b8ad93c404490d984ad6c1ee153cfb9f0cc5da4b6a7d6f"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## UTF-16 Endianness Reversal",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "2945e18281cb41e6c2d139aa9000983146977b8e50e2fee3283bee5663ce3ea4",
+    "normalized_content_sha256": "eca43782db5e6bef8003c72f24e940f988e3d7ffe140bf3366d94f5081eb6c81"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Cipher Identification Workflow",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "1ad5ac79faa390acc76eebc886567f844d97143080c04c204a0dd03f29b8f856",
+    "normalized_content_sha256": "6b46a3e0247cb512cdf3c1d58ad3b9eb032bf95395ec79edd90e767fe9218e55"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## HISTFILE Trick for Restricted Shell File Reads (BCTF 2016)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "5410d6053845e94070c10dc5aea0bb42c494a12ba2310bc29ab12475947e13f9",
+    "normalized_content_sha256": "bd5459818a7d9e2bf196059fd110e542062b4d3c546124a5aa98b519f65e4eec"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Levenshtein Distance Oracle Attack (SunshineCTF 2016)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "37e46fc521b0ffb82c76b880a05c77896c3221b5f17b0a5bbe5ba231f156b953",
+    "normalized_content_sha256": "5c6eefb86aa78fc612fb2aa175ebc34d12591c528ed6334d03e4d3b62e0e4250"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## SECCOMP High-Bit File Descriptor Bypass (33C3 CTF 2016)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "7430071a4de86015886c382904cc29051434e631b17d3a9045ef1306135f5ba9",
+    "normalized_content_sha256": "029a1f20c3089bc171a3594c9d376cb8d8bb23766aa4d37cd8a2a662129cd7b8"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## rvim Jail Escape via Python3 (BKP 2017)",
+    "status": "relocated",
+    "destination": "ctf-misc/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8ed54e31b06b31fc3bfbb7660f513d55bc6f38adba8a7d59509c140972abe5a5",
+    "normalized_content_sha256": "bd4f52933b9610b45d2ffe6dea20e8d4d87de98a6e363d556851919e52cb8efe"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-23",
+    "status": "relocated",
+    "destination": "ctf-misc/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "75ee274ce941bb4f1eb3ebf22120dd7ee021ff5b232469edd79f857b7766b3bd",
+    "normalized_content_sha256": "abd55bf964bfa0f2ec73e37de5c29d2acaa64cc860e117fd5aa04b5714b77ba6"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-24",
+    "status": "relocated",
+    "destination": "ctf-misc/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "3a6db24e96f677e2974655b9a271bea125f3c385c06c199da6cf99f1415b8749",
+    "normalized_content_sha256": "c35cd008f2dcd3ad00c1fc4b1e3b14d603dcc0c1da23f397cbe4c2a7df3a59c7"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-24",
+    "status": "relocated",
+    "destination": "ctf-misc/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "78ea05d610444dd36f0410084a759853ebe76acab7a284ea9862186ef3996902",
+    "normalized_content_sha256": "8f04a4e141b91788604550b604535d7dd33e699b388d788bf0a41fbfd4ec841a"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-30",
+    "status": "relocated",
+    "destination": "ctf-misc/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "56a543131b807f5ac6148d8392072b46cec0b8a846678e2ba5fd741c87b9dd3c",
+    "normalized_content_sha256": "7ff49c6ec54382c0af70649914586fc550a0b2737344c49ab1653e7d211bb2d0"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-05-06",
+    "status": "relocated",
+    "destination": "ctf-misc/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "088a4284bf48ef37a092f1ab28aa347c03dd8bad108c9c57b1172443528b9ed6",
+    "normalized_content_sha256": "1aff199081fbc8b69fa08b1762fd2e4f0ca3a10aa9168c57f5118281e6e3f8d1"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-05-08",
+    "status": "relocated",
+    "destination": "ctf-misc/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "f2575d4327055081aa48b9cf30b13c6fc841698c5da62c65500939f2e676225a",
+    "normalized_content_sha256": "1904123be9f73f4115bbd3453e78455d6c9664dec99c2ee7df658abef67e75e1"
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "9c3c13237a61363fe245a71e3a5931fd8972de3e435ef49177acf703dfcccfd8",
+    "normalized_content_sha256": "1698400c49afa5e182087af996b90f7955b876bc0a2a190ba5217866c29084b2"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "a5b9ecfcefcf1a3fcfef465e2f15045c21cbf6bbdcf4af3cbe00bac611fe7def",
+    "normalized_content_sha256": "ed52fe5289506433b7eff6ac64c3ea77adf2998143e4597b3948c23881d8a04f"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "f958a93c7ebc7410d69a17f6fbd5c7ea5f49b4e4f11af671e22691e99e412bf0",
+    "normalized_content_sha256": "9925893ffd663e635cf5f02f6d2fb3c07abef6123515c35d14d6f090ff5a47f4"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "84dbbcdf0210ac0ec8e27ae51250eb5cbb35696e9312d41537c82c0dcfe03cce",
+    "normalized_content_sha256": "4fc131408f45bec2954c91c9b9d02164c2812eff0e6b2b2cf8137b8be2c68704"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "9045e56d7a7ddfbd614334ba5c611dfaf424bc0121ce0e59401be1aaa49daea6",
+    "normalized_content_sha256": "f4f6337e2c13dc87dd803620ffbedb1070a05d192ca61225bcf1a313cc1b4505"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## String Identification",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "bb6c5f444855399729724f45a0eeede46703be2663763c8ad7d3148f7b72d31e",
+    "normalized_content_sha256": "d847e08932afbefd47e4530f0f2eb2d9015545886b3a4482f330babc75703f20"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Twitter/X Account Tracking",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "bcb2c0555533c50216daad5508f99413c1da0fd28d0342c90677ad290004ea04",
+    "normalized_content_sha256": "70f0fe5f07ac971105545a6a58b6c78c9beae7b6b7f0602cc4bec445520a782b"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Tumblr Investigation",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "959aa4d4907a59fa3d237c9abe33a3acb9a550c138fa4b568e0aaee7c743ab76",
+    "normalized_content_sha256": "c84ace13f9eafa446b2cb7eb6fe9c996fdb55f65aaa997541d2d4d3568b73ece"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Username OSINT",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "b9b102a5ed71a1fba9fe0aafb0d71c4c1429875c9e241cc392a13a80a8216dbc",
+    "normalized_content_sha256": "79ef330dc3388f6415e032dc57cc2c4cbecffe4497a8732edb495d6d9c9eb659"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Image Analysis & Reverse Image Search",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "cb02712072b59de626a2f10f6f6924113bbac9f16672e3ca75b390fc43e0cc71",
+    "normalized_content_sha256": "fd3dc261faf48a54b34173c2f20c4461c33edd11b4693ee6171a0f35ce0060a0"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Geolocation",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "7a27aab943b351523d8deaaa783c661382953a7cb6c3560fc6d7a1b52c4963c8",
+    "normalized_content_sha256": "d24e9d25b369f07deda91dd04d6b2047fafa36a28cebb64b78f8315b240d567a"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## MGRS Coordinates",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "5c23e45d6e19b4d7e05b85847e7e38cbde9860a4fb299c58149fed36cb8413bc",
+    "normalized_content_sha256": "1a8c38068885dd23f3e4116fdf3de44bcd1aa8a99b6cdda5142802581d0cd3b4"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Google Plus Codes",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "35da63b6d1366ac2bf5ba5275023095180d40f52ac18840e218525c4c45c2328",
+    "normalized_content_sha256": "9aa4b62d1c843c61df5ac1a68e427c6e5f89ed1b7ec5d79b4df6568fc9415db7"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Metadata Extraction",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0ce07803bb22a4536578c017646e0e0c4dcbe1f9ef572b85f28a4f77283dc19e",
+    "normalized_content_sha256": "530ce230eeef2286926e79e962466095169b8ada66037bc0f6937545d299f105"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Google Dorking",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "9ac306d7716d91d5975beeff6be17102ce0b5d8ef5b9c48b40a8c17d3e5f1677",
+    "normalized_content_sha256": "7712528efa41cffc2b2a808a4a915c48c62e479cc888305e345cfb1f46f9914b"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Google Docs/Sheets",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "6857d5be12e56845edefb814c6fe7ce80948f7aed19f3b7a90303de42d30e4b3",
+    "normalized_content_sha256": "139361f3e5947294842b934ab9056221e782d045e3cf0bf5711ccaaf3bf4895f"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## DNS Reconnaissance",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "a6aa3df6a5c02cf2ef66316e9c9eb04db21d8c19e622e920a1c1cb52e2f27147",
+    "normalized_content_sha256": "72514e064f690456213a8ce87677626d19e97c4cf049abe00c3b4bcc27e205df"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Tor Relay Lookups",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "eab3908f20968402fa7d60b1115dd4339f8fd3da56e57092c0845460ebd2874b",
+    "normalized_content_sha256": "93d4c179cb01bd8a0fac80e271aeb3023778d3c6df5b302168d481b84cd0922b"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## GitHub Repository Analysis",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "33eb1b8674679ab3c9286a1c2d3f3aec1607652660d1d0b8dd93a9de8695fa80",
+    "normalized_content_sha256": "2fc5b79f82702b4ae765d8fdd0c0cd1183c817fb55974eed3d09ed6a163c7996"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Telegram Bot Investigation",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "e90b285f4536016b29742ac9da4ce5b170056e9990494f725aa4517f423c6d7d",
+    "normalized_content_sha256": "e89aa90ab1202af920615ba3a19f6257927caced7dc47949d6e9bee7da61e4e6"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## FEC Political Donation Research",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "91fe13f31275332c6a128332ad373f5178b386dd6140b8697e3944eeee36de35",
+    "normalized_content_sha256": "d902171155addbc59acbf7b95383622800c62259e9641c8a56e9136d89e488fc"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## IP Geolocation",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4a9c16665e01bb4c644ac7ed55851ffad96f09c1752f9aa0e2ad69820135addc",
+    "normalized_content_sha256": "25534d4f7c98c2c1512464e59025c9158a4724ae1ad56755de2c297ee8a83eae"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Unicode Homoglyph Steganography",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "119c40038e1de1501f67be76a1f2a88fdf58ea49f128010288c093258725f142",
+    "normalized_content_sha256": "20ae9872635b005bcb2a2c5f60702a4efe8699201b45a24aa0e4d153361b0025"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## BlueSky Public API",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "a7992526fe303b26b64c13451a8fa4f11e2176fc87bdb67faf8f7f54b5c430c4",
+    "normalized_content_sha256": "2e1d813ebfd77376b2fb2e18078cb4bd420f16e438ebc0978e2226eb6cded715"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Fake Service Banner Detection",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "6c0a5ebc0282f87b00ebbb09ae06baec5ae413b0981fba956c2dabbcd2ed3648",
+    "normalized_content_sha256": "f2399ba170ad33ab2a6092517113a980231938450b2a935a557210035e321b9f"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Shodan SSH Fingerprint Lookup",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "6ea8836b919c5ad010dddc9a8889a99f8c03f2e983b16a4455a3dccf53d6792c",
+    "normalized_content_sha256": "ecd65e08eed7961fcd086ba20556db0cd17f3c9e3dd74005657731767e9d76ce"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Gaming Platform OSINT",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "6f1e5ee508083111f4c68c7363107a9fad68c80584fbc12790342c677f02f1b7",
+    "normalized_content_sha256": "200eb400bd1d0e343d269644a3d92e3452c2d53ead44515dba3642b2c0f5c5ee"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Resources",
+    "status": "relocated",
+    "destination": "ctf-osint/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "9a2f615fe27951b21d6a2bca794a4e05e40da373c900854148cc712d63c1e6c1",
+    "normalized_content_sha256": "f4479da0f644074924757005283f9d4d439ea28a724902945a3c0dfdffc9c8ed"
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "be2fee97bb977b4d27232be01af467a16ea4ea50523d3dc8e57580ac0dd0b017",
+    "normalized_content_sha256": "506341fd01480019b844e88362d02e514b06346609a987078fc5dd47e3c2f4a8"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "cd4a7d75a690eae2f512ed25292a06dee90b49e1b559e75b2a5770847b2bccda",
+    "normalized_content_sha256": "8ff2feacd8d95bcc219d21b985cb65e944e8c813df349a74d989bce278060eee"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "2ecf6591819ec8f1901ba122236141eef70d9cfb955e14fef792bd63e407f30a",
+    "normalized_content_sha256": "d9bb1e1e020548fe7dcb318667cc21becde6a18aeba71a3e9271821758548dc5"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "8f80ad78c245fc760b2ac597c17785d5d443b012f0e4038cecf3421275f30188",
+    "normalized_content_sha256": "aa36a609af9ab515113c70880974c606f671a54a91acab2d684d9ef428320357"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "794bdebdce9b1eff73471ec8584a3c69f2a08b5d7e8623d0218462dae84f01a8",
+    "normalized_content_sha256": "7b515f5929432395d5c232e358ede47540817ef9150af5bcb9214c65174c9221"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Source Code Red Flags",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "ff5583c412219792584f5b21209c5b9991c40a93b00596240b440d4c2cd426d4",
+    "normalized_content_sha256": "d8bfe42e65d6e4f0a4ca1d8bd24e689b77dfad7fcbc8a5127f8117da3e7b2447"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Race Condition Exploitation",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "d82e4d0022869066dae3fa87dc98ab2017bc47989d86da9e0f7669e4edf310b4",
+    "normalized_content_sha256": "dd643cdc29e59bb04afe78e855d23aa97d39f6a6a12d452c38b4ad767a4d8680"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Common Vulnerabilities",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0ec13059ede5e26d0ea33060bcec4158ff465148cae3fe34fbb24401b69b20f7",
+    "normalized_content_sha256": "e1e87a18d3c575669448762aeb329ee88c9178b6a19367bed44149e09bc3ac41"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Protection Implications for Exploit Strategy",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "731c62f45b213f6d103470b89a21faa21a7f3fd9ba22ed6f24899fc70969b6a6",
+    "normalized_content_sha256": "143501fe54decad5ced9a14ff18970851f8d88bf0a8d917391fa683b538a653e"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Stack Buffer Overflow",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "8935c02688c03e746df3d5d899c56e4dfdf96d52ab6b6236c145a55b446032db",
+    "normalized_content_sha256": "22930a35e9882947187dd94cf2aeb632362749897dd3fc110a39dc242d21d009"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Parser Stack Overflow (Unchecked memcpy)",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "d0e3d0306b36079feaf0fe867ec264d1b44d668300aea3737da2169cc3d63dd2",
+    "normalized_content_sha256": "59a2ecf414c55a118269ed2be63a901247b4f4ca786a72ac8a9dacf61c4c0ee8"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Struct Pointer Overwrite (Heap Menu Challenges)",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "2d8299c18ab01dbccd76367908964b6ce6bec02692530492825bdd7239adf6b4",
+    "normalized_content_sha256": "b37d7a371be4b047c0fd1f53332933d34d7e3107263338a6133c1a03d0ae0b35"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Signed Integer Bypass",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "3a5beab5a12864c9d13491e756ed7d679f2085aca655c25aa48a108212461142",
+    "normalized_content_sha256": "14f859072683cb061d2b40cc382c231f68db7e375d56031fce5ff56f5e2bebc8"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Canary-Aware Partial Overflow",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "630812a2da410fc028ad99ea646f4f786a59ee714c7ef05410759d7942b05884",
+    "normalized_content_sha256": "72bf59eb6c77ab69f9da73a5c446be669e5093187ac36122993c090fc204ead5"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Global Buffer Overflow (CSV Injection)",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "633e6880584b2e0029882b16970b6f01b9d8d566f557bd52a0a225636c08d740",
+    "normalized_content_sha256": "bfde2101c4acb6d62b292a50560b5aa5c0a5cfff19d2113cbf3371b5e9ca9604"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## ROP Chain Building",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "0ce675a717a99bb4f380371b809614b12f8f9c9c62b8b3519d9ed862fc02e08f",
+    "normalized_content_sha256": "11178e6c251e14adc0ac6d2eaea3918c208b0e9f36404092d7989f394cb7475c"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Format String Through Input Transformation",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "7c67dd90d8046394ae9112d6be0c0d7a9ab3a26c09505ef4e7cea3d83c6e9e72",
+    "normalized_content_sha256": "f093cdbcf9a7485e9de10adae511f861abda0b573644ee26fe863521658a5a93"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Kernel Exploitation",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "91786b0daf4ab25488cde02b0cd99ab5c0d77b3e5c0bccbe3f4f32852ab60483",
+    "normalized_content_sha256": "d5f5033eeb2c7ea617ff516a7a4f3f45d23113b934bd372dd8b4922e9a588d16"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Sandbox and Emulator Escape",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "b605f987c78ec170fd7c71a790f05fb90b1e71374d9617f1d3a908716981633b",
+    "normalized_content_sha256": "5e8216311c60ffdbb6f5155b46a2a3d1ae243dd66bb5c588b6a64f48364f81bc"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Advanced Exploit Primitives",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "980ae0e76770f8bbec22a3e4336dbca703a7c64b76bee8d6481b2d6ff7c2073a",
+    "normalized_content_sha256": "dbc9f507f2d1ee808816da1eb196d182a481e4843218bb1e6f4a1a75dbbe37e9"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Deep-Dive Notes",
+    "status": "relocated",
+    "destination": "ctf-pwn/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "6add0ca0257cdd59000526f7b6b05989324351f71d3674b90e4742d6a7bc62f8",
+    "normalized_content_sha256": "199a9296cac1bda5489312cdde13183408765eef64cc2c1ccc3920b949c80f80"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-19",
+    "status": "relocated",
+    "destination": "ctf-pwn/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "c35148218f1d4058cf001862e0db4960ee5844fa5daf118977e8191c6efe9d1a",
+    "normalized_content_sha256": "fb80473503aa0624c13e023a6da7173a2177bb441cf93efc0db6ed73ccb50bac"
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "ca50d31298258349741eae45419c76eb831a88ca05e809b184982b3d292c1dfb",
+    "normalized_content_sha256": "11475a0b80172c00c729e923dd858a7bdae920e5d2bf90f6501700029a585935"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "c7be14d0f187e4b9be16106fe74a56d7daa91ed60bc4cfc8dd2481adf08c1c0b",
+    "normalized_content_sha256": "9e84e0b6df2e009ea80d13d6d27c1df5574501ba6e18f973a62ab228712038b2"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "cf85a90db3ebc3cbf77e983244909ca92e425bb12cb6c3549f52bef4eab5b924",
+    "normalized_content_sha256": "2646388a78cb78ddd3c590b0053805079e08bb472365c54261c676922d30cae4"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "91e48050ee9b3a8b934a1b7c099437360f9486a0825de7ecdc1f3148e97cad5f",
+    "normalized_content_sha256": "0b5f07b8a0db6aefbef7a682885b26b84f3ae31be62d48347fe7b49db0483c97"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Problem-Solving Workflow",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "d23253b553336f39758ee6fbf8eabaafde854fc8e8cc032c34eef681b3f72e7b",
+    "normalized_content_sha256": "885b2d1f80caf4e3988a3f8186ed45896de876e92c788e55373e33c01f209528"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Quick Wins (Try First!)",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "3fbcbfe8dbffad03540d310eb554bbbcb7c64a13df97308d541ddf3061febe3d",
+    "normalized_content_sha256": "4aabff5a1f41be26fca34ce2e34b1b64ac96f0a804854e6f7ffbfb1811268505"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Initial Analysis",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "2da6fdf07873b2c364949dff3e5939d1199df884cb87e76810b5f44b752a5b9f",
+    "normalized_content_sha256": "01882a54af730ebef6f2c61aba3d1858e43cf8226d0e9fe4defd2169b5872b00"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Memory Dumping Strategy",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "4f38f869319fc466db98bafccf6063e7361de47145f852f11a3facf48be58702",
+    "normalized_content_sha256": "e984e5aa35f6c2cf61b8d7cb0e9a3905b3d9c9c1041e107c2d07d5710a51fcd5"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Decoy Flag Detection",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "f613013f6e1aca953af8b7187ed216fdc5ef468a5596835d36ee5de437b12618",
+    "normalized_content_sha256": "215b6ac4d112b95981d74c02d5e9cfa745c7f9e201978be1867e31ba5cbe182b"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## GDB PIE Debugging",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "241bf5c534c3b59b3db5dfde0240567ff2fd314743c4944a5ef66d3dd4c096a4",
+    "normalized_content_sha256": "5c0f5e6af02aa0a21a09ce5adefc10a555fcddf960994948144452c3dfd3dc14"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Comparison Direction (Critical!)",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "126cb0e9e57dad896ca00002ccb0bfc19a07280b38c3b76db13e6d0d923151a8",
+    "normalized_content_sha256": "f581862350760b609f26a45ee408b27ce140f510208727ea87fb4b80eb58b31c"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Common Encryption Patterns",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "c27d73a4ca7e870bbd0c2e791c20bc39cf97aad631832892a6f2e448bb6fce56",
+    "normalized_content_sha256": "b44e4a19a24edbfc873b67d63ec930824c10b2e4e8ee6c71cf81e40cc4b6961e"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Quick Tool Reference",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "eb5cb919c19233aa9092d1edaca8e90ce5cf1476edf8d3c433bdd3a2896d738a",
+    "normalized_content_sha256": "e2f93eb07f7e4b0721c3dcbdb6e626fd27f68bf8984548da0c4e56cff96a4c5c"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Deep-Dive Notes",
+    "status": "relocated",
+    "destination": "ctf-reverse/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "352c22920312fe822ce91abd6bcb8e625ac440e2a026cc59e2f686cf05e87f07",
+    "normalized_content_sha256": "eb4c3a0b3d5ee857aec03836898d5d4e8e9364a3c28afcbc67682301ca05873f"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-19",
+    "status": "relocated",
+    "destination": "ctf-reverse/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "95d2e3179f2fe6333a5c323d5dfc5201ee4cbdcbecd360e474a6da64b473f713",
+    "normalized_content_sha256": "90f714863470c4c5fa852c22aaeca58a6cdf973fd435a660cab184f6f1d5107c"
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "6e7091e5a9a1aea77a209bf9b631912e0e64997b2e01c2d629a4719c25ab7d81",
+    "normalized_content_sha256": "297bed6fe7b629b5b0792927a7387d3043894e337752ea9503ae9a9503e95d88"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Prerequisites",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "d810eda5ab3331f5d06937bf010106f05a9db712356e3af8d912a4f3ae234eaa",
+    "normalized_content_sha256": "3f81694f08967dff2d70af08b5543ee7aa349a2e97a1cc3235c13e325514dfaf"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Additional Resources",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "fea6ef17fc12749b25fa6da853164bfdbd666fb8c64b007daccfe719f64a088e",
+    "normalized_content_sha256": "ea7dd02ad80ce98aba19079de53be7ae707b7fa4023471d0aac739c251ed83e6"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## When to Pivot",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "93071cfaa9e460459d4a9dbf554e0901c5ec7493bf2f5147c994713da99496be",
+    "normalized_content_sha256": "49fb28ba1689f72920d602bbbc3b54e65ae52eaebb1663727cdb93b92774b4eb"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## First-Pass Workflow",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "61f6de3b469626a97d39d7276444ce075944e7ffa9b533bd9a76d173399cde8a",
+    "normalized_content_sha256": "2db55690a622e4dc959937b1bd24d9d166d32e01a3262c47c40e8fdd8c65367a"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Quick Start Commands",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "57b99fd1fa648210c090f61db447963b88d4d0be1ac847a50c73dab488e6a3dd",
+    "normalized_content_sha256": "760164b013e012302a89686629c7a2757cb3a5c922c376299f8335db9e6809c4"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## First Questions to Answer",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "9bba94f5ab1cc69eb31095c1e76b724a5cf393c8a8a9fc8230e7daab1eb0325e",
+    "normalized_content_sha256": "fe27a9b2afd2361a4dfb50ad031ddc6929298e6c3fb0c945feca4b14f5429e63"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## High-Value Recon Checks",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "f2acd426bff860e9018e4d7fb671fd5d23dd0d775621447cdbc0aff513f3b291",
+    "normalized_content_sha256": "536ab49ac84754b4a51c868661de26c5c2f5f4ea573c369d26a6e475a8c8b8d0"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Fast Pattern Map",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "abb6332460009cbb3db3fd3a9bd67ad62c86f25e78ebc8092901ec82619bb8a6",
+    "normalized_content_sha256": "c78ea25f658432bf382672ad8a6715f4b7bf92535d0245281b27c479616c86f4"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Common Chain Shapes",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "b7bac06a73baf55ef7dfd13605a4ade224cc9a7c89da245f33abf1e29464f2b2",
+    "normalized_content_sha256": "22f322484563b9ad6f6b57edc88a87e5ab1fce3599423a7041601cc2be255342"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Deep-Dive Notes",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "05f4b05bcce07b6b0102948bb92103971333ad53b18d98bdb6c6be04eb44bcc8",
+    "normalized_content_sha256": "2b6f5ac1a5288f7d2f9124fe3d6d9c54918b715424558c456fe61a7ba8efe75d"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Common Flag Locations",
+    "status": "relocated",
+    "destination": "ctf-web/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "1cf689472576256923de45d1bd89525d796791550fb246e23a7a7f0fbd16b542",
+    "normalized_content_sha256": "98d3651c84e138db562013be377d4bda914d718f5cda4b473620601d98acc250"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-19",
+    "status": "relocated",
+    "destination": "ctf-web/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "043d01fb3d00101b9bb87c289007c8b33b8cc186a43460af6ef37b585aba0800",
+    "normalized_content_sha256": "d10ef6f6d3976bc768c3539cf32e262afdcec892038ee42568ea1e981bff6415"
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "heading": "## Append-only Retrieval and Learning Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "7537cffffae9cceabe712eedf38dabb5fbe0905fce388b54d8c8efc7aca84dd9",
+    "normalized_content_sha256": "ab24b3b04e542d6e92fbb9246806484ef92ab266768f027a8320c74b7d0c672f"
+  },
+  {
+    "old_path": "ctf-writeup/SKILL.md",
+    "heading": "## Workflow",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "5986c28cc7429de00dc8c80f2a4e5db389191bc151c56619fd8a75e3ccc28716",
+    "normalized_content_sha256": "6188ab18f2d5c418b01a579752a17a4344c04c326d551b7e641f3c1e15fffcad"
+  },
+  {
+    "old_path": "ctf-writeup/SKILL.md",
+    "heading": "## Templates",
+    "status": "relocated",
+    "destination": "ctf-writeup/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "637930375301ded85e3046e93f980ea936377d0850d77c01713b1fbbf63bb816",
+    "normalized_content_sha256": "27c51b6ac0aa0b035b725d12ccc5f969afe6f3c939ec91c690c2a34170b058e5"
+  },
+  {
+    "old_path": "ctf-writeup/SKILL.md",
+    "heading": "## Best Practices Checklist",
+    "status": "relocated",
+    "destination": "ctf-writeup/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "af5ed99b707c0718d850ba82d49ea07e4b11a8d25e66e0451b769a1c6b51867b",
+    "normalized_content_sha256": "3a3c1a23ac2051e982cfe0b40036299588fb11e3e1a4197762d78afa09e842e9"
+  },
+  {
+    "old_path": "ctf-writeup/SKILL.md",
+    "heading": "## Quality Guidelines",
+    "status": "relocated",
+    "destination": "ctf-writeup/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "033e2338e8c6d44457ff12895c1c130c21afaf84258c2023551f74685b71cdb8",
+    "normalized_content_sha256": "4b43e4cc31d5f61092e944da860df1285bcd329ae1d42b231f5ca90fa2cfae6a"
+  },
+  {
+    "old_path": "ctf-writeup/SKILL.md",
+    "heading": "## Challenge",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "907c02ce2c5240059a18cf5633e963cde7f03d91c5da4bf01faf23ba7d549159",
+    "normalized_content_sha256": "15b5daa6545a1c72b6710d9e991ca85bf29254d8a0ce6b6350e2336ff4b2c332"
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "heading": "## Environment Setup",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "046971183a28386b1adb1a73178d9195028029e8562baf6e22c2dbcc1f3726d3",
+    "normalized_content_sha256": "aa640cc60cb222eda19a52ccde81639c1799db98fcc5502466a31bd6f9b2c2f2"
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "heading": "## Workflow",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "d6780ece046165ec54425bf0798afcdeec34d7f52b6257ebd01f03ed3818482d",
+    "normalized_content_sha256": "58c20e813f368fc9f62bd683dd53080c53f08f0e613184f7b9910049de6a9034"
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "heading": "## Flag Formats",
+    "status": "relocated",
+    "destination": "solve-challenge/triage-reference.md",
+    "reason": "Substantive implementation and niche notes moved out of the always-loaded entrypoint",
+    "original_text_sha256": "12c0b77d779c70eb3b77625f94f2712185bb344c6ce2103660ff8a20f82df92d",
+    "normalized_content_sha256": "7320626d169c36f0815fe6c39a9344fb385d7565fde6d1e9ee5023fb87b59f39"
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "heading": "## Quick Reference",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "e851525bd065918e4cb17bad6c9ae16e297e32f8c8cdb5d65d3070c7d35fd19d",
+    "normalized_content_sha256": "6a2d7e7caf3c76f3866effead4656e9a7d4d1ba79573c9fd52be0bd40f94f66e"
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "heading": "## Challenge",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "95c0b07fc7d49c899fce7b3d339b448b56f88f964898b4029ec9d2d39df798af",
+    "normalized_content_sha256": "15b5daa6545a1c72b6710d9e991ca85bf29254d8a0ce6b6350e2336ff4b2c332"
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "heading": "## Local Learnings Appended 2026-04-19",
+    "status": "relocated",
+    "destination": "solve-challenge/personal-learnings.md",
+    "reason": "Personal challenge-derived observations retained verbatim with LF normalization",
+    "original_text_sha256": "e48f823908a2181e9a41ab9859be55b7f1f9280fb5c15a6858097e13acc66b90",
+    "normalized_content_sha256": "e3c1c857485dfea58504c89d6eff03c28bca638d5489fd655cf0b89a305d5c1f"
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "heading": "## Append-only Evidence-First Optimization Layer",
+    "status": "superseded",
+    "destination": "docs/WORKFLOW.md",
+    "reason": "Equivalent workflow rewritten for Codex, scoped instance operations, local-first execution and progressive disclosure",
+    "original_text_sha256": "f2fef1d758db614b8e1fb55f6eb610481929773a20e888741518d6118a1a2763",
+    "normalized_content_sha256": "de39e86be0821ef13c5474584c27d75b60c4c1167378870c3ad9aa1cea3f7645"
+  }
+]

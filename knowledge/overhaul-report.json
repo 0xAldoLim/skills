@@ -1,0 +1,1962 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-01",
+  "repository": "https://github.com/0xAldoLim/skills",
+  "baseline_commit": "d95fd4433d0656f5de29b04a64e28801c01f127c",
+  "delivery": "Reviewed repository overhaul; commit and push explicitly requested by the user after validation. Existing installed skills were not modified.",
+  "1_architecture": {
+    "entrypoints": "Nine direct operational category roots plus solve-challenge and opt-in ctf-writeup",
+    "flow": [
+      "cheap local inventory",
+      "assigned-instance health",
+      "evidence hypotheses",
+      "INDEX and bounded section lookup",
+      "one to four matching references",
+      "targeted helper/script",
+      "checker verification",
+      "evidence-gated automatic learning"
+    ],
+    "shared_contracts": [
+      "docs/SCOPE.md",
+      "docs/INSTANCE_HEALTH.md",
+      "docs/WORKFLOW.md",
+      "docs/LEARNING.md",
+      "docs/TOOLS.md"
+    ],
+    "persistent_state": [
+      "solve/STATE.md",
+      "solve/HYPOTHESES.md",
+      "solve/findings.json",
+      "solve/scripts/",
+      "output/"
+    ],
+    "difficulty": "Fast / normal (initially up to three hypotheses) / automatic exhaustive escalation; continue while a meaningful feasible path remains."
+  },
+  "2_upstream_synchronization": {
+    "repository": "https://github.com/ljagiello/ctf-skills",
+    "branch": "main",
+    "commit": "c332c7be1b27cb64639a20124ac55ba916adef92",
+    "retrieval_date": "2026-10-01",
+    "decisions": {
+      "reviewed-retained-local": 102,
+      "imported": 42
+    },
+    "import_units_note": "42 import decisions include complete references and individual sections, not 42 independent attack families.",
+    "imported": [
+      {
+        "source": "ctf-crypto/advanced-math.md",
+        "heading": "## Coppersmith via Howgrave-Graham Lattice (fpylll primary)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/dh-attacks.md",
+        "destination": "ctf-crypto/dh-attacks.md",
+        "decision": "imported",
+        "reason": "New upstream reference; reviewed and boundary-gated"
+      },
+      {
+        "source": "ctf-crypto/ecc-attacks.md",
+        "heading": "## HNP Cross-Link: ECDSA Truncated Nonces → Lattice (8-sig example)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/ecc-attacks.md",
+        "heading": "## MOV Attack (Weil Pairing, embedding degree k≤6)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/ecc-attacks.md",
+        "heading": "## Twist Security & Twist Attacks",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/ecc-attacks.md",
+        "heading": "## GLV / CM Endomorphism Leakage (d=-3/-4)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/ecc-attacks.md",
+        "heading": "## X25519 Low-Order Points + All-Zero Check (RFC 7748)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/exotic-crypto.md",
+        "heading": "## ForkAES-5-2-2 Reflective Differential (BSidesSF 2026)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/exotic-crypto.md",
+        "heading": "## GhostBlood — Faulty ChaCha ARX Rotate (BSidesSF 2026)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/lattice-and-lwe.md",
+        "heading": "## NTRU Lattice Recovery (G1) -- NTRU / NTRU Prime / Kyber Flattening",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/lattice-and-lwe.md",
+        "heading": "## GGH Embedding / CVP Closest Vector (G2)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/lattice-and-lwe.md",
+        "heading": "## Mersenne AJPS / MLHRSP Small Roots (G3) -- p = 2^n -1",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/lattice-and-lwe.md",
+        "heading": "## BDD Predicate / LadderLeak -- Below HNP (G6/G17)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/lattice-and-lwe.md",
+        "heading": "## Module-LWE / ML-KEM & Estimator -- Moved to post-quantum.md",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/modern-ciphers-4.md",
+        "destination": "ctf-crypto/modern-ciphers-4.md",
+        "decision": "imported",
+        "reason": "New upstream reference; reviewed and boundary-gated"
+      },
+      {
+        "source": "ctf-crypto/prng.md",
+        "heading": "## PCG Family — Permuted Congruential Generator (XSH-RR / XSL-RR / DXSM)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/prng.md",
+        "heading": "## xoroshiro / xoshiro Family — Constants & Scramblers",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/prng.md",
+        "heading": "## Blum-Blum-Shub (BBS) — LSB Hardness & Parity Trap",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/prng.md",
+        "heading": "## Chaotic Maps — Henon & Arnold Cat Map (Image Scrambling)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks-2.md",
+        "heading": "## Implicit Factoring via Shared LSB/MSB — Implicit Factoring (Implicit factoring)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks-2.md",
+        "heading": "## LSB Oracle Binary Search (Clean Parity Oracle) — LSB oracle binary-search",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks.md",
+        "heading": "## Boneh-Durfee Attack (Small Private Exponent beyond Wiener, d < N^0.292)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks.md",
+        "heading": "## Partial Key Exposure: Known Bits of d (MSB/LSB via Coppersmith)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks.md",
+        "heading": "## Williams p+1 Factorization and ECM Chain",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks.md",
+        "heading": "## Stereotyped Coppersmith Attack (Single Modulus, Known Prefix) — Stereotyped Coppersmith",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks.md",
+        "heading": "## Small-CRT Attack: dp, dq < N^0.073 — Small CRT dp,dq (small CRT dp)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks.md",
+        "heading": "## Custom Totient Checklist: phi=(p^4-1)(q^4-1) and Variant Totients",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/rsa-attacks.md",
+        "heading": "## Bleichenbacher Decryption Oracle (0x00 0x02) — PKCS#1 v1.5 Interval Attack",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/stream-ciphers.md",
+        "heading": "## RC4 Family — RC4 vs RC4A vs VMPC vs Spritz",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-crypto/stream-ciphers.md",
+        "heading": "## eSTREAM Portfolio — Trivium / Grain / Mickey (Reduced-Round Z3)",
+        "destination": "ctf-crypto/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-misc/bashjails.md",
+        "heading": "## 2024 Hardening Note — rbash Is NOT a Security Boundary",
+        "destination": "ctf-misc/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-misc/pyjails.md",
+        "heading": "## Audit-Hook (PEP 551/578) Trampoline Escapes",
+        "destination": "ctf-misc/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-misc/pyjails.md",
+        "heading": "## Filter'd Length-Limit Re-evaluation (JailCTF 2024 — M=14)",
+        "destination": "ctf-misc/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-misc/pyjails.md",
+        "heading": "## Modern Filter Trio: impossible / one / primal",
+        "destination": "ctf-misc/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-pwn/heap-techniques.md",
+        "heading": "## Largebin Attack — Dedicated Technique (TravelGraph / Setjmp 2024)",
+        "destination": "ctf-pwn/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-pwn/heap-techniques.md",
+        "heading": "## tcache 2.39 Changes — Key, Count, and calloc",
+        "destination": "ctf-pwn/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-pwn/heap-techniques.md",
+        "heading": "## House of Tangerine — tcache Count + Unsorted Bin Variant",
+        "destination": "ctf-pwn/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-pwn/kernel-bypass.md",
+        "heading": "## CET Shadow Stack (SHSTK) and IBT — Signal-Frame Bypass (Wolv / IERAE 2024)",
+        "destination": "ctf-pwn/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-pwn/kernel.md",
+        "heading": "## io_uring PBUF_RING Use-After-Free — CVE-2024-0582 (KernelCTF 2024)",
+        "destination": "ctf-pwn/upstream-2026.md",
+        "decision": "imported",
+        "reason": "Complementary upstream section absent locally; existing personal references retained"
+      },
+      {
+        "source": "ctf-reverse/unicorn-emulation.md",
+        "destination": "ctf-reverse/unicorn-emulation.md",
+        "decision": "imported",
+        "reason": "New upstream reference; reviewed and boundary-gated"
+      },
+      {
+        "source": "ctf-web/pat-reference.md",
+        "destination": "ctf-web/pat-reference.md",
+        "decision": "imported",
+        "reason": "New upstream reference; reviewed and boundary-gated"
+      },
+      {
+        "source": "ctf-web/python-requests.md",
+        "destination": "ctf-web/python-requests.md",
+        "decision": "imported",
+        "reason": "New upstream reference; reviewed and boundary-gated"
+      }
+    ],
+    "conflicts": "102 changed overlapping sections reviewed with local knowledge retained; targeted corrections merge stronger verified behavior. Unsafe full-pickle defaults, unvalidated allocator/CET recipes, faulty lattice/AEAD claims and CTFd workflow were corrected or superseded.",
+    "audit": "knowledge/migration/upstream-decisions.json"
+  },
+  "3_research": {
+    "window": [
+      "2024-01-01",
+      "2026-10-01"
+    ],
+    "ctf_technical_source_urls_reviewed": 54,
+    "writeup_and_solver_source_note": "Unique contributing technical URLs, including organizer writeups/solve code and technical blog articles; catalog/pointer pages and downloads alone excluded.",
+    "technique_cards": 56,
+    "primary_documentation_sources": 12,
+    "total_distinct_ctf_and_documentation_urls_reviewed": 66,
+    "competitions": [
+      "0CTF 2024",
+      "CSAW CTF 2024 Qualifiers",
+      "DEF CON CTF 2025 Qualifiers",
+      "DownUnderCTF 2024",
+      "DownUnderCTF 2025",
+      "GEMASTIK 2024 Qualifiers",
+      "Google CTF 2024 Quals",
+      "HITCON CTF 2024",
+      "HTB Cyber Apocalypse 2024",
+      "HTB Cyber Apocalypse 2025",
+      "Hack.lu CTF 2024",
+      "IDSECCONF 2025 Finals",
+      "Insomni'hack 2025",
+      "LA CTF 2026",
+      "PlaidCTF 2025",
+      "SECCON 13 Online CTF (2024)",
+      "SekaiCTF 2025",
+      "Siber Siaga CTF 2025 Finals",
+      "UIUCTF 2024",
+      "Wargames.MY 2024"
+    ],
+    "competition_count": 20,
+    "regional_unique_urls": {
+      "Indonesia": 6,
+      "Malaysia": 4
+    },
+    "regional_cards": {
+      "international": 44,
+      "Indonesia": 8,
+      "Malaysia": 4
+    },
+    "source_languages": {
+      "English": 47,
+      "Indonesian/English": 6,
+      "Indonesian": 2,
+      "English with Malay context": 1
+    },
+    "search_languages": [
+      "English",
+      "Indonesian",
+      "Malay"
+    ],
+    "category_cards": {
+      "ctf-ai-ml": 5,
+      "ctf-crypto": 7,
+      "ctf-forensics": 6,
+      "ctf-malware": 5,
+      "ctf-misc": 6,
+      "ctf-osint": 6,
+      "ctf-pwn": 6,
+      "ctf-reverse": 8,
+      "ctf-web": 7
+    },
+    "downloaded_file_sources": 90,
+    "retrieval_status": {
+      "source_reviewed": 45,
+      "empty_or_pointer_only": 20,
+      "retrieved_not_counted_as_reviewed": 25
+    },
+    "repository_catalog": {
+      "successful": 17,
+      "unavailable": 1,
+      "truncated": 1,
+      "path": "knowledge/research-catalog.json"
+    },
+    "verification": "All new research cards independently paraphrased and source-reviewed; full historical challenge reproductions remain unperformed and are explicitly labeled.",
+    "ledgers": [
+      "knowledge/research-sources.json",
+      "knowledge/research-retrieval.json",
+      "knowledge/research-search-log.json",
+      "knowledge/technical-validation-sources.json"
+    ],
+    "technical_writeup_urls_reviewed": 50,
+    "solver_source_urls_reviewed": 4
+  },
+  "4_knowledge_improvements": {
+    "new_family_or_variant_cards": 56,
+    "niche_examples": [
+      "Repeated threshold registration reveals one polynomial across shared MPC instances",
+      "SMB offline authentication metadata must match username/domain before key reconstruction",
+      "Tensor/tokenizer special IDs preserve information that rendering hides",
+      "Keras serialized code inspected as data before execution",
+      "Decompiler metadata and Go ABI recover unnamed handlers",
+      "Sequence/offset clues recover packet and sparse disk order",
+      "Frame timing and coalescing defeat misleading GIF playback",
+      "Signed getline length causes short wrap with exact ABI/callback prerequisites",
+      "Browser identifier hash must include unambiguous field boundaries",
+      "Layered ECB cut-and-paste plus session signing must both be modeled",
+      "Reduced-width instruction scoring becomes weighted constraints"
+    ],
+    "significant_correction_entries": 43,
+    "correction_ledger": "knowledge/migration/corrections.json",
+    "corrected_examples": [
+      "Approximate-GCD determinant-one fake lattice",
+      "Incorrect totient-to-factor congruence",
+      "Coppersmith unknown-divisor bound",
+      "Manger modular interval/wrap conditions",
+      "HNP residual dimensions and root verification",
+      "glibc 2.39 raw tcache heads versus safe-linked next pointers",
+      "Shadow stack signal tokens require a real primitive",
+      "X25519 low-order/all-zero behavior",
+      "Poly1305 final reduction and RFC serialization",
+      "Partitioning oracle finite-field construction",
+      "Untrusted full-object PyTorch loading",
+      "FGSM domain bounds and PGD target labels",
+      "Unsupported singular-curve coordinate shortcut",
+      "Python/Sage fence syntax and malformed examples"
+    ]
+  },
+  "5_personal_preservation": {
+    "original_tracked_files": 193,
+    "all_files_accounted": 193,
+    "original_root_sections": 238,
+    "section_statuses": {
+      "superseded": 43,
+      "corrected": 4,
+      "relocated": 191
+    },
+    "verbatim_personal_sections": 19,
+    "prior_LEARNED_and_accepted_records": "Retained in place; historical externally sourced accepted records are not falsely reclassified as independently verified live solves.",
+    "protected_references": 142,
+    "removal_policy": "No unexplained removal. 43 obsolete workflow sections superseded; 4 technically invalid/unsafe root sections corrected with reasons. Corrected reference content is recoverable in the inactive original archive.",
+    "archive": "knowledge/migration/original-baseline.zip",
+    "audit": [
+      "knowledge/migration/file-map.json",
+      "knowledge/migration/section-map.json",
+      "knowledge/migration/corrections.json",
+      "scripts/verify_migration.py"
+    ]
+  },
+  "6_token_efficiency": {
+    "root_sizes": [
+      {
+        "category": "ctf-ai-ml",
+        "original_characters": 7449,
+        "current_characters": 5458,
+        "reduction_percent": 26.7,
+        "estimated_current_tokens_characters_divided_by_four": 1364
+      },
+      {
+        "category": "ctf-crypto",
+        "original_characters": 41415,
+        "current_characters": 5109,
+        "reduction_percent": 87.7,
+        "estimated_current_tokens_characters_divided_by_four": 1277
+      },
+      {
+        "category": "ctf-forensics",
+        "original_characters": 50932,
+        "current_characters": 4803,
+        "reduction_percent": 90.6,
+        "estimated_current_tokens_characters_divided_by_four": 1201
+      },
+      {
+        "category": "ctf-malware",
+        "original_characters": 8804,
+        "current_characters": 4687,
+        "reduction_percent": 46.8,
+        "estimated_current_tokens_characters_divided_by_four": 1172
+      },
+      {
+        "category": "ctf-misc",
+        "original_characters": 32722,
+        "current_characters": 4915,
+        "reduction_percent": 85.0,
+        "estimated_current_tokens_characters_divided_by_four": 1229
+      },
+      {
+        "category": "ctf-osint",
+        "original_characters": 10049,
+        "current_characters": 4691,
+        "reduction_percent": 53.3,
+        "estimated_current_tokens_characters_divided_by_four": 1173
+      },
+      {
+        "category": "ctf-pwn",
+        "original_characters": 20207,
+        "current_characters": 4947,
+        "reduction_percent": 75.5,
+        "estimated_current_tokens_characters_divided_by_four": 1237
+      },
+      {
+        "category": "ctf-reverse",
+        "original_characters": 16727,
+        "current_characters": 4789,
+        "reduction_percent": 71.4,
+        "estimated_current_tokens_characters_divided_by_four": 1197
+      },
+      {
+        "category": "ctf-web",
+        "original_characters": 15012,
+        "current_characters": 4940,
+        "reduction_percent": 67.1,
+        "estimated_current_tokens_characters_divided_by_four": 1235
+      },
+      {
+        "category": "ctf-writeup",
+        "original_characters": 6307,
+        "current_characters": 1735,
+        "reduction_percent": 72.5,
+        "estimated_current_tokens_characters_divided_by_four": 434
+      },
+      {
+        "category": "solve-challenge",
+        "original_characters": 13430,
+        "current_characters": 5052,
+        "reduction_percent": 62.4,
+        "estimated_current_tokens_characters_divided_by_four": 1263
+      }
+    ],
+    "measurement": "Characters and characters/4 estimates, not tokenizer-measured billing tokens.",
+    "indices": "Nine deterministic symptom indexes; compact file catalog with first three useful headings; all nested reference sections searchable with exact line ranges.",
+    "retrieval": "lookup_knowledge.py returns bounded section matches; code fence headings excluded; H1 does not repeatedly return the whole file.",
+    "automation": [
+      "nonexecuting magic/entropy/hash triage",
+      "budgeted ZIP/TAR extraction",
+      "exact crypto arithmetic",
+      "local payload generation",
+      "three-check health gate",
+      "scope-enforced fuzz scaffold",
+      "automatic learning promotion/index refresh"
+    ]
+  },
+  "7_kali_tooling": {
+    "tiers": [
+      "core",
+      "web",
+      "pwn",
+      "crypto",
+      "reverse",
+      "forensics",
+      "osint",
+      "malware",
+      "misc",
+      "ai-ml",
+      "heavy"
+    ],
+    "policy": "Existing tools and stdlib first; dpkg/import checks, isolated Python venv, dry-run, verify, missing-only; heavy explicitly selected and excluded from all.",
+    "install_contract": "Complete-directory ~/.agents/skills symlinks, standalone copy option, all-conflict preflight, idempotent links and recoverable sibling backups.",
+    "native_validation": {
+      "tests": 97,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 97,
+      "status": "passed",
+      "result_file": "kali-junit.xml"
+    },
+    "kali_environment": {
+      "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+      "python": "3.14.7",
+      "os_release": "PRETTY_NAME=\"Kali GNU/Linux Rolling\"\nNAME=\"Kali GNU/Linux\"\nVERSION_ID=\"2026.3\"\nVERSION=\"2026.3\"\nVERSION_CODENAME=kali-rolling\nID=kali\nID_LIKE=debian\nHOME_URL=\"https://www.kali.org/\"\nSUPPORT_URL=\"https://forums.kali.org/\"\nBUG_REPORT_URL=\"https://bugs.kali.org/\"\nANSI_COLOR=\"1;31\"\n",
+      "container_image": "kalilinux/kali-rolling@sha256:d1d7e581ed60b0bbf9cb8a4bc853526355978f3b943d3a1d7dc7ce209e4231b6"
+    },
+    "limitations": "Core apt tool tier and pwntools fixtures exercised when native run passes. Heavy numerical/GPU stacks, graphical applications, and every category apt package are not asserted installed or reproduced.",
+    "native_package_versions": {
+      "pytest": "9.1.1",
+      "pwntools": "4.15.0",
+      "unicorn": "2.1.2",
+      "capstone": "6.0.0a11",
+      "PyYAML": "6.0.3",
+      "jsonschema": "4.26.0",
+      "ruff": "0.16.9"
+    },
+    "sage_snapshot_behavior": "No apt candidate on Kali 2026.3; clear conda/existing-environment fallback instead of a broken apt batch; existing Sage accepted without dpkg ownership."
+  },
+  "8_instance_safety": {
+    "authorized": "Exactly supplied challenge host/URL/port and components; justified bounded enumeration, fuzzing, brute force and exploit tests.",
+    "excluded": "CTFd, scoreboard/submission/provisioning, organizer networks, adjacent addresses, shared nodes/hosts and other teams.",
+    "boundary": "Stop at shared infrastructure; recovered credentials, URLs or reachability do not add scope. Exact intended escape ambiguity requires clarification.",
+    "implementation": "Every category root, dispatcher, shared docs, remote helpers and corrected legacy examples enforce the distinction; no active CTFd client."
+  },
+  "9_instance_health": {
+    "budget": "Baseline plus at most two known-route/protocol confirmations (maximum three).",
+    "unavailable": "Repeated DNS/refused/timeouts or generic expiry/proxy responses stop deep remote work and request refresh.",
+    "ambiguous": "One 404/500, TLS uncertainty and silent TCP alone are inconclusive.",
+    "resume": "Preserve state/payloads/offsets/solver; update endpoint/scope and recheck before replay.",
+    "implementation": "scripts/instance_health.py uses bounded subprocess deadlines, no redirects, verified TLS and small response samples."
+  },
+  "10_automatic_learning": {
+    "automatic_gates": [
+      "flag verified",
+      "materially contributed",
+      "understood",
+      "reproducible",
+      "reusable",
+      "novel or verified meaningful prerequisite variant"
+    ],
+    "novelty": "Concept/body/primitive/prerequisite comparison; preserves byte/punctuation/number semantics; version/runtime/parser/mitigation changes are explicit dimensions. Conservative semantic uncertainty remains in inbox.",
+    "transaction": "Exclusive lock, rollback on failed index write, one promotion ledger event, generated learned reference and catalog pointer; accepted records used for duplicate comparison, failed/inbox guesses do not suppress good methods.",
+    "excluded": "Flags, secrets, passwords, temporary endpoints, luck and unverified guesses; approval flag never bypasses evidence gates.",
+    "no_push": true
+  },
+  "11_validation": {
+    "original_windows_baseline": {
+      "passed": 23,
+      "failed": 4,
+      "failure_areas": [
+        "case-sensitive generated index ordering",
+        "Windows shell CRLF launch",
+        "CRLF append-only false positives",
+        "safety allowlist mismatch"
+      ]
+    },
+    "windows": {
+      "tests": 97,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 4,
+      "passed": 93,
+      "status": "passed",
+      "result_file": "windows-junit.xml"
+    },
+    "kali": {
+      "tests": 97,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "passed": 97,
+      "status": "passed",
+      "result_file": "kali-junit.xml"
+    },
+    "repository_data_and_cli": {
+      "host": "Windows with bundled Python and validation venv",
+      "json_files": 30,
+      "yaml_files": 13,
+      "cli_help": [
+        {
+          "path": "ctf-web/scripts/async_fuzz.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/append_learning.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/audit_snippets.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/capture_learning.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/check_repository_safety.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/classify_challenge.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/classify_learning.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/crypto_helpers.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/detect_duplicates.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/enrich_from_sources.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/extract_archive.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/generate_prompt.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/human_review_gate.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/install_tools.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/instance_health.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/lookup_knowledge.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/poly1305_helper.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/pwn_payloads.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/rebuild_indexes.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/triage_artifacts.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/validate_skills.py",
+          "exit_code": 0,
+          "usage_present": true
+        },
+        {
+          "path": "scripts/verify_append_only.py",
+          "exit_code": 0,
+          "usage_present": true
+        }
+      ],
+      "errors": [],
+      "status": "passed"
+    },
+    "snippet_audit": {
+      "syntax_valid_context_required": 1075,
+      "sage_runtime_required": 11
+    },
+    "snippet_syntax_errors": 0,
+    "meaningful_checks": [
+      "Real YAML metadata, skill discovery, direct invocation and common category contract",
+      "All file link targets and generated index determinism",
+      "Immutable baseline source inventory, relocated content, tamper detection and append preservation",
+      "JSON Schema on existing accepted records",
+      "Crypto known-answer / exact arithmetic / Poly1305 RFC vectors",
+      "Pwntools SROP, format payloads and ORW generation",
+      "Live local HTTP health, no-redirect and deadline fixtures",
+      "Archive traversal/link/budget refusal and artifact signatures",
+      "Learning duplicate/variant, evidence gates, rollback and dry-run",
+      "Shell installation copy/preflight/idempotency/backup",
+      "CLI dry-run plans and module readiness",
+      "Compile, shell parse, safety/provenance and Ruff F checks"
+    ],
+    "remaining_validation_limits": [
+      "Syntax-valid historical examples are contextual templates, not universally executable exploits.",
+      "Live competition challenge end-to-end solves were not reproduced.",
+      "Sage and heavyweight ML/kernel/SDR workflows require category-specific runtime checks."
+    ],
+    "resolved_execution_issues": [
+      "Windows shell lookup uses Git Bash when sh is absent from PATH.",
+      "Read-only Windows caches are excluded from the native source copy.",
+      "Kali Python 3.14 pwntools/Unicorn source build needs CMake, pkg-config and C/C++ compilers; prerequisites added to pwn/reverse tiers.",
+      "Kali has no sagemath candidate: actionable fallback appears in plans and verification stays unsuccessful; an external Sage command remains supported."
+    ],
+    "evidence_directory": "knowledge/validation/",
+    "ci": "Ubuntu Python 3.11/3.12 workflow configured; remote GitHub Actions was not executed in this local task."
+  },
+  "12_files_changed": {
+    "counts": {
+      "modified": 79,
+      "added": 90,
+      "line-ending-only": 111
+    },
+    "files": [
+      {
+        "path": ".gitattributes",
+        "status": "modified"
+      },
+      {
+        "path": ".github/workflows/validate.yml",
+        "status": "modified"
+      },
+      {
+        "path": ".pre-commit-config.yaml",
+        "status": "modified"
+      },
+      {
+        "path": "LICENSE",
+        "status": "added"
+      },
+      {
+        "path": "NOTICE.md",
+        "status": "added"
+      },
+      {
+        "path": "README.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-ai-ml/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-ai-ml/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-ai-ml/adversarial-ml.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-ai-ml/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-ai-ml/llm-attacks.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-ai-ml/model-attacks.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-ai-ml/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-ai-ml/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-crypto/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-crypto/advanced-math.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-crypto/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/classic-ciphers.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-crypto/dh-attacks.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/ecc-attacks.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-crypto/exotic-crypto-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/exotic-crypto.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/historical.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/lattice-and-lwe.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/modern-ciphers-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/modern-ciphers-3.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/modern-ciphers-4.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/modern-ciphers.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/personal-learnings.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/post-quantum.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/prng-attacks.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/prng.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/rsa-attacks-2.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-crypto/rsa-attacks.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-crypto/stream-ciphers.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-crypto/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/upstream-2026.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-crypto/zkp-and-advanced.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-forensics/3d-printing.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-forensics/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-forensics/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/disk-advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/disk-and-memory.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/disk-recovery.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/linux-forensics.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-forensics/network-advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/network.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/peripheral-capture.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/personal-learnings.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-forensics/signals-and-hardware.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/steganography.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-forensics/stego-advanced-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/stego-advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/stego-image.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-forensics/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-forensics/windows.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-malware/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-malware/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-malware/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-malware/c2-and-protocols.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-malware/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-malware/pe-and-dotnet.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-malware/scripts-and-obfuscation.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-malware/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-misc/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-misc/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-misc/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/bashjails.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/ctfd-navigation.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-misc/dns.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/encodings-advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/encodings.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/games-and-vms-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/games-and-vms-3.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-misc/games-and-vms-4.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/games-and-vms.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/linux-privesc.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-misc/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-misc/personal-learnings.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-misc/pyjails.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-misc/rf-sdr.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-misc/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-misc/upstream-2026.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-osint/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-osint/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-osint/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-osint/geolocation-and-media.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-osint/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-osint/social-media.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-osint/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-osint/web-and-dns.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-pwn/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-pwn/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-pwn/advanced-exploits-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/advanced-exploits-3.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/advanced-exploits-4.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/advanced-exploits-5.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/advanced-exploits.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/field-notes.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/format-string.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/heap-fsop.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/heap-techniques-2.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-pwn/heap-techniques.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/kernel-bypass.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/kernel-techniques.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-pwn/kernel.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-pwn/overflow-basics.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/personal-learnings.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-pwn/rop-advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/rop-and-shellcode.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-pwn/sandbox-escape.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-pwn/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-pwn/upstream-2026.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-reverse/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-reverse/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-reverse/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/anti-analysis-ctf.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/anti-analysis.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/field-notes.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/languages-compiled.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/languages-platforms.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/languages.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-reverse/patterns-ctf-2.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-reverse/patterns-ctf-3.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/patterns-ctf.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-reverse/patterns-runtime.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/patterns.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/personal-learnings.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-reverse/platforms-hardware.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/platforms.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/tools-advanced-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/tools-advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/tools-dynamic.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/tools-emulation.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/tools.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-reverse/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-reverse/unicorn-emulation.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-web/INDEX.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-web/LEARNED.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-web/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/auth-and-access-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/auth-and-access.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/auth-infra.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/auth-jwt.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/client-side-advanced.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/client-side.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/cves.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/field-notes.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-web/modern-playbook.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-web/node-and-prototype.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/pat-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-web/personal-learnings.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-web/python-requests.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-web/scripts/async_fuzz.py",
+        "status": "added"
+      },
+      {
+        "path": "ctf-web/server-side-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/server-side-advanced-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/server-side-advanced-3.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/server-side-advanced-4.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/server-side-advanced.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-web/server-side-deser.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/server-side-exec-2.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/server-side-exec.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/server-side.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-web/sql-injection.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-web/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "ctf-web/web3.md",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "ctf-writeup/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "ctf-writeup/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "docs/INSTANCE_HEALTH.md",
+        "status": "added"
+      },
+      {
+        "path": "docs/LEARNING.md",
+        "status": "added"
+      },
+      {
+        "path": "docs/OPERATIONS.md",
+        "status": "modified"
+      },
+      {
+        "path": "docs/OVERHAUL_REPORT.md",
+        "status": "added"
+      },
+      {
+        "path": "docs/SCOPE.md",
+        "status": "added"
+      },
+      {
+        "path": "docs/TOOLS.md",
+        "status": "added"
+      },
+      {
+        "path": "docs/WORKFLOW.md",
+        "status": "added"
+      },
+      {
+        "path": "find-skills/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "install.sh",
+        "status": "modified"
+      },
+      {
+        "path": "knowledge/accepted/2026-07-22-http2-downgrade-desync.json",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "knowledge/accepted/2026-07-22-java-ghost-bits.json",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "knowledge/enrichment-report.json",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "knowledge/integrity-manifest.json",
+        "status": "modified"
+      },
+      {
+        "path": "knowledge/learning-ledger.jsonl",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "knowledge/migration/baseline.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/corrections.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/file-map.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/installed-comparison.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/legacy-integrity-manifest.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/original-baseline.zip",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/section-map.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/upstream-comparison.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/migration/upstream-decisions.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/overhaul-report.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/research-catalog.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/research-retrieval.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/research-search-log.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/research-sources.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/snippet-audit.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/sources.lock.json",
+        "status": "modified"
+      },
+      {
+        "path": "knowledge/sources.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "knowledge/technical-validation-sources.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation-details.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-core-readiness.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-environment.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-heavy-availability.txt",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-heavy-plan.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-junit.xml",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-package-versions.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-snippets.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/kali-tool-plan.json",
+        "status": "added"
+      },
+      {
+        "path": "knowledge/validation/windows-junit.xml",
+        "status": "added"
+      },
+      {
+        "path": "prompts/ctf-ai-ml.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-crypto.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-forensics.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-malware.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-misc.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-osint.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-pwn.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-reverse.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/ctf-web.md",
+        "status": "modified"
+      },
+      {
+        "path": "prompts/solve-challenge.md",
+        "status": "modified"
+      },
+      {
+        "path": "pyproject.toml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "schemas/learning.schema.json",
+        "status": "modified"
+      },
+      {
+        "path": "schemas/unsolved-status.schema.json",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "scripts/append_learning.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/audit_snippets.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/capture_learning.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/check_repository_safety.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/classify_challenge.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/classify_learning.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "scripts/crypto_helpers.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/detect_duplicates.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "scripts/enrich_from_sources.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/extract_archive.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/generate_prompt.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "scripts/human_review_gate.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "scripts/install_ctf_tools.sh",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/install_tools.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/instance_health.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/learning_lib.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/lookup_knowledge.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/poly1305_helper.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/pwn_payloads.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/rebuild_indexes.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/tool_manifest.json",
+        "status": "added"
+      },
+      {
+        "path": "scripts/triage_artifacts.py",
+        "status": "added"
+      },
+      {
+        "path": "scripts/validate_skills.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/verify_append_only.py",
+        "status": "modified"
+      },
+      {
+        "path": "scripts/verify_migration.py",
+        "status": "added"
+      },
+      {
+        "path": "solve-challenge/SKILL.md",
+        "status": "modified"
+      },
+      {
+        "path": "solve-challenge/agents/openai.yaml",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "solve-challenge/personal-learnings.md",
+        "status": "added"
+      },
+      {
+        "path": "solve-challenge/triage-reference.md",
+        "status": "added"
+      },
+      {
+        "path": "tests/conftest.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "tests/test_artifact_triage.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_classification.py",
+        "status": "modified"
+      },
+      {
+        "path": "tests/test_health_live.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_helpers.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_human_review.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "tests/test_indexes.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "tests/test_installer.py",
+        "status": "modified"
+      },
+      {
+        "path": "tests/test_integrity.py",
+        "status": "modified"
+      },
+      {
+        "path": "tests/test_learning.py",
+        "status": "modified"
+      },
+      {
+        "path": "tests/test_learning_extended.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_poly1305.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_prompts.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "tests/test_provenance.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "tests/test_pwn_payloads.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_quality.py",
+        "status": "modified"
+      },
+      {
+        "path": "tests/test_schema.py",
+        "status": "added"
+      },
+      {
+        "path": "tests/test_skills.py",
+        "status": "line-ending-only"
+      },
+      {
+        "path": "tests/test_tool_plans.py",
+        "status": "added"
+      }
+    ],
+    "line_endings": "LF prescribed for source; preservation normalizes CRLF only; original bytes retained in archive."
+  },
+  "13_remaining_meaningful_gaps": [
+    "DEF CON finals, in-window TCTF, technically valuable picoCTF and DiceCTF need deeper selected source review; catalog/pointer coverage was not promoted as knowledge.",
+    "Malaysia contributions are primarily English with Malay-context sources; search used Malay but fully Malay technical writeups remain underrepresented.",
+    "Independent reproduction of the 56 historical technique cards is still needed before claiming each exploit works on another runtime.",
+    "Heavy Sage/GNU Radio/GPU/architecture/kernel stacks and all-category apt availability require focused validation on the actual user setup.",
+    "Novelty scoring is a conservative explicit feature comparison, not a trained semantic embedding guarantee.",
+    "Historical long references remain substantial and context dependent; targeted retrieval is improved, while full technical correctness of every legacy snippet cannot be claimed."
+  ]
+}

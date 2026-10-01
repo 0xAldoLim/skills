@@ -1,0 +1,19 @@
+# Personal verified challenge learnings
+
+> Execution guard: historical examples are knowledge, not target authorization. Instance-only scope, bounded requests, local isolation and version checks in ../docs/SCOPE.md and ../docs/WORKFLOW.md take precedence. Never execute recovered malware or model/pickle payloads on the host.
+
+Read only sections matching current evidence. The instance boundary in [scope](../docs/SCOPE.md) applies to every historical example. Historical endpoints are evidence, never new authorized targets.
+
+## Local Learnings Appended 2026-04-19
+
+- **Tail-appended shell APK payloads:** If an Android APK decompiles to a stub `Application` that swaps classloaders or references missing classes, inspect the end of `classes.dex` before diving into the stub UI. Check the final bytes for a payload length, carve the tail blob, and test trivial bytewise decryptors such as XOR with a constant.
+- **Known-plaintext recovery from paired assets:** When an app ships both a readable media asset and a nearby opaque sibling blob of similar size, test whether the blob is just a transformed version of that asset. A paired plaintext/ciphertext asset can turn the problem into immediate repeating-XOR keystream recovery.
+- **Stub-stage versus payload-stage asset comparison:** In nested APK chains, compare asset lengths across stub and payload stages before fully reconstructing native helpers. If the payload container body length exactly matches a stub-stage asset, test direct XOR or stream-reuse hypotheses first.
+- **Printable slack-space encodings:** If the visible control flow is too trivial, scan section slack and padding for long printable strings with a repeated delimiter character. Remove the constant delimiter and immediately test the result as base64 or hex before assuming the bytes are junk padding.
+- **Split APK evidence aggregation:** Treat `.apks` bundles as multiple evidence sources, not a single monolithic APK. Unzip the bundle, inspect `split-manifest.json`, then analyze `base.apk`, architecture splits, and density/resource splits independently. Fragments may be distributed across Flutter-looking metadata blobs, PNG resources, and native `.so` files, then concatenated and hashed for a final decryptor.
+- **Android split decoy handling:** In split APK challenges, verify field names byte-for-byte before trusting readable metadata. Homoglyph keys such as Cyrillic `а` in `frаg`, prompt assets, and manifest install order can be deliberate traps; prefer independently validated extraction paths and derive concatenation order from evidence semantics.
+- **Flutter metadata blob extraction in APKs:** If `assets/flutter_assets/kernel_blob.bin` begins with a custom marker such as `FLUTTER-KERNEL\x00`, split at the first NUL and parse the remainder as structured metadata before reversing Dart bytecode. Test base64, zlib, byte reversal, and hex fields in that metadata early.
+- **PNG `LSB0` resource fragments:** For Android resource PNGs, convert to RGB, flatten channel bytes, read bit 0 of each byte, and pack bits MSB-first. A common container shape is `b"LSB0"` followed by a 4-byte big-endian payload length and a labeled payload such as `LABEL:fragment`; use the label as metadata and the suffix as key material.
+- **Native split XOR marker fragments:** For architecture splits, search native libraries and companion source for markers that disclose a byte mask, such as `ORACLE_MASK_XOR_0x37`. XOR either the declared byte array or the full `.so` by that mask, then search the decoded stream for fragment-looking strings.
+- **Hash-derived BLAKE2s stream decryptors:** When recovered fragments are readable but not flag-shaped, concatenate them exactly, hash with SHA-256, and test custom stream ciphers that derive blocks from `BLAKE2s(key || label || counter_be32)`. XOR the generated stream with ciphertext fields stored in metadata.
+

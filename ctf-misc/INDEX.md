@@ -13,20 +13,30 @@ Use this index after category selection. Open only the reference whose signal ma
 | RF or SDR | [rf-sdr.md](rf-sdr.md) |
 | game, toy VM, or constraint | [games-and-vms.md](games-and-vms.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-misc --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
-- [bashjails.md](bashjails.md) — Table of Contents; Identifying the Jail; Eval Context Detection; Character-Restricted Bash: Only `#`, `$`, `\`; Internal Service Discovery (Post-Shell); Other Restricted Character Set Tricks
-- [ctfd-navigation.md](ctfd-navigation.md) — Table of Contents; Detect CTFd; Authentication; Method 1: API Token (Recommended); Method 2: Session Login (Cookie-Based); List Challenges
-- [dns.md](dns.md) — Table of Contents; EDNS Client Subnet (ECS) Spoofing; DNSSEC NSEC Walking; Incremental Zone Transfer (IXFR); DNS Rebinding; DNS Tunneling / Exfiltration
-- [encodings-advanced.md](encodings-advanced.md) — Table of Contents; Verilog/HDL; Gray Code Cyclic Encoding (EHAX 2026); Binary Tree Key Encoding; RTF Custom Tag Data Extraction (VolgaCTF 2013); SMS PDU Decoding and Reassembly (RuCTF 2013)
-- [encodings.md](encodings.md) — Table of Contents; Common Encodings; Base64; Base32; Hex; IEEE 754 Floating Point Encoding
-- [games-and-vms-2.md](games-and-vms-2.md) — Table of Contents; Cookie Checkpoint Game Brute-Forcing (BYPASS CTF 2025); Flask Session Cookie Game State Leakage (BYPASS CTF 2025); WebSocket Game Manipulation + Cryptic Hint Decoding (BYPASS CTF 2025); Server Time-Only Validation Bypass (BYPASS CTF 2025); De Bruijn Sequence for Substring Coverage (BearCatCTF 2026)
-- [games-and-vms-3.md](games-and-vms-3.md) — Table of Contents; memfd_create Packed Binaries; Multi-Phase Interactive Crypto Game (EHAX 2026); Emulator ROM-Switching State Preservation (BSidesSF 2026); Python Marshal Code Injection (iCTF 2013); Benford's Law Frequency Distribution Bypass (iCTF 2013)
-- [games-and-vms-4.md](games-and-vms-4.md) — Table of Contents; XSLT as Turing-Complete VM for Binary Search (35C3 2018); JavaScript MAX_SAFE_INTEGER Successor Equality (35C3 2018); Binary Search Oracle in Comparison-Only DSL (35C3 2018); Blind SQLi via Script-Engine Timeout Error (35C3 2018); OEIS Sequence Lookup Automation for Recurrence Puzzles (X-MAS CTF 2018)
-- [games-and-vms.md](games-and-vms.md) — Table of Contents; WASM Game Exploitation via Patching; Roblox Place File Reversing; PyInstaller Extraction; Opcode Remapping; Marshal Code Analysis
-- [linux-privesc.md](linux-privesc.md) — Table of Contents; Sudo Wildcard Parameter Injection via fnmatch (Dump HTB); Crafted Pcap for /etc/sudoers.d (Dump HTB); Monit confcheck Process Command-Line Injection (Zero HTB); Apache -d Last-Wins ServerRoot Override (Zero HTB); Backup Cronjob SUID Abuse (Slonik HTB)
-- [pyjails.md](pyjails.md) — Table of Contents; Identifying Jail Type; Systematic Enumeration; Test Basic Features; Test Blocked AST Nodes; Brute-Force Function Names
-- [rf-sdr.md](rf-sdr.md) — IQ File Formats; Analysis Pipeline; QAM-16 Demodulation with Carrier + Timing Recovery; Key Insights for RF CTF Challenges; Common Framing Patterns
+- [bashjails.md](bashjails.md) — Identifying the Jail; Eval Context Detection; Character-Restricted Bash: Only `#`, `$`, `\`; 9 further searchable sections
+- [ctfd-navigation.md](ctfd-navigation.md) — Supporting category knowledge
+- [dns.md](dns.md) — EDNS Client Subnet (ECS) Spoofing; DNSSEC NSEC Walking; Incremental Zone Transfer (IXFR); 6 further searchable sections
+- [encodings-advanced.md](encodings-advanced.md) — Verilog/HDL; Gray Code Cyclic Encoding (EHAX 2026); Binary Tree Key Encoding; 7 further searchable sections
+- [encodings.md](encodings.md) — Common Encodings; QR Codes; Multi-Stage URL Encoding Chain (UTCTF 2026); 2 further searchable sections
+- [games-and-vms-2.md](games-and-vms-2.md) — Cookie Checkpoint Game Brute-Forcing (BYPASS CTF 2025); Flask Session Cookie Game State Leakage (BYPASS CTF 2025); WebSocket Game Manipulation + Cryptic Hint Decoding (BYPASS CTF 2025); 4 further searchable sections
+- [games-and-vms-3.md](games-and-vms-3.md) — memfd_create Packed Binaries; Multi-Phase Interactive Crypto Game (EHAX 2026); Emulator ROM-Switching State Preservation (BSidesSF 2026); 15 further searchable sections
+- [games-and-vms-4.md](games-and-vms-4.md) — XSLT as Turing-Complete VM for Binary Search (35C3 2018); JavaScript MAX_SAFE_INTEGER Successor Equality (35C3 2018); Binary Search Oracle in Comparison-Only DSL (35C3 2018); 8 further searchable sections
+- [games-and-vms.md](games-and-vms.md) — WASM Game Exploitation via Patching; Roblox Place File Reversing; PyInstaller Extraction; 9 further searchable sections
+- [linux-privesc.md](linux-privesc.md) — Sudo Wildcard Parameter Injection via fnmatch (Dump HTB); Crafted Pcap for /etc/sudoers.d (Dump HTB); Monit confcheck Process Command-Line Injection (Zero HTB); 14 further searchable sections
+- [modern-playbook.md](modern-playbook.md) — Split ZIP parsers follow a symlink volume; Read-budgeted filesystem walk; Round-robin file chunk interleave; 3 further searchable sections
+- [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-23; Local Learnings Appended 2026-04-24; Local Learnings Appended 2026-04-24; 3 further searchable sections
+- [pyjails.md](pyjails.md) — Identifying Jail Type; Systematic Enumeration; Oracle-Based Challenges; 20 further searchable sections
+- [rf-sdr.md](rf-sdr.md) — IQ File Formats; Analysis Pipeline; QAM-16 Demodulation with Carrier + Timing Recovery; 2 further searchable sections
+- [triage-reference.md](triage-reference.md) — Quick Start Commands; General Tips; Common Encodings; 37 further searchable sections
+- [upstream-2026.md](upstream-2026.md) — 2024 Hardening Note — rbash Is NOT a Security Boundary; Audit-Hook (PEP 551/578) Trampoline Escapes; Filter'd Length-Limit Re-evaluation (JailCTF 2024 — M=14); 1 further searchable sections
 
 ## Cross-category pivots
 

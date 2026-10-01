@@ -403,6 +403,8 @@ shellcode = asm(shellcraft.execve("/bin/sh", ["/bin/sh", "-c", "cat /flag*"]))
 
 ## BuildKit Daemon Exploitation for Build Secrets (BSidesSF 2026)
 
+Scope prerequisite: only a dedicated host/daemon explicitly assigned as part of this challenge permits the operations below. A socket, capability, mount, neighboring address or exposed control plane discovered in a challenge container does not extend authorization to the shared host. Stop at that boundary and retain local application/file analysis. Even in a dedicated lab, inspect exact kernel/cgroup/namespace/BuildKit configuration: privileges alone do not guarantee the historical technique works.
+
 **Pattern (builds-as-a-service):** Challenge accepts a Dockerfile and builds it. The build environment uses Docker BuildKit with `--mount=type=secret,id=flag` to inject secrets during build. An exposed BuildKit daemon (tcp://127.0.0.1:1234) allows submitting nested build requests that mount and read the secret.
 
 **Attack (two-stage Dockerfile):**
@@ -445,6 +447,8 @@ RUN --mount=type=secret,id=flag cat /run/secrets/flag; false
 ---
 
 ## Docker Container Escape Techniques
+
+Scope prerequisite: only a dedicated host/daemon explicitly assigned as part of this challenge permits the operations below. A socket, capability, mount, neighboring address or exposed control plane discovered in a challenge container does not extend authorization to the shared host. Stop at that boundary and retain local application/file analysis. Even in a dedicated lab, inspect exact kernel/cgroup/namespace/BuildKit configuration: privileges alone do not guarantee the historical technique works.
 
 ### Privileged Container Breakout
 
@@ -500,7 +504,7 @@ Even without escape, containers leak host info:
 - `/sys/kernel/slab/*/cgroup/` -- other container IDs (cgroup debug info)
 - `/proc/1/environ` -- environment variables from container start
 
-**Key insight:** Check `--privileged` flag, mounted sockets (`docker.sock`), and capabilities (`capsh --print`) first. Privileged = instant escape. Socket = create new privileged container. CAP_SYS_ADMIN = cgroup release_agent. Without any of these, focus on information leakage and application-level escapes.
+**Key insight:** Check `--privileged` flag, mounted sockets (`docker.sock`), and capabilities (`capsh --print`) first. These are leads, not guarantees: user namespaces, socket policy, host devices, cgroup version and release_agent restrictions determine feasibility. Without any of these, focus on information leakage and application-level escapes.
 
 ---
 

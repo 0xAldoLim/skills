@@ -4,8 +4,8 @@
 from __future__ import annotations
 
 import argparse
-import re
 from pathlib import Path
+from lookup_knowledge import sections
 
 
 CATEGORY_ROUTES: dict[str, list[tuple[str, str]]] = {
@@ -21,15 +21,9 @@ CATEGORY_ROUTES: dict[str, list[tuple[str, str]]] = {
 }
 
 
-def headings(path: Path, limit: int = 6) -> list[str]:
-    found: list[str] = []
-    for line in path.read_text(encoding="utf-8", errors="replace").splitlines():
-        match = re.match(r"^#{2,4}\s+(.+?)\s*$", line)
-        if match and not match.group(1).lower().startswith(("prerequisite", "additional resources", "quick start")):
-            found.append(match.group(1).strip())
-        if len(found) >= limit:
-            break
-    return found
+def headings(path: Path, limit: int | None = None) -> list[str]:
+    found = [section['title'] for section in sections(path) if section['level'] == 2 and section['title'].casefold() not in {'table of contents', 'references'}]
+    return found if limit is None else found[:limit]
 
 
 def build_index(root: Path, category: str) -> str:
@@ -48,13 +42,21 @@ def build_index(root: Path, category: str) -> str:
     for signal, filename in CATEGORY_ROUTES[category]:
         if (directory / filename).is_file():
             lines.append(f"| {signal} | [{filename}]({filename}) |")
-    lines.extend(["", "## File catalog", ""])
-    for path in sorted(directory.glob("*.md")):
+    lines.extend(["", "## Targeted retrieval", "",
+        f"Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category {category} --limit 5`.",
+        "Results include exact section lines. Read that range before loading another reference.",
+        "Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.",
+        "", "## File catalog", ""])
+    for path in sorted(directory.rglob("*.md"), key=lambda item: item.relative_to(directory).as_posix().casefold()):
         if path.name in {"INDEX.md", "SKILL.md"}:
             continue
         topics = headings(path)
-        summary = "; ".join(topics) if topics else "Supporting category knowledge"
-        lines.append(f"- [{path.name}]({path.name}) — {summary}")
+        # All sections remain searchable; the index stays compact even for long references.
+        summary = "; ".join(topics[:3]) if topics else "Supporting category knowledge"
+        if len(topics) > 3:
+            summary += f"; {len(topics) - 3} further searchable sections"
+        relative = path.relative_to(directory).as_posix()
+        lines.append(f"- [{relative}]({relative}) — {summary}")
     lines.extend([
         "",
         "## Cross-category pivots",
@@ -83,7 +85,7 @@ def main() -> int:
             if not destination.is_file() or destination.read_text(encoding="utf-8") != content:
                 stale.append(destination.relative_to(root).as_posix())
         else:
-            destination.write_text(content, encoding="utf-8")
+            destination.write_text(content, encoding="utf-8", newline="\n")
     if stale:
         print("stale indexes: " + ", ".join(stale))
         return 1

@@ -1,0 +1,6525 @@
+{
+  "scope": "Python/Sage fenced examples in category references; parsing is not runtime reproduction",
+  "counts": {
+    "syntax_valid_context_required": 1075,
+    "sage_runtime_required": 11
+  },
+  "snippets": [
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 27,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 76,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 131,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 196,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 272,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 354,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 435,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 565,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/adversarial-ml.md",
+      "line": 597,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/llm-attacks.md",
+      "line": 22,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/llm-attacks.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/llm-attacks.md",
+      "line": 140,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/llm-attacks.md",
+      "line": 229,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/llm-attacks.md",
+      "line": 304,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/llm-attacks.md",
+      "line": 391,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/model-attacks.md",
+      "line": 27,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/model-attacks.md",
+      "line": 78,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/model-attacks.md",
+      "line": 140,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/model-attacks.md",
+      "line": 211,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/model-attacks.md",
+      "line": 269,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/model-attacks.md",
+      "line": 297,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-ai-ml/model-attacks.md",
+      "line": 363,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 41,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 79,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 112,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 147,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 202,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 235,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 251,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 274,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 283,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 297,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 320,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 348,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 373,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 413,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 429,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 466,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 491,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 550,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 558,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 597,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 634,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 662,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 693,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/advanced-math.md",
+      "line": 708,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 34,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 63,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 132,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 148,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 179,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 203,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 251,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 279,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 298,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 316,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 329,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 358,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 369,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 384,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 408,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 441,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 464,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 496,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 555,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 580,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 599,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 624,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/classic-ciphers.md",
+      "line": 644,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/dh-attacks.md",
+      "line": 18,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/dh-attacks.md",
+      "line": 33,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/dh-attacks.md",
+      "line": 48,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/dh-attacks.md",
+      "line": 89,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/dh-attacks.md",
+      "line": 121,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 26,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 62,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 71,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 107,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 125,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 143,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 152,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 172,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 200,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 222,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 237,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 267,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 293,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 321,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/ecc-attacks.md",
+      "line": 336,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 27,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 56,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 76,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 117,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 145,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 163,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 182,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 203,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 225,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 250,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 272,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 291,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 311,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 332,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto-2.md",
+      "line": 350,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 22,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 91,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 115,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 134,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 171,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 237,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 269,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 300,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 330,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 353,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 395,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 440,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/exotic-crypto.md",
+      "line": 483,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/historical.md",
+      "line": 23,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/historical.md",
+      "line": 76,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/historical.md",
+      "line": 95,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 70,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 86,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 98,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 154,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 195,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 284,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 336,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 389,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 433,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/lattice-and-lwe.md",
+      "line": 479,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 36,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 64,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 82,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 115,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 161,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 193,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 226,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 240,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 255,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 274,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 334,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 354,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 390,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 417,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 440,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 473,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 514,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-2.md",
+      "line": 541,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 32,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 64,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 86,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 113,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 145,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 163,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 185,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 211,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 243,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 267,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 287,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 309,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 324,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 341,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 360,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 379,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 397,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 415,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-3.md",
+      "line": 433,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-4.md",
+      "line": 53,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-4.md",
+      "line": 92,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-4.md",
+      "line": 143,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers-4.md",
+      "line": 202,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 56,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 102,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 112,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 128,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 164,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 194,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 235,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 256,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 292,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 344,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 392,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 412,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 438,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 463,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 493,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 538,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 557,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 600,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/modern-ciphers.md",
+      "line": 623,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 29,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 65,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 99,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 129,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 151,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 167,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 187,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 209,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 229,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng-attacks.md",
+      "line": 248,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 36,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 56,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 94,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 158,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 175,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 195,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 212,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 246,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 270,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 292,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 316,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 337,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 364,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 393,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 454,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 501,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 515,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/prng.md",
+      "line": 587,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 46,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 105,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 151,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 172,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 200,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 230,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 266,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 285,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 311,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 335,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 371,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 402,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 428,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 483,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 498,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 523,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 544,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 564,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 581,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 596,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 613,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 640,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 658,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 680,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 697,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 713,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 729,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 747,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks-2.md",
+      "line": 765,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 39,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 62,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 96,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 150,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 177,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 217,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 247,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 264,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 283,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 300,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 321,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 346,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 367,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 375,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 391,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 403,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 428,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/rsa-attacks.md",
+      "line": 450,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 35,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 67,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 90,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 144,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 176,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 220,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 241,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 266,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 289,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 333,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 360,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/stream-ciphers.md",
+      "line": 382,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 19,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 35,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 76,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 101,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 127,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 157,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 235,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 262,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 301,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 342,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 378,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 418,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 492,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 550,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 603,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 610,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 656,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 685,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 716,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 762,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 796,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 838,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 864,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 888,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 928,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 969,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1015,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1068,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1088,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1136,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1165,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1212,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1246,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1290,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1318,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1366,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1398,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1459,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1487,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1594,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1619,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1654,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1682,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1729,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1755,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1799,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1824,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1896,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1915,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1959,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 1990,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 2072,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 2128,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 2181,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 2203,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "line": 2216,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 34,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 46,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 69,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 101,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 126,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 159,
+      "language": "sage",
+      "status": "sage_runtime_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 184,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 210,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 244,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 285,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 321,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 382,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 410,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-crypto/zkp-and-advanced.md",
+      "line": 445,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/3d-printing.md",
+      "line": 40,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 57,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 144,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 216,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 257,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 295,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 327,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 349,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 436,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-advanced.md",
+      "line": 469,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-and-memory.md",
+      "line": 203,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-and-memory.md",
+      "line": 356,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-and-memory.md",
+      "line": 455,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-recovery.md",
+      "line": 69,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-recovery.md",
+      "line": 100,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-recovery.md",
+      "line": 257,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-recovery.md",
+      "line": 336,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-recovery.md",
+      "line": 456,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-recovery.md",
+      "line": 616,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/disk-recovery.md",
+      "line": 662,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/linux-forensics.md",
+      "line": 91,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/linux-forensics.md",
+      "line": 113,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/linux-forensics.md",
+      "line": 165,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/linux-forensics.md",
+      "line": 199,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/linux-forensics.md",
+      "line": 380,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/linux-forensics.md",
+      "line": 425,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/linux-forensics.md",
+      "line": 444,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 33,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 91,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 118,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 152,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 194,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 244,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 325,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 369,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 401,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 427,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 519,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network-advanced.md",
+      "line": 563,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network.md",
+      "line": 253,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network.md",
+      "line": 278,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network.md",
+      "line": 344,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network.md",
+      "line": 600,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/network.md",
+      "line": 629,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/peripheral-capture.md",
+      "line": 29,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/peripheral-capture.md",
+      "line": 113,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/peripheral-capture.md",
+      "line": 169,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/peripheral-capture.md",
+      "line": 214,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/peripheral-capture.md",
+      "line": 241,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/peripheral-capture.md",
+      "line": 268,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 27,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 55,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 90,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 124,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 165,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 220,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 277,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 296,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 308,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 342,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 377,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 441,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 491,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 510,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 564,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 612,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 655,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/signals-and-hardware.md",
+      "line": 696,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 50,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 97,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 109,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 136,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 206,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 246,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 283,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 345,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 382,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 423,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 465,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 490,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 498,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 599,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 642,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/steganography.md",
+      "line": 667,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 33,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 93,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 113,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 133,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 206,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 241,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 271,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 397,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced-2.md",
+      "line": 436,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 29,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 97,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 112,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 202,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 237,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 281,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 306,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 369,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 399,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-advanced.md",
+      "line": 466,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 35,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 62,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 89,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 125,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 195,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 211,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 234,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 263,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 321,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 367,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 388,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 450,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 471,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 507,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 551,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 578,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/stego-image.md",
+      "line": 614,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/triage-reference.md",
+      "line": 53,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 47,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 84,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 104,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 114,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 142,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 159,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 267,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 303,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 324,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 360,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 386,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-forensics/windows.md",
+      "line": 414,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/c2-and-protocols.md",
+      "line": 79,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/c2-and-protocols.md",
+      "line": 94,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/c2-and-protocols.md",
+      "line": 145,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/c2-and-protocols.md",
+      "line": 243,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/pe-and-dotnet.md",
+      "line": 81,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/scripts-and-obfuscation.md",
+      "line": 63,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/scripts-and-obfuscation.md",
+      "line": 120,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/scripts-and-obfuscation.md",
+      "line": 291,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/scripts-and-obfuscation.md",
+      "line": 327,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/scripts-and-obfuscation.md",
+      "line": 347,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/scripts-and-obfuscation.md",
+      "line": 413,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-malware/scripts-and-obfuscation.md",
+      "line": 434,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/bashjails.md",
+      "line": 32,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/dns.md",
+      "line": 24,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/dns.md",
+      "line": 41,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/dns.md",
+      "line": 89,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/dns.md",
+      "line": 130,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/dns.md",
+      "line": 174,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/dns.md",
+      "line": 231,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 24,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 44,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 91,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 110,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 139,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 186,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 217,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 256,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 306,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 382,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 415,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 439,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings-advanced.md",
+      "line": 474,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 56,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 77,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 91,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 106,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 125,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 138,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 167,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 190,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 223,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 263,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 306,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/encodings.md",
+      "line": 367,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-2.md",
+      "line": 21,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-2.md",
+      "line": 113,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-2.md",
+      "line": 139,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-2.md",
+      "line": 179,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 37,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 58,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 94,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 141,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 180,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 202,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 229,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 269,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 305,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 372,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 393,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 436,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 515,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 564,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-3.md",
+      "line": 614,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-4.md",
+      "line": 66,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-4.md",
+      "line": 102,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-4.md",
+      "line": 120,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-4.md",
+      "line": 140,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-4.md",
+      "line": 163,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms-4.md",
+      "line": 181,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 76,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 97,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 135,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 168,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 180,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 204,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 216,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 298,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 351,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/games-and-vms.md",
+      "line": 477,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/linux-privesc.md",
+      "line": 56,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 67,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 78,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 89,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 107,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 126,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 138,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 151,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 157,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 162,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 167,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 176,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 182,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 213,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 220,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 228,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 243,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 270,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 302,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 314,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 324,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 331,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 364,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 382,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 392,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 430,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 444,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 475,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 495,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 527,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 552,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 576,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 583,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 593,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 607,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/pyjails.md",
+      "line": 648,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/rf-sdr.md",
+      "line": 11,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/rf-sdr.md",
+      "line": 42,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/rf-sdr.md",
+      "line": 69,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 67,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 147,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 167,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 184,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 223,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 341,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 376,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 389,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/triage-reference.md",
+      "line": 411,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 55,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 75,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 92,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 103,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 122,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 139,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 157,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 175,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 188,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 234,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 254,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 294,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 332,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 366,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "line": 381,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-osint/geolocation-and-media.md",
+      "line": 133,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-osint/geolocation-and-media.md",
+      "line": 154,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-osint/geolocation-and-media.md",
+      "line": 462,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-osint/social-media.md",
+      "line": 229,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-osint/web-and-dns.md",
+      "line": 102,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 37,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 69,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 90,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 100,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 140,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 182,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 201,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 223,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 245,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 264,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 278,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 294,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 308,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 363,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 412,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 423,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 523,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-2.md",
+      "line": 550,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 53,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 90,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 121,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 164,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 264,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 311,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 367,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 410,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 439,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 478,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 519,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 547,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-3.md",
+      "line": 579,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 38,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 162,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 223,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 229,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 234,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 280,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 315,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 341,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 362,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 401,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 454,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 496,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 527,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-4.md",
+      "line": 564,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-5.md",
+      "line": 23,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-5.md",
+      "line": 54,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits-5.md",
+      "line": 98,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 55,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 136,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 171,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 207,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 241,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 280,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 316,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 347,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 402,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 417,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 480,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 522,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 647,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 686,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced-exploits.md",
+      "line": 704,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced.md",
+      "line": 31,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced.md",
+      "line": 63,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced.md",
+      "line": 116,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced.md",
+      "line": 184,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced.md",
+      "line": 202,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced.md",
+      "line": 281,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/advanced.md",
+      "line": 306,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 45,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 54,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 60,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 82,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 156,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 170,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 193,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 209,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 228,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 250,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 275,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 340,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 359,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 377,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 422,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 478,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 513,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 553,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 585,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 628,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 670,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/format-string.md",
+      "line": 687,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-fsop.md",
+      "line": 20,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-fsop.md",
+      "line": 75,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-fsop.md",
+      "line": 116,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-fsop.md",
+      "line": 134,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-fsop.md",
+      "line": 178,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-fsop.md",
+      "line": 216,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-fsop.md",
+      "line": 236,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 26,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 74,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 110,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 152,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 176,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 198,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 221,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 241,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 269,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 292,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques-2.md",
+      "line": 317,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 33,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 57,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 66,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 112,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 176,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 221,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 274,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 314,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 336,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 360,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 390,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 420,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 453,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/heap-techniques.md",
+      "line": 495,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/kernel-techniques.md",
+      "line": 346,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/kernel.md",
+      "line": 430,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/kernel.md",
+      "line": 577,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 51,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 81,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 108,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 139,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 160,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 221,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 261,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 323,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 360,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 455,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 503,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 522,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 571,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/overflow-basics.md",
+      "line": 585,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 38,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 49,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 79,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 125,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 203,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 219,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 240,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 262,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 272,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 281,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 295,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 303,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 331,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 357,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 406,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 464,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 541,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 603,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 629,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-advanced.md",
+      "line": 687,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 30,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 55,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 71,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 84,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 120,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 138,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 185,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 224,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 271,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 303,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 334,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 371,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 405,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 473,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 526,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 565,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 595,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/rop-and-shellcode.md",
+      "line": 626,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/sandbox-escape.md",
+      "line": 117,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/sandbox-escape.md",
+      "line": 202,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-pwn/sandbox-escape.md",
+      "line": 228,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/anti-analysis-ctf.md",
+      "line": 64,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/anti-analysis-ctf.md",
+      "line": 86,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/anti-analysis-ctf.md",
+      "line": 126,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/anti-analysis-ctf.md",
+      "line": 164,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/anti-analysis.md",
+      "line": 576,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-compiled.md",
+      "line": 503,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-compiled.md",
+      "line": 633,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-compiled.md",
+      "line": 651,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-platforms.md",
+      "line": 133,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-platforms.md",
+      "line": 227,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-platforms.md",
+      "line": 279,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-platforms.md",
+      "line": 322,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-platforms.md",
+      "line": 479,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-platforms.md",
+      "line": 512,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages-platforms.md",
+      "line": 544,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 42,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 204,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 244,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 298,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 351,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 376,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 424,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 460,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 473,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 480,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 500,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/languages.md",
+      "line": 529,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 83,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 99,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 129,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 160,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 187,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 229,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 257,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 294,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 318,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 355,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-2.md",
+      "line": 380,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 41,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 77,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 136,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 267,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 309,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 365,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 410,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 469,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 605,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 644,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 676,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf-3.md",
+      "line": 774,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 64,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 84,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 145,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 187,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 223,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 258,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 284,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 326,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 416,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 491,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 573,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 600,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-ctf.md",
+      "line": 643,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-runtime.md",
+      "line": 61,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-runtime.md",
+      "line": 75,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-runtime.md",
+      "line": 110,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-runtime.md",
+      "line": 209,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns-runtime.md",
+      "line": 249,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 123,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 190,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 199,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 259,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 291,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 360,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 374,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 408,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 447,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 475,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/patterns.md",
+      "line": 523,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/platforms-hardware.md",
+      "line": 34,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/platforms-hardware.md",
+      "line": 171,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/platforms-hardware.md",
+      "line": 253,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/platforms-hardware.md",
+      "line": 351,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/platforms-hardware.md",
+      "line": 373,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/platforms.md",
+      "line": 602,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/platforms.md",
+      "line": 621,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 28,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 56,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 166,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 216,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 235,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 267,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 291,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 312,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced-2.md",
+      "line": 388,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced.md",
+      "line": 77,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced.md",
+      "line": 197,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced.md",
+      "line": 228,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced.md",
+      "line": 274,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced.md",
+      "line": 322,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-advanced.md",
+      "line": 394,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 281,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 305,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 341,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 366,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 380,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 410,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 435,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 482,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 627,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-dynamic.md",
+      "line": 666,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-emulation.md",
+      "line": 36,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-emulation.md",
+      "line": 56,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-emulation.md",
+      "line": 80,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-emulation.md",
+      "line": 113,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-emulation.md",
+      "line": 138,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools-emulation.md",
+      "line": 169,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 112,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 165,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 184,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 215,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 225,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 241,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 251,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 376,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 434,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/tools.md",
+      "line": 485,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 51,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 89,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 110,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 127,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 142,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 162,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 187,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 210,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 221,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 249,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 296,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 342,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 371,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 432,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 518,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 555,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 594,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 634,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 710,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 736,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 788,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 812,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 827,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 856,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 882,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 917,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 952,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 994,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 1026,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 1038,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 1093,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 1136,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "line": 1183,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access-2.md",
+      "line": 24,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 79,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 138,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 166,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 205,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 270,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 427,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 486,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 523,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 588,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 722,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 754,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-and-access.md",
+      "line": 763,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-infra.md",
+      "line": 26,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-infra.md",
+      "line": 50,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-infra.md",
+      "line": 68,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-infra.md",
+      "line": 85,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-infra.md",
+      "line": 249,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-infra.md",
+      "line": 269,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-jwt.md",
+      "line": 38,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-jwt.md",
+      "line": 52,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-jwt.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-jwt.md",
+      "line": 88,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-jwt.md",
+      "line": 119,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/auth-jwt.md",
+      "line": 162,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 149,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 168,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 214,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 258,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 320,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 351,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 402,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 458,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 498,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 539,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 561,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 634,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side-advanced.md",
+      "line": 705,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side.md",
+      "line": 98,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side.md",
+      "line": 113,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side.md",
+      "line": 248,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side.md",
+      "line": 294,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/client-side.md",
+      "line": 327,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/cves.md",
+      "line": 59,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/cves.md",
+      "line": 76,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/cves.md",
+      "line": 91,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/cves.md",
+      "line": 117,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/cves.md",
+      "line": 145,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/node-and-prototype.md",
+      "line": 123,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/pat-reference.md",
+      "line": 74,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-2.md",
+      "line": 146,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-2.md",
+      "line": 174,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-2.md",
+      "line": 195,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-2.md",
+      "line": 267,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-2.md",
+      "line": 318,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-2.md",
+      "line": 377,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-2.md",
+      "line": 476,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-2.md",
+      "line": 504,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-4.md",
+      "line": 36,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-4.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-4.md",
+      "line": 167,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced-4.md",
+      "line": 203,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced.md",
+      "line": 30,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced.md",
+      "line": 134,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced.md",
+      "line": 176,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced.md",
+      "line": 220,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced.md",
+      "line": 311,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced.md",
+      "line": 324,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-advanced.md",
+      "line": 356,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-deser.md",
+      "line": 72,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-deser.md",
+      "line": 107,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-deser.md",
+      "line": 151,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-deser.md",
+      "line": 227,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-deser.md",
+      "line": 296,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-deser.md",
+      "line": 372,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-deser.md",
+      "line": 419,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec-2.md",
+      "line": 338,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec-2.md",
+      "line": 453,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec-2.md",
+      "line": 524,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec-2.md",
+      "line": 553,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec-2.md",
+      "line": 602,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec-2.md",
+      "line": 667,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec-2.md",
+      "line": 705,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec.md",
+      "line": 245,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side-exec.md",
+      "line": 439,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 132,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 151,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 169,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 284,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 310,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 349,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 390,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 432,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/server-side.md",
+      "line": 454,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 59,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 83,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 118,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 187,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 260,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 289,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 337,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 378,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 432,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 473,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 510,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 544,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 603,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 653,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/sql-injection.md",
+      "line": 692,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/web3.md",
+      "line": 29,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/web3.md",
+      "line": 89,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/web3.md",
+      "line": 186,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    },
+    {
+      "path": "ctf-web/web3.md",
+      "line": 336,
+      "language": "python",
+      "status": "syntax_valid_context_required"
+    }
+  ]
+}

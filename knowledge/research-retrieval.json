@@ -1,0 +1,812 @@
+[
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "osint/they-re-making-decoys/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/osint/they-re-making-decoys/solve/WRITEUP.md",
+    "sha256": "db261119cbfdb270df0df14eff9b58749aefb024cb233aea3d7fe7b252e9c0bf",
+    "bytes": 2564,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "osint/back-to-the-jungle/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/osint/back-to-the-jungle/solve/WRITEUP.md",
+    "sha256": "bb4b221026e857a59fb7a5ca623cfac65348d0dd38de46bc64756cda285b2e8d",
+    "bytes": 944,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "forensics/emuc2/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/forensics/emuc2/solve/WRITEUP.md",
+    "sha256": "661dc488842c57e13d7a405f70c0e472ee981fb0136c0976545bacc4d1286eee",
+    "bytes": 4643,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "forensics/macromagic/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/forensics/macromagic/solve/WRITEUP.md",
+    "sha256": "15a46ee7c5a8ea70ef282012f6014e648748d595fe31b93cee9b955293bb1fca",
+    "bytes": 4369,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "rev/ternary-brained/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/rev/ternary-brained/solve/WRITEUP.md",
+    "sha256": "aa46ed514f245b4d93d13123f6b4cfda909dc925291285a3121bc3ca8fb6d44a",
+    "bytes": 351,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "forensics/lostinmemory/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/forensics/lostinmemory/solve/WRITEUP.md",
+    "sha256": "013dc5e8fae89694e35e11b1e5c3cd51b1f53cf27ce53abe66d07b886a502af5",
+    "bytes": 1786,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "web/co2v2/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/web/co2v2/solve/WRITEUP.md",
+    "sha256": "c61ae15c7e1f8667100e50fa666f661c048b9725c36a346df81e2dccd6a176f2",
+    "bytes": 3564,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "crypto/poly1305-otm/solve/solv.py",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/crypto/poly1305-otm/solve/solv.py",
+    "sha256": "9eb5d813550182929f85117c0721b5d7004ce1755cb980cb838d032cf5b5c7dd",
+    "bytes": 4746,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "misc/wackyrecipe/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/misc/wackyrecipe/solve/WRITEUP.md",
+    "sha256": "f87989c4d3a0eea6e69fddc80a9d0804d4317ff87f5975e0881848a1761298dc",
+    "bytes": 2066,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "web/prisoner-processor/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/web/prisoner-processor/solve/WRITEUP.md",
+    "sha256": "84fdb9481d8e00cbcb498c92c26f0d281479178951429a1edbc9d6da8a72a14c",
+    "bytes": 11437,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "pwn/mirage/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/pwn/mirage/solve/WRITEUP.md",
+    "sha256": "5a54ac874585d42aa01683bf79d8999dcb27f7da8e0404425d31cd1db66563cf",
+    "bytes": 457,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "crypto/kyber-decryption-oracle/solve/solv.sage",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/crypto/kyber-decryption-oracle/solve/solv.sage",
+    "sha256": "c5e105e4975f8e01f4418fbaceeea0c447de04dfb1096ba4efd5b02d695c1e32",
+    "bytes": 7741,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "misc/mkductfiso/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/misc/mkductfiso/solve/WRITEUP.md",
+    "sha256": "0088407333297e0ad6babb62433124fa8738a292c2ec903f77f28724dc8d418b",
+    "bytes": 1069,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2024_Public",
+    "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+    "path": "beginner/tldr-please-summarise/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2024_Public/blob/f2797a33d8f5851508f37e854afceedf85eee8a3/beginner/tldr-please-summarise/solve/WRITEUP.md",
+    "sha256": "58fcfac13cd3f7b896b421ec6ec5aded51e89a95f4436c32961ea0cfc361e591",
+    "bytes": 1400,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "ai/ductfbank-3/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/ai/ductfbank-3/solve/WRITEUP.md",
+    "sha256": "6c5f2c270aa9e6760c63208531e1ee7751d44b941ebab2a9896ade4b1b58dea2",
+    "bytes": 1829,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "ai/ductfbank-1/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/ai/ductfbank-1/solve/WRITEUP.md",
+    "sha256": "117781d2c50719c28b503de94231b0dd94fdc6084da6f86f6c8be6b4a6931549",
+    "bytes": 130,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "ai/ductfbank-2/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/ai/ductfbank-2/solve/WRITEUP.md",
+    "sha256": "7376eb395cb36d941eb8b38ea504f6a0fe9430435006d7e19ff1d14375348d6f",
+    "bytes": 908,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "misc/fishy_website/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/misc/fishy_website/solve/WRITEUP.md",
+    "sha256": "d67e365f2ebb679d05204fd5207c257e4fef296dd731777b51100bb725a65060",
+    "bytes": 4867,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "misc/dualzip/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/misc/dualzip/solve/WRITEUP.md",
+    "sha256": "da277103c2d81be778ae3d02fd292606b1513938bf5762a7589d2388577c2110",
+    "bytes": 1394,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "misc/scrapbooking/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/misc/scrapbooking/solve/WRITEUP.md",
+    "sha256": "6421c58534425ab7e448bfc4e8760c3bd31351aa1c2e787e89f3ab2351938d34",
+    "bytes": 945,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "misc/for_golf_hard/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/misc/for_golf_hard/solve/WRITEUP.md",
+    "sha256": "fb1feab10a1b7c65d97d388328b513900af153c13a4ba4ac647c37cf43edff5f",
+    "bytes": 803,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "osint/LoveGranniE/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/osint/LoveGranniE/solve/WRITEUP.md",
+    "sha256": "73336d731460b9a97c7cf431b45f249028e6bcacd6ec6f18fc8906228de0344d",
+    "bytes": 1179,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "pwn/rolling_around/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/pwn/rolling_around/solve/WRITEUP.md",
+    "sha256": "71c3e93855d32238d5fbc0807355b91eff3090baf82fb37f3542150d8c65a450",
+    "bytes": 6520,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "osint/look_at_all_those_chickens/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/osint/look_at_all_those_chickens/solve/WRITEUP.md",
+    "sha256": "84d4334edab67806f9a6cf0b13d86612f71a965fb29c8cb103ce662a0eca75c3",
+    "bytes": 407,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "rev/bilingual/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/rev/bilingual/solve/WRITEUP.md",
+    "sha256": "9b0f594d0672a3ade552308394d9a95901d19dfb6c72e2473d9ef3c6b97de378",
+    "bytes": 386,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "rev/godot/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/rev/godot/solve/WRITEUP.md",
+    "sha256": "812fe6066ecd20287b5a0f0b1b78eeaf45f7cb69b0d7a3129109a95b9c331323",
+    "bytes": 1477,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "pwn/mysterious_vault/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/pwn/mysterious_vault/solve/WRITEUP.md",
+    "sha256": "485d49f01eda59c4de4ef9ae114c1c5478fbeb1c9b8b463a65d3875268ac0092",
+    "bytes": 4367,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "rev/swiftpasswordmanager-crackme/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/rev/swiftpasswordmanager-crackme/solve/WRITEUP.md",
+    "sha256": "bb93dba244e2a75328b23752e24a03ba00a1c1696cdde42193df32d0f4d1e6c7",
+    "bytes": 34640,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "web/mutant/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/web/mutant/solve/WRITEUP.md",
+    "sha256": "e53928f2f698982d9473500bbad024645a32e47cf5415f9b6ff23190bd77da58",
+    "bytes": 937,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "web/gomail/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/web/gomail/solve/WRITEUP.md",
+    "sha256": "7458c660d79dac83a88e94cd4854d04cd0b31e1f425ef20fd5750f53919e88a3",
+    "bytes": 4044,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "web/request_handling/solve/WRITEUP.md",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/web/request_handling/solve/WRITEUP.md",
+    "sha256": "b9f0e47c21579251fce9773fffaa13c3c66ae71b809837290cbac8ac0f99b8d7",
+    "bytes": 77,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "crypto/cheap_logs/solve/solve.py",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/crypto/cheap_logs/solve/solve.py",
+    "sha256": "a7ecaa8d4aea9ef380bedbc0f2539cac5869c23272b4f73820bd77cf1ec7168e",
+    "bytes": 4473,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DownUnderCTF/Challenges_2025_Public",
+    "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+    "path": "crypto/sh-rsa/solve/solv.py",
+    "url": "https://github.com/DownUnderCTF/Challenges_2025_Public/blob/f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b/crypto/sh-rsa/solve/solv.py",
+    "sha256": "f45f58eaabd2d8373fd91257a62b07ce967662f95247bb7737313d3f7c11c50a",
+    "bytes": 2047,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "crypto/baby-aes/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/crypto/baby-aes/writeup/README.md",
+    "sha256": "0623382e53d394a92247069353dfd928ef43a3482e525ab6b5657eb1dda5e080",
+    "bytes": 910,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "crypto/broken-chall/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/crypto/broken-chall/writeup/README.md",
+    "sha256": "1a3e5a8a2256d49ac1e90fbd541091a793bad1d79f2cf1c912712fbf2866c1c1",
+    "bytes": 2192,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "crypto/common-and-well-known/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/crypto/common-and-well-known/writeup/README.md",
+    "sha256": "c679ad1bc28d1fcef5266405decb8d3706d9b1a44f3402e23d302bc050122c3b",
+    "bytes": 927,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "forensics/Oddly/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/forensics/Oddly/writeup/README.md",
+    "sha256": "1fa27721f2ef15db3534163e4537d6d37e9481d6b97280c5d86baffa880849fd",
+    "bytes": 12457,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "forensics/ruze/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/forensics/ruze/writeup/README.md",
+    "sha256": "0440f78c2707e385ebf589336ad82f5a6fae226b157994e9cd9fb00ebe43b7dc",
+    "bytes": 797,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "pwn/bolehhh/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/pwn/bolehhh/writeup/README.md",
+    "sha256": "580dfa678ab10af2c145f8801b138de06ae734d203303eeab4f5985dae6c0d6d",
+    "bytes": 9,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "rev/P-Code/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/rev/P-Code/writeup/README.md",
+    "sha256": "8b6664976a984f8439bd7e53a53517a9c85c24e6cac6d604dc054e428bbcca78",
+    "bytes": 284,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "rev/The Art of RENN/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/rev/The%20Art%20of%20RENN/writeup/README.md",
+    "sha256": "8b06c4c16916044366f83cbe604dcdb586dff43c634559ed333b6db68ebae1f5",
+    "bytes": 20,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "web/vendor-baru/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/web/vendor-baru/writeup/README.md",
+    "sha256": "65da55fef23fffe0eb6c7e751cafa617a154b2e6a25165f4ecc9c7dc86101e46",
+    "bytes": 1572,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2025-public",
+    "commit": "7d21c290d8ce0f45326018d65e7100c733a3d94a",
+    "path": "for/hacked/solver/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2025-public/blob/7d21c290d8ce0f45326018d65e7100c733a3d94a/for/hacked/solver/README.md",
+    "sha256": "db150aeaf0aa4d11f1825f3f65401e0d3235c43804071436507624bc0ae58903",
+    "bytes": 655,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2025-public",
+    "commit": "7d21c290d8ce0f45326018d65e7100c733a3d94a",
+    "path": "for/iri/solver/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2025-public/blob/7d21c290d8ce0f45326018d65e7100c733a3d94a/for/iri/solver/README.md",
+    "sha256": "5baa32d68e47a3b782fa0e5b13117a226c428c63776170ae8d44eec471ea8e21",
+    "bytes": 668,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/crypto/determined/solve.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/crypto/determined/solve.md",
+    "sha256": "f3565475b8b1536e5a60fb1f15e7f590b4b160f39bd5ebde732b5a574e804934",
+    "bytes": 1812,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/crypto/without-a-trace/solve.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/crypto/without-a-trace/solve.md",
+    "sha256": "c9d6f541e124dd37af269e1062030f11adcf5694564988e20abd90f4a543252c",
+    "bytes": 2549,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "ctf-gemastik/penyisihan-2024",
+    "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+    "path": "web/karbit/writeup/README.md",
+    "url": "https://github.com/ctf-gemastik/penyisihan-2024/blob/b5800ac9f044bd43056b3251fe1b51eb135969e4/web/karbit/writeup/README.md",
+    "sha256": "53ccaf905579ee81be5030a98d6058d0baa369ebfa7efb4ceb4c46521f2d7d50",
+    "bytes": 3263,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/misc/push-and-pickle/SOLVE.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/misc/push-and-pickle/SOLVE.md",
+    "sha256": "5060193beec05795b8dba72950c0110ce9d137bae216d2d1984988e60af6f6e7",
+    "bytes": 8047,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/misc/astea/SOLVE.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/misc/astea/SOLVE.md",
+    "sha256": "534d540ee679e1732a5babffd417da508c181e6f712b066789c150dea42cf8f3",
+    "bytes": 3275,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/pwn/pwnymalloc/SOLVE.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/pwn/pwnymalloc/SOLVE.md",
+    "sha256": "0f4cf2321078fc841e10fe39b0c864c5a2dd7fcfb5425b62169f060f7a2283d6",
+    "bytes": 7129,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/rev/summarize/SOLVE.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/rev/summarize/SOLVE.md",
+    "sha256": "feb445bc9444d981666f193d7188ddebec35ebe1dbbc5807c9d4d6ca21eab647",
+    "bytes": 7976,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/pwn/rusty-pointers/SOLVE.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/pwn/rusty-pointers/SOLVE.md",
+    "sha256": "84c249e46731b1956fa225c5fa0d6ba9d2b9177049428ab5fe991eb6ef0b7acf",
+    "bytes": 5738,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/web/log-action/SOLVE.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/web/log-action/SOLVE.md",
+    "sha256": "4cc75b8c32ed86d4013b6331f3b58c4d3bc2c1ee4c0e70a7e42bfd3b17befd84",
+    "bytes": 85,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/osint/an-unlikely-partnership/challenge/SOLVE.md",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/osint/an-unlikely-partnership/challenge/SOLVE.md",
+    "sha256": "dfc1e67643863c0d15252b52e090cb0ccf3f8d8bc469b475fca7a3c17e6c398f",
+    "bytes": 1843,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "sigpwny/UIUCTF-2024-Public",
+    "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+    "path": "challenges/osint/the-weakest-link/challenge/SOLVE.MD",
+    "url": "https://github.com/sigpwny/UIUCTF-2024-Public/blob/073cb80f1f42669252e88020fdb5b281f031c693/challenges/osint/the-weakest-link/challenge/SOLVE.MD",
+    "sha256": "67402576328dd0315837f471e68d12b3c5ecfef615be37efc5b5b07081dd5000",
+    "bytes": 3594,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "project-sekai-ctf/sekaictf-2025",
+    "commit": "683dd81ae520581add40ec21c4819866e28cbde4",
+    "path": "misc/discrepancy/solution/README.md",
+    "url": "https://github.com/project-sekai-ctf/sekaictf-2025/blob/683dd81ae520581add40ec21c4819866e28cbde4/misc/discrepancy/solution/README.md",
+    "sha256": "60402a36afee8db2971ce0d6bda337136a7762598a67446adea584b697dd72a0",
+    "bytes": 2107,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "project-sekai-ctf/sekaictf-2025",
+    "commit": "683dd81ae520581add40ec21c4819866e28cbde4",
+    "path": "pwn/learning-oop/solution/README.md",
+    "url": "https://github.com/project-sekai-ctf/sekaictf-2025/blob/683dd81ae520581add40ec21c4819866e28cbde4/pwn/learning-oop/solution/README.md",
+    "sha256": "62509457bc97ab9bd77ce7fc9b5e6604ccb0059b034e25edb6bd147198efa966",
+    "bytes": 82,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "project-sekai-ctf/sekaictf-2025",
+    "commit": "683dd81ae520581add40ec21c4819866e28cbde4",
+    "path": "pwn/outdated/solution/README.md",
+    "url": "https://github.com/project-sekai-ctf/sekaictf-2025/blob/683dd81ae520581add40ec21c4819866e28cbde4/pwn/outdated/solution/README.md",
+    "sha256": "fda6803702d2a8051b8e6c46aec9995ded7d93eac340263e0408665a266b8855",
+    "bytes": 2779,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "project-sekai-ctf/sekaictf-2025",
+    "commit": "683dd81ae520581add40ec21c4819866e28cbde4",
+    "path": "reverse/what-in-ternation/solution/README.md",
+    "url": "https://github.com/project-sekai-ctf/sekaictf-2025/blob/683dd81ae520581add40ec21c4819866e28cbde4/reverse/what-in-ternation/solution/README.md",
+    "sha256": "d693fa54014310412b4a73697040c692171e0ea2b665e7698906af91ddb8daee",
+    "bytes": 1661,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "project-sekai-ctf/sekaictf-2025",
+    "commit": "683dd81ae520581add40ec21c4819866e28cbde4",
+    "path": "reverse/sekaibank-signature/solution/writeup.md",
+    "url": "https://github.com/project-sekai-ctf/sekaictf-2025/blob/683dd81ae520581add40ec21c4819866e28cbde4/reverse/sekaibank-signature/solution/writeup.md",
+    "sha256": "1b3b66464ba41d48f0dc281c123f06e21874f3224dae46cb03467cf451535b79",
+    "bytes": 2930,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "project-sekai-ctf/sekaictf-2025",
+    "commit": "683dd81ae520581add40ec21c4819866e28cbde4",
+    "path": "reverse/miku-music-machine/solution/README.md",
+    "url": "https://github.com/project-sekai-ctf/sekaictf-2025/blob/683dd81ae520581add40ec21c4819866e28cbde4/reverse/miku-music-machine/solution/README.md",
+    "sha256": "c6d2b21f3d3414102a67236b5bae71b8917650f4dbb3cc927d88584e50b2941b",
+    "bytes": 4182,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2025",
+    "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+    "path": "machine_learning/ml_enchanted_weights/README.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2025/blob/843bdcc55112c5b68b05b5fe706fbbb1dad9b551/machine_learning/ml_enchanted_weights/README.md",
+    "sha256": "8ecd40125ca4c3a9a9c00dd9106ae0f3d5a5615159cebec24458aa1f216622ba",
+    "bytes": 1628,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "uclaacm/lactf-archive",
+    "commit": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+    "path": "2026/crypto/slow-gold/solve/README.md",
+    "url": "https://github.com/uclaacm/lactf-archive/blob/3379d4a7b36680764a34e7dc817cc3c94c244764/2026/crypto/slow-gold/solve/README.md",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "uclaacm/lactf-archive",
+    "commit": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+    "path": "2026/misc/not-just-a-hobby/solve.md",
+    "url": "https://github.com/uclaacm/lactf-archive/blob/3379d4a7b36680764a34e7dc817cc3c94c244764/2026/misc/not-just-a-hobby/solve.md",
+    "sha256": "54dac6dbbfd4ff385a9ba7bafcfc100e604cc8950598d3bb39f01c52158cba38",
+    "bytes": 641,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "uclaacm/lactf-archive",
+    "commit": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+    "path": "2026/crypto/six-seven-again/solve.sage",
+    "url": "https://github.com/uclaacm/lactf-archive/blob/3379d4a7b36680764a34e7dc817cc3c94c244764/2026/crypto/six-seven-again/solve.sage",
+    "sha256": "9ed953c82bf22454c028a57c3ac2231556e12c8267cbc5a7d72439bcf866f70f",
+    "bytes": 1171,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "uclaacm/lactf-archive",
+    "commit": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+    "path": "2026/web/bobles-and-narnes/README.md",
+    "url": "https://github.com/uclaacm/lactf-archive/blob/3379d4a7b36680764a34e7dc817cc3c94c244764/2026/web/bobles-and-narnes/README.md",
+    "sha256": "b4368b9ffce25525ebf2aa38ef62cbea5f961a84b7358288a066a5c7040bea1f",
+    "bytes": 232,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2025",
+    "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+    "path": "machine_learning/ml_malakars_deception/README.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2025/blob/843bdcc55112c5b68b05b5fe706fbbb1dad9b551/machine_learning/ml_malakars_deception/README.md",
+    "sha256": "f07d3800b3fc6177ecf8e183a99026aff8c150a7cabd82b82a6093f3b3d5d7f6",
+    "bytes": 15995,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2025",
+    "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+    "path": "machine_learning/ml_wasteland/README.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2025/blob/843bdcc55112c5b68b05b5fe706fbbb1dad9b551/machine_learning/ml_wasteland/README.md",
+    "sha256": "46f3e09c3af1bc4984f00ff0a254a0614bbedd3064847f5985e3a8351e53e2f5",
+    "bytes": 4706,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2025",
+    "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+    "path": "machine_learning/ml_reverse_prompt/README.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2025/blob/843bdcc55112c5b68b05b5fe706fbbb1dad9b551/machine_learning/ml_reverse_prompt/README.md",
+    "sha256": "bce8b058d6fcedd0403e3944bfa805a8965575afea1f5a45129cc89f149f6ade",
+    "bytes": 3434,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2024",
+    "commit": "4e59eec7a4919d2a4ae4f5d98ecf8ba153ac464a",
+    "path": "crypto/[Medium] Partial Tenacity/README.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2024/blob/4e59eec7a4919d2a4ae4f5d98ecf8ba153ac464a/crypto/%5BMedium%5D%20Partial%20Tenacity/README.md",
+    "sha256": "cc975af4f2ccb3004c2712b6cb56e327ddd4c95f21c8b59720babbc37ce74ced",
+    "bytes": 11544,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2025",
+    "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+    "path": "pwn/[Hard] Vault/README.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2025/blob/843bdcc55112c5b68b05b5fe706fbbb1dad9b551/pwn/%5BHard%5D%20Vault/README.md",
+    "sha256": "f74f61a99eb8cf1ee522aafe168c1396b5f73cc6331bd4ea6af1f5c49e283407",
+    "bytes": 12540,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2025",
+    "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+    "path": "prompt_injection/ai-embassy-ai/official_writeup.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2025/blob/843bdcc55112c5b68b05b5fe706fbbb1dad9b551/prompt_injection/ai-embassy-ai/official_writeup.md",
+    "sha256": "ed6b42f6754cfe43bc5769d33dd666b5e963aa8ea92cb2585897c0399aa23e03",
+    "bytes": 4239,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2025",
+    "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+    "path": "prompt_injection/ai-cursed-gatekeeper/official_writeup.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2025/blob/843bdcc55112c5b68b05b5fe706fbbb1dad9b551/prompt_injection/ai-cursed-gatekeeper/official_writeup.md",
+    "sha256": "cf92f01dcbe54b0b6b1a821ecd6a3c90693bae607b0457e712ca17dba260ac53",
+    "bytes": 4210,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "hackthebox/cyber-apocalypse-2024",
+    "commit": "4e59eec7a4919d2a4ae4f5d98ecf8ba153ac464a",
+    "path": "forensics/[Medium] Phreaky/README.md",
+    "url": "https://github.com/hackthebox/cyber-apocalypse-2024/blob/4e59eec7a4919d2a4ae4f5d98ecf8ba153ac464a/forensics/%5BMedium%5D%20Phreaky/README.md",
+    "sha256": "65a4f9713e965f3fe717cbab24ac4467dd4ba8e48a690ec27604772e325fa034",
+    "bytes": 3098,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "osirislab/CSAW-CTF-2024-Quals",
+    "commit": "f2238204ff78d167f6d977aec8705f19897eb554",
+    "path": "crypto/trapdoor/solution.py",
+    "url": "https://github.com/osirislab/CSAW-CTF-2024-Quals/blob/f2238204ff78d167f6d977aec8705f19897eb554/crypto/trapdoor/solution.py",
+    "sha256": "67185577ab97f06c82bc5ade1da45945b046f6eccc9674e7b65717ad6b4912dd",
+    "bytes": 808,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "nautilus-institute/quals-2025",
+    "commit": "94ef8d5614c0b7dd49135e2bbc15e0a947e6ee2d",
+    "path": "im-pio-ssible/solver.py",
+    "url": "https://github.com/nautilus-institute/quals-2025/blob/94ef8d5614c0b7dd49135e2bbc15e0a947e6ee2d/im-pio-ssible/solver.py",
+    "sha256": "bc7c85a0aa58d420b8c517133903d68ef5169bf991bbba0cd4aab050cee3ebf9",
+    "bytes": 4423,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "nautilus-institute/quals-2025",
+    "commit": "94ef8d5614c0b7dd49135e2bbc15e0a947e6ee2d",
+    "path": "memorybank/solver/solver.py",
+    "url": "https://github.com/nautilus-institute/quals-2025/blob/94ef8d5614c0b7dd49135e2bbc15e0a947e6ee2d/memorybank/solver/solver.py",
+    "sha256": "daf202483ff2c6beda3a55330e14aa63203fe35a3af7e00b092318bca77bb2a6",
+    "bytes": 943,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "SECCON/SECCON13_online_CTF",
+    "commit": "32d98bc7af7159877dd90d96b44f93d00f9e49b3",
+    "path": "web/double-parser/solves.md",
+    "url": "https://github.com/SECCON/SECCON13_online_CTF/blob/32d98bc7af7159877dd90d96b44f93d00f9e49b3/web/double-parser/solves.md",
+    "sha256": "6d02426b5d9491426eecc4b423839707f2a83596d7217927b81bf4588b0316f6",
+    "bytes": 493,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "SECCON/SECCON13_online_CTF",
+    "commit": "32d98bc7af7159877dd90d96b44f93d00f9e49b3",
+    "path": "web/double-parser/README.md",
+    "url": "https://github.com/SECCON/SECCON13_online_CTF/blob/32d98bc7af7159877dd90d96b44f93d00f9e49b3/web/double-parser/README.md",
+    "sha256": "a3e4457abdb24f7b3abe4134b1904888f4ed8363234ba11e5b9cbac2703b95c2",
+    "bytes": 447,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "nautilus-institute/quals-2025",
+    "commit": "94ef8d5614c0b7dd49135e2bbc15e0a947e6ee2d",
+    "path": "jxl4fun/solver/readme.md",
+    "url": "https://github.com/nautilus-institute/quals-2025/blob/94ef8d5614c0b7dd49135e2bbc15e0a947e6ee2d/jxl4fun/solver/readme.md",
+    "sha256": "b0cb2ce3f56112930317c373cb1052b73fae0a843635b0ff4ee7590e7376b584",
+    "bytes": 2352,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "osirislab/CSAW-CTF-2024-Quals",
+    "commit": "f2238204ff78d167f6d977aec8705f19897eb554",
+    "path": "forensics/covert/solution/solution.md",
+    "url": "https://github.com/osirislab/CSAW-CTF-2024-Quals/blob/f2238204ff78d167f6d977aec8705f19897eb554/forensics/covert/solution/solution.md",
+    "sha256": "b466e1560e4ba6afdbf020aec07b05c8159ced584ccd7ee4982c73fef4411e37",
+    "bytes": 1354,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "strellic/my-ctf-challenges",
+    "commit": "89a142a9d60a4c83e42d4264be9cb72dfe56fcc6",
+    "path": "README.md",
+    "url": "https://github.com/strellic/my-ctf-challenges/blob/89a142a9d60a4c83e42d4264be9cb72dfe56fcc6/README.md",
+    "sha256": "903f5458b9f34ba16ecadf419ce8226a7ae1e87d44c78f001547fc281c90a932",
+    "bytes": 14181,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "strellic/my-ctf-challenges",
+    "commit": "89a142a9d60a4c83e42d4264be9cb72dfe56fcc6",
+    "path": "DiceCTF-Finals-2025/connections/chall/README.md",
+    "url": "https://github.com/strellic/my-ctf-challenges/blob/89a142a9d60a4c83e42d4264be9cb72dfe56fcc6/DiceCTF-Finals-2025/connections/chall/README.md",
+    "sha256": "60b55ff7df79af72590f9524208e46642bc32bdc175cdad41349681c0e2f958f",
+    "bytes": 1450,
+    "status": "retrieved_not_counted_as_reviewed"
+  },
+  {
+    "repo": "SECCON/SECCON13_online_CTF",
+    "commit": "32d98bc7af7159877dd90d96b44f93d00f9e49b3",
+    "path": "reversing/qrackv/solver/solve.py",
+    "url": "https://github.com/SECCON/SECCON13_online_CTF/blob/32d98bc7af7159877dd90d96b44f93d00f9e49b3/reversing/qrackv/solver/solve.py",
+    "sha256": "7f033b91de4b63f291417408d0563ee2ad5e1c05632f23bbf5be953fcc8209dc",
+    "bytes": 1435,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "DeFiHackLabs/hitcon-ctf-2024-writeup",
+    "commit": "539fd42fe6adfaeabeacce8fa4a906785793a4f9",
+    "path": "writeup/noexitroom.md",
+    "url": "https://github.com/DeFiHackLabs/hitcon-ctf-2024-writeup/blob/539fd42fe6adfaeabeacce8fa4a906785793a4f9/writeup/noexitroom.md",
+    "sha256": "2c9f80bfa12b580509a0cfa1ef4db0f25cfd38cfa691358f2d9c079cdabba99c",
+    "bytes": 6037,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "google/google-ctf",
+    "commit": "1655538e8c8b41451d39f670ef15a5af22979ca9",
+    "path": "2024/quals/web-postviewer3/README.md",
+    "url": "https://github.com/google/google-ctf/blob/1655538e8c8b41451d39f670ef15a5af22979ca9/2024/quals/web-postviewer3/README.md",
+    "sha256": "eb77bf673d586d12bc3f6a33897d870577ea46571909e0bc864d21494d392afe",
+    "bytes": 8336,
+    "status": "source_reviewed"
+  },
+  {
+    "repo": "farisv/The-Cyber-Jawara-International-2024-CTF",
+    "commit": "eade4586651a7f319f9189872105fed7335b5c7c",
+    "path": "challs/forensic/p2pwannabe/README.md",
+    "url": "https://github.com/farisv/The-Cyber-Jawara-International-2024-CTF/blob/eade4586651a7f319f9189872105fed7335b5c7c/challs/forensic/p2pwannabe/README.md",
+    "sha256": "bc08466d3b6c4288f66721f33e2d1a439a7c40187f4a0efef890bb55fd47b84c",
+    "bytes": 568,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "farisv/The-Cyber-Jawara-International-2024-CTF",
+    "commit": "eade4586651a7f319f9189872105fed7335b5c7c",
+    "path": "challs/rev/python_is_hard/README.md",
+    "url": "https://github.com/farisv/The-Cyber-Jawara-International-2024-CTF/blob/eade4586651a7f319f9189872105fed7335b5c7c/challs/rev/python_is_hard/README.md",
+    "sha256": "d0a5c911ff46c7626be94e9a58b4472aaa85502bb41d7ac349c6aff02d0537f6",
+    "bytes": 278,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "farisv/The-Cyber-Jawara-International-2024-CTF",
+    "commit": "eade4586651a7f319f9189872105fed7335b5c7c",
+    "path": "challs/web/javabox/README.md",
+    "url": "https://github.com/farisv/The-Cyber-Jawara-International-2024-CTF/blob/eade4586651a7f319f9189872105fed7335b5c7c/challs/web/javabox/README.md",
+    "sha256": "5567bae3b98ffe81f71736f95bf8f22b390cf93cbf124619cb4128671a2f1169",
+    "bytes": 406,
+    "status": "empty_or_pointer_only"
+  },
+  {
+    "repo": "farisv/The-Cyber-Jawara-International-2024-CTF",
+    "commit": "eade4586651a7f319f9189872105fed7335b5c7c",
+    "path": "challs/forensic/sleeper/README.md",
+    "url": "https://github.com/farisv/The-Cyber-Jawara-International-2024-CTF/blob/eade4586651a7f319f9189872105fed7335b5c7c/challs/forensic/sleeper/README.md",
+    "sha256": "aebc1a5f25b8233c916a23ccfff5d2826d674c68fcacc5b04b4439b59930176b",
+    "bytes": 697,
+    "status": "empty_or_pointer_only"
+  }
+]

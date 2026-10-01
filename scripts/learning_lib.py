@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Shared, dependency-free helpers for the append-only learning pipeline."""
+"""Shared helpers for evidence-gated learning and prerequisite-aware retrieval."""
 
 from __future__ import annotations
 
@@ -49,6 +49,7 @@ REQUIRED_FIELDS = (
 INVALID_SOURCE_TYPES = {"failed_guess", "unverified_payload", "speculation", "accident"}
 HIGH_CONFIDENCE = {"high", "verified"}
 TOKEN_RE = re.compile(r"[a-z0-9][a-z0-9+_.-]+")
+DIMENSIONS = ("runtime", "architecture", "mitigation", "parser", "oracle", "constraint", "framework", "version", "protocol")
 
 
 @dataclass(frozen=True)
@@ -99,6 +100,26 @@ def validate_record(record: dict[str, Any]) -> list[str]:
             date.fromisoformat(str(record["date_added"]))
         except ValueError:
             errors.append("date_added must use YYYY-MM-DD")
+    for field in ("title", "technique", "core_insight", "verification_evidence", "resulting_primitive"):
+        if field in record and (not isinstance(record[field], str) or not record[field].strip()):
+            errors.append(f"{field} must be nonempty text")
+    for field in ("flag_value", "password", "instance_id", "live_target", "credentials"):
+        if record.get(field):
+            errors.append(f"remove challenge-specific sensitive field: {field}")
+    if re.search(r"\b(?:flag|ctf|ductf|wgmy|gemastik|htb|picoctf|sekai)\{[^{}\n]{3,}\}", json.dumps(record), re.I):
+        errors.append("remove literal flag values from reusable knowledge")
+    if "variant_dimensions" in record:
+        dimensions = record['variant_dimensions']
+        if not isinstance(dimensions, dict):
+            errors.append("variant_dimensions must be an object")
+        elif any(key not in DIMENSIONS or not isinstance(value, str) or not value.strip() for key, value in dimensions.items()):
+            errors.append("variant_dimensions requires recognized dimensions with nonempty text")
+    for field in ('understood', 'materially_contributed', 'reusable', 'reproducible'):
+        if field in record and not isinstance(record[field], bool):
+            errors.append(field + ' must be boolean')
+    for field in ('subcategories', 'trigger_conditions', 'failure_modes', 'when_not_to_use', 'related_existing_techniques'):
+        if isinstance(record.get(field), list) and any(not isinstance(item, str) for item in record[field]):
+            errors.append(field + ' items must be text')
     return errors
 
 
@@ -114,8 +135,10 @@ def slugify(value: str) -> str:
 
 
 def command_fingerprint(value: Any) -> str:
-    normalized = normalize(value)
-    normalized = re.sub(r"\b(?:0x[0-9a-f]+|\d+)\b", "<n>", normalized)
+    if isinstance(value, list):
+        value = "\n".join(str(item) for item in value)
+    # Preserve punctuation, numbers and encoding: payload bytes are semantics.
+    normalized = str(value).replace("\r\n", "\n").strip()
     return hashlib.sha256(normalized.encode()).hexdigest() if normalized else ""
 
 
@@ -130,6 +153,8 @@ def _tokens(record: dict[str, Any]) -> set[str]:
         record.get("trigger_conditions", []),
         record.get("resulting_primitive", ""),
         record.get("core_insight", ""),
+        record.get("technique", ""),
+        record.get("prerequisites", []),
     )
     return set(normalize(list(fields)).split())
 
@@ -148,19 +173,39 @@ def find_duplicate(candidate: dict[str, Any], existing: Iterable[dict[str, Any]]
         candidate.get("resulting_primitive", ""),
         candidate.get("verification_evidence", ""),
     ])
+    strong_variant = None
+    title_review = None
     best_score = 0.0
     best_match = ""
     best_reason = "no equivalent technique found"
     for record in existing:
         identifier = record_identifier(record)
+        if record.get("category") != candidate.get("category"):
+            continue
+        left = candidate.get("variant_dimensions", {})
+        right = record.get("variant_dimensions", {})
+        changed = [key for key in DIMENSIONS if key in left and key in right and normalize(left[key]) != normalize(right[key])]
+        if changed and (_jaccard(_tokens(candidate), _tokens(record)) >= 0.4 or candidate_title == normalize(record.get("title", ""))):
+            strong_variant = DuplicateResult("variant", 0.8, (identifier,), "different verified prerequisites: " + ", ".join(changed))
+            continue
         title = normalize(record.get("title", ""))
+        similarity = _jaccard(_tokens(candidate), _tokens(record))
         aliases = {normalize(x) for x in record.get("aliases", [])}
         if candidate_id == identifier:
-            return DuplicateResult("duplicate", 1.0, (identifier,), "exact identifier match")
+            result = DuplicateResult("duplicate" if similarity >= 0.78 else "review", 1.0, (identifier,), "exact identifier match")
+            if result.decision == 'duplicate':
+                return result
+            title_review = result
         if candidate_title and candidate_title == title:
-            return DuplicateResult("duplicate", 1.0, (identifier,), "normalized title match")
+            result = DuplicateResult("duplicate" if similarity >= 0.78 else "review", similarity, (identifier,), "normalized title match")
+            if result.decision == 'duplicate':
+                return result
+            title_review = result
         if candidate_title in aliases or title in candidate_aliases or candidate_aliases & aliases:
-            return DuplicateResult("duplicate", 0.98, (identifier,), "alias match")
+            result = DuplicateResult("duplicate" if similarity >= 0.78 else "review", similarity, (identifier,), "alias match")
+            if result.decision == 'duplicate':
+                return result
+            title_review = result
         fingerprint = command_fingerprint(record.get("commands_or_code", ""))
         if candidate_commands and candidate_commands == fingerprint:
             return DuplicateResult("duplicate", 0.95, (identifier,), "command or payload fingerprint match")
@@ -174,6 +219,10 @@ def find_duplicate(candidate: dict[str, Any], existing: Iterable[dict[str, Any]]
         score = _jaccard(_tokens(candidate), _tokens(record))
         if score > best_score:
             best_score, best_match, best_reason = score, identifier, "semantic token similarity"
+    if strong_variant is not None:
+        return strong_variant
+    if title_review is not None:
+        return title_review
     if best_score >= 0.78:
         return DuplicateResult("review", best_score, (best_match,), best_reason)
     if best_score >= 0.52:
@@ -182,34 +231,39 @@ def find_duplicate(candidate: dict[str, Any], existing: Iterable[dict[str, Any]]
 
 
 def iter_learning_records(root: Path, exclude: Path | None = None) -> Iterable[dict[str, Any]]:
-    heading_re = re.compile(r"^#{2,4}\s+(.+?)\s*$")
-    bullet_re = re.compile(r"^-\s+\*\*(.+?)(?::)?\*\*")
+    from lookup_knowledge import sections
     fence_re = re.compile(r"```[^\n]*\n(.*?)```", re.DOTALL)
     for category in sorted(CATEGORIES):
         directory = root / category
         if not directory.exists():
             continue
-        for path in sorted(directory.glob("*.md")):
-            if path.name == "INDEX.md":
+        for path in sorted(directory.rglob("*.md")):
+            if path.name in {"INDEX.md", "SKILL.md"}:
                 continue
-            text = path.read_text(encoding="utf-8", errors="replace")
-            for line_number, line in enumerate(text.splitlines(), 1):
-                stripped = line.strip()
-                match = heading_re.match(stripped) or bullet_re.match(stripped)
-                if not match:
+            text = path.read_text(encoding="utf-8")
+            for section in sections(path):
+                if section['level'] == 1:
                     continue
-                title = match.group(1).strip(" *:#`")
+                body = section['text']
+                title = section['title'].strip(" *:#`")
                 if len(title) < 4:
                     continue
+                dimensions = {}
+                match = re.search(r"^\*\*Prerequisite dimensions:\*\* (.+)$", body, re.M)
+                if match:
+                    try:
+                        parsed = json.loads(match[1])
+                        if isinstance(parsed, dict):
+                            dimensions = parsed
+                    except ValueError:
+                        pass
                 yield {
-                    "identifier": f"authored:{path.relative_to(root).as_posix()}:{line_number}",
-                    "title": title,
-                    "category": category,
-                    "trigger_conditions": [],
-                    "resulting_primitive": "",
-                    "verification_evidence": "",
-                    "core_insight": "",
-                    "commands_or_code": "",
+                    "identifier": f"authored:{path.relative_to(root).as_posix()}:{section['line']}",
+                    "title": title, "category": category,
+                    "trigger_conditions": [body], "resulting_primitive": "",
+                    "verification_evidence": "", "core_insight": body,
+                    "technique": body, "commands_or_code": "",
+                    "variant_dimensions": dimensions,
                 }
             for block_number, block in enumerate(fence_re.findall(text), 1):
                 if not normalize(block):
@@ -217,14 +271,12 @@ def iter_learning_records(root: Path, exclude: Path | None = None) -> Iterable[d
                 yield {
                     "identifier": f"authored-code:{path.relative_to(root).as_posix()}:{block_number}",
                     "title": f"Code example in {path.name} section {block_number}",
-                    "category": category,
-                    "trigger_conditions": [],
-                    "resulting_primitive": "",
-                    "verification_evidence": "",
-                    "core_insight": "",
-                    "commands_or_code": block,
+                    "category": category, "trigger_conditions": [],
+                    "resulting_primitive": "", "verification_evidence": "",
+                    "core_insight": "", "commands_or_code": block,
                 }
-    for area in ("inbox", "accepted", "rejected"):
+    # Failed/speculative inbox and rejected records must not suppress a later verified method.
+    for area in ("accepted",):
         directory = root / "knowledge" / area
         if not directory.exists():
             continue
@@ -247,7 +299,10 @@ def classify_record(record: dict[str, Any], duplicate: DuplicateResult) -> tuple
         "reusable beyond one challenge": record.get("reusable") is True,
         "reproducible": record.get("reproducible") is True,
         "high category confidence": str(record.get("category_confidence", record.get("confidence", ""))).lower() in HIGH_CONFIDENCE,
-        "no equivalent technique": duplicate.decision == "unique",
+        "no equivalent technique": duplicate.decision == "unique" or (
+            duplicate.decision == "variant" and bool(record.get("variant_dimensions"))
+            and duplicate.reason.startswith("different verified prerequisites:")),
+        "understood behavior": record.get("understood") is True,
     }
     reasons.extend(label for label, passed in gates.items() if not passed)
     return ("accepted", []) if all(gates.values()) else ("inbox", reasons)
@@ -260,10 +315,11 @@ def render_learning_markdown(record: dict[str, Any], variant_of: str | None = No
 
     variant = f"\n**Variant of:** {variant_of}\n" if variant_of else ""
     return (
-        f"\n## {record['title']}\n\n"
+        f"\n## {record['title']}\n\n<!-- learning:{record_identifier(record)} -->\n\n"
         f"**Added:** {record['date_added']}\n\n"
         f"**Source:** {record['source_type']} — {record['source_reference']}\n\n"
         f"**Confidence:** {record['confidence']}\n"
+        f"\n**Prerequisite dimensions:** {json.dumps(record.get('variant_dimensions', {}), sort_keys=True)}\n"
         f"{variant}\n"
         f"**Trigger conditions**\n\n{bullets(record['trigger_conditions'])}\n\n"
         f"**Core insight**\n\n{record['core_insight']}\n\n"

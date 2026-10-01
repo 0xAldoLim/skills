@@ -11,11 +11,19 @@ Use this index after category selection. Open only the reference whose signal ma
 | model extraction or inversion | [model-attacks.md](model-attacks.md) |
 | LLM, prompt, or LoRA attacks | [llm-attacks.md](llm-attacks.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-ai-ml --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
-- [adversarial-ml.md](adversarial-ml.md) — Table of Contents; Adversarial Example Generation (FGSM, PGD, C&W); FGSM (Fast Gradient Sign Method); PGD (Projected Gradient Descent); C&W (Carlini & Wagner) Attack; Adversarial Patch Generation
-- [llm-attacks.md](llm-attacks.md) — Table of Contents; Prompt Injection (Foundational); Direct Prompt Injection; Indirect Prompt Injection; LLM Jailbreaking (Foundational); Token Smuggling (Foundational)
-- [model-attacks.md](model-attacks.md) — Table of Contents; ML Model Weight Perturbation Negation (DiceCTF 2026); ML Model Inversion via Gradient Descent (BSidesSF 2025); Neural Network Encoder Collision (RootAccess2026); LoRA Adapter Weight Merging (ApoorvCTF 2026); Model Extraction via Query API
+- [adversarial-ml.md](adversarial-ml.md) — Adversarial Example Generation (FGSM, PGD, C&W); Adversarial Patch Generation; Evasion Attacks on ML Classifiers (Foundational); 4 further searchable sections
+- [llm-attacks.md](llm-attacks.md) — Prompt Injection (Foundational); LLM Jailbreaking (Foundational); Token Smuggling (Foundational); 2 further searchable sections
+- [model-attacks.md](model-attacks.md) — Model loading prerequisite; ML Model Weight Perturbation Negation (DiceCTF 2026); ML Model Inversion via Gradient Descent (BSidesSF 2025); 4 further searchable sections
+- [modern-playbook.md](modern-playbook.md) — Indirect nickname injection reaches a tool; Agent tool injection chains into backend SQL; Weights encode integer characters; 2 further searchable sections
+- [triage-reference.md](triage-reference.md) — Model loading prerequisite; Quick Start Commands; Model Weight Analysis; 4 further searchable sections
 
 ## Cross-category pivots
 

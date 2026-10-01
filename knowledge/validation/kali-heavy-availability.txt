@@ -1,0 +1,16 @@
+sagemath:
+  Installed: (none)
+  Candidate: (none)
+  Version table:
+7zip:
+  Installed: (none)
+  Candidate: 26.03+dfsg-3
+  Version table:
+     26.03+dfsg-3 500
+        500 http://http.kali.org/kali kali-rolling/main amd64 Packages
+ghidra:
+  Installed: (none)
+  Candidate: 12.1.3+ds-0kali1
+  Version table:
+     12.1.3+ds-0kali1 500
+        500 http://http.kali.org/kali kali-rolling/main amd64 Packages

@@ -1,0 +1,15 @@
+{
+  "installed_root": "C:\\Users\\USER\\.codex\\skills",
+  "different_files": [
+    "ctf-ai-ml/SKILL.md",
+    "ctf-crypto/SKILL.md",
+    "ctf-forensics/SKILL.md",
+    "ctf-malware/SKILL.md",
+    "ctf-misc/SKILL.md",
+    "ctf-osint/SKILL.md",
+    "ctf-pwn/SKILL.md",
+    "ctf-reverse/SKILL.md",
+    "ctf-web/SKILL.md",
+    "solve-challenge/SKILL.md"
+  ]
+}

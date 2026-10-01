@@ -1,173 +1,43 @@
 ---
 name: ctf-web
-description: Provides web exploitation techniques for CTF challenges. Use when the target is primarily an HTTP application, API, browser client, template engine, identity flow, or smart-contract frontend/backend surface, including XSS, SQLi, SSTI, SSRF, XXE, JWT, auth bypass, file upload, request smuggling, OAuth/OIDC, SAML, prototype pollution, and similar web bugs. Do not use it for native binary memory corruption, reverse engineering of standalone executables, disk or memory forensics, or pure cryptanalysis unless the web flaw is still the main path to the flag.
+description: "Solve CTF HTTP applications, APIs, browser and authentication bugs. Use when a web trust boundary is the path to the flag; pivot to crypto or reverse when that becomes the blocker."
 license: MIT
-compatibility: Requires filesystem-based agent (Claude Code or similar) with bash, Python 3, and internet access for tool installation.
-allowed-tools: Bash Read Write Edit Glob Grep Task WebFetch WebSearch
+compatibility: Codex CLI on Kali Linux with Python 3 and terminal access; optional tools installed on demand.
 metadata:
-  user-invocable: "false"
+  user-invocable: "true"
 ---
 
-# CTF Web Exploitation
+# ctf-web
 
-Use this skill as a routing and execution guide for web-heavy challenges. Keep the first pass short: map the app, confirm the trust boundary, and only then dive into the detailed technique notes.
+## Execute the solve
 
-## Prerequisites
+Read the description, inventory and identify supplied files, preserve originals, and search obvious flag candidates. Develop locally when source/binaries are available. Use normal solving operations autonomously within the assigned challenge.
 
-**Python packages (all platforms):**
-```bash
-pip install sqlmap flask-unsign requests
-```
+**Scope:** the provided challenge instance is in scope; CTFd, scoreboard, provisioning, organizer networks, shared hosts/nodes, other teams and neighboring addresses are out of scope. Never probe, enumerate, fuzz, brute force or exploit competition infrastructure. A recovered URL/credential or reachable internal address does not add scope. Stop at a shared boundary; clarify only the exact boundary if an intended escape needs it. Read [scope](../docs/SCOPE.md) when network or escape behavior is involved.
 
-**Linux (apt):**
-```bash
-apt install hashcat jq curl
-```
+**Remote health:** before deep remote work use a cheap DNS/TCP/TLS and baseline HTTP/protocol check. Generic 404/410, proxy 502/503/504, NXDOMAIN/refused/timeouts can mean expiry. Confirm with at most two small known-route/protocol tests; one 404 alone is inconclusive. If unavailable, stop remote exploitation, request a refreshed instance, preserve `solve/STATE.md`, and resume the existing solver after refresh. See [health](../docs/INSTANCE_HEALTH.md).
 
-**macOS (Homebrew):**
-```bash
-brew install hashcat jq curl
-```
+Open [INDEX.md](INDEX.md), then one to four references matching observed evidence. Track up to three strong hypotheses in normal mode; run their cheapest discriminating tests. Escalate local reasoning, mathematics, emulation and technical research for hard/zero-solve challenges. Budget expensive and remote experiments; prefer reduced offline search. Never expand target scope.
 
-**Go tools (all platforms, requires Go):**
-```bash
-go install github.com/ffuf/ffuf/v2@latest
-```
+Search concepts, documentation, source and analogous techniques during live solves; do not search exact active challenge writeups/solutions/flags. Paths to helpers are relative to this skill/bundle, not the challenge directory. Use existing Kali CLI tools, stdlib and reliable packages first; install missing tools on demand with `../scripts/install_ctf_tools.sh`. Detailed [workflow](../docs/WORKFLOW.md) covers persistent state and human-assisted discriminators.
 
-**Manual install:**
-- ysoserial — [GitHub](https://github.com/frohoff/ysoserial), requires Java (Java deserialization payloads)
+## Finish and learn
 
-## Additional Resources
+Verify the flag through a reproducible derivation or actual checker; a regex match is a candidate. Return flag, verification, short solution and solver paths. Only generate a full writeup when requested. After a verified solve, automatically capture materially useful, reproducible, understood, novel methods with `../scripts/capture_learning.py record.json --auto`. Check concepts and prerequisites, not titles alone; never store flags, passwords, live instance IDs, failures or luck. Promotion and index maintenance are in [learning](../docs/LEARNING.md). Never auto-push.
 
-- [sql-injection.md](sql-injection.md) - SQL injection techniques: auth bypass, UNION extraction, filter bypasses, second-order SQLi, truncation, race-assisted leaks, INSERT ON DUPLICATE KEY UPDATE password overwrite, innodb_table_stats WAF bypass
-- [server-side.md](server-side.md) - PHP type juggling, php://filter LFI, Python str.format traversal, SSTI (Jinja2, Twig, ERB, Mako, EJS, Vue.js, Smarty), SSRF (Host header, DNS rebinding, curl redirect, unescaped-dot regex, SNI FTP smuggling, mod_vhost_alias), PHP hash_hmac NULL
-- [server-side-2.md](server-side-2.md) - XXE (basic, OOB, DOCX upload), XML injection via X-Forwarded-For, PHP variable variables, PHP uniqid predictable filename, sequential regex replacement bypass, command injection (newline, blocklist, sendmail CGI, multi-barcode, git CLI), GraphQL injection (introspection, batching, interpolation)
-- [server-side-exec.md](server-side-exec.md) - Direct code execution paths, upload-to-RCE, deserialization-adjacent execution, LaTeX injection, header and API abuses
-- [server-side-exec-2.md](server-side-exec-2.md) - More execution chains: SQLi fragmentation, path parser tricks, polyglot uploads, wrapper abuse, filename injection, BMP pixel webshell with filename truncation
-- [server-side-deser.md](server-side-deser.md) - Java/Python/PHP deserialization and race-condition playbooks, PHP SoapClient CRLF SSRF via deserialization
-- [server-side-advanced.md](server-side-advanced.md) - Advanced SSRF, traversal, archive, parser, framework, and modern app-server issues, Nginx alias traversal
-- [server-side-advanced-2.md](server-side-advanced-2.md) - Docker API SSRF, Castor/XML, Apache expression reads, parser discrepancies, Windows path tricks, rogue MySQL server file read
-- [server-side-advanced-3.md](server-side-advanced-3.md) - Part 3 (CSAW/35C3/ASIS/PlaidCTF 2018): WAV polyglot upload, multi-slash URL `path.startswith` bypass, Xalan XSLT `math:random()` seed guess, SoapClient `_user_agent` CRLF method smuggling, `gopher:///` no-host URL scheme bypass, SSRF credential leak via attacker-specified outbound URL
-- [server-side-advanced-4.md](server-side-advanced-4.md) - Part 4: WeasyPrint SSRF/file read (CVE-2024-28184), MongoDB regex/$where blind oracle, Pongo2 Go template injection, ZIP PHP webshell, basename() bypass, wget CRLF SSRF→SMTP, Gopher SSRF to MySQL blind SQLi, React Server Components Flight RCE (CVE-2025-55182), AMQP/TLS interception via sslsplit+arpspoof, CairoSVG XXE, Bazaar repo reconstruction
-- [client-side.md](client-side.md) - XSS, CSRF, cache poisoning, DOM tricks, admin bot abuse, request smuggling, paywall bypass
-- [client-side-advanced.md](client-side-advanced.md) - CSP bypasses, Unicode tricks, XSSI, CSS exfiltration, browser normalization quirks, postMessage null origin bypass
-- [auth-and-access.md](auth-and-access.md) - Auth/authz bypasses, hidden endpoints, IDOR, redirect chains, subdomain takeover, AI chatbot jailbreaks
-- [auth-and-access-2.md](auth-and-access-2.md) - Part 2 (2018-era): `std::unordered_set` bucket collision auth bypass, `nodeprep.prepare` Unicode homograph username collision, SRP A=0/A=N auth bypass, ArangoDB AQL MERGE privilege escalation
-- [auth-jwt.md](auth-jwt.md) - JWT/JWE manipulation, weak secrets, header injection, key confusion, replay
-- [auth-infra.md](auth-infra.md) - OAuth/OIDC, SAML, CORS, CI/CD secrets, IdP abuse, login poisoning
-- [node-and-prototype.md](node-and-prototype.md) - Prototype pollution, JS sandbox escape, Node.js attack chains
-- [web3.md](web3.md) - Solidity and Web3 challenge notes
-- [cves.md](cves.md) - CVE-driven techniques you can match against challenge banners, headers, dependency leaks, or version strings
-- [field-notes.md](field-notes.md) - Long-form exploit notes: quick references for SQLi, XSS, LFI, JWT, SSTI, SSRF, command injection, XXE, deserialization, race conditions, auth bypass, and multi-stage chains
+## Category triage
 
-## When to Pivot
+Map source routes, serializers, auth checks, bot behavior and dependencies before choosing a payload. Read the first baseline response and preserve session/cookie assumptions. Health comes before endpoint discovery.
 
-- If the target is a native binary, custom VM, or firmware image, switch to `/ctf-reverse` first.
-- If the HTTP bug only gives you code execution and the hard part becomes memory corruption or seccomp escape, switch to `/ctf-pwn`.
-- If the "web" challenge really turns on JWT math, custom MACs, or crypto primitives, switch to `/ctf-crypto`.
-- If the web challenge involves analyzing logs, PCAPs, or recovering artifacts from a web server, switch to `/ctf-forensics`.
-- If the challenge requires gathering intelligence from public web sources, DNS records, or social media before exploitation, switch to `/ctf-osint`.
+| Evidence | Cheap discriminator | Reference |
+|---|---|---|
+| Generic 404, proxy failure, NXDOMAIN, timeout | Compare supplied URL and known source route; at most three health checks | [Instance health](../docs/INSTANCE_HEALTH.md) |
+| Query interpolation, ORM operators, boolean/time differences | One local boolean pair or source trace; distinguish data binding from syntax | [SQL](sql-injection.md), [server quirks](server-side-advanced-4.md) |
+| Template, upload, XML, SSRF, traversal or pickle | Identify sink, parser/version and needed reachability; prove one read or evaluation | [Server](server-side.md), [deserialization](server-side-deser.md) |
+| Admin bot, CSP, DOM or postMessage | Reproduce browser context/origin and user gesture locally | [Browser](client-side-advanced.md), [modern cases](modern-playbook.md) |
+| JWT, OAuth, GraphQL, WebSocket, race, proxy/cache | Trace exact validator and framing/state transition; use isolated backend | [Auth](auth-jwt.md), [recent methods](modern-playbook.md) |
 
-## First-Pass Workflow
+Start fuzzing only after deriving a small candidate set and budget. Use the scoped helper in `scripts/async_fuzz.py`; redirects do not expand scope. SQLmap, ffuf and feroxbuster are optional hypothesis tools, not default recon. SSRF to cloud metadata or internal services requires evidence that the exact resource is part of the challenge. Request smuggling/cache tests require a dedicated challenge backend, not a shared competition edge.
 
-1. Identify the real boundary: browser only, backend only, mixed app, or auth flow.
-2. Capture one normal request/response pair for every major feature before fuzzing.
-3. Enumerate hidden functionality from JS bundles, response headers, routes, and alternate methods.
-4. Classify the likely bug family: injection, authz, parser mismatch, upload, trust proxy, state machine, or client-side execution.
-5. Build the smallest proof first: leak, bypass, or primitive. Save full exploit chaining for later.
-
-## Quick Start Commands
-
-```bash
-# Recon
-curl -sI https://target.com
-ffuf -u https://target.com/FUZZ -w wordlist.txt
-curl -s https://target.com/robots.txt
-
-# SQLi quick test
-sqlmap -u "https://target.com/page?id=1" --batch --dbs
-
-# JWT decode (no verification)
-echo '<token>' | cut -d. -f2 | base64 -d 2>/dev/null | jq .
-
-# Cookie decode (Flask)
-flask-unsign --decode --cookie '<cookie>'
-flask-unsign --unsign --cookie '<cookie>' --wordlist rockyou.txt
-
-# SSTI probes
-curl "https://target.com/page?name={{7*7}}"
-curl "https://target.com/page?name={{config}}"
-
-# Request inspection
-curl -v -X POST https://target.com/api -H "Content-Type: application/json" -d '{}'
-```
-
-## First Questions to Answer
-
-- Is the flag likely in the browser, an API response, a local file, a database row, or an internal service?
-- Does the app trust user-controlled data in templates, redirects, file paths, headers, serialized objects, or background jobs?
-- Are there multiple parsers disagreeing with each other: proxy vs app, URL parser vs fetcher, sanitizer vs browser, serializer vs filter?
-- Can you turn the bug into a smaller primitive first: read one file, forge one token, call one internal endpoint, trigger one bot visit?
-
-## High-Value Recon Checks
-
-- Read the HTML, inline scripts, and bundled JS before guessing the API surface.
-- Compare what the UI submits with what the backend accepts; optional JSON fields often unlock hidden paths.
-- Check obvious metadata and helper paths early: `/robots.txt`, `/sitemap.xml`, `/.well-known/`, `/admin`, `/debug`, `/.git/`, `/.env`.
-- Try alternate verbs and content types on interesting routes: `GET`, `POST`, `PUT`, `PATCH`, `TRACE`, JSON, form, multipart, XML.
-- Treat file upload, PDF/export, webhook, OAuth callback, and admin bot features as likely exploit multipliers.
-
-## Fast Pattern Map
-
-- SQL errors, odd filtering, or state-dependent DB behavior: start with [sql-injection.md](sql-injection.md).
-- Templating, file reads, SSRF, command execution, XML, or parser bugs: start with [server-side.md](server-side.md) and [server-side-exec.md](server-side-exec.md).
-- XSS, CSP bypass, admin bot, client routing, DOM issues, or scriptless exfiltration: start with [client-side.md](client-side.md).
-- Session forgery, hidden admin routes, JWT, OAuth, SAML, or weak trust boundaries: start with [auth-and-access.md](auth-and-access.md), [auth-jwt.md](auth-jwt.md), and [auth-infra.md](auth-infra.md).
-- Node.js apps, prototype pollution, VM sandboxes, or SSRF into internal services: add [node-and-prototype.md](node-and-prototype.md).
-- Smart contract frontends or blockchain-integrated apps: add [web3.md](web3.md).
-
-## Common Chain Shapes
-
-- Recon -> hidden route -> auth bypass -> internal file read -> token or flag
-- XSS or HTML injection -> admin bot -> privileged action -> secret leak
-- Traversal or upload -> config/source leak -> secret recovery -> session forgery
-- SSRF -> metadata or internal API -> credential leak -> code execution
-- SQLi or NoSQL injection -> credential bypass -> second-stage template or upload abuse
-
-## Deep-Dive Notes
-
-Use [field-notes.md](field-notes.md) once you have confirmed the challenge is truly web-heavy and you need the long exploit catalog.
-
-- Recon, SQLi, XSS, traversal, JWT, SSTI, SSRF, XXE, and command injection quick notes
-- Deserialization, race conditions, file upload to RCE, and multi-stage chain examples
-- Node, OAuth/SAML, CI/CD, Web3, bot abuse, CSP bypasses, and modern browser tricks
-- CVE-shaped playbooks and older challenge patterns that still show up in modern CTFs
-
-## Common Flag Locations
-
-- Files: `/flag.txt`, `/flag`, `/app/flag.txt`, `/home/*/flag*`
-- Environment: `/proc/self/environ`, process command line, debug config dumps
-- Database: tables named `flag`, `flags`, `secret`, or seeded challenge content
-- HTTP: custom headers, archived responses, hidden routes, admin exports
-- Browser: hidden DOM nodes, `data-*` attributes, inline state objects, source maps
-
-## Local Learnings Appended 2026-04-19
-
-- **Custom interpreter may be a decoy:** If a challenge heavily spotlights a custom interpreter or relay, inspect the surrounding app shell in parallel. Page-specific bundles, RSC surfaces, and client-side auth logic can show that the interpreter is real but low-value while the actual bug sits in the enclosing app.
-- **Parser-fingerprint before exploitation:** For custom reference or expression interpreters, run a compact live parser matrix first. Include canonical references, malformed numeric forms, bracket syntax, and any claimed dereference operator using fully controlled local objects so you can separate grammar behavior from challenge data.
-- **Order-sensitive duplicate-cookie bypass:** Exact-match auth gates may still accept duplicate cookie names if the framework merges them in order and the valid value wins late. Replay with invalid-first and valid-last cookie pairs before assuming the cookie check is strict.
-- **Non-serializable live results can persist:** A relay slot that serializes as `null` or `{}` can still hold a useful live object for later operations. Probe later-slot metadata and behavior before deciding a value is dead just because its serialized form is empty.
-- **Literalization boundaries matter:** `$N`-style tokens embedded inside object or array literals may remain literal strings instead of becoming references, and self-referential structures may not create a local binding context. Prove which contexts actually trigger reference resolution before building deeper chains.
-- **Index parsing can normalize strange prefixes:** Custom parsers may accept decimal-prefix forms like `$1abc`, `$1e3`, `$0x0`, `$+1`, or `$-0` while still treating named roots like `$flag` or `$process` as index errors. Map the tokenizer instead of trusting comments or client notes.
-- **Single-root versus multi-root parsing:** Strings with multiple `$` markers may still resolve only one root token. Test concatenated, spaced, and dot-spliced forms explicitly rather than assuming repeated expansion.
-- **Built-in graph confinement is useful evidence:** Property access and type hops that only yield more built-ins (`Number`, `Boolean`, `Function`, stock methods) are evidence that the object graph is confined. Establish that limit early so you stop overinvesting in dead-end constructor walks.
-- **Aliasing does not imply autovivification:** A reference alias can point at the same visible object value while missing-property reads still fail to create nested structure. Test aliasing and structure creation separately.
-- **RSC-looking colon tails may be fake syntax:** Tokens that look like `"$0:f:..."` may collapse to the base object or be parsed as part of the index token rather than introducing a second traversal language. Verify the live grammar before assuming framework-inspired semantics.
-- **Probe for hidden prefix slots and reuse stability:** Minimal arrays, off-by-one references, and repeated same-pass reuse can show whether hidden internal prefix slots exist and whether a live object remains stable across later references in the same request.
-- **Same-request transport can differ from cross-request memory:** A live object may survive through a later stock-shaped block in the same interpreter pass while all cross-request `$N` state resets on the next HTTP request. Test both scopes separately.
-- **Reference-resolved operators may be trusted:** If an operator slot is populated from a previously resolved live reference and still executes like stock vocabulary, treat slot position as part of the trust boundary rather than only the literal string value.
-- **Decorative signature plus real MAC:** When a token contains a flashy signature wrapper and a plain MAC, confirm which verifier enforces what. The decorative signature field can leak or carry material later reused by an HMAC-based admin or backend verifier.
-
-## Append-only Retrieval and Learning Layer
-
-After confirming this category, read [INDEX.md](INDEX.md) and open only references matching the framework, trust boundary, and candidate bug family. Maintain at most three hypotheses, begin with a baseline request and the smallest replay-safe proof, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate. Curated external additions live in [LEARNED.md](LEARNED.md).
+- [Personal challenge-derived learnings](personal-learnings.md) — load matching sections only.
+- [Detailed existing techniques](triage-reference.md) — load matching sections only.

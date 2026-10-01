@@ -33,3 +33,12 @@ def test_custom_cipher_binary_has_crypto_secondary() -> None:
     result = classify(facts("Reverse a custom cipher implemented in this ELF", ["chall.elf"]))
     assert result["primary_category"] == "ctf-reverse"
     assert "ctf-crypto" in result["secondary_categories"]
+
+
+def test_remote_endpoint_alone_does_not_imply_pwn():
+    assert classify(facts('Connect to this service', [], 'target.example:31337'))['primary_category']=='solve-challenge'
+    assert classify(facts('Understand this binary', ['chall.elf'], 'target.example:31337'))['primary_category']=='ctf-reverse'
+
+
+def test_short_signal_does_not_match_inside_words():
+    assert 'ctf-misc' not in classify(facts('perform careful analysis', []))['scores']

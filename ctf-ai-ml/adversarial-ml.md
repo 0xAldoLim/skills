@@ -56,7 +56,8 @@ loss.backward()
 # Generate adversarial example
 epsilon = 0.03  # perturbation budget (L-inf norm)
 x_adv = x + epsilon * x.grad.sign()
-x_adv = torch.clamp(x_adv, x.min(), x.max())
+# These bounds assume unnormalized [0,1] pixels; derive channel bounds after normalization.
+x_adv = torch.clamp(x_adv, 0, 1)
 
 # Check adversarial prediction
 with torch.no_grad():
@@ -67,6 +68,8 @@ with torch.no_grad():
 ```
 
 ### PGD (Projected Gradient Descent)
+
+The examples assume unnormalized [0,1] image inputs. Establish the permitted domain, preprocessing, norm and epsilon from the actual checker; observed sample minima/maxima are not valid domain bounds. For normalized channels, transform bounds and epsilon consistently and verify the perturbation in the original domain.
 
 Iterative FGSM with projection. Stronger attack, considered the standard for robustness evaluation.
 
@@ -118,7 +121,7 @@ def targeted_pgd(model, x, y_target, epsilon=0.03, alpha=0.007, num_steps=100):
 # Usage
 model.eval()
 x_adv = pgd_attack(model, x, torch.tensor([original_class]))
-# or for targeted: x_adv = targeted_pgd(model, x, target_class=42)
+# or for targeted: x_adv = targeted_pgd(model, x, y_target=42)
 ```
 
 ### C&W (Carlini & Wagner) Attack

@@ -50,7 +50,7 @@ Ki = theta_n ** 2                # integral gain
 carrier_phase = 0.0
 carrier_freq = 0.0
 
-for each symbol sample:
+for raw_sample in samples:
     # De-rotate by current phase estimate
     symbol = raw_sample * np.exp(-1j * carrier_phase)
 
@@ -67,8 +67,8 @@ for each symbol sample:
 
 **Mueller-Muller timing error detector:**
 ```python
-timing_error = (Re(y[n]-y[n-1]) * Re(d[n-1]) - Re(d[n]-d[n-1]) * Re(y[n-1]))
-             + (Im(y[n]-y[n-1]) * Im(d[n-1]) - Im(d[n]-d[n-1]) * Im(y[n-1]))
+timing_error = ((Re(y[n]-y[n-1]) * Re(d[n-1]) - Re(d[n]-d[n-1]) * Re(y[n-1]))
+             + (Im(y[n]-y[n-1]) * Im(d[n-1]) - Im(d[n]-d[n-1]) * Im(y[n-1])))
 # y = received symbol, d = decision (nearest constellation point)
 ```
 

@@ -156,7 +156,7 @@ if solver.check() == sat:
 **Vulnerability:** Given one share, the equation `y_0 = s + g(s)*x_0 + g^2(s)*x_0^2 + ... + g^9(s)*x_0^9` is **univariate** in s.
 
 **Root-finding via Frobenius:**
-```python
+```sage
 # In GF(p), find roots of h(s) via gcd with x^p - x
 # h(s) = s + g(s)*x_0 + ... + g^9(s)*x_0^9 - y_0
 # Compute x^p mod h(x) via binary exponentiation with polynomial reduction
