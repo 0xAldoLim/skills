@@ -1,0 +1,52 @@
+{
+  "tiers": [
+    "heavy"
+  ],
+  "missing_apt": [
+    "ghidra",
+    "qemu-system-x86",
+    "gnuradio"
+  ],
+  "missing_python": [
+    "angr",
+    "torch",
+    "transformers",
+    "tensorflow"
+  ],
+  "commands": [
+    [
+      "apt-get",
+      "install",
+      "-y",
+      "ghidra",
+      "qemu-system-x86",
+      "gnuradio"
+    ],
+    [
+      "/usr/bin/python3",
+      "-m",
+      "venv",
+      "/root/.local/share/ctf-tools/venv"
+    ],
+    [
+      "/root/.local/share/ctf-tools/venv/bin/python",
+      "-m",
+      "pip",
+      "install",
+      "angr",
+      "torch",
+      "transformers",
+      "tensorflow"
+    ]
+  ],
+  "venv": "/root/.local/share/ctf-tools/venv",
+  "heavy_explicit": true,
+  "required_tools_setup": [
+    {
+      "tool": "sage",
+      "reason": "This apt snapshot has no sagemath candidate.",
+      "fallback": "Use an existing Sage environment, or conda create -n ctf-sage -c conda-forge sage; expose its sage command before retrying.",
+      "documentation": "https://doc.sagemath.org/html/en/installation/conda.html"
+    }
+  ]
+}

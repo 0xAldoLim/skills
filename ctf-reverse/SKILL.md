@@ -1,184 +1,42 @@
 ---
 name: ctf-reverse
-description: Provides reverse engineering techniques for CTF challenges. Use when the main job is to understand how a compiled, obfuscated, packed, or virtualized target works before exploiting or solving it, including binaries, APKs, WASM, firmware, custom VMs, bytecode, game clients, malware-like loaders, and anti-debug or anti-analysis logic. Do not use it when the vulnerability is already understood and the remaining task is exploitation; use pwn instead. Do not use it for pure web workflows, log or disk forensics, or standalone crypto problems unless reversing the implementation is the real blocker.
+description: "Understand and solve compiled, packed or obfuscated CTF targets: native binaries, bytecode, APK/JNI, WASM, firmware and custom VMs. Use before exploitation when behavior, transform or validation logic is the blocker."
 license: MIT
-compatibility: Requires filesystem-based agent (Claude Code or similar) with bash, Python 3, and internet access for tool installation.
-allowed-tools: Bash Read Write Edit Glob Grep Task WebFetch WebSearch
+compatibility: Codex CLI on Kali Linux with Python 3 and terminal access; optional tools installed on demand.
 metadata:
-  user-invocable: "false"
+  user-invocable: "true"
 ---
 
-# CTF Reverse Engineering
+# ctf-reverse
 
-Quick reference for RE challenges. For detailed techniques, see supporting files.
+## Execute the solve
 
-## Prerequisites
+Read the description, inventory and identify supplied files, preserve originals, and search obvious flag candidates. Develop locally when source/binaries are available. Use normal solving operations autonomously within the assigned challenge.
 
-**Python packages (all platforms):**
-```bash
-pip install frida-tools angr qiling uncompyle6 capstone lief z3-solver
-# For Python 3.9+ bytecode: build pycdc from source
-git clone https://github.com/zrax/pycdc && cd pycdc && cmake . && make
-```
+**Scope:** the provided challenge instance is in scope; CTFd, scoreboard, provisioning, organizer networks, shared hosts/nodes, other teams and neighboring addresses are out of scope. Never probe, enumerate, fuzz, brute force or exploit competition infrastructure. A recovered URL/credential or reachable internal address does not add scope. Stop at a shared boundary; clarify only the exact boundary if an intended escape needs it. Read [scope](../docs/SCOPE.md) when network or escape behavior is involved.
 
-**Linux (apt):**
-```bash
-apt install gdb radare2 binutils strace ltrace apktool upx
-```
+**Remote health:** before deep remote work use a cheap DNS/TCP/TLS and baseline HTTP/protocol check. Generic 404/410, proxy 502/503/504, NXDOMAIN/refused/timeouts can mean expiry. Confirm with at most two small known-route/protocol tests; one 404 alone is inconclusive. If unavailable, stop remote exploitation, request a refreshed instance, preserve `solve/STATE.md`, and resume the existing solver after refresh. See [health](../docs/INSTANCE_HEALTH.md).
 
-**macOS (Homebrew):**
-```bash
-brew install gdb radare2 binutils apktool upx ghidra
-```
+Open [INDEX.md](INDEX.md), then one to four references matching observed evidence. Track up to three strong hypotheses in normal mode; run their cheapest discriminating tests. Escalate local reasoning, mathematics, emulation and technical research for hard/zero-solve challenges. Budget expensive and remote experiments; prefer reduced offline search. Never expand target scope.
 
-**radare2 plugins:**
-```bash
-r2pm -ci r2ghidra   # Native Ghidra decompiler for radare2
-```
+Search concepts, documentation, source and analogous techniques during live solves; do not search exact active challenge writeups/solutions/flags. Paths to helpers are relative to this skill/bundle, not the challenge directory. Use existing Kali CLI tools, stdlib and reliable packages first; install missing tools on demand with `../scripts/install_ctf_tools.sh`. Detailed [workflow](../docs/WORKFLOW.md) covers persistent state and human-assisted discriminators.
 
-**Manual install:**
-- pwndbg — Linux: [GitHub](https://github.com/pwndbg/pwndbg), macOS: `brew install pwndbg/tap/pwndbg-gdb`
+## Finish and learn
 
-## Additional Resources
+Verify the flag through a reproducible derivation or actual checker; a regex match is a candidate. Return flag, verification, short solution and solver paths. Only generate a full writeup when requested. After a verified solve, automatically capture materially useful, reproducible, understood, novel methods with `../scripts/capture_learning.py record.json --auto`. Check concepts and prerequisites, not titles alone; never store flags, passwords, live instance IDs, failures or luck. Promotion and index maintenance are in [learning](../docs/LEARNING.md). Never auto-push.
 
-- [tools.md](tools.md) - Static analysis tools (GDB, Ghidra, radare2, IDA, Binary Ninja, dogbolt.org, RISC-V with Capstone, Unicorn emulation, Python bytecode, WASM, Android APK, .NET, packed binaries)
-- [tools-dynamic.md](tools-dynamic.md) - Dynamic analysis tools: Frida (hooking, anti-debug bypass, memory scanning, Android/iOS), angr symbolic execution (path exploration, constraints, CFG), lldb (macOS/LLVM debugger), x64dbg (Windows)
-- [tools-emulation.md](tools-emulation.md) - Emulation frameworks and side-channel tooling: Qiling (cross-platform OS-level emulation), Triton (DSE), Intel Pin instruction-counting + genetic algorithm side channel, opcode-only trace reconstruction, LD_PRELOAD time freeze and memcmp side-channel for byte-by-byte bruteforce
-- [tools-advanced.md](tools-advanced.md) - Advanced tools (Part 1): VMProtect/Themida analysis, binary diffing (BinDiff, Diaphora), deobfuscation frameworks (D-810, GOOMBA, Miasm), Qiling framework, Triton DSE, Manticore, Rizin/Cutter, RetDec, custom VM bytecode lifting to LLVM IR
-- [tools-advanced-2.md](tools-advanced-2.md) - Advanced tools (Part 2): advanced GDB (Python scripting, brute-force, conditional breakpoints, watchpoints, reverse debugging with rr, pwndbg/GEF), advanced Ghidra scripting, patching (Binary Ninja API, LIEF), GDB constraint extraction + ILP solver (BackdoorCTF 2017), GDB position-encoded input zero flag monitoring (EKOPARTY 2017), LD_PRELOAD execute-only binary dump (BackdoorCTF 2017), PEDA current_inst bit-by-bit flag scraper (CONFidence CTF 2019 Teaser)
-- [anti-analysis.md](anti-analysis.md) - Anti-analysis taxonomy: Linux anti-debug (ptrace, /proc, timing, signals, direct syscalls), Windows anti-debug (PEB, NtQueryInformationProcess, heap flags, TLS callbacks, HW/SW breakpoint detection, exception-based, thread hiding), anti-VM/sandbox (CPUID, MAC, timing, artifacts, resources), anti-DBI (Frida detection/bypass), code integrity/self-hashing, anti-disassembly (opaque predicates, junk bytes), MBA identification/simplification, comprehensive bypass strategies
-- [anti-analysis-ctf.md](anti-analysis-ctf.md) - CTF writeup techniques: SIGILL handler for execution mode switching (Hack.lu 2015), SIGFPE signal handler side-channel via strace counting (PlaidCTF 2017), instruction trace inversion with Keystone and Unicorn (MeePwn 2017), call-less function chaining via stack frame manipulation (THC 2018), parent-patched child binary dump via `process_vm_writev` (Google CTF Quals 2018)
-- [patterns.md](patterns.md) - Foundational binary patterns: custom VMs, anti-debugging, nanomites, self-modifying code, XOR ciphers, mixed-mode stagers, LLVM obfuscation, S-box/keystream, SECCOMP/BPF, exception handlers, memory dumps, byte-wise transforms, x86-64 gotchas, custom mangle reversing, position-based transforms, hex-encoded string comparison, signal-based binary exploration
-- [patterns-runtime.md](patterns-runtime.md) - Runtime patching and oracle techniques: malware anti-analysis bypass, multi-stage shellcode loaders, timing side-channel attacks, multi-thread anti-debug with decoy + signal handler MBA (ApoorvCTF 2026), INT3 patch + coredump brute-force oracle (Pwn2Win 2016), signal handler chain + LD_PRELOAD oracle (Nuit du Hack 2016), printf format string VM decompilation to Z3 (SECCON 2017), quadtree recursive image format parser (Google CTF Quals 2018)
-- [patterns-ctf.md](patterns-ctf.md) - Competition-specific patterns (Part 1): hidden emulator opcodes, LD_PRELOAD key extraction, SPN static extraction, image XOR smoothness, byte-at-a-time cipher, mathematical convergence bitmap, Windows PE XOR bitmap OCR, two-stage RC4+VM loaders, GBA ROM meet-in-the-middle, Sprague-Grundy game theory, kernel module maze solving, multi-threaded VM channels, backdoored shared library detection via string diffing, custom binfmt kernel module with RC4 flat binaries, hash-resolved imports / no-import ransomware, ELF section header corruption for anti-analysis
-- [patterns-ctf-2.md](patterns-ctf-2.md) - Competition-specific patterns (Part 2): multi-layer self-decrypting brute-force, embedded ZIP+XOR license, stack string deobfuscation, prefix hash brute-force, CVP/LLL lattice for integer validation, decision tree function obfuscation, GF(2^8) Gaussian elimination, ROP chain obfuscation analysis (ROPfuscation)
-- [patterns-ctf-3.md](patterns-ctf-3.md) - Competition-specific patterns (Part 3): Z3 single-line Python circuit, sliding window popcount, keyboard LED Morse code via ioctl, C++ destructor-hidden validation, syscall side-effect memory corruption, MFC dialog event handlers, VM sequential key-chain brute-force, Burrows-Wheeler transform inversion, OpenType font ligature exploitation, GLSL shader VM with self-modifying code, instruction counter as cryptographic state, batch crackme automation via objdump, fork+pipe+dead branch anti-analysis, TensorFlow DNN inversion via sigmoid layer inversion, BPF filter analysis via kernel JIT to x64 assembly
-- [languages.md](languages.md) - Language-specific: Python bytecode & opcode remapping, Python version-specific bytecode, Pyarmor static unpack, DOS stubs, Unity IL2CPP, HarmonyOS HAP/ABC, Brainfuck/esolangs (+ BF character-by-character static analysis, BF side-channel read count oracle, BF comparison idiom detection), UEFI, transpilation to C, code coverage side-channel, OPAL functional reversing, non-bijective substitution, FRACTRAN program inversion
-- [languages-platforms.md](languages-platforms.md) - Platform/framework-specific: Roblox place file analysis, Godot game asset extraction, Rust serde_json schema recovery, Android JNI RegisterNatives obfuscation, Android DEX runtime bytecode patching via /proc/self/maps, Android native .so loading bypass via new project, Frida Firebase Cloud Functions bypass, Verilog/hardware RE, prefix-by-prefix hash reversal, Ruby/Perl polyglot constraint satisfaction, Electron ASAR extraction + native binary analysis, Node.js npm runtime introspection
-- [languages-compiled.md](languages-compiled.md) - Go binary reversing (GoReSym, goroutines, memory layout, channel ops, embed.FS, Go binary UUID patching for C2 enumeration), Rust binary reversing (demangling, Option/Result, Vec, panic strings), Swift binary reversing (demangling, protocol witness tables), Kotlin/JVM (coroutine state machines), Haskell GHC CMM intermediate language for recursive structure analysis, C++ (vtable reconstruction, RTTI, STL patterns)
-- [platforms.md](platforms.md) - Platform-specific RE: macOS/iOS (Mach-O, code signing, Objective-C runtime, Swift, dyld, jailbreak bypass), embedded/IoT firmware (binwalk, UART/JTAG/SPI extraction, ARM/MIPS, RTOS), kernel drivers (Linux .ko, eBPF, Windows .sys), game engines (Unreal Engine, Unity, anti-cheat, Lua), automotive CAN bus
-- [platforms-hardware.md](platforms-hardware.md) - Hardware and advanced architecture RE: HD44780 LCD controller GPIO reconstruction, RISC-V advanced (custom extensions, privileged modes, debugging), ARM64/AArch64 reversing and exploitation (calling convention, ROP gadgets, qemu-aarch64-static emulation)
-- [field-notes.md](field-notes.md) - Quick reference notes: binary types, anti-debugging bypass, specialized patterns, CTF case notes
+## Category triage
 
----
+Identify format, architecture, runtime, packed/tail data and validation boundary. Start with symbols, imports, strings, constants and a small call graph. Work backwards from success/check sites rather than decompiling everything.
 
-## When to Pivot
+| Evidence | Cheap discriminator | Reference |
+|---|---|---|
+| ELF/PE, Go/Rust/C++/Swift runtime | readelf/objdump or PE metadata; locate comparison and input path | [Languages](languages-compiled.md), [recent cases](modern-playbook.md) |
+| JNI/Android, WASM, .NET, Python/Java bytecode | Extract container; inspect entrypoints and native callbacks | [Platforms](platforms.md), [languages](languages-platforms.md) |
+| VM dispatch or flattened state machine | Trace a short input; build opcode/state table and validate one step | [Patterns](patterns.md), [VM examples](patterns-ctf.md) |
+| Decompiler fails, anti-debug, packed code or MMIO | Verify architecture/code boundaries; emulate only the decisive routine | [Emulation](unicorn-emulation.md), [anti-analysis](anti-analysis.md) |
 
-- If you already understand the binary and now need heap, ROP, or kernel exploitation, switch to `/ctf-pwn`.
-- If the challenge is really about recovering deleted files, PCAP data, or disk artifacts, switch to `/ctf-forensics`.
-- If the target is a web app and you are only reversing a small client-side helper script, switch to `/ctf-web`.
-- If the binary implements a machine learning model and the challenge is about model attacks or adversarial inputs, switch to `/ctf-ai-ml`.
-- If the reversed binary's core logic is a cryptographic algorithm or math problem, switch to `/ctf-crypto`.
-- If the binary is a real malware sample with C2, packing, or evasion behavior, switch to `/ctf-malware`.
-- If the challenge is a toy VM, encoding puzzle, or pyjail rather than a real binary, switch to `/ctf-misc`.
+Prefer Ghidra headless when useful, then rizin/radare2, then objdump/readelf plus Capstone/Unicorn. Use angr/Z3 only for a tractable slice with modeled I/O and concrete checks; validate a candidate in the original checker. Extractor/runtime tools must match version/ABI. Execute unknown samples only in an isolated local environment; inspect static code first. Route to pwn after identifying a real corruption primitive, or crypto after lifting exact equations.
 
-## Problem-Solving Workflow
-
-1. **Start with strings extraction** - many easy challenges have plaintext flags
-2. **Try ltrace/strace** - dynamic analysis often reveals flags without reversing
-3. **Try Frida hooking** - hook strcmp/memcmp to capture expected values without reversing
-4. **Try angr** - symbolic execution solves many flag-checkers automatically
-5. **Try Qiling** - emulate foreign-arch binaries or bypass heavy anti-debug without artifacts
-6. **Map control flow** before modifying execution
-7. **Automate manual processes** via scripting (r2pipe, Frida, angr, Python)
-8. **Validate assumptions** by comparing decompiler outputs (dogbolt.org for side-by-side)
-
-## Quick Wins (Try First!)
-
-```bash
-# Plaintext flag extraction
-strings binary | grep -E "flag\{|CTF\{|pico"
-strings binary | grep -iE "flag|secret|password"
-rabin2 -z binary | grep -i "flag"
-
-# Dynamic analysis - often captures flag directly
-ltrace ./binary
-strace -f -s 500 ./binary
-
-# Hex dump search
-xxd binary | grep -i flag
-
-# Run with test inputs
-./binary AAAA
-echo "test" | ./binary
-```
-
-## Initial Analysis
-
-```bash
-file binary           # Type, architecture
-checksec --file=binary # Security features (for pwn)
-chmod +x binary       # Make executable
-```
-
-## Memory Dumping Strategy
-
-**Key insight:** Let the program compute the answer, then dump it. Break at final comparison (`b *main+OFFSET`), enter any input of correct length, then `x/s $rsi` to dump computed flag.
-
-## Decoy Flag Detection
-
-**Pattern:** Multiple fake targets before real check. Look for multiple comparison targets in sequence with different success messages. Set breakpoint at FINAL comparison, not earlier ones.
-
-## GDB PIE Debugging
-
-PIE binaries randomize base address. Use relative breakpoints:
-```bash
-gdb ./binary
-start                    # Forces PIE base resolution
-b *main+0xca            # Relative to main
-run
-```
-
-## Comparison Direction (Critical!)
-
-Two patterns: (1) `transform(flag) == stored_target` — reverse the transform. (2) `transform(stored_target) == flag` — flag IS the transformed data, just apply transform to stored target.
-
-## Common Encryption Patterns
-
-- XOR with single byte - try all 256 values
-- XOR with known plaintext (`flag{`, `CTF{`)
-- RC4 with hardcoded key
-- Custom permutation + XOR
-- XOR with position index (`^ i` or `^ (i & 0xff)`) layered with a repeating key
-
-## Quick Tool Reference
-
-```bash
-# Radare2
-r2 -d ./binary     # Debug mode
-aaa                # Analyze
-afl                # List functions
-pdf @ main         # Disassemble main
-
-# Ghidra (headless)
-analyzeHeadless project/ tmp -import binary -postScript script.py
-
-# IDA
-ida64 binary       # Open in IDA64
-```
-
-## Deep-Dive Notes
-
-Use [field-notes.md](field-notes.md) after the first round of triage when you know what kind of target you have.
-
-- Target formats: Python bytecode, WASM, Android, Flutter, .NET, UPX, Tauri
-- Technique notes: anti-debug bypass, VM analysis, x86-64 gotchas, iterative solvers, Unicorn, timing side channels
-- Platform notes: Godot, Roblox, macOS/iOS, embedded firmware, kernel drivers, game engines, Swift, Kotlin, Go, Rust, D
-- Case notes: modern CTF-specific reversing patterns and older classic challenge patterns
-
-## Local Learnings Appended 2026-04-19
-
-- **Tail-appended shell APK payloads:** If an Android APK decompiles to a stub `Application` that swaps classloaders or references missing classes, inspect the end of `classes.dex` before diving into the stub UI. Check the final bytes for a payload length, carve the tail blob, and test trivial bytewise decryptors such as XOR with a constant.
-- **Known-plaintext recovery from paired assets:** When an app ships both a readable media asset and a nearby opaque sibling blob of similar size, test whether the blob is just a transformed version of that asset. A paired plaintext/ciphertext asset can turn the problem into immediate repeating-XOR keystream recovery.
-- **Stub-stage versus payload-stage asset comparison:** In nested APK chains, compare asset lengths across stub and payload stages before fully reconstructing native helpers. If the payload container body length exactly matches a stub-stage asset, test direct XOR or stream-reuse hypotheses first.
-- **Printable slack-space encodings:** If the visible control flow is too trivial, scan section slack and padding for long printable strings with a repeated delimiter character. Remove the constant delimiter and immediately test the result as base64 or hex before assuming the bytes are junk padding.
-- **Split APK evidence aggregation:** Treat `.apks` bundles as multiple evidence sources, not a single monolithic APK. Unzip the bundle, inspect `split-manifest.json`, then analyze `base.apk`, architecture splits, and density/resource splits independently. Fragments may be distributed across Flutter-looking metadata blobs, PNG resources, and native `.so` files, then concatenated and hashed for a final decryptor.
-- **Android split decoy handling:** In split APK challenges, verify field names byte-for-byte before trusting readable metadata. Homoglyph keys such as Cyrillic `а` in `frаg`, prompt assets, and manifest install order can be deliberate traps; prefer independently validated extraction paths and derive concatenation order from evidence semantics.
-- **Flutter metadata blob extraction in APKs:** If `assets/flutter_assets/kernel_blob.bin` begins with a custom marker such as `FLUTTER-KERNEL\x00`, split at the first NUL and parse the remainder as structured metadata before reversing Dart bytecode. Test base64, zlib, byte reversal, and hex fields in that metadata early.
-- **PNG `LSB0` resource fragments:** For Android resource PNGs, convert to RGB, flatten channel bytes, read bit 0 of each byte, and pack bits MSB-first. A common container shape is `b"LSB0"` followed by a 4-byte big-endian payload length and a labeled payload such as `LABEL:fragment`; use the label as metadata and the suffix as key material.
-- **Native split XOR marker fragments:** For architecture splits, search native libraries and companion source for markers that disclose a byte mask, such as `ORACLE_MASK_XOR_0x37`. XOR either the declared byte array or the full `.so` by that mask, then search the decoded stream for fragment-looking strings.
-- **Hash-derived BLAKE2s stream decryptors:** When recovered fragments are readable but not flag-shaped, concatenate them exactly, hash with SHA-256, and test custom stream ciphers that derive blocks from `BLAKE2s(key || label || counter_be32)`. XOR the generated stream with ciphertext fields stored in metadata.
-
-## Append-only Retrieval and Learning Layer
-
-After confirming this category, read [INDEX.md](INDEX.md) and open only references matching the artifact, architecture, runtime, or obfuscation symptom. Maintain at most three hypotheses, test the cheapest discriminator, verify the flag, then use `../scripts/capture_learning.py --auto` only for reproducible solve-derived knowledge that passes every acceptance gate.
+- [Personal challenge-derived learnings](personal-learnings.md) — load matching sections only.
+- [Detailed existing techniques](triage-reference.md) — load matching sections only.

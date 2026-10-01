@@ -244,7 +244,7 @@ flag = int(roots[0])
 
 **Pattern:** When server encrypts `m+padding` where `padding = sha256(user_input)` and `e=3`, two ciphertexts with known padding difference allow polynomial GCD in `Zmod(n)` to recover `m`. (N1CTF 2018)
 
-```python
+```sage
 # SageMath
 def franklin_reiter(n, pad1, pad2, c1, c2):
     R.<X> = PolynomialRing(Zmod(n))
@@ -261,7 +261,7 @@ def franklin_reiter(n, pad1, pad2, c1, c2):
 
 **Pattern:** When RSA primes have a near-linear relation `q ~ 4p`, approximate `q` from `sqrt(4*n)`, then use Coppersmith's `small_roots` to find the error term. (ASIS CTF 2018)
 
-```python
+```sage
 # SageMath
 qbar = isqrt(4 * n)
 R.<x> = PolynomialRing(Zmod(n))
@@ -343,8 +343,8 @@ for k in range(1, num_digits):
 **Pattern (six-seven-again):** p = base + 10^k * x where base is fully known and x is small (x < N^0.25).
 
 **Attack via SageMath:**
-```python
-# Construct f(x) such that f(x_secret) = 0 (mod p) and thus (mod N)
+```sage
+# Construct a root modulo an unknown factor p; this need not be a root modulo N
 # p = base + 10^k * x -> x + base * (10^k)^{-1} = 0 (mod p)
 R.<x> = PolynomialRing(Zmod(N))
 f = x + (base * inverse_mod(10**k, N)) % N
@@ -357,11 +357,7 @@ roots = f.small_roots(X=2**70, beta=0.5)  # x < N^0.25
 
 ## Manger's RSA Padding Oracle Attack (Nullcon 2026)
 
-**Pattern (TLS, Nullcon 2026):** RSA-encrypted key with threshold oracle. Phase 1: double f until `k*f >= threshold`. Phase 2: binary search. ~128 total queries for 64-bit key.
-
-See [advanced-math.md](advanced-math.md) for full implementation.
-
----
+A threshold oracle distinguishes whether `m*f mod N` is below B. Verify that predicate using known plaintexts; a generic padding error or timing difference is not enough. Maintain exact integer intervals and modular wrap counts. For each multiplier f and possible quotient r, intersect the current interval with `r*N <= m*f < r*N+B` (below) or `r*N+B <= m*f < (r+1)*N` (above), using integer ceil/floor bounds. Choose a new f that splits the remaining intervals and respect the instance query budget. The old single binary-search interval used reversed updates and ignored wraparound. Even a small m does not prevent m*f wrapping. Re-encrypt the final singleton; retain ambiguous intervals when the oracle is noisy.
 
 ## Manger's Attack on RSA-OAEP via Timing Oracle (HTB Early Bird)
 

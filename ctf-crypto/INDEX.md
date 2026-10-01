@@ -13,24 +13,37 @@ Use this index after category selection. Open only the reference whose signal ma
 | PRNG or predictable state | [prng.md](prng.md) |
 | ECC or nonce reuse | [ecc-attacks.md](ecc-attacks.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-crypto --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
-- [advanced-math.md](advanced-math.md) — Table of Contents; Elliptic Curve Isogenies; Pohlig-Hellman Attack (Weak ECC); Baby-Step Giant-Step for General DLP; LLL Algorithm for Approximate GCD; Merkle-Hellman Knapsack Cryptosystem via LLL (ASIS 2014)
-- [classic-ciphers.md](classic-ciphers.md) — Table of Contents; Vigenere Cipher; Kasiski Examination for Key Length; Atbash Cipher; Polybius Square Cipher (Qiwi-Infosec 2016); Substitution Cipher with Rotating Wheel
-- [ecc-attacks.md](ecc-attacks.md) — Table of Contents; Small Subgroup Attacks; Invalid Curve Attacks; Singular Curves; Smart's Attack (Anomalous Curves); ECC Fault Injection
-- [exotic-crypto-2.md](exotic-crypto-2.md) — Table of Contents; BB-84 Quantum Key Distribution MITM Attack (PlaidCTF 2017); ElGamal Trivial DLP When B = p-1 (Hack.lu 2017); Paillier LSB Oracle via Homomorphic Doubling (CODE BLUE 2017); Differential Privacy Laplace Noise Cancellation (Pwn2Win 2017); Homomorphic Encryption Oracle Bit-Extraction (Tokyo Westerns 2017)
-- [exotic-crypto.md](exotic-crypto.md) — Table of Contents; Braid Group DH — Alexander Polynomial Multiplicativity (DiceCTF 2026); Monotone Function Inversion with Partial Output; Tropical Semiring Residuation Attack (BearCatCTF 2026); Paillier Cryptosystem Attack (SECCON 2015); Hamming Code Error Correction with Helical Interleaving (Sharif CTF 2016)
-- [historical.md](historical.md) — Table of Contents; Lorenz SZ40/42 (Tunny) Cipher; Book Cipher Brute Force (Nullcon 2026)
-- [lattice-and-lwe.md](lattice-and-lwe.md) — Table of Contents; Quick Triage: Is This a Lattice Problem?; Core Tools: LLL, BKZ, Babai, CVP, SVP (ASIS CTF Finals 2015, CTFZone 2017); LLL; BKZ; Babai nearest plane
-- [modern-ciphers-2.md](modern-ciphers-2.md) — Table of Contents; Blum-Goldwasser Bit-Extension Oracle (PlaidCTF 2013); Hash Length Extension Attack (PlaidCTF 2014); Compression Oracle / CRIME-Style Attack (BCTF 2015); Hash Function Time Reversal via Cycle Detection (BSidesSF 2025); OFB Mode with Invertible RNG Backward Decryption (BSidesSF 2026)
-- [modern-ciphers-3.md](modern-ciphers-3.md) — Table of Contents; Custom Hash State Reversal via Known Intermediates (BackdoorCTF 2016); CRC32 Brute-Force for Small Payloads (BackdoorCTF 2016); Noisy RSA LSB Oracle with Post-Hoc Error Correction (SharifCTF 7 2016); Sponge Hash Collision via Meet-in-the-Middle on Partial State (BKP 2017); CBC IV Forgery + Block Truncation for Authentication Bypass (0CTF 2017)
-- [modern-ciphers.md](modern-ciphers.md) — Table of Contents; AES-CFB-8 Static IV State Forging; ECB Pattern Leakage on Images; Padding Oracle Attack; CBC-MAC vs OFB-MAC Vulnerability; Non-Permutation S-box Collision Attack
-- [prng-attacks.md](prng-attacks.md) — Table of Contents; Mersenne Twister Seed Recovery from Subset Sum (Tokyo Westerns 2017); MT19937 State Recovery via Constraint Propagation (HITCON 2017); Rule 86 Cellular Automaton PRNG Reversal via Z3 (Insomni'hack 2018); Java LCG Seed Meet-in-the-Middle via Partial Modulo (P.W.N. CTF 2018); LCG Backward Stepping via Multiplicative Inverse (P.W.N. CTF 2018)
-- [prng.md](prng.md) — Table of Contents; Mersenne Twister (MT19937) State Recovery; MT State Recovery from random.random() Floats via GF(2) Matrix (PHD CTF Quals 2012); Time-Based Seed Attacks; C srand/rand Synchronization via Python ctypes; Layered Encryption Recovery
-- [rsa-attacks-2.md](rsa-attacks-2.md) — Table of Contents; RSA p=q Validation Bypass (BearCatCTF 2026); RSA Cube Root CRT when gcd(e, phi) > 1 (BearCatCTF 2026); Factoring n from Multiple of phi(n) (BearCatCTF 2026); RSA Signature Forgery via Multiplicative Homomorphism (MMA CTF 2015); Weak RSA Key Generation via Base Representation (Sharif CTF 2016)
-- [rsa-attacks.md](rsa-attacks.md) — Table of Contents; Small Public Exponent (Cube Root); Common Modulus Attack; Wiener's Attack (Small Private Exponent); Pollard's p-1 Factorization; Hastad's Broadcast Attack
-- [stream-ciphers.md](stream-ciphers.md) — Table of Contents; LFSR Stream Cipher Attacks; Berlekamp-Massey Algorithm; Correlation Attack; Known-Plaintext on LFSR Keystream; Galois vs Fibonacci LFSR
-- [zkp-and-advanced.md](zkp-and-advanced.md) — Table of Contents; ZKP Attacks; Graph 3-Coloring; Z3 SMT Solver Guide; Garbled Circuits: Free XOR Delta Recovery (LACTF 2026); Bigram/Trigram Substitution -> Constraint Solving (LACTF 2026)
+- [advanced-math.md](advanced-math.md) — Elliptic Curve Isogenies; Pohlig-Hellman Attack (Weak ECC); Baby-Step Giant-Step for General DLP; 16 further searchable sections
+- [classic-ciphers.md](classic-ciphers.md) — Vigenere Cipher; Atbash Cipher; Polybius Square Cipher (Qiwi-Infosec 2016); 14 further searchable sections
+- [dh-attacks.md](dh-attacks.md) — Triage: Is This Classic DH?; Trivial Generator Values (g = 0, 1, p-1); Pohlig-Hellman When p-1 Is Smooth; 2 further searchable sections
+- [ecc-attacks.md](ecc-attacks.md) — Small Subgroup Attacks; Invalid Curve Attacks; Singular Curves; 11 further searchable sections
+- [exotic-crypto-2.md](exotic-crypto-2.md) — BB-84 Quantum Key Distribution MITM Attack (PlaidCTF 2017); ElGamal Trivial DLP When B = p-1 (Hack.lu 2017); Paillier LSB Oracle via Homomorphic Doubling (CODE BLUE 2017); 11 further searchable sections
+- [exotic-crypto.md](exotic-crypto.md) — Braid Group DH — Alexander Polynomial Multiplicativity (DiceCTF 2026); Monotone Function Inversion with Partial Output; Tropical Semiring Residuation Attack (BearCatCTF 2026); 7 further searchable sections
+- [historical.md](historical.md) — Lorenz SZ40/42 (Tunny) Cipher; Book Cipher Brute Force (Nullcon 2026)
+- [lattice-and-lwe.md](lattice-and-lwe.md) — Quick Triage: Is This a Lattice Problem?; Core Tools: LLL, BKZ, Babai, CVP, SVP (ASIS CTF Finals 2015, CTFZone 2017); Hidden Number Problem (HNP): Partial Nonce / Biased Nonce (nullcon HackIM 2020, Ledger Donjon CTF 2020); 7 further searchable sections
+- [modern-ciphers-2.md](modern-ciphers-2.md) — Blum-Goldwasser Bit-Extension Oracle (PlaidCTF 2013); Hash Length Extension Attack (PlaidCTF 2014); Compression Oracle / CRIME-Style Attack (BCTF 2015); 16 further searchable sections
+- [modern-ciphers-3.md](modern-ciphers-3.md) — Custom Hash State Reversal via Known Intermediates (BackdoorCTF 2016); CRC32 Brute-Force for Small Payloads (BackdoorCTF 2016); Noisy RSA LSB Oracle with Post-Hoc Error Correction (SharifCTF 7 2016); 9 further searchable sections
+- [modern-ciphers-4.md](modern-ciphers-4.md) — ChaCha20-Poly1305 Nonce Reuse — Forbidden Attack over $2^{130}-5$ (RFC 8439, picoCTF 2025); Partitioning-Oracle / Key-Committing AEAD & Ciphertext Splitting via Lattice; Sponge Construction Generality — SHA-3 / Keccak / Ascon / Gimli / Sparkle; 1 further searchable sections
+- [modern-ciphers.md](modern-ciphers.md) — AES-CFB-8 Static IV State Forging; ECB Pattern Leakage on Images; Padding Oracle Attack; 20 further searchable sections
+- [modern-playbook.md](modern-playbook.md) — CBC decrypt used as encryption; RSA conversion overflow threshold oracle; Kyber decryption hash with sparse chosen messages; 4 further searchable sections
+- [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-19
+- [post-quantum.md](post-quantum.md) — ML-KEM / Kyber implementation oracle; LWE and module lattices; NTRU and related constructions; 1 further searchable sections
+- [prng-attacks.md](prng-attacks.md) — Mersenne Twister Seed Recovery from Subset Sum (Tokyo Westerns 2017); MT19937 State Recovery via Constraint Propagation (HITCON 2017); Rule 86 Cellular Automaton PRNG Reversal via Z3 (Insomni'hack 2018); 7 further searchable sections
+- [prng.md](prng.md) — Mersenne Twister (MT19937) State Recovery; MT State Recovery from random.random() Floats via GF(2) Matrix (PHD CTF Quals 2012); Time-Based Seed Attacks; 12 further searchable sections
+- [rsa-attacks-2.md](rsa-attacks-2.md) — RSA p=q Validation Bypass (BearCatCTF 2026); RSA Cube Root CRT when gcd(e, phi) > 1 (BearCatCTF 2026); Factoring n from Multiple of phi(n) (BearCatCTF 2026); 27 further searchable sections
+- [rsa-attacks.md](rsa-attacks.md) — Small Public Exponent (Cube Root); Common Modulus Attack; Wiener's Attack (Small Private Exponent); 12 further searchable sections
+- [stream-ciphers.md](stream-ciphers.md) — LFSR Stream Cipher Attacks; RC4 Second-Byte Bias Distinguisher (Hackover CTF 2015); XOR Consecutive Byte Correlation Attack (Defcamp 2015); 5 further searchable sections
+- [triage-reference.md](triage-reference.md) — Quick Start Commands; Classic Ciphers; Modern Cipher Attacks; 22 further searchable sections
+- [upstream-2026.md](upstream-2026.md) — Coppersmith via Howgrave-Graham Lattice (fpylll primary); HNP Cross-Link: ECDSA Truncated Nonces → Lattice (8-sig example); MOV Attack (Weil Pairing, embedding degree k≤6); 25 further searchable sections
+- [zkp-and-advanced.md](zkp-and-advanced.md) — ZKP Attacks; Graph 3-Coloring; Z3 SMT Solver Guide; 12 further searchable sections
 
 ## Cross-category pivots
 

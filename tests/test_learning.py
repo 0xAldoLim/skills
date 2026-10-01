@@ -38,7 +38,7 @@ def test_duplicate_layers_detect_alias_command_and_outcome() -> None:
     assert find_duplicate(alias_candidate, [alias_existing]).reason == "alias match"
 
     command_candidate = copy.deepcopy(record)
-    command_candidate.update({"identifier": "candidate:command", "title": "Different title", "commands_or_code": "probe --count 99"})
+    command_candidate.update({"identifier": "candidate:command", "title": "Different title", "commands_or_code": "probe --count 12"})
     command_existing = copy.deepcopy(record)
     command_existing.update({"identifier": "existing:command", "title": "Other title", "commands_or_code": "probe --count 12"})
     assert find_duplicate(command_candidate, [command_existing]).reason == "command or payload fingerprint match"
@@ -68,6 +68,7 @@ def test_verified_unique_record_can_auto_accept() -> None:
         "reusable": True,
         "reproducible": True,
         "category_confidence": "high",
+        "understood": True,
     })
     decision, reasons = classify_record(record, find_duplicate(record, []))
     assert decision == "accepted"
@@ -86,6 +87,7 @@ def test_append_pipeline_never_overwrites_and_ledgers(tmp_path: Path) -> None:
         "reusable": True,
         "reproducible": True,
         "category_confidence": "high",
+        "understood": True,
     })
     source = tmp_path / "candidate.json"
     source.write_text(json.dumps(record), encoding="utf-8")

@@ -14,5 +14,13 @@
       "commit": "c9a4b9ee8645eb60763eb4eef172f1ecb0a5b3e8",
       "license": "MIT"
     }
-  ]
+  ],
+  "upstream_sync": {
+    "repository": "https://github.com/ljagiello/ctf-skills",
+    "commit": "c332c7be1b27cb64639a20124ac55ba916adef92",
+    "retrieved": "2026-10-01",
+    "license": "MIT",
+    "decisions": "migration/upstream-decisions.json",
+    "note": "Historic source pins above still describe the two original accepted enrichment records."
+  }
 }

@@ -425,7 +425,7 @@ forged_sig = gmpy2.iroot(target, 3)[0] + 1  # +1 to round up
 
 **Pattern:** RSA where `q = k*p + delta` for a known small constant `k` and unknown small `delta`. Since `p ≈ sqrt(N/k)`, approximate `q_approx = k * isqrt(N // k) + 2^512` as an upper bound. The univariate polynomial `F(x) = q_approx - x` has `delta` as a small root modulo `q` (which divides N). Coppersmith's method finds this root when `delta < N^(1/4)`.
 
-```python
+```sage
 from sage.all import *
 
 N, e, c = ...  # RSA parameters

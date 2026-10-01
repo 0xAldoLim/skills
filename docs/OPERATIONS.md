@@ -1,169 +1,58 @@
-# CTF Skill Operations on Kali Linux
+# CTF skill operations on Kali
 
-## Architecture
+## Architecture and paths
 
-The repository remains a normal filesystem Agent Skills collection:
+Each ctf-*/SKILL.md is a direct operational entrypoint. INDEX.md provides symptom routes and a compact catalog; detailed *.md and learned/*.md references load only when evidence calls for them. The dispatcher uses artifact magic and a native vulnerability discriminator rather than treating every remote service as pwn. ctf-writeup is used only on request. Existing agents/openai.yaml metadata supports category discovery.
 
-```text
-solve-challenge/SKILL.md        unknown or mixed challenge dispatcher
-ctf-*/SKILL.md                 direct category entry points
-ctf-*/INDEX.md                 generated symptom-to-reference maps
-ctf-*/*.md                     detailed authored techniques
-ctf-*/LEARNED.md               append-only accepted additions
-prompts/*.md                   category prompt templates
-knowledge/                     integrity, provenance, inbox, and ledger
-scripts/                       deterministic routing and learning utilities
-tests/                         validation and policy tests
-```
+Helpers resolve relative to the loaded skill, not the challenge working directory. REPO_ROOT is the complete checkout/installed bundle; SKILL_DIR is the selected category. The challenge keeps originals in place or input/, generated files in output/ and state/scripts in solve/.
 
-The intended workflow stays simple:
+## Installation, replacement and updates
 
-```text
-Get challenge -> create a challenge directory -> add files and description
--> select or classify a $ctf-* skill -> run Codex in that directory
--> recover and verify the flag -> capture reusable learning if warranted
-```
+Run `sh install.sh --dry-run`, then `sh install.sh`. The default uses complete-directory symlinks into ~/.agents/skills; preserve the checkout. --copy also installs docs/scripts/schemas/knowledge/prompts at the bundle root so relative references work. Existing targets cause a preflight failure before any installation. --replace moves conflicts into a sibling .ctf-backup-<pid> directory before copying/linking. Review backups before removing them. Source and destination must differ even when the destination uses .. or symlink aliases.
 
-## Install on Kali
+On a copied installation, preserve local learned references and accepted records before replacing the bundle; merge them back using the learning review and rebuild indexes. A symlinked checkout keeps new learning in the repository. Updating from Git must preserve local edits/records. There is no automatic push, destructive reset or host-wide install in the solving workflow.
+
+## Tools and fallbacks
 
 ```bash
-git clone git@github.com:0xAldoLim/skills.git
-cd skills
-./install.sh
+python3 "$REPO_ROOT/scripts/install_tools.py" core crypto --dry-run
+python3 "$REPO_ROOT/scripts/install_tools.py" core crypto --missing-only
+python3 "$REPO_ROOT/scripts/install_tools.py" core crypto --verify
+source ~/.local/share/ctf-tools/venv/bin/activate
 ```
 
-The installer copies complete skill directories into `~/.agents/skills`, including supporting references, indexes, learned entries, and `agents/openai.yaml`. It does not delete local-only files at the destination.
+Actual installs use apt-get for missing system packages and pip inside a dedicated venv for missing importable modules; no sudo pip. --dry-run and --verify do not create a venv or install packages. `all` excludes heavy; add `heavy` explicitly when needed. Failed apt names/imports/shared libraries are reported. Run apt-get update separately only when repository metadata needs it. Use [TOOLS.md](TOOLS.md) for lightweight alternatives before large downloads or computations.
 
-Equivalent manual installation:
+## Solve state and exact scope
+
+Initialize solve/STATE.md with assignment, file hashes, proven facts, offsets/keys/constants, response fingerprints and next tests. HYPOTHESES.md records each hypothesis, evidence, cheapest discriminator, predicted observation, outcome and pivot condition. Optional findings.json stores machine-readable facts. Never erase failed hypotheses after a refresh. Record the new endpoint and replay the smallest already-working request before continuing.
+
+Create solve/scope.json using the example in [SCOPE.md](SCOPE.md); each target is explicitly assigned, with no wildcard, range, subnet or credential-bearing URL. Run instance_health.py with that file before remote exploitation. At most three short requests/connections, verified TLS and no redirects prevent the health gate from becoming enumeration. DNS/slow response work is bounded by a subprocess deadline. A single 404/500 or silent TCP server is inconclusive; repeated expiry/proxy/transport failure is likely unavailable and requires refresh. Keep useful local development running.
+
+## Retrieval and automatic learning
 
 ```bash
-mkdir -p ~/.agents/skills
-cp -a ctf-* solve-challenge ctf-writeup ~/.agents/skills/
+python3 "$REPO_ROOT/scripts/lookup_knowledge.py" 'Coppersmith unbalanced unknown divisor' --category ctf-crypto --limit 4
+python3 "$REPO_ROOT/scripts/capture_learning.py" solve/learning.json --auto --dry-run
+python3 "$REPO_ROOT/scripts/capture_learning.py" solve/learning.json --auto
 ```
 
-## Update
+Inspect neighboring concepts and explicit runtime/architecture/mitigation/parser/oracle/constraint/framework/version/protocol dimensions before declaring novelty. Strong unique/verified variants need no manual approval. A fuzzy/title overlap enters the inbox, while verification/materiality/understanding gates remain mandatory even with --approved. Promotion writes a targeted reference, catalog pointer, generated index and ledger; a failed promotion restores existing files. Concurrent promotion is refused with a lock; after a crash, inspect the recorded PID and state before removing a stale lock. Do not concurrently hand-edit the same category during promotion.
+
+## Validation and preservation
 
 ```bash
-cd ~/skills
-git pull --ff-only
-./install.sh
-```
-
-If the checkout lives elsewhere, use that path. To install into a different Agent Skills directory:
-
-```bash
-SKILLS_DIR=/path/to/skills ./install.sh
-```
-
-## Direct invocation and dispatcher use
-
-When the category is clear, invoke it directly:
-
-```text
-Use $ctf-reverse to solve the challenge in the current directory.
-Read the challenge description and inspect the provided files first.
-Recover and verify the flag.
-```
-
-Use `$solve-challenge` for unknown or mixed bundles. Category `name` and `description` frontmatter drive discovery; `agents/openai.yaml` adds a visible default `$skill-name` prompt without rewriting original frontmatter.
-
-## Challenge workspace
-
-```text
-challenge-name/
-├── DESCRIPTION.md
-├── input/                  supplied files, unchanged
-├── output/                 carved or generated artifacts
-└── solve/                  scripts, transcripts, and notes
-```
-
-Run prompt generation from the repository:
-
-```bash
-python3 scripts/generate_prompt.py \
-  --description "$(< /path/to/challenge/DESCRIPTION.md)" \
-  --workspace /path/to/challenge
-```
-
-Pass `--category ctf-reverse` when known and `--remote target.example:31337` only when a remote target is part of the challenge. Templates exist for every major category; users never need internal reference filenames.
-
-## Evidence-first solving
-
-The dispatcher establishes facts before classification, selects one primary and at most two secondary categories, and keeps at most three hypotheses. Each hypothesis records supporting and contradicting evidence, the cheapest discriminator, expected result, and pivot condition. Category indexes map artifact, symptom, primitive, framework, architecture, and cross-category signals to a small set of references.
-
-## Automatic learning
-
-Create a record conforming to `schemas/learning.schema.json`, then capture it:
-
-```bash
-python3 scripts/capture_learning.py solve/new-learning.json --auto
-```
-
-Automatic acceptance requires a verified flag, material contribution, reuse beyond one challenge, reproducibility, high category confidence, and no equivalent technique. Accepted records append to `ctf-<category>/LEARNED.md` and the JSONL ledger. The pipeline never replaces an existing entry. Failed guesses, unverified payloads, accidents, and speculation are rejected; uncertain or related candidates go to `knowledge/inbox/`.
-
-## Inbox review
-
-```bash
-python3 scripts/classify_learning.py knowledge/inbox/<candidate>.json
-python3 scripts/detect_duplicates.py knowledge/inbox/<candidate>.json
-python3 scripts/append_learning.py knowledge/inbox/<candidate>.json --approved
-python3 scripts/rebuild_indexes.py
-```
-
-Approve a variant only when architecture, operating system, runtime, framework, encoding restriction, mitigation, primitive, or remote/local behavior is meaningfully different. Identify the original technique in the record. Move rejected candidates into `knowledge/rejected/` while retaining the ledger event.
-
-## External enrichment
-
-`knowledge/sources.yaml` and `sources.lock.json` pin repository URLs, exact commits, and licenses. `knowledge/enrichment-report.json` records overlap, duplicate score, decision, reason, and destination. To run a broad conservative heading comparison against already-cloned sources:
-
-```bash
-python3 scripts/enrich_from_sources.py \
-  --source ljagiello-ctf-skills /tmp/ljagiello-ctf-skills \
-  --source yaklang-hack-skills /tmp/yaklang-hack-skills
-```
-
-Generated candidates default to inbox unless an exact duplicate is skipped. Human review must distill concepts in original wording, use safe placeholders, and retain source path, commit, and license. Never import full files or payload catalogs.
-
-## Append-only guarantees
-
-`knowledge/integrity-manifest.json` stores each protected path, original size, SHA-256, and protected byte length. Validation hashes exactly that original prefix and permits only appended bytes:
-
-```bash
+python3 -m venv .venv
+. .venv/bin/activate
+python3 -m pip install pytest PyYAML jsonschema ruff
+python3 -m pytest tests/ -q
 python3 scripts/verify_append_only.py
+python3 scripts/validate_skills.py
+python3 scripts/rebuild_indexes.py --check
+python3 scripts/check_repository_safety.py
+ruff check scripts tests --select F
 ```
 
-Generated indexes may be rebuilt. Authored knowledge may not be deleted, shortened, reordered, or rewritten.
+The historical verifier filename remains compatible, but its v2 manifest checks migration completeness and normalized protected reference prefixes. It verifies the inactive original snapshot, original section hashes, documented correction/supersession reasons and verbatim relocated personal sections. Never regenerate a baseline to hide missing knowledge. Planned explanatory corrections require a reasoned migration update. INDEX.md is generated and can change; verified learned additions remain separate and original LEARNED pointers append.
 
-## Human-review escalation
-
-Human review is allowed only for a concrete visual, auditory, physical-context, or interpretive limitation after relevant machine methods are exhausted. Record the artifact, attempted methods, conflicting candidates, recognized reason, narrow question, and empty remaining-machine-options list. Validate it with:
-
-```bash
-python3 scripts/human_review_gate.py output/unsolved-status.json
-```
-
-Tool absence, script errors, initial failure, misclassification, or untried analysis never satisfy the gate.
-
-## Validation
-
-```bash
-python -m pytest tests/ -v
-python scripts/verify_append_only.py
-python scripts/validate_skills.py
-python scripts/rebuild_indexes.py --check
-python scripts/check_repository_safety.py
-```
-
-When installed, also run `pre-commit run --all-files`.
-
-## Recovery and rollback
-
-Before rollback, preserve any new inbox records or challenge-local solve scripts. Inspect history and create a recovery branch rather than force-pushing:
-
-```bash
-git log --oneline --decorate -10
-git switch -c recovery/preserve-learning
-git revert <commit-to-revert>
-```
-
-To restore the installed copy from a known repository revision, check out that revision in a separate worktree or clone and run its installer. Never truncate a protected file to undo an appended entry; use a follow-up correction entry and ledger event.
+Python snippets are syntax-audited separately from execution. Sage notation and deliberate sketches are labeled; successful parsing does not establish runtime correctness. Tests use synthetic arithmetic/archive/HTTP/payload fixtures, not live competition attacks. Windows/Git Bash validation here does not prove Kali package availability, heavy runtime compatibility or successful reproduction of every researched challenge. See the implementation report for exact counts and limits.

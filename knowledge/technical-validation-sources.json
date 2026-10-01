@@ -1,0 +1,66 @@
+{
+  "retrieved": "2026-10-01",
+  "counting_policy": "Documentation/foundation sources, separate from in-window CTF writeup counts.",
+  "sources": [
+    {
+      "topic": "PyTorch serialization / explicit weights_only",
+      "url": "https://docs.pytorch.org/docs/stable/notes/serialization",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "glibc 2.39 tcache structure and transitions",
+      "url": "https://github.com/bminor/glibc/blob/glibc-2.39/malloc/malloc.c",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Linux userspace shadow stack signal tokens",
+      "url": "https://docs.kernel.org/arch/x86/shstk.html",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "X25519 encoding and all-zero considerations",
+      "url": "https://www.rfc-editor.org/rfc/rfc7748.html",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "ChaCha20-Poly1305 serialization",
+      "url": "https://www.rfc-editor.org/rfc/rfc8439.html",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Partitioning oracle prerequisites",
+      "url": "https://www.usenix.org/conference/usenixsecurity21/presentation/len",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Kali 7zip package mapping",
+      "url": "https://www.kali.org/tools/7zip/",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Kali Ghidra package mapping",
+      "url": "https://www.kali.org/tools/ghidra/",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Sage conda-forge installation fallback",
+      "url": "https://doc.sagemath.org/html/en/installation/conda.html",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Codex skill discovery and invocation",
+      "url": "https://developers.openai.com/codex/skills/",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Sage Weil pairing and torsion prerequisites",
+      "url": "https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_point.html",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    },
+    {
+      "topic": "Unicorn native build prerequisites",
+      "url": "https://github.com/unicorn-engine/unicorn/blob/master/docs/COMPILE.md",
+      "verification": "primary source reviewed; helper known-answer tests where available"
+    }
+  ]
+}

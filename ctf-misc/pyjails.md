@@ -190,7 +190,7 @@ print(open("/flag.txt").read())
 
 ## Magic Comment Escape
 
-```python
+```text
 # -*- coding: raw_unicode_escape -*-
 \u0069\u006d\u0070\u006f\u0072\u0074 os
 ```

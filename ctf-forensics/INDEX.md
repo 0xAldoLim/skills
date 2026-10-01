@@ -13,22 +13,31 @@ Use this index after category selection. Open only the reference whose signal ma
 | audio or signal | [stego-advanced.md](stego-advanced.md) |
 | Windows artifacts | [windows.md](windows.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-forensics --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
-- [3d-printing.md](3d-printing.md) — Table of Contents; PrusaSlicer Binary G-code (.g / .bgcode); QOIF (Quite OK Image Format); G-code Analysis Tips; G-code Side View Visualization (0xFun 2026); Uncommon File Magic Bytes
-- [disk-advanced.md](disk-advanced.md) — Table of Contents; Deleted Partition Recovery; ZFS Forensics (Nullcon 2026); GPT Partition GUID Data Encoding (VuwCTF 2025); Windows Minidump String Carving (0xFun 2026); VMDK Sparse Parsing (0xFun 2026)
-- [disk-and-memory.md](disk-and-memory.md) — Table of Contents; Memory Forensics (Volatility 3); Disk Image Analysis; VM Forensics (OVA/VMDK); VMware Snapshot Forensics; GIMP Raw Memory Dump Visual Inspection (INShAck 2018)
-- [disk-recovery.md](disk-recovery.md) — Table of Contents; LUKS Master Key Recovery from Memory Dump (Hack.lu 2015); PRNG Timestamp Seed Brute-Force for Encryption Key Recovery (CSAW 2015); VBA Macro Encoded Binary Recovery (Sharif CTF 2016); FemtoZip Shared Dictionary Decompression (Sharif CTF 2016); XFS Filesystem Reconstruction from Corrupted Metadata (BSidesSF 2025)
-- [linux-forensics.md](linux-forensics.md) — Table of Contents; Log Analysis; Linux Attack Chain Forensics; Docker Image Forensics (Pragyan 2026); Browser Credential Decryption; Firefox Browser History (places.sqlite)
-- [network-advanced.md](network-advanced.md) — Table of Contents; Packet Interval Timing-Based Encoding (EHAX 2026); NTLMv2 Hash Cracking from PCAP (Pragyan 2026); TCP Flag Covert Channel (BearCatCTF 2026); DNS Query Name Last-Byte Steganography (UTCTF 2026); DNS Trailing Byte Binary Encoding (UTCTF 2026)
-- [network.md](network.md) — Table of Contents; tcpdump Quick Reference; TLS/SSL Decryption via Keylog File; Wireshark Basics; Port Scan Analysis; Gateway/Device via MAC OUI
-- [peripheral-capture.md](peripheral-capture.md) — Table of Contents; USB HID Mouse/Pen Drawing Recovery (EHAX 2026); USB HID Keyboard Capture Decoding (EKOPARTY CTF 2016); USB Keyboard LED Morse Code Exfiltration (BITSCTF 2017); USB HID Keyboard Arrow Key Navigation Tracking (HackIT 2017); Bluetooth RFCOMM Packet Reassembly (HITCON 2018)
-- [signals-and-hardware.md](signals-and-hardware.md) — Table of Contents; VGA Signal Decoding; HDMI TMDS Decoding; DisplayPort 8b/10b + LFSR Decoding; Voyager Golden Record Audio (0xFun 2026); Side-Channel Power Analysis (EHAX 2026)
-- [steganography.md](steganography.md) — Table of Contents; Quick Tools; Binary Border Steganography; Multi-Layer PDF Steganography (Pragyan 2026); Advanced PDF Steganography (Nullcon 2026 rdctd series); SVG Animation Keyframe Steganography (UTCTF 2024)
-- [stego-advanced-2.md](stego-advanced-2.md) — Table of Contents; Video Frame Accumulation for Hidden Image (ASIS CTF Finals 2013); Reversed Audio Hidden Message (ASIS CTF Finals 2013); Video Frame Averaging for Hidden Content (SECCON 2015); JPEG XL TOC Permutation Steganography (BSidesSF 2026); Arnold's Cat Map Image Descrambling (Nuit du Hack 2017)
-- [stego-advanced.md](stego-advanced.md) — Table of Contents; FFT Frequency Domain Steganography (Pragyan 2026); SSTV Red Herring + LSB Audio Stego (0xFun 2026); DotCode Barcode via SSTV (0xFun 2026); DTMF Audio Decoding; Custom Frequency DTMF / Dual-Tone Keypad Encoding (EHAX 2026)
-- [stego-image.md](stego-image.md) — Table of Contents; JPEG Unused Quantization Table LSB Steganography (EHAX 2026); BMP Bitplane QR Code Extraction + Steghide (BYPASS CTF 2025); Image Jigsaw Puzzle Reassembly via Edge Matching (BYPASS CTF 2025); F5 JPEG DCT Coefficient Ratio Detection (ApoorvCTF 2026); PNG Unused Palette Entry Steganography (ApoorvCTF 2026)
-- [windows.md](windows.md) — Table of Contents; Windows Event Logs (.evtx); Registry Analysis; OEMInformation Backdoor Detection; SAM Database Analysis; Recycle Bin Forensics
+- [3d-printing.md](3d-printing.md) — PrusaSlicer Binary G-code (.g / .bgcode); QOIF (Quite OK Image Format); G-code Analysis Tips; 2 further searchable sections
+- [disk-advanced.md](disk-advanced.md) — Deleted Partition Recovery; ZFS Forensics (Nullcon 2026); GPT Partition GUID Data Encoding (VuwCTF 2025); 13 further searchable sections
+- [disk-and-memory.md](disk-and-memory.md) — Memory Forensics (Volatility 3); Disk Image Analysis; VM Forensics (OVA/VMDK); 14 further searchable sections
+- [disk-recovery.md](disk-recovery.md) — LUKS Master Key Recovery from Memory Dump (Hack.lu 2015); PRNG Timestamp Seed Brute-Force for Encryption Key Recovery (CSAW 2015); VBA Macro Encoded Binary Recovery (Sharif CTF 2016); 18 further searchable sections
+- [linux-forensics.md](linux-forensics.md) — Log Analysis; Linux Attack Chain Forensics; Docker Image Forensics (Pragyan 2026); 15 further searchable sections
+- [modern-playbook.md](modern-playbook.md) — Shuffled capture to sparse encrypted disk reconstruction; Persistence links registry to ransomware; TLS keylog reveals covert IP identification encoding; 3 further searchable sections
+- [network-advanced.md](network-advanced.md) — Packet Interval Timing-Based Encoding (EHAX 2026); NTLMv2 Hash Cracking from PCAP (Pragyan 2026); TCP Flag Covert Channel (BearCatCTF 2026); 13 further searchable sections
+- [network.md](network.md) — tcpdump Quick Reference; TLS/SSL Decryption via Keylog File; Wireshark Basics; 18 further searchable sections
+- [peripheral-capture.md](peripheral-capture.md) — USB HID Mouse/Pen Drawing Recovery (EHAX 2026); USB HID Keyboard Capture Decoding (EKOPARTY CTF 2016); USB Keyboard LED Morse Code Exfiltration (BITSCTF 2017); 3 further searchable sections
+- [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-19; Local Learnings Appended 2026-04-23; Local Learnings Appended 2026-04-24; 5 further searchable sections
+- [signals-and-hardware.md](signals-and-hardware.md) — VGA Signal Decoding; HDMI TMDS Decoding; DisplayPort 8b/10b + LFSR Decoding; 13 further searchable sections
+- [steganography.md](steganography.md) — Quick Tools; Binary Border Steganography; Multi-Layer PDF Steganography (Pragyan 2026); 13 further searchable sections
+- [stego-advanced-2.md](stego-advanced-2.md) — Video Frame Accumulation for Hidden Image (ASIS CTF Finals 2013); Reversed Audio Hidden Message (ASIS CTF Finals 2013); Video Frame Averaging for Hidden Content (SECCON 2015); 9 further searchable sections
+- [stego-advanced.md](stego-advanced.md) — FFT Frequency Domain Steganography (Pragyan 2026); SSTV Red Herring + LSB Audio Stego (0xFun 2026); DotCode Barcode via SSTV (0xFun 2026); 12 further searchable sections
+- [stego-image.md](stego-image.md) — JPEG Unused Quantization Table LSB Steganography (EHAX 2026); BMP Bitplane QR Code Extraction + Steghide (BYPASS CTF 2025); Image Jigsaw Puzzle Reassembly via Edge Matching (BYPASS CTF 2025); 16 further searchable sections
+- [triage-reference.md](triage-reference.md) — Quick Start Commands; Log Analysis; Windows Event Logs (.evtx); 16 further searchable sections
+- [windows.md](windows.md) — Windows Event Logs (.evtx); Registry Analysis; SAM Database Analysis; 20 further searchable sections
 
 ## Cross-category pivots
 

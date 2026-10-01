@@ -29,12 +29,15 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, Any], list[str]]:
         end = lines.index("---", 1)
     except ValueError:
         return {}, ["missing closing frontmatter delimiter"]
-    metadata: dict[str, Any] = {}
-    for line in lines[1:end]:
-        if not line or line[0].isspace() or ":" not in line:
-            continue
-        key, value = line.split(":", 1)
-        metadata[key.strip()] = parse_scalar(value)
+    try:
+        import yaml
+        metadata = yaml.safe_load('\n'.join(lines[1:end]))
+        if not isinstance(metadata, dict):
+            return {}, ['frontmatter must be a YAML mapping']
+    except ImportError:
+        return {}, ['install validation dependency PyYAML']
+    except yaml.YAMLError as error:
+        return {}, [f'invalid YAML frontmatter: {error}']
     for field in ("name", "description"):
         if not metadata.get(field):
             errors.append(f"missing required frontmatter field: {field}")
@@ -47,6 +50,7 @@ def validate_links(root: Path) -> list[str]:
         if ".git" in path.parts:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
+        text = re.sub(r'(?ms)^\s*```[^\n]*\n.*?^\s*```\s*$', '', text)
         for raw in LINK_RE.findall(text):
             target = raw.strip().split(maxsplit=1)[0].strip("<>")
             if not target or target.startswith(("#", "http://", "https://", "mailto:", "data:")):
@@ -81,6 +85,15 @@ def validate(root: Path) -> list[str]:
         elif name:
             seen[name] = path
         if name in MAJOR:
+            body = path.read_text(encoding="utf-8")
+            if "allowed-tools" in metadata or "Claude Code" in str(metadata.get("compatibility", "")):
+                errors.append(f"{name}: obsolete agent-specific execution metadata")
+            invocation = metadata.get("metadata", {}).get("user-invocable")
+            if str(invocation).lower() != "true":
+                errors.append(f"{name}: explicit invocation must be enabled")
+            for requirement in ("../docs/SCOPE.md", "../docs/INSTANCE_HEALTH.md", "../docs/WORKFLOW.md", "../docs/LEARNING.md", "--auto", "at most two", "verified", "exact active"):
+                if requirement not in body:
+                    errors.append(f"{name}: missing execution contract {requirement!r}")
             index = path.parent / "INDEX.md"
             agent = path.parent / "agents" / "openai.yaml"
             if not index.is_file():
@@ -89,6 +102,13 @@ def validate(root: Path) -> list[str]:
                 errors.append(f"{name}: missing direct-invocation agents/openai.yaml")
             else:
                 agent_text = agent.read_text(encoding="utf-8")
+                import yaml
+                try:
+                    value = yaml.safe_load(agent_text)
+                    if not isinstance(value, dict) or not isinstance(value.get('interface'), dict):
+                        errors.append(f'{name}: invalid agent interface YAML')
+                except yaml.YAMLError as error:
+                    errors.append(f'{name}: invalid agent YAML: {error}')
                 if f"${name}" not in agent_text:
                     errors.append(f"{name}: default_prompt must explicitly mention ${name}")
                 if "allow_implicit_invocation: true" not in agent_text:

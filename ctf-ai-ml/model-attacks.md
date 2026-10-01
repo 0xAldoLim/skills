@@ -2,6 +2,12 @@
 
 Techniques for attacking ML models directly: weight manipulation, model inversion, encoder collision, LoRA adapter exploitation, model extraction, and membership inference. For adversarial example generation and data poisoning, see [adversarial-ml.md](adversarial-ml.md). For LLM-specific attacks, see [llm-attacks.md](llm-attacks.md).
 
+## Model loading prerequisite
+
+Inspect the serialization/container metadata before loading. For a plain state_dict, explicitly use `torch.load(path, map_location="cpu", weights_only=True)` in a disposable analysis process with memory/CPU limits; then instantiate the reviewed architecture and call load_state_dict. Restricted loading narrows code-execution exposure but is not an untrusted-data sandbox. PyTorch 2.6 changed the default when pickle_module is omitted, so explicit arguments avoid runtime-dependent surprises. Prefer safetensors data inspection when available.
+
+The full-object examples below use `load_isolated_model(path)` as a prerequisite, not a provided host loader. Define it only after isolating and reviewing the artifact's classes/loader in the challenge analysis environment. A serialized nn.Module is not a state_dict: do not call eval on a dictionary or silently set weights_only=False/allowlist arbitrary globals to get past an error. See [PyTorch's serialization guidance](https://docs.pytorch.org/docs/stable/notes/serialization).
+
 ## Table of Contents
 - [ML Model Weight Perturbation Negation (DiceCTF 2026)](#ml-model-weight-perturbation-negation-dicectf-2026)
 - [ML Model Inversion via Gradient Descent (BSidesSF 2025)](#ml-model-inversion-via-gradient-descent-bsidessf-2025)
@@ -77,11 +83,11 @@ from torchvision import transforms
 from PIL import Image
 
 # Load the challenge model
-model = torch.load("challenge_model.pt", map_location="cpu")
+model = load_isolated_model("challenge_model.pt")
 model.eval()
 
 # Target: the output we want to invert (e.g., a specific embedding or class)
-target_output = torch.load("target_embedding.pt")  # shape depends on model
+target_output = torch.load("target_embedding.pt", map_location="cpu", weights_only=True)  # shape depends on model
 
 # Initialize random input (e.g., 3x224x224 image)
 input_tensor = torch.randn(1, 3, 224, 224, requires_grad=True)
@@ -137,7 +143,7 @@ import torch.nn as nn
 import torch.optim as optim
 
 # Load the encoder model
-encoder = torch.load("encoder.pt", map_location="cpu")
+encoder = load_isolated_model("encoder.pt")
 encoder.eval()
 
 # Initialize two random inputs
@@ -361,7 +367,7 @@ import numpy as np
 from sklearn.metrics import roc_auc_score
 
 # Load challenge model
-model = torch.load("target_model.pt", map_location="cpu")
+model = load_isolated_model("target_model.pt")
 model.eval()
 
 def get_prediction_metrics(model, x, true_label):

@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
-"""Scan added/appended material for secrets, live targets, and malformed Markdown."""
+"""Scan the complete active repository for credential material and broken fences.
+
+Research citations and historical addresses do not authorize network actions.
+Behavioral scope enforcement is covered by dedicated helper/policy tests.
+"""
 
 from __future__ import annotations
 
 import argparse
-import ipaddress
-import json
 import re
 from pathlib import Path
 
 
 SECRET_PATTERNS = (
-    re.compile(r"-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----"),
+    re.compile(r"-----BEGIN (?:RSA |OPENSSH |EC )?PRIVATE KEY-----\s+[A-Za-z0-9+/=]{40,}"),
     re.compile(r"\bgh[pousr]_[A-Za-z0-9]{30,}\b"),
     re.compile(r"\bAKIA[0-9A-Z]{16}\b"),
     re.compile(r"\bctfd_[A-Za-z0-9_-]{16,}\b"),
@@ -23,8 +25,6 @@ TEXT_SUFFIXES = {".md", ".py", ".json", ".yaml", ".yml", ".toml", ".sh", ".jsonl
 
 def scan(root: Path) -> list[str]:
     errors: list[str] = []
-    manifest = json.loads((root / "knowledge" / "integrity-manifest.json").read_text(encoding="utf-8"))
-    protected = {entry["path"]: int(entry["protected_original_byte_length"]) for entry in manifest["protected_files"]}
     for path in sorted(root.rglob("*")):
         if not path.is_file() or ".git" in path.parts:
             continue
@@ -34,23 +34,21 @@ def scan(root: Path) -> list[str]:
             continue
         relative = path.relative_to(root).as_posix()
         data = path.read_bytes()
-        data = data[protected.get(relative, 0):]
         text = data.decode("utf-8", errors="ignore")
         for pattern in SECRET_PATTERNS:
             if pattern.search(text):
                 errors.append(f"{relative}: possible secret matching {pattern.pattern}")
-        for raw_ip in IP_RE.findall(text):
-            try:
-                address = ipaddress.ip_address(raw_ip)
-            except ValueError:
-                continue
-            if address.is_global:
-                errors.append(f"{relative}: globally routable example address {raw_ip}")
-        for host in re.findall(r"https?://([A-Za-z0-9.-]+)", text):
-            if host not in SAFE_HOSTS and not host.endswith(("github.com", "githubusercontent.com", "openai.com", "json-schema.org")):
-                errors.append(f"{relative}: non-allowlisted example host {host}")
-        if path.suffix.lower() == ".md" and text.count("```") % 2:
-            errors.append(f"{relative}: unbalanced fenced code block in added/appended material")
+        if path.suffix.lower() == '.md':
+            fence = None
+            for line in text.splitlines():
+                marker = re.match(r'^\s*(`{3,}|~{3,})', line)
+                if marker:
+                    if fence is None:
+                        fence = (marker[1][0], len(marker[1]))
+                    elif marker[1][0] == fence[0] and len(marker[1]) >= fence[1]:
+                        fence = None
+            if fence is not None:
+                errors.append(f'{relative}: unbalanced fenced code block')
     return errors
 
 

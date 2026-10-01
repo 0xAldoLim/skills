@@ -1,7 +1,24 @@
-# Protected pre-existing files with historical whitespace. Keep bytes immutable.
+* text=auto
+*.md text eol=lf
+*.py text eol=lf
+*.sh text eol=lf
+*.json text eol=lf
+*.jsonl text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+# Existing historical whitespace exceptions; semantic preservation is audited separately.
 ctf-crypto/exotic-crypto-2.md whitespace=-blank-at-eof
 ctf-forensics/stego-advanced.md whitespace=-blank-at-eof
 ctf-misc/pyjails.md whitespace=-trailing-space
 ctf-reverse/field-notes.md whitespace=-trailing-space
 ctf-reverse/patterns-ctf-3.md whitespace=-trailing-space
 ctf-reverse/tools-dynamic.md whitespace=-blank-at-eof
+# Relocated and imported references retain their audited source whitespace.
+ctf-*/personal-learnings.md whitespace=-blank-at-eof
+ctf-*/triage-reference.md whitespace=-blank-at-eof
+solve-challenge/personal-learnings.md whitespace=-blank-at-eof
+solve-challenge/triage-reference.md whitespace=-blank-at-eof
+ctf-crypto/modern-ciphers-4.md whitespace=-blank-at-eof
+# SQL comment payloads intentionally require a space following the two hyphens.
+ctf-web/pat-reference.md whitespace=-trailing-space

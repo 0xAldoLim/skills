@@ -11,11 +11,19 @@ Use this index after category selection. Open only the reference whose signal ma
 | image geolocation or landmark | [geolocation-and-media.md](geolocation-and-media.md) |
 | DNS, archive, public web | [web-and-dns.md](web-and-dns.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-osint --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
-- [geolocation-and-media.md](geolocation-and-media.md) — Table of Contents; Image Analysis; Reverse Image Search; Companion-Photo and Vehicle-ID Correlation; Geolocation Techniques; MGRS (Military Grid Reference System)
-- [social-media.md](social-media.md) — Table of Contents; Twitter/X Account Tracking; Tumblr Investigation; BlueSky Advanced Search; Username OSINT; Platform False Positives
-- [web-and-dns.md](web-and-dns.md) — Table of Contents; Google Dorking; Google Docs/Sheets in OSINT; DNS Reconnaissance; DNS TXT Record OSINT; Tor Relay Lookups
+- [geolocation-and-media.md](geolocation-and-media.md) — Image Analysis; Reverse Image Search; Companion-Photo and Vehicle-ID Correlation; 17 further searchable sections
+- [modern-playbook.md](modern-playbook.md) — Video frame reveals a public URL; Regional sighting map beats generic image search; Unlisted collaboration exposed by public activity; 3 further searchable sections
+- [social-media.md](social-media.md) — Twitter/X Account Tracking; Tumblr Investigation; BlueSky Advanced Search; 9 further searchable sections
+- [triage-reference.md](triage-reference.md) — Quick Start Commands; String Identification; Twitter/X Account Tracking; 21 further searchable sections
+- [web-and-dns.md](web-and-dns.md) — Google Dorking; Google Docs/Sheets in OSINT; DNS Reconnaissance; 14 further searchable sections
 
 ## Cross-category pivots
 

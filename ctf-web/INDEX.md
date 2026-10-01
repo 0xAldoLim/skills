@@ -13,29 +13,40 @@ Use this index after category selection. Open only the reference whose signal ma
 | XSS, CSP, admin bot | [client-side.md](client-side.md) |
 | JWT, OAuth, authz | [auth-and-access.md](auth-and-access.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-web --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
+- [auth-and-access-2.md](auth-and-access-2.md) — std::unordered_set Bucket Collision Auth Bypass (Hackover 2018); nodeprep.prepare Homograph Username Collision (HCTF 2018); SRP A=0, A=N Auth Bypass (OTW Advent 2018); 1 further searchable sections
+- [auth-and-access.md](auth-and-access.md) — Password/Secret Inference from Public Data; Weak Signature/Hash Validation Bypass; Client-Side Access Gate Bypass; 18 further searchable sections
+- [auth-infra.md](auth-infra.md) — OAuth/OIDC Exploitation; CORS Misconfiguration; Git History Credential Leakage (Barrier HTB); 8 further searchable sections
+- [auth-jwt.md](auth-jwt.md) — Algorithm None; Algorithm Confusion (RS256 to HS256); Weak Secret Brute-Force; 7 further searchable sections
+- [client-side-advanced.md](client-side-advanced.md) — Unicode Case Folding XSS Bypass (UNbreakable 2026); CSS Font Glyph Width + Container Query Exfiltration (UNbreakable 2026); Hyperscript CDN CSP Bypass (UNbreakable 2026); 16 further searchable sections
+- [client-side.md](client-side.md) — XSS Payloads; DOMPurify Bypass via Trusted Backend Routes; JavaScript String Replace Exploitation; 17 further searchable sections
+- [cves.md](cves.md) — CVE-2025-29927: Next.js Middleware Bypass; CVE-2025-0167: Curl .netrc Credential Leakage; Uvicorn CRLF Injection (Unpatched N-Day); 21 further searchable sections
+- [field-notes.md](field-notes.md) — Reconnaissance; SQL Injection Quick Reference; XSS Quick Reference; 62 further searchable sections
 - [LEARNED.md](LEARNED.md) — Java char-to-byte narrowing as a normalization bypass; HTTP/2 downgrade desynchronization as a request-smuggling variant
-- [auth-and-access-2.md](auth-and-access-2.md) — Table of Contents; std::unordered_set Bucket Collision Auth Bypass (Hackover 2018); nodeprep.prepare Homograph Username Collision (HCTF 2018); SRP A=0, A=N Auth Bypass (OTW Advent 2018); ArangoDB AQL MERGE Injection for Privilege Escalation (P.W.N. CTF 2018)
-- [auth-and-access.md](auth-and-access.md) — Table of Contents; Password/Secret Inference from Public Data; Weak Signature/Hash Validation Bypass; Client-Side Access Gate Bypass; NoSQL Injection (MongoDB); Blind NoSQL with Binary Search
-- [auth-infra.md](auth-infra.md) — Table of Contents; OAuth/OIDC Exploitation; Open Redirect Token Theft; OIDC ID Token Manipulation; OAuth State Parameter CSRF; CORS Misconfiguration
-- [auth-jwt.md](auth-jwt.md) — Table of Contents; Algorithm None; Algorithm Confusion (RS256 to HS256); Weak Secret Brute-Force; Unverified Signature (Crypto-Cat); JWK Header Injection (Crypto-Cat)
-- [client-side-advanced.md](client-side-advanced.md) — Table of Contents; Unicode Case Folding XSS Bypass (UNbreakable 2026); CSS Font Glyph Width + Container Query Exfiltration (UNbreakable 2026); Hyperscript CDN CSP Bypass (UNbreakable 2026); PBKDF2 Prefix Timing Oracle via postMessage (UNbreakable 2026); Client-Side HMAC Bypass via Leaked JS Secret (Codegate 2013)
-- [client-side.md](client-side.md) — Table of Contents; XSS Payloads; Basic; Cookie Exfiltration; Filter Bypass; Hex/Unicode Bypass
-- [cves.md](cves.md) — Table of Contents; CVE-2025-29927: Next.js Middleware Bypass; CVE-2025-0167: Curl .netrc Credential Leakage; Uvicorn CRLF Injection (Unpatched N-Day); Python urllib Scheme Validation Bypass (0-Day); Chrome Referrer Leak via Link Header (2025)
-- [field-notes.md](field-notes.md) — Table of Contents; Reconnaissance; SQL Injection Quick Reference; XSS Quick Reference; XSSI via JSONP Callback Exfiltration; Path Traversal / LFI Quick Reference
-- [node-and-prototype.md](node-and-prototype.md) — Table of Contents; Prototype Pollution Basics; Common Vectors; Known Vulnerable Libraries; flatnest Circular Reference Bypass (CVE-2023-26135); Gadget: Library Settings via Prototype Chain
-- [server-side-2.md](server-side-2.md) — Table of Contents; XXE (XML External Entity); Basic XXE; OOB XXE with External DTD; XXE via DOCX/Office XML Upload (School CTF 2016); SVG XXE via svglib to PNG Pipeline (P.W.N. CTF 2018)
-- [server-side-advanced-2.md](server-side-advanced-2.md) — Table of Contents; SSRF to Docker API RCE Chain (H7CTF 2025); Castor XML Deserialization via xsi:type Polymorphism (Atlas HTB); Apache ErrorDocument Expression File Read (Zero HTB); SQLite File Path Traversal to Bypass String Equality (Codegate 2013); HQL Injection via Non-Breaking Space (HackIM 2016)
-- [server-side-advanced-3.md](server-side-advanced-3.md) — Table of Contents; WAV Polyglot Upload Bypass via .wave Extension (PlaidCTF 2018); Multi-Slash URL Parser `path.startswith` Bypass (CSAW 2018 Finals); Xalan XSLT math:random() Seed Guess (35C3 2018); SoapClient _user_agent CRLF Method Smuggling (35C3 2018); `gopher://` No-Host URL Scheme Bypass (35C3 2018)
-- [server-side-advanced-4.md](server-side-advanced-4.md) — Table of Contents; WeasyPrint SSRF & File Read (CVE-2024-28184, Nullcon 2026); Variant 1: Blind SSRF via Attachment Oracle; Variant 2: Local File Read via file:// Attachment; MongoDB Regex Injection / $where Blind Oracle (Nullcon 2026); Pongo2 / Go Template Injection via Path Traversal (Nullcon 2026)
-- [server-side-advanced.md](server-side-advanced.md) — Table of Contents; ExifTool CVE-2021-22204 — DjVu Perl Injection (0xFun 2026); Go Rune/Byte Length Mismatch + Command Injection (VuwCTF 2025); Zip Symlink Path Traversal (UTCTF 2024); Path Traversal Bypass Techniques; Brace Stripping
-- [server-side-deser.md](server-side-deser.md) — Table of Contents; Java Deserialization (ysoserial); Python Pickle Deserialization; Race Conditions (Time-of-Check to Time-of-Use); Pickle Chaining via STOP Opcode Stripping (VolgaCTF 2013); Java XMLDecoder Deserialization RCE (HackIM 2016)
-- [server-side-exec-2.md](server-side-exec-2.md) — Table of Contents; SQLi Keyword Fragmentation Bypass (SecuInside 2013); SQL WHERE Bypass via ORDER BY CASE (Sharif CTF 2016); SQL Injection via DNS Records (PlaidCTF 2014); Bash Brace Expansion for Space-Free Command Injection (Insomnihack 2016); Common Lisp Injection via Reader Macro (Insomnihack 2016)
-- [server-side-exec.md](server-side-exec.md) — Table of Contents; Ruby Code Injection; instance_eval Breakout; Bypassing Keyword Blocklists; Exfiltration; Ruby ObjectSpace Memory Scanning for Flag Extraction (Tokyo Westerns 2016)
-- [server-side.md](server-side.md) — Table of Contents; PHP Type Juggling; PHP File Inclusion / php://filter; SQL Injection; Python str.format() Attribute Traversal (PlaidCTF 2017); SSTI (Server-Side Template Injection)
-- [sql-injection.md](sql-injection.md) — Table of Contents; Backslash Escape Quote Bypass; Hex Encoding for Quote Bypass; Second-Order SQL Injection; SQLi LIKE Character Brute-Force; MySQL Column Truncation (VolgaCTF 2014)
-- [web3.md](web3.md) — Table of Contents; Challenge Infrastructure Pattern; Auth Implementation (Python); EIP-1967 Proxy Pattern Exploitation; ABI Coder v1 vs v2 - Dirty Address Bypass; Solidity CBOR Metadata Stripping for Codehash Bypass
+- [modern-playbook.md](modern-playbook.md) — Signed token length truncation; HTML namespace mutation after sanitization; Framework behavior instantiated from attributes; 4 further searchable sections
+- [node-and-prototype.md](node-and-prototype.md) — Prototype Pollution Basics; flatnest Circular Reference Bypass (CVE-2023-26135); Gadget: Library Settings via Prototype Chain; 5 further searchable sections
+- [pat-reference.md](pat-reference.md) — How to use this index; Category map — local technique → PAT path; Exemplar payloads (offline-safe, attributed); 7 further searchable sections
+- [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-19
+- [python-requests.md](python-requests.md) — Bounded request queue; Processing order and byte preservation; Differential interpretation
+- [server-side-2.md](server-side-2.md) — XXE (XML External Entity); XML Injection via X-Forwarded-For Header (Pwn2Win 2016); PHP Variable Variables ($$var) Abuse (bugs_bunny 2017); 4 further searchable sections
+- [server-side-advanced-2.md](server-side-advanced-2.md) — SSRF to Docker API RCE Chain (H7CTF 2025); Castor XML Deserialization via xsi:type Polymorphism (Atlas HTB); Apache ErrorDocument Expression File Read (Zero HTB); 12 further searchable sections
+- [server-side-advanced-3.md](server-side-advanced-3.md) — WAV Polyglot Upload Bypass via .wave Extension (PlaidCTF 2018); Multi-Slash URL Parser `path.startswith` Bypass (CSAW 2018 Finals); Xalan XSLT math:random() Seed Guess (35C3 2018); 3 further searchable sections
+- [server-side-advanced-4.md](server-side-advanced-4.md) — WeasyPrint SSRF & File Read (CVE-2024-28184, Nullcon 2026); MongoDB Regex Injection / $where Blind Oracle (Nullcon 2026); Pongo2 / Go Template Injection via Path Traversal (Nullcon 2026); 8 further searchable sections
+- [server-side-advanced.md](server-side-advanced.md) — ExifTool CVE-2021-22204 — DjVu Perl Injection (0xFun 2026); Go Rune/Byte Length Mismatch + Command Injection (VuwCTF 2025); Zip Symlink Path Traversal (UTCTF 2024); 7 further searchable sections
+- [server-side-deser.md](server-side-deser.md) — Java Deserialization (ysoserial); Python Pickle Deserialization; Race Conditions (Time-of-Check to Time-of-Use); 8 further searchable sections
+- [server-side-exec-2.md](server-side-exec-2.md) — SQLi Keyword Fragmentation Bypass (SecuInside 2013); SQL WHERE Bypass via ORDER BY CASE (Sharif CTF 2016); SQL Injection via DNS Records (PlaidCTF 2014); 24 further searchable sections
+- [server-side-exec.md](server-side-exec.md) — Ruby Code Injection; Ruby ObjectSpace Memory Scanning for Flag Extraction (Tokyo Westerns 2016); Perl open() RCE; 17 further searchable sections
+- [server-side.md](server-side.md) — PHP Type Juggling; PHP File Inclusion / php://filter; SQL Injection; 9 further searchable sections
+- [sql-injection.md](sql-injection.md) — Backslash Escape Quote Bypass; Hex Encoding for Quote Bypass; Second-Order SQL Injection; 24 further searchable sections
+- [triage-reference.md](triage-reference.md) — First-Pass Workflow; Quick Start Commands; First Questions to Answer; 5 further searchable sections
+- [web3.md](web3.md) — Challenge Infrastructure Pattern; EIP-1967 Proxy Pattern Exploitation; ABI Coder v1 vs v2 - Dirty Address Bypass; 10 further searchable sections
 
 ## Cross-category pivots
 

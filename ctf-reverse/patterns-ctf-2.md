@@ -126,13 +126,13 @@ print(flag.decode())
 
 **Approach:**
 1. Extract `.rodata` blob with pyelftools:
-   ```python
-   from elftools.elf.elffile import ELFFile
-   with open(binary, "rb") as f:
-       elf = ELFFile(f)
-       ro = elf.get_section_by_name(".rodata")
-       blob = ro.data()[offset:offset+size]
-   ```
+```python
+from elftools.elf.elffile import ELFFile
+with open(binary, "rb") as f:
+    elf = ELFFile(f)
+    ro = elf.get_section_by_name(".rodata")
+    blob = ro.data()[offset:offset+size]
+```
 2. Recover embedded constants (length, magic values) by XOR with known keys from disassembly
 3. Reimplement the byte-by-byte verification loop:
    - Each iteration: compute two hash-like values from running state

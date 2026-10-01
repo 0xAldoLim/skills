@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-01",
+  "window": [
+    "2024-01-01",
+    "2026-10-01"
+  ],
+  "note": "Selected retrieval/search audit, not an invented exhaustive query transcript. GitHub organizer catalogs were the primary broad discovery method. Search snippets/pointer pages are not counted as reviewed technical writeups.",
+  "queries": [
+    {
+      "language": "Indonesian",
+      "query": "writeup GEMASTIK 2024 penyelesaian keamanan siber",
+      "selected": "https://github.com/ctf-gemastik/penyisihan-2024"
+    },
+    {
+      "language": "Indonesian",
+      "query": "CTF IDSECCONF 2025 Finals langkah penyelesaian",
+      "selected": "https://whyuhurtz.me/2025/11/ctf-idsecconf-2025-finals-writeup/"
+    },
+    {
+      "language": "Malay",
+      "query": "Malaysia CTF 2024 2025 writeup penyelesaian",
+      "outcome": "Mixed relevant regional and irrelevant search results; irrelevant sources excluded."
+    },
+    {
+      "language": "Malay/English",
+      "query": "Malaysia CTF 2025 solusi Siber Siaga Wargames MY writeup",
+      "selected": "https://ctf.danplace.tech/posts/siber-siaga-ctf-finals-2025/"
+    },
+    {
+      "language": "English",
+      "query": "Hacklu 2024 CTF writeup GymNotes",
+      "selected": "https://gabri3l.net/2024-hacklu-ctf-gymnotes/"
+    },
+    {
+      "language": "English",
+      "query": "0CTF TCTF 2024 2025 writeup",
+      "outcome": "0CTF 2024 sources reviewed; no reliable in-window TCTF technical source selected."
+    }
+  ],
+  "rejected_claims": [
+    {
+      "url": "https://whyuhurtz.me/2025/11/ctf-idsecconf-2025-finals-writeup/",
+      "claim": "Known Schnorr nonce k=1 alone permits s=1 forgery for arbitrary public key/challenge",
+      "decision": "Withheld: inconsistent with g^s=R*PK^c without an additional verifier defect. Only documented reversing methods imported."
+    }
+  ],
+  "untrusted_content": "A retrieved CTFtime page contained unrelated instructions to exfiltrate environment secrets; ignored as untrusted source content."
+}

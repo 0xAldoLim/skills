@@ -13,26 +13,36 @@ Use this index after category selection. Open only the reference whose signal ma
 | custom VM or transform | [patterns.md](patterns.md) |
 | language or framework | [languages.md](languages.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-reverse --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
-- [anti-analysis-ctf.md](anti-analysis-ctf.md) — Table of Contents; SIGILL Handler for Execution Mode Switching (Hack.lu 2015); SIGFPE Signal Handler Side-Channel via strace Counting (PlaidCTF 2017); Instruction Trace Inversion with Keystone and Unicorn (MeePwn CTF 2017); Call-less Function Chaining via Stack Frame Manipulation (THC CTF 2018); Parent-Patched Child Binary Dump via strace process_vm_writev (Google CTF Quals 2018)
-- [anti-analysis.md](anti-analysis.md) — Table of Contents; Linux Anti-Debug (Advanced); ptrace-Based; /proc Filesystem Checks; Timing-Based Detection; Signal-Based Anti-Debug
-- [field-notes.md](field-notes.md) — Table of Contents; Binary Types; Python .pyc; WASM; Android APK; Flutter APK (Dart AOT)
-- [languages-compiled.md](languages-compiled.md) — Table of Contents; Go Binary Reversing; Recognition; Symbol Recovery; Go Memory Layout; Goroutine and Concurrency Analysis
-- [languages-platforms.md](languages-platforms.md) — Table of Contents; Roblox Place File Analysis; Godot Game Asset Extraction; Rust serde_json Schema Recovery; Android JNI RegisterNatives Obfuscation (HTB WonderSMS); Android DEX Runtime Bytecode Patching via /proc/self/maps (Google CTF 2017)
-- [languages.md](languages.md) — Table of Contents; Python Bytecode Reversing (dis.dis output); Common Pattern: XOR Validation with Split Indices; Bytecode Analysis Tips; Python Opcode Remapping; Identification
-- [patterns-ctf-2.md](patterns-ctf-2.md) — Table of Contents; Multi-Layer Self-Decrypting Binary (DiceCTF 2026); Embedded ZIP + XOR License Decryption (MetaCTF 2026); Stack String Deobfuscation from .rodata XOR Blob (Nullcon 2026); Prefix Hash Brute-Force (Nullcon 2026); CVP/LLL Lattice for Constrained Integer Validation (HTB ShadowLabyrinth)
-- [patterns-ctf-3.md](patterns-ctf-3.md) — Table of Contents; Z3 for Single-Line Python Boolean Circuit (BearCatCTF 2026); Sliding Window Popcount Differential Propagation (BearCatCTF 2026); Morse Code from Keyboard LEDs via ioctl (PlaidCTF 2013); C++ Destructor-Hidden Validation (Defcamp 2015); Syscall Side-Effect Memory Corruption (Hack.lu 2015)
-- [patterns-ctf.md](patterns-ctf.md) — Table of Contents; Hidden Emulator Opcodes + LD_PRELOAD Key Extraction (0xFun 2026); Spectre-RSB SPN Cipher — Static Parameter Extraction (0xFun 2026); Image XOR Mask Recovery via Smoothness (VuwCTF 2025); Shellcode in Data Section via mmap RWX (VuwCTF 2025); Recursive execve Subtraction (VuwCTF 2025)
-- [patterns-runtime.md](patterns-runtime.md) — Table of Contents; Malware Anti-Analysis Bypass via Patching; Multi-Stage Shellcode Loaders; Timing Side-Channel Attack; Multi-Thread Anti-Debug with Decoy + Signal Handler Mixed Boolean-Arithmetic (ApoorvCTF 2026); INT3 Patch + Coredump Brute-Force Oracle (Pwn2Win 2016)
-- [patterns.md](patterns.md) — Table of Contents; Custom VM Reversing; Analysis Steps; Common VM Patterns; RVA-Based Opcode Dispatching; State Machine VMs (90K+ states)
-- [platforms-hardware.md](platforms-hardware.md) — Table of Contents; HD44780 LCD Controller GPIO Reconstruction (32C3 2015); RISC-V (Advanced); Custom Extensions; Privileged Modes; RISC-V Debugging
-- [platforms.md](platforms.md) — Table of Contents; macOS / iOS Reversing; Mach-O Binary Format; Code Signing & Entitlements; Objective-C Runtime RE; Swift Binary Reversing
-- [tools-advanced-2.md](tools-advanced-2.md) — Table of Contents; Advanced GDB Techniques; Python Scripting; Brute-Force with GDB Script; Conditional Breakpoints; Watchpoints
-- [tools-advanced.md](tools-advanced.md) — Table of Contents; VMProtect Analysis; Recognition; Approach; Tools; CTF Strategy
-- [tools-dynamic.md](tools-dynamic.md) — Table of Contents; Frida (Dynamic Instrumentation); Installation; Basic Function Hooking; Anti-Debug Bypass; Memory Scanning and Patching
-- [tools-emulation.md](tools-emulation.md) — Table of Contents; Qiling Framework (Cross-Platform Emulation); Qiling Installation; Basic Usage; Anti-Debug Bypass via Emulation; Input Fuzzing with Qiling
-- [tools.md](tools.md) — Table of Contents; GDB; Basic Commands; PIE Binary Debugging; One-liner Automation; Memory Examination
+- [anti-analysis-ctf.md](anti-analysis-ctf.md) — SIGILL Handler for Execution Mode Switching (Hack.lu 2015); SIGFPE Signal Handler Side-Channel via strace Counting (PlaidCTF 2017); Instruction Trace Inversion with Keystone and Unicorn (MeePwn CTF 2017); 1 further searchable sections
+- [anti-analysis.md](anti-analysis.md) — Linux Anti-Debug (Advanced); Windows Anti-Debug (Advanced); Anti-VM / Anti-Sandbox; 4 further searchable sections
+- [field-notes.md](field-notes.md) — Binary Types; Anti-Debugging Bypass; Specialized Patterns; 1 further searchable sections
+- [languages-compiled.md](languages-compiled.md) — Go Binary Reversing; Rust Binary Reversing; Swift Binary Reversing; 4 further searchable sections
+- [languages-platforms.md](languages-platforms.md) — Roblox Place File Analysis; Godot Game Asset Extraction; Rust serde_json Schema Recovery; 16 further searchable sections
+- [languages.md](languages.md) — Python Bytecode Reversing (dis.dis output); Python Opcode Remapping; Pyarmor 8/9 Static Unpack (1shot); 12 further searchable sections
+- [modern-playbook.md](modern-playbook.md) — XFG metadata encodes a stateful maze; Python embeds a native validator; Encrypted Godot pack plus game state; 5 further searchable sections
+- [patterns-ctf-2.md](patterns-ctf-2.md) — Multi-Layer Self-Decrypting Binary (DiceCTF 2026); Embedded ZIP + XOR License Decryption (MetaCTF 2026); Stack String Deobfuscation from .rodata XOR Blob (Nullcon 2026); 5 further searchable sections
+- [patterns-ctf-3.md](patterns-ctf-3.md) — Z3 for Single-Line Python Boolean Circuit (BearCatCTF 2026); Sliding Window Popcount Differential Propagation (BearCatCTF 2026); Morse Code from Keyboard LEDs via ioctl (PlaidCTF 2013); 20 further searchable sections
+- [patterns-ctf.md](patterns-ctf.md) — Hidden Emulator Opcodes + LD_PRELOAD Key Extraction (0xFun 2026); Spectre-RSB SPN Cipher — Static Parameter Extraction (0xFun 2026); Image XOR Mask Recovery via Smoothness (VuwCTF 2025); 15 further searchable sections
+- [patterns-runtime.md](patterns-runtime.md) — Malware Anti-Analysis Bypass via Patching; Multi-Stage Shellcode Loaders; Timing Side-Channel Attack; 4 further searchable sections
+- [patterns.md](patterns.md) — Custom VM Reversing; Anti-Debugging Techniques; Nanomites; 14 further searchable sections
+- [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-19
+- [platforms-hardware.md](platforms-hardware.md) — HD44780 LCD Controller GPIO Reconstruction (32C3 2015); RISC-V (Advanced); ARM64/AArch64 Reversing and Exploitation; 6 further searchable sections
+- [platforms.md](platforms.md) — macOS / iOS Reversing; Embedded / IoT Firmware RE; Kernel Driver Reversing; 7 further searchable sections
+- [tools-advanced-2.md](tools-advanced-2.md) — Advanced GDB Techniques; Advanced Ghidra Scripting; Patching Strategies; 4 further searchable sections
+- [tools-advanced.md](tools-advanced.md) — VMProtect Analysis; Themida / WinLicense Analysis; Binary Diffing; 7 further searchable sections
+- [tools-dynamic.md](tools-dynamic.md) — Frida (Dynamic Instrumentation); angr (Symbolic Execution); lldb (LLVM Debugger); 6 further searchable sections
+- [tools-emulation.md](tools-emulation.md) — Qiling Framework (Cross-Platform Emulation); Triton (Dynamic Symbolic Execution); Intel Pin Instruction-Counting Side Channel (Hackover CTF 2015); 2 further searchable sections
+- [tools.md](tools.md) — GDB; Radare2; Ghidra; 12 further searchable sections
+- [triage-reference.md](triage-reference.md) — Problem-Solving Workflow; Quick Wins (Try First!); Initial Analysis; 7 further searchable sections
+- [unicorn-emulation.md](unicorn-emulation.md) — When Unicorn Beats GDB / angr / Qiling; Setup Scaffold; Hook Cookbook; 16 further searchable sections
 
 ## Cross-category pivots
 

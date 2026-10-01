@@ -1,0 +1,325 @@
+[
+  {
+    "path": "ctf-crypto/advanced-math.md",
+    "heading": "LLL Algorithm for Approximate GCD",
+    "reason": "Removed determinant-one lattice falsely claimed to recover approximate divisors; preserved the family with prerequisites and candidate verification.",
+    "new_sha256": "f5f705276a5dbc93d2eb525fcfc85cb81e0731e1a77a532a280e15fcaa437c81",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "2bfe59c99c102eb424ad2e1dc3e4718b900d0abbc2595b294eb7d246fa89cc05",
+    "old_sha256": "d652023e045b1e91abff30e9e9fced6f757b05009ad05ec327a29c0004add12c"
+  },
+  {
+    "path": "ctf-crypto/advanced-math.md",
+    "heading": "Coppersmith's Method (Close Private Keys)",
+    "reason": "Corrected unsupported conversion from a totient congruence to a factor congruence.",
+    "new_sha256": "7719ef7527af838ecf8513ae8f62bf259448af631e58211a78ff3812b2401346",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "2bfe59c99c102eb424ad2e1dc3e4718b900d0abbc2595b294eb7d246fa89cc05",
+    "old_sha256": "9c0b4e13af6667043b1d6ac6623a4e2ae9a6f0584f9cd1af10494cc5e8db2890"
+  },
+  {
+    "path": "ctf-crypto/advanced-math.md",
+    "heading": "Coppersmith's Method (Structured Primes, LACTF 2026)",
+    "reason": "Corrected unknown-divisor exponent bound and replaced misleading fixed balanced-factor parameters with source-derived prerequisites.",
+    "new_sha256": "27c5c2e0982199892545ec1f0a014a352afa6e7a0c598f152543038f4b7cb182",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "2bfe59c99c102eb424ad2e1dc3e4718b900d0abbc2595b294eb7d246fa89cc05",
+    "old_sha256": "477891026eaada3a2b15c0162331f5a24861fafcaede9681b79c3d28ffb6c9ea"
+  },
+  {
+    "path": "ctf-crypto/advanced-math.md",
+    "heading": "Manger's RSA Padding Oracle Attack (Nullcon 2026)",
+    "reason": "Replaced invalid binary search with correct modular interval conditions; no unsupported fixed query guarantee.",
+    "new_sha256": "7bd43eac51add67dc87895a6f04a2b3bc79be26f2b0679f6b3c0099949e6e659",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "2bfe59c99c102eb424ad2e1dc3e4718b900d0abbc2595b294eb7d246fa89cc05",
+    "old_sha256": "22e78009af40cddf95741721a79a5eebd68f13260acf72cf5d32afa4d545fcb3"
+  },
+  {
+    "path": "ctf-crypto/rsa-attacks.md",
+    "heading": "Manger's RSA Padding Oracle Attack (Nullcon 2026)",
+    "reason": "Replaced invalid binary search with correct modular interval conditions; no unsupported fixed query guarantee.",
+    "new_sha256": "7bd43eac51add67dc87895a6f04a2b3bc79be26f2b0679f6b3c0099949e6e659",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "05df863ec256b2841a1852fd277d14519832d6d5d3edb0124f797e732efe7ffd",
+    "old_sha256": "5dff6dc53f95e89a2193972dd36964fac924cd82c80b4e7eca1d71ed7ce1bf59"
+  },
+  {
+    "path": "ctf-crypto/upstream-2026.md",
+    "heading": "Coppersmith via Howgrave-Graham Lattice (fpylll primary)",
+    "reason": "Retained construction family while withholding an untested, incorrect factor-root acceptance helper.",
+    "new_sha256": "60a088ccedaa0d5dd410e3782e4f44c674ec4bad3cb86ff2de2fb9e020c098cc",
+    "original_source": "imported complementary sections; see upstream-decisions.json for per-section source bodies"
+  },
+  {
+    "path": "ctf-crypto/upstream-2026.md",
+    "heading": "HNP Cross-Link: ECDSA Truncated Nonces \u2192 Lattice (8-sig example)",
+    "reason": "Removed malformed HNP implementation that omitted r_i and used placeholder checks.",
+    "new_sha256": "e76a0c7fbd6fae305beb39ed4538b662a5fa94c65b38dbde39131e16c3397afb",
+    "original_source": "imported complementary sections; see upstream-decisions.json for per-section source bodies"
+  },
+  {
+    "path": "ctf-pwn/upstream-2026.md",
+    "heading": "five upstream sections",
+    "reason": "Corrected allocator layout/tunable/calloc/free bookkeeping, invalid Tangerine recipe, fake CET SSP bypass and unsupported io_uring race; retained bounded research routes.",
+    "new_sha256": "01022c22ed751a8cd73a330e40e152d23753e21ff080090fa7286e96a738d56c",
+    "original_source": "imported complementary sections; see upstream-decisions.json for per-section source bodies"
+  },
+  {
+    "path": "ctf-misc/ctfd-navigation.md",
+    "heading": "entire historical platform client",
+    "reason": "Archived at immutable baseline Git commit; autonomous platform navigation/submission removed per explicit user request.",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "04b31fe69a64bd4543b3441160ded9921f6ac55c51931ece38b3f54f6d4eacbf"
+  },
+  {
+    "path": "ctf-osint/web-and-dns.md",
+    "heading": "Cross-Challenge Container IP Reuse (RITSEC 2018)",
+    "reason": "Removed shared-network enumeration/lateral movement directive while retaining offline address correlation.",
+    "new_sha256": "d6cfc4ed9f810e54e33356869e6cf67753a05a9498b49df4e7c06c691d22d248",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "9c33b7a0988d184d070ee6add4416a0ef87cee4e27489b4fb6be2bd5f09191cf",
+    "old_sha256": "5a5cdb11e7203b5f67dbca66b750bb68db1d7c8e65ad7a77ea7a77ff867f9d98"
+  },
+  {
+    "path": "ctf-misc/triage-reference.md",
+    "heading": "CTFd Platform Navigation (No Browser)",
+    "reason": "Removed autonomous platform detection, token requests and submission from the migrated root section.",
+    "new_sha256": "aedec7ec687b92d4f9da3690bcd5e30ca62a345b6ec089ca305c6b081af4486f",
+    "original_source": "personal root SKILL.md at d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "ba1a9dcc350efe734108fe6293385611a1e8710ddb8b1a63fa3398d793995bec",
+    "old_sha256": "2c7243ecb8c37ffe2fd08faaff6666c6226aabbe7f762454ac5e9fdf20feef5a"
+  },
+  {
+    "path": "ctf-malware/c2-and-protocols.md",
+    "heading": "Telegram Bot API for Evidence Recovery",
+    "reason": "Corrected read-only mislabeling of Telegram forwarding and removed credential-based authority inference.",
+    "new_sha256": "80cd83108ec959806f507dafef321dc3d2f08d1148ff4ac2c70e7e91685b9d45",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "d337c645f00d1f34f23568ea65d46abd64077d3ebaa4d44f4f85f93ad030c926",
+    "old_sha256": "e58839bb4ba204ab5b5096223649e07e8166a0c6b4dde8918d6f263fb11a00f6"
+  },
+  {
+    "path": "ctf-malware/c2-and-protocols.md",
+    "heading": "ARP Spoof + TCP RST Injection to Capture IRC C2 Creds (TAMUctf 2019)",
+    "reason": "Retained historical interception method with an explicit isolated-network prerequisite; no inferred shared-network scope.",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "d337c645f00d1f34f23568ea65d46abd64077d3ebaa4d44f4f85f93ad030c926",
+    "old_sha256": "b50653e9e539cba36ff607eb428264fe8e86195d57d25f308710306e5352c441"
+  },
+  {
+    "path": "ctf-misc/games-and-vms-3.md",
+    "heading": "BuildKit Daemon Exploitation for Build Secrets (BSidesSF 2026)",
+    "reason": "Preserved escape/build-service knowledge with explicit dedicated-host assignment and configuration prerequisites.",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "399b8ea917f7bb0616f768689b11d8cea03de201e956ed2a6479cb72b0d67d7b",
+    "old_sha256": "ff295f0e8f08c67e322264de954bc6b48afe3404c46201ec40eda8f779457a79"
+  },
+  {
+    "path": "ctf-misc/games-and-vms-3.md",
+    "heading": "Docker Container Escape Techniques",
+    "reason": "Preserved escape/build-service knowledge with explicit dedicated-host assignment and configuration prerequisites.",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "399b8ea917f7bb0616f768689b11d8cea03de201e956ed2a6479cb72b0d67d7b",
+    "old_sha256": "0032ec72fa7682aae9fb6cbc14ce9662c83074c2872f00d796ae9c5c35e533e5"
+  },
+  {
+    "path": "ctf-crypto/upstream-2026.md",
+    "heading": "X25519 Low-Order Points + All-Zero Check (RFC 7748)",
+    "reason": "Corrected low-order input orders/enumeration, single predictable secret and Python constant-time claim.",
+    "new_sha256": "ac2af299949a6002a7c9f79fd38f5c1c32f1f416d007da3cb7c337b75c777fde",
+    "original_source": "imported complementary sections; see upstream-decisions.json for per-section source bodies"
+  },
+  {
+    "path": "ctf-ai-ml/model-attacks.md",
+    "heading": "Model loading prerequisite",
+    "reason": "Separated state_dict inspection from full-object loading; made runtime and isolation prerequisites explicit.",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "f7393fd2397d515ff5a41f0f2c604d4572cffcc3392bb706f749b6e811eadebf"
+  },
+  {
+    "path": "ctf-ai-ml/triage-reference.md",
+    "heading": "Model loading prerequisite",
+    "reason": "Separated state_dict inspection from full-object loading; made runtime and isolation prerequisites explicit.",
+    "original_source": "personal root SKILL.md at d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "d8c52b6d55d7672632844ac6d9c05186a60896665c2d4fe9e10e7b88e6a91d0c"
+  },
+  {
+    "path": "ctf-ai-ml/adversarial-ml.md",
+    "heading": "FGSM/PGD bounds and call signature",
+    "reason": "Corrected sample-extrema domain clipping and wrong targeted-PGD keyword; documented preprocessing and threat-model requirements.",
+    "original_source": "personal repository d95fd4433d0656f5de29b04a64e28801c01f127c",
+    "original_file_sha256": "f40e626221fcfc5461968f7e1c25180bf830b0ea8c71c5834eb0a10f8554aa2c"
+  },
+  {
+    "path": "ctf-web/python-requests.md",
+    "heading": "entire imported toolkit",
+    "reason": "Replaced unbounded queues/high default concurrency, redirect following and TLS-disable advice with scoped bounded replay; retained payload transformations and differential testing.",
+    "original_source": "upstream c332c7be1b27cb64639a20124ac55ba916adef92",
+    "original_file_sha256": "3c71be78143c184081447f88a6f598ab4d9a7139f71a93d7258de381ba472344"
+  },
+  {
+    "path": "ctf-crypto/modern-ciphers-4.md",
+    "heading": "ChaCha20-Poly1305 Nonce Reuse \u2014 Forbidden Attack over $2^{130}-5$ (RFC 8439, picoCTF 2025)",
+    "reason": "Corrected final 128-bit tag reduction/carry enumeration and RFC AEAD padding/length encoding; removed invalid recovery implementations.",
+    "original_source": "upstream c332c7be1b27cb64639a20124ac55ba916adef92",
+    "original_file_sha256": "5a59576ac43182b201cde5ceda0ac48dbb166e78e93f7e980a471fdc296cba89",
+    "new_sha256": "d99956ff09d9b25ff53d31a1b395ac5c2a29e8ab5c9f019db65ec24726dc939d"
+  },
+  {
+    "path": "ctf-crypto/modern-ciphers-4.md",
+    "heading": "Partitioning-Oracle / Key-Committing AEAD & Ciphertext Splitting via Lattice",
+    "reason": "Removed tautological fake collision/lattice demo and unjustified commitment mitigation; retained scheme-specific verified partitioning route.",
+    "original_source": "upstream c332c7be1b27cb64639a20124ac55ba916adef92",
+    "original_file_sha256": "5a59576ac43182b201cde5ceda0ac48dbb166e78e93f7e980a471fdc296cba89",
+    "new_sha256": "dfb9069cd96205f8a5e134c1cca7a65b937fdcee1a72dba6d9fc568569006e4c"
+  },
+  {
+    "path": "ctf-crypto/triage-reference.md",
+    "heading": "Manger summaries",
+    "reason": "Kept root summaries consistent with the corrected modular interval derivation."
+  },
+  {
+    "path": "ctf-crypto/advanced-math.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Labeled Sage preparser notation with the required interpreter; Made incomplete path sketch explicit and bounded the random-walk loop",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "85d7fa59c43fbfc30d7714df95d9814826b1202106de23356111cb12bd8f3a29"
+  },
+  {
+    "path": "ctf-crypto/classic-ciphers.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Completed empty conditional body with an explicitly contextual candidate",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "2dc223b7737639300775150ab3ce103802f9705c533a0b14b51a16db012691db"
+  },
+  {
+    "path": "ctf-crypto/ecc-attacks.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Checked repeated root and removed unsupported universal singular-curve map; Labeled Sage preparser notation with the required interpreter",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "4191c04510830c6fc077a28c6bff8e95548b8f7b8e8c9c71dd0835ba487ef779"
+  },
+  {
+    "path": "ctf-crypto/rsa-attacks-2.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Labeled Sage preparser notation with the required interpreter",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "3e7ffaa79657286cb230d0465a4de7af4bcfd05bcb2cbd95a0132622ed484b04"
+  },
+  {
+    "path": "ctf-crypto/rsa-attacks.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Labeled Sage preparser notation with the required interpreter",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "cbcda4b4254bd78137638da1081500f1f47389e3290240938e03e9e94d51621e"
+  },
+  {
+    "path": "ctf-crypto/upstream-2026.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Labeled Sage preparser notation with the required interpreter",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "edf46961b43e7cbf4233ee2f7c671bc1a17727e406807466f2c86d8a098c0d9a"
+  },
+  {
+    "path": "ctf-crypto/zkp-and-advanced.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Labeled Sage preparser notation with the required interpreter",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "f6c8c8fd666d7d0d524c36581103ea2752efefdb1ac306351728fe1713a62bae"
+  },
+  {
+    "path": "ctf-forensics/steganography.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Removed accidental top-level Markdown indentation from Python code",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "61327f4da799e68d18a4501e75484a86bd27e790b1cdf7580f9031839fcaf1e4"
+  },
+  {
+    "path": "ctf-misc/pyjails.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Preserved encoded-source bytes as data; Python encoding-cookie behavior requires a separate isolated reproduction",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "25118ff318c42c4f82f55da5dce0d0f9ea25d0760058f94818592be95a2410d8"
+  },
+  {
+    "path": "ctf-misc/rf-sdr.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Repaired RF loop/multiline expression syntax; sample and constellation context remains required",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "77bb2549a8ce950019adfb407259f4beba394d0be1bebf8ef194043b0dc38e9b"
+  },
+  {
+    "path": "ctf-osint/geolocation-and-media.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Removed accidental top-level Markdown indentation from Python code",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "15ba9963eddd59df179c747c289999dc39dbc61203ca6bc2599aaf8ebbd7b6e9"
+  },
+  {
+    "path": "ctf-pwn/heap-techniques-2.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Replaced invalid hex placeholder with a required measured-address variable",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "093effd841c1195de8d120d63835b7aca944f34bfa7e07c77aa365591cb5e038"
+  },
+  {
+    "path": "ctf-pwn/kernel-techniques.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Replaced invalid hex placeholder with the required leak variable",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "f977924d185f27e3550aaefdfe8864d7dbb4c04101dcd2eb89c1cfdf425c0a0a"
+  },
+  {
+    "path": "ctf-pwn/rop-and-shellcode.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Removed accidental top-level Markdown indentation from Python code",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "735204ddc1a323abae7a5bdee2d648833c83717700adb834aae15a9cb45d6026"
+  },
+  {
+    "path": "ctf-reverse/patterns-ctf-2.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Removed accidental top-level Markdown indentation from Python code",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "91cd9bc9ffed3d9733cd22888a65424c2bef74f1bc36a0df3b9d84d7f3f93aec"
+  },
+  {
+    "path": "ctf-reverse/patterns-ctf.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Repaired orphaned branch and initialized the original value used in the hash sketch",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "305af41f926481852d2ae887254afdd1897c0d0ded9591b85e7911690a7906b1"
+  },
+  {
+    "path": "ctf-web/field-notes.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Labeled mixed template-language payloads as literal data, not Python programs",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "069ebb3ca0742aba187f3e216bb11e4b2babb3cbcdeb59c0c27d8827de3a75e6"
+  },
+  {
+    "path": "ctf-web/server-side-advanced.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Removed accidental top-level Markdown indentation from Python code",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "d24e72555946ebe9e09ec309e6303807ee19bf220d666e87d73dff1da53dfed9"
+  },
+  {
+    "path": "ctf-web/server-side.md",
+    "heading": "syntax and interpreter labels",
+    "reason": "Labeled mixed template-language payloads as literal data, not Python programs; Removed accidental top-level Markdown indentation from Python code",
+    "verification": "Python AST parsing; Sage labeled and not executed",
+    "new_file_sha256": "2dd0432a16ffad184f99a4dcd2e2bc0dc0f154763e5c7d2fa8e18d4670779803"
+  },
+  {
+    "path": "ctf-crypto/upstream-2026.md",
+    "heading": "MOV Attack (Weil Pairing, embedding degree k\u22646)",
+    "reason": "Replaced annihilating global cofactor projection with actual point-order projection; removed unsupported field-size feasibility claim; bounded detection and verified candidate contract.",
+    "original_source": "upstream ljagiello/ctf-skills c332c7be1b27cb64639a20124ac55ba916adef92",
+    "old_sha256": "ce2776297c0216b71aae04e78d5407f6100319d23de9efd1a530498067e1d235",
+    "new_sha256": "23ec7eaa4c1f50c4664d9911eddeaf1a462d0c9cad0b20f38c95cb60756dd6dc",
+    "validation": "Algebraic counterexample (Z/rZ)^2; primary Sage pairing contract; Sage runtime execution remains unperformed.",
+    "source_url": "https://doc.sagemath.org/html/en/reference/arithmetic_curves/sage/schemes/elliptic_curves/ell_point.html"
+  }
+]

@@ -1,0 +1,1597 @@
+[
+  {
+    "old_path": ".gitattributes",
+    "original_git_blob_sha256": "2d906635c147d12f527d92111ebafc07cea08ac0391fbe675e2e4e49c53edbd8",
+    "baseline_worktree_sha256": "2d906635c147d12f527d92111ebafc07cea08ac0391fbe675e2e4e49c53edbd8",
+    "destination": ".gitattributes",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": ".github/workflows/validate.yml",
+    "original_git_blob_sha256": "1d8dafa4d5024479df17744f0004fff19a329ad8924d1211bcab395695d3580f",
+    "baseline_worktree_sha256": "1d8dafa4d5024479df17744f0004fff19a329ad8924d1211bcab395695d3580f",
+    "destination": ".github/workflows/validate.yml",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": ".gitignore",
+    "original_git_blob_sha256": "364f67b18cb3a72368b143aff2e66af1e9ac22e6216471db75c815519ceb0b7b",
+    "baseline_worktree_sha256": "364f67b18cb3a72368b143aff2e66af1e9ac22e6216471db75c815519ceb0b7b",
+    "destination": ".gitignore",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": ".pre-commit-config.yaml",
+    "original_git_blob_sha256": "9d84d6fd9de1ef92990ecce265a0c320250120d1d94d5ac63ed4d83756f54eea",
+    "baseline_worktree_sha256": "9d84d6fd9de1ef92990ecce265a0c320250120d1d94d5ac63ed4d83756f54eea",
+    "destination": ".pre-commit-config.yaml",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "README.md",
+    "original_git_blob_sha256": "b8d04847196bab70c67e92e2c6092b9169c705d0af71454d41c8a5f32ece1079",
+    "baseline_worktree_sha256": "b8d04847196bab70c67e92e2c6092b9169c705d0af71454d41c8a5f32ece1079",
+    "destination": "README.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "ctf-ai-ml/INDEX.md",
+    "original_git_blob_sha256": "4adacbd3222b6d01579cef651d5f2c89d3fecd256740c324529081ea1d5dd2b8",
+    "baseline_worktree_sha256": "4adacbd3222b6d01579cef651d5f2c89d3fecd256740c324529081ea1d5dd2b8",
+    "destination": "ctf-ai-ml/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-ai-ml/SKILL.md",
+    "original_git_blob_sha256": "929ae0493465c22c5547540e1c5e1b2ab303118a9140c538b0127d508a04a7e4",
+    "baseline_worktree_sha256": "929ae0493465c22c5547540e1c5e1b2ab303118a9140c538b0127d508a04a7e4",
+    "destination": "ctf-ai-ml/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-ai-ml/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-ai-ml/adversarial-ml.md",
+    "original_git_blob_sha256": "5b1395770ae46fde6b8c312c664249e5adecd5e4eb41927a00e5491cf4e5015d",
+    "baseline_worktree_sha256": "5b1395770ae46fde6b8c312c664249e5adecd5e4eb41927a00e5491cf4e5015d",
+    "destination": "ctf-ai-ml/adversarial-ml.md",
+    "status": "corrected",
+    "reason": "Corrected sample-extrema domain clipping and wrong targeted-PGD keyword; documented preprocessing and threat-model requirements."
+  },
+  {
+    "old_path": "ctf-ai-ml/agents/openai.yaml",
+    "original_git_blob_sha256": "af0b135277f91385f3c712c756d0a051581ab37f01c6654da1b7dc86a3162a3c",
+    "baseline_worktree_sha256": "af0b135277f91385f3c712c756d0a051581ab37f01c6654da1b7dc86a3162a3c",
+    "destination": "ctf-ai-ml/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-ai-ml/llm-attacks.md",
+    "original_git_blob_sha256": "5338b7a11f59418a14ce74cae18e1507864c2fc2c5243e98d6d98cb6a9f169f2",
+    "baseline_worktree_sha256": "5338b7a11f59418a14ce74cae18e1507864c2fc2c5243e98d6d98cb6a9f169f2",
+    "destination": "ctf-ai-ml/llm-attacks.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-ai-ml/model-attacks.md",
+    "original_git_blob_sha256": "5dfaad68a8b9532904310e550cf08bab9f878c4a17a4b9e00fdf474a0870b47d",
+    "baseline_worktree_sha256": "5dfaad68a8b9532904310e550cf08bab9f878c4a17a4b9e00fdf474a0870b47d",
+    "destination": "ctf-ai-ml/model-attacks.md",
+    "status": "corrected",
+    "reason": "Separated state_dict inspection from full-object loading; made runtime and isolation prerequisites explicit."
+  },
+  {
+    "old_path": "ctf-crypto/INDEX.md",
+    "original_git_blob_sha256": "7b4af41fe4c9d2b7507510f9e34cdbf3ed294e9bbd6e0b609a5428d6a684d11c",
+    "baseline_worktree_sha256": "7b4af41fe4c9d2b7507510f9e34cdbf3ed294e9bbd6e0b609a5428d6a684d11c",
+    "destination": "ctf-crypto/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-crypto/SKILL.md",
+    "original_git_blob_sha256": "cc1e7b843451281377baae551d3dd7f8871492bce0df5649592e2531b12a50bb",
+    "baseline_worktree_sha256": "cc1e7b843451281377baae551d3dd7f8871492bce0df5649592e2531b12a50bb",
+    "destination": "ctf-crypto/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-crypto/personal-learnings.md",
+      "ctf-crypto/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-crypto/advanced-math.md",
+    "original_git_blob_sha256": "8773e5aa40958f73900c0a00ee0005b4f402fe7e9e9614652bd538e2d6146c00",
+    "baseline_worktree_sha256": "8773e5aa40958f73900c0a00ee0005b4f402fe7e9e9614652bd538e2d6146c00",
+    "destination": "ctf-crypto/advanced-math.md",
+    "status": "corrected",
+    "reason": "Removed determinant-one lattice falsely claimed to recover approximate divisors; preserved the family with prerequisites and candidate verification.; Corrected unsupported conversion from a totient congruence to a factor congruence.; Corrected unknown-divisor exponent bound and replaced misleading fixed balanced-factor parameters with source-derived prerequisites.; Replaced invalid binary search with correct modular interval conditions; no unsupported fixed query guarantee.; Labeled Sage preparser notation with the required interpreter; Made incomplete path sketch explicit and bounded the random-walk loop"
+  },
+  {
+    "old_path": "ctf-crypto/agents/openai.yaml",
+    "original_git_blob_sha256": "5c018a9b37581da1e9620742582ad6f9d4aeceac43fe234237c799fdc7cd99fa",
+    "baseline_worktree_sha256": "5c018a9b37581da1e9620742582ad6f9d4aeceac43fe234237c799fdc7cd99fa",
+    "destination": "ctf-crypto/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/classic-ciphers.md",
+    "original_git_blob_sha256": "a3343f7e299e74554c5298025254afaec14b0f79ced27f1badd54c79a2cb2e82",
+    "baseline_worktree_sha256": "a3343f7e299e74554c5298025254afaec14b0f79ced27f1badd54c79a2cb2e82",
+    "destination": "ctf-crypto/classic-ciphers.md",
+    "status": "corrected",
+    "reason": "Completed empty conditional body with an explicitly contextual candidate"
+  },
+  {
+    "old_path": "ctf-crypto/ecc-attacks.md",
+    "original_git_blob_sha256": "9de0e39d1c4065919f33c1d990cc11990c2f9176576702f871f840fd2c60ef28",
+    "baseline_worktree_sha256": "9de0e39d1c4065919f33c1d990cc11990c2f9176576702f871f840fd2c60ef28",
+    "destination": "ctf-crypto/ecc-attacks.md",
+    "status": "corrected",
+    "reason": "Checked repeated root and removed unsupported universal singular-curve map; Labeled Sage preparser notation with the required interpreter"
+  },
+  {
+    "old_path": "ctf-crypto/exotic-crypto-2.md",
+    "original_git_blob_sha256": "3a90be81271362061b99c599a8048fee7305537722c4357bb116c7ab06d8a1c1",
+    "baseline_worktree_sha256": "3a90be81271362061b99c599a8048fee7305537722c4357bb116c7ab06d8a1c1",
+    "destination": "ctf-crypto/exotic-crypto-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/exotic-crypto.md",
+    "original_git_blob_sha256": "116717e9d529e3221deefa919945e699f7515f59d665a582989bd82293e9205d",
+    "baseline_worktree_sha256": "116717e9d529e3221deefa919945e699f7515f59d665a582989bd82293e9205d",
+    "destination": "ctf-crypto/exotic-crypto.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/historical.md",
+    "original_git_blob_sha256": "11fe4c3e07be2100f73bc10a0ca61e4a4cbd49c9e9f5da365e226e07ab4de6be",
+    "baseline_worktree_sha256": "11fe4c3e07be2100f73bc10a0ca61e4a4cbd49c9e9f5da365e226e07ab4de6be",
+    "destination": "ctf-crypto/historical.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/lattice-and-lwe.md",
+    "original_git_blob_sha256": "3cedfa06d7d13b215320b388462b82b6168f9e78bd4fc0f3cc3a4cc8277bec90",
+    "baseline_worktree_sha256": "3cedfa06d7d13b215320b388462b82b6168f9e78bd4fc0f3cc3a4cc8277bec90",
+    "destination": "ctf-crypto/lattice-and-lwe.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/modern-ciphers-2.md",
+    "original_git_blob_sha256": "ba05eaecd914418a410202d960a25b29bab58184eaae2b85b664e6668b576639",
+    "baseline_worktree_sha256": "ba05eaecd914418a410202d960a25b29bab58184eaae2b85b664e6668b576639",
+    "destination": "ctf-crypto/modern-ciphers-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/modern-ciphers-3.md",
+    "original_git_blob_sha256": "28f10014010f7833364292a2626be029d431bd1aa37d18afb72ac08b0f1c5fb8",
+    "baseline_worktree_sha256": "28f10014010f7833364292a2626be029d431bd1aa37d18afb72ac08b0f1c5fb8",
+    "destination": "ctf-crypto/modern-ciphers-3.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/modern-ciphers.md",
+    "original_git_blob_sha256": "7b3fa5af62796f37f5a9123c6e8eb8900f8f7306523c8d763a74acb14c8d3b0b",
+    "baseline_worktree_sha256": "7b3fa5af62796f37f5a9123c6e8eb8900f8f7306523c8d763a74acb14c8d3b0b",
+    "destination": "ctf-crypto/modern-ciphers.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/prng-attacks.md",
+    "original_git_blob_sha256": "ce37c227b40cc631a9a9e86874ad2dd3ffa8ddc44e64c624c60d4f655ae963fe",
+    "baseline_worktree_sha256": "ce37c227b40cc631a9a9e86874ad2dd3ffa8ddc44e64c624c60d4f655ae963fe",
+    "destination": "ctf-crypto/prng-attacks.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/prng.md",
+    "original_git_blob_sha256": "14230b1a546bc8c54d10eb51511960826c6f9207f460030cce7338d701e81d61",
+    "baseline_worktree_sha256": "14230b1a546bc8c54d10eb51511960826c6f9207f460030cce7338d701e81d61",
+    "destination": "ctf-crypto/prng.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/rsa-attacks-2.md",
+    "original_git_blob_sha256": "dc9b1804280bde3586b053d80606f6ee1c1272576152c838cf17d6d292062e2e",
+    "baseline_worktree_sha256": "dc9b1804280bde3586b053d80606f6ee1c1272576152c838cf17d6d292062e2e",
+    "destination": "ctf-crypto/rsa-attacks-2.md",
+    "status": "corrected",
+    "reason": "Labeled Sage preparser notation with the required interpreter"
+  },
+  {
+    "old_path": "ctf-crypto/rsa-attacks.md",
+    "original_git_blob_sha256": "074668b2e460898f6f5ec7d964e13c9d11095a63b94f05c6bf85eb485762179d",
+    "baseline_worktree_sha256": "074668b2e460898f6f5ec7d964e13c9d11095a63b94f05c6bf85eb485762179d",
+    "destination": "ctf-crypto/rsa-attacks.md",
+    "status": "corrected",
+    "reason": "Replaced invalid binary search with correct modular interval conditions; no unsupported fixed query guarantee.; Labeled Sage preparser notation with the required interpreter"
+  },
+  {
+    "old_path": "ctf-crypto/stream-ciphers.md",
+    "original_git_blob_sha256": "4c464f4d8ecd2581e44322a77f615586bc1c2dc181ff68ae92be6c4c762fed9f",
+    "baseline_worktree_sha256": "4c464f4d8ecd2581e44322a77f615586bc1c2dc181ff68ae92be6c4c762fed9f",
+    "destination": "ctf-crypto/stream-ciphers.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-crypto/zkp-and-advanced.md",
+    "original_git_blob_sha256": "8b8cc7b161f513e69a3122b2bdff98cc26e7a80fe61846fde0497ed865424c3b",
+    "baseline_worktree_sha256": "8b8cc7b161f513e69a3122b2bdff98cc26e7a80fe61846fde0497ed865424c3b",
+    "destination": "ctf-crypto/zkp-and-advanced.md",
+    "status": "corrected",
+    "reason": "Labeled Sage preparser notation with the required interpreter"
+  },
+  {
+    "old_path": "ctf-forensics/3d-printing.md",
+    "original_git_blob_sha256": "aa31dfeba56807b59a1e5bd0b13aec3c5bf2dca7e523f7bafed958c4d56a1768",
+    "baseline_worktree_sha256": "aa31dfeba56807b59a1e5bd0b13aec3c5bf2dca7e523f7bafed958c4d56a1768",
+    "destination": "ctf-forensics/3d-printing.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/INDEX.md",
+    "original_git_blob_sha256": "b2e6d61da642d83ecdceb099ba4d31e0f9a2d8aba3db0eb3975eae3947f3c212",
+    "baseline_worktree_sha256": "b2e6d61da642d83ecdceb099ba4d31e0f9a2d8aba3db0eb3975eae3947f3c212",
+    "destination": "ctf-forensics/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-forensics/SKILL.md",
+    "original_git_blob_sha256": "fd463d355c708ae9213f4a2c7016bf3849d74194a56e0657564e0be0f51b2620",
+    "baseline_worktree_sha256": "fd463d355c708ae9213f4a2c7016bf3849d74194a56e0657564e0be0f51b2620",
+    "destination": "ctf-forensics/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-forensics/personal-learnings.md",
+      "ctf-forensics/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-forensics/agents/openai.yaml",
+    "original_git_blob_sha256": "63ef0499b37b45991b3ab394706fa00f649a91a9fd6f0fd3feaa74c75e7cbb38",
+    "baseline_worktree_sha256": "63ef0499b37b45991b3ab394706fa00f649a91a9fd6f0fd3feaa74c75e7cbb38",
+    "destination": "ctf-forensics/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/disk-advanced.md",
+    "original_git_blob_sha256": "3d5750601ea5d5bee367c8186eee20512393316cf56af0887e3bfc2479a0540d",
+    "baseline_worktree_sha256": "3d5750601ea5d5bee367c8186eee20512393316cf56af0887e3bfc2479a0540d",
+    "destination": "ctf-forensics/disk-advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/disk-and-memory.md",
+    "original_git_blob_sha256": "8ad627153d7cd8127ce971141a53a13b02164998fb3f598eeba1229e50a110be",
+    "baseline_worktree_sha256": "8ad627153d7cd8127ce971141a53a13b02164998fb3f598eeba1229e50a110be",
+    "destination": "ctf-forensics/disk-and-memory.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/disk-recovery.md",
+    "original_git_blob_sha256": "49901f697d7c04a5002c4d8b82e30898d5fec77538dcb2d36ce2fefb6b9c398c",
+    "baseline_worktree_sha256": "49901f697d7c04a5002c4d8b82e30898d5fec77538dcb2d36ce2fefb6b9c398c",
+    "destination": "ctf-forensics/disk-recovery.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/linux-forensics.md",
+    "original_git_blob_sha256": "7b706faf85fab195880c36683298907eac20478940df9f888a5ed627337a6826",
+    "baseline_worktree_sha256": "7b706faf85fab195880c36683298907eac20478940df9f888a5ed627337a6826",
+    "destination": "ctf-forensics/linux-forensics.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/network-advanced.md",
+    "original_git_blob_sha256": "f38ea4110b39e909e7aa38e156a05349a4bd9d06666122a7987e0a505de35050",
+    "baseline_worktree_sha256": "f38ea4110b39e909e7aa38e156a05349a4bd9d06666122a7987e0a505de35050",
+    "destination": "ctf-forensics/network-advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/network.md",
+    "original_git_blob_sha256": "656ba4c624dbb62320518debec9734be0cfb254c0f71060e24f3ecdd62679c81",
+    "baseline_worktree_sha256": "656ba4c624dbb62320518debec9734be0cfb254c0f71060e24f3ecdd62679c81",
+    "destination": "ctf-forensics/network.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/peripheral-capture.md",
+    "original_git_blob_sha256": "8926b6a929eb32e05b6fb00fdeb9e48ef17ef2534273ae1e90c0572d2c4fd550",
+    "baseline_worktree_sha256": "8926b6a929eb32e05b6fb00fdeb9e48ef17ef2534273ae1e90c0572d2c4fd550",
+    "destination": "ctf-forensics/peripheral-capture.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/signals-and-hardware.md",
+    "original_git_blob_sha256": "313e4af5e7de1bf966ec5123dcb4a1f4db9489a9d3edf6cdb3483753de2ed8bc",
+    "baseline_worktree_sha256": "313e4af5e7de1bf966ec5123dcb4a1f4db9489a9d3edf6cdb3483753de2ed8bc",
+    "destination": "ctf-forensics/signals-and-hardware.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/steganography.md",
+    "original_git_blob_sha256": "de01d6611e243e1195e1c9f302e7bab71054b6e4e5835b7fae8a5cf3dc77c0b4",
+    "baseline_worktree_sha256": "de01d6611e243e1195e1c9f302e7bab71054b6e4e5835b7fae8a5cf3dc77c0b4",
+    "destination": "ctf-forensics/steganography.md",
+    "status": "corrected",
+    "reason": "Removed accidental top-level Markdown indentation from Python code"
+  },
+  {
+    "old_path": "ctf-forensics/stego-advanced-2.md",
+    "original_git_blob_sha256": "7995f07f15603a21964b489068bad4d1e8a91ed31f05b086d8d86001b9a18bb2",
+    "baseline_worktree_sha256": "7995f07f15603a21964b489068bad4d1e8a91ed31f05b086d8d86001b9a18bb2",
+    "destination": "ctf-forensics/stego-advanced-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/stego-advanced.md",
+    "original_git_blob_sha256": "62969284e1223195bd8e899a204dad6d77ee737c385f893345dadb4f8ae80e8b",
+    "baseline_worktree_sha256": "62969284e1223195bd8e899a204dad6d77ee737c385f893345dadb4f8ae80e8b",
+    "destination": "ctf-forensics/stego-advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/stego-image.md",
+    "original_git_blob_sha256": "76bdcfa4c1f8b0ad3379cdb934bfd355a42f4c183c91248f0b63efd4dc670186",
+    "baseline_worktree_sha256": "76bdcfa4c1f8b0ad3379cdb934bfd355a42f4c183c91248f0b63efd4dc670186",
+    "destination": "ctf-forensics/stego-image.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-forensics/windows.md",
+    "original_git_blob_sha256": "bd22d26db9740876508e80794a9f3c77a49a93c9302cb9f4b36453ee2740468f",
+    "baseline_worktree_sha256": "bd22d26db9740876508e80794a9f3c77a49a93c9302cb9f4b36453ee2740468f",
+    "destination": "ctf-forensics/windows.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-malware/INDEX.md",
+    "original_git_blob_sha256": "afb20cfa83800fbe2110a25d71d88ec30e027af7e7696cb0af0bf8d5902a7db0",
+    "baseline_worktree_sha256": "afb20cfa83800fbe2110a25d71d88ec30e027af7e7696cb0af0bf8d5902a7db0",
+    "destination": "ctf-malware/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-malware/SKILL.md",
+    "original_git_blob_sha256": "d278c722e31c8eabf954d6bfd0591b69a70f75b093a5e768daaee4f755faaa40",
+    "baseline_worktree_sha256": "d278c722e31c8eabf954d6bfd0591b69a70f75b093a5e768daaee4f755faaa40",
+    "destination": "ctf-malware/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-malware/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-malware/agents/openai.yaml",
+    "original_git_blob_sha256": "73bf07e3c0b839ac89004941db2c58d061bb310e1a5696ed16962d7c0157b727",
+    "baseline_worktree_sha256": "73bf07e3c0b839ac89004941db2c58d061bb310e1a5696ed16962d7c0157b727",
+    "destination": "ctf-malware/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-malware/c2-and-protocols.md",
+    "original_git_blob_sha256": "7030a7f008950f286ee929ea9dc7ed16fddadb94f0ec79d10184eebf0c291f79",
+    "baseline_worktree_sha256": "7030a7f008950f286ee929ea9dc7ed16fddadb94f0ec79d10184eebf0c291f79",
+    "destination": "ctf-malware/c2-and-protocols.md",
+    "status": "corrected",
+    "reason": "Corrected read-only mislabeling of Telegram forwarding and removed credential-based authority inference.; Retained historical interception method with an explicit isolated-network prerequisite; no inferred shared-network scope."
+  },
+  {
+    "old_path": "ctf-malware/pe-and-dotnet.md",
+    "original_git_blob_sha256": "56c365bf25c9373e3d915677e67d1b9b6eb0f3a20f624773157b97977db4598f",
+    "baseline_worktree_sha256": "56c365bf25c9373e3d915677e67d1b9b6eb0f3a20f624773157b97977db4598f",
+    "destination": "ctf-malware/pe-and-dotnet.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-malware/scripts-and-obfuscation.md",
+    "original_git_blob_sha256": "dd9e3ce37ac50189ff49718f62546b4546aefe5698f1d66a88f9b821a7101e46",
+    "baseline_worktree_sha256": "dd9e3ce37ac50189ff49718f62546b4546aefe5698f1d66a88f9b821a7101e46",
+    "destination": "ctf-malware/scripts-and-obfuscation.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/INDEX.md",
+    "original_git_blob_sha256": "0b7b229907bcde441602289c527edcef72c256ac828999cfe3d8ab95e9dc0eb6",
+    "baseline_worktree_sha256": "0b7b229907bcde441602289c527edcef72c256ac828999cfe3d8ab95e9dc0eb6",
+    "destination": "ctf-misc/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-misc/SKILL.md",
+    "original_git_blob_sha256": "7cd3f192c813b5c4e382a01db58ccacaab4ee6a5b1b1e5ac4b1fcf2069c4dcff",
+    "baseline_worktree_sha256": "7cd3f192c813b5c4e382a01db58ccacaab4ee6a5b1b1e5ac4b1fcf2069c4dcff",
+    "destination": "ctf-misc/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-misc/personal-learnings.md",
+      "ctf-misc/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-misc/agents/openai.yaml",
+    "original_git_blob_sha256": "be9c2a089b11a09f3ffaf4b5c9a02c13279a5e203eb557a8a53a4943d105063b",
+    "baseline_worktree_sha256": "be9c2a089b11a09f3ffaf4b5c9a02c13279a5e203eb557a8a53a4943d105063b",
+    "destination": "ctf-misc/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/bashjails.md",
+    "original_git_blob_sha256": "bcef015b6f3b5a01402ac08b5a9f7ee35754e3aead598411f5268123960c3a4f",
+    "baseline_worktree_sha256": "bcef015b6f3b5a01402ac08b5a9f7ee35754e3aead598411f5268123960c3a4f",
+    "destination": "ctf-misc/bashjails.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/ctfd-navigation.md",
+    "original_git_blob_sha256": "dd0aa27b75212879c5b64767409d51a05d553706a6699ffbe8965941523316bc",
+    "baseline_worktree_sha256": "dd0aa27b75212879c5b64767409d51a05d553706a6699ffbe8965941523316bc",
+    "destination": "ctf-misc/ctfd-navigation.md",
+    "status": "corrected",
+    "reason": "Archived at immutable baseline Git commit; autonomous platform navigation/submission removed per explicit user request."
+  },
+  {
+    "old_path": "ctf-misc/dns.md",
+    "original_git_blob_sha256": "6ecd2eb3f31fe93af1e6db4197dfb5e209c3f408972e6fb17a4c7ba3ab17bfa5",
+    "baseline_worktree_sha256": "6ecd2eb3f31fe93af1e6db4197dfb5e209c3f408972e6fb17a4c7ba3ab17bfa5",
+    "destination": "ctf-misc/dns.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/encodings-advanced.md",
+    "original_git_blob_sha256": "e28bce134c1a80444371c31192c2ee1560496b0c71daed6d1aa20ec673aaf997",
+    "baseline_worktree_sha256": "e28bce134c1a80444371c31192c2ee1560496b0c71daed6d1aa20ec673aaf997",
+    "destination": "ctf-misc/encodings-advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/encodings.md",
+    "original_git_blob_sha256": "c83a8f9921c5cedcc9a2ce20f154bb5794c3358fd8782caab5e2e3656f9ffe60",
+    "baseline_worktree_sha256": "c83a8f9921c5cedcc9a2ce20f154bb5794c3358fd8782caab5e2e3656f9ffe60",
+    "destination": "ctf-misc/encodings.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/games-and-vms-2.md",
+    "original_git_blob_sha256": "56968bfd272bd4ae7822def5e32992d49cffd9a5cf6d0f076515a717e4049541",
+    "baseline_worktree_sha256": "56968bfd272bd4ae7822def5e32992d49cffd9a5cf6d0f076515a717e4049541",
+    "destination": "ctf-misc/games-and-vms-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/games-and-vms-3.md",
+    "original_git_blob_sha256": "98098c1326e45e380262c41002965393862bbc281e970ea9a9ccd1ebc5d6fa56",
+    "baseline_worktree_sha256": "98098c1326e45e380262c41002965393862bbc281e970ea9a9ccd1ebc5d6fa56",
+    "destination": "ctf-misc/games-and-vms-3.md",
+    "status": "corrected",
+    "reason": "Preserved escape/build-service knowledge with explicit dedicated-host assignment and configuration prerequisites.; Preserved escape/build-service knowledge with explicit dedicated-host assignment and configuration prerequisites."
+  },
+  {
+    "old_path": "ctf-misc/games-and-vms-4.md",
+    "original_git_blob_sha256": "03b801791c9fe7232241eab248d370431554d8f2d3a52df7671cdd37fcdaeb91",
+    "baseline_worktree_sha256": "03b801791c9fe7232241eab248d370431554d8f2d3a52df7671cdd37fcdaeb91",
+    "destination": "ctf-misc/games-and-vms-4.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/games-and-vms.md",
+    "original_git_blob_sha256": "1270ba1a22074fb049498740d8267eb8dd520a69cc800494ed683d7510f2ee35",
+    "baseline_worktree_sha256": "1270ba1a22074fb049498740d8267eb8dd520a69cc800494ed683d7510f2ee35",
+    "destination": "ctf-misc/games-and-vms.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/linux-privesc.md",
+    "original_git_blob_sha256": "ede39b54e1064020de6cc92ee8342e8d2f4a10503696c5a32060bcfa1409f2e1",
+    "baseline_worktree_sha256": "ede39b54e1064020de6cc92ee8342e8d2f4a10503696c5a32060bcfa1409f2e1",
+    "destination": "ctf-misc/linux-privesc.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-misc/pyjails.md",
+    "original_git_blob_sha256": "4dc88e4593f20968e632df20b9b9a1b2d5f8571dd0f36112ed63382c4768b91c",
+    "baseline_worktree_sha256": "4dc88e4593f20968e632df20b9b9a1b2d5f8571dd0f36112ed63382c4768b91c",
+    "destination": "ctf-misc/pyjails.md",
+    "status": "corrected",
+    "reason": "Preserved encoded-source bytes as data; Python encoding-cookie behavior requires a separate isolated reproduction"
+  },
+  {
+    "old_path": "ctf-misc/rf-sdr.md",
+    "original_git_blob_sha256": "2a72143706279888e1ec1576b97e7c2345efc6e7ab31eabb2845789c39eb2f60",
+    "baseline_worktree_sha256": "2a72143706279888e1ec1576b97e7c2345efc6e7ab31eabb2845789c39eb2f60",
+    "destination": "ctf-misc/rf-sdr.md",
+    "status": "corrected",
+    "reason": "Repaired RF loop/multiline expression syntax; sample and constellation context remains required"
+  },
+  {
+    "old_path": "ctf-osint/INDEX.md",
+    "original_git_blob_sha256": "242ccb69ffdadb5d8f3d921689991741b0a6bf8aa4d12b6b7540b3fecb75daf0",
+    "baseline_worktree_sha256": "242ccb69ffdadb5d8f3d921689991741b0a6bf8aa4d12b6b7540b3fecb75daf0",
+    "destination": "ctf-osint/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-osint/SKILL.md",
+    "original_git_blob_sha256": "e3f74e3880237b370bdf7f1743e38d4ff6ef99c957d06e81ddae0c2b1011bc61",
+    "baseline_worktree_sha256": "e3f74e3880237b370bdf7f1743e38d4ff6ef99c957d06e81ddae0c2b1011bc61",
+    "destination": "ctf-osint/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-osint/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-osint/agents/openai.yaml",
+    "original_git_blob_sha256": "9c3fb8f7185c4f09a41e2f6d5be3d2bfd83d0ce82219e2a34cbdd525c7512a7a",
+    "baseline_worktree_sha256": "9c3fb8f7185c4f09a41e2f6d5be3d2bfd83d0ce82219e2a34cbdd525c7512a7a",
+    "destination": "ctf-osint/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-osint/geolocation-and-media.md",
+    "original_git_blob_sha256": "acef9a3374be761cf4744155358597ad76e5760b9d4737a700f3d0ba2ba96cc8",
+    "baseline_worktree_sha256": "acef9a3374be761cf4744155358597ad76e5760b9d4737a700f3d0ba2ba96cc8",
+    "destination": "ctf-osint/geolocation-and-media.md",
+    "status": "corrected",
+    "reason": "Removed accidental top-level Markdown indentation from Python code"
+  },
+  {
+    "old_path": "ctf-osint/social-media.md",
+    "original_git_blob_sha256": "47fa32f911dc28cf65d9d9075ee64ccedd8e0612be2914bcc1f216c1713bcb38",
+    "baseline_worktree_sha256": "47fa32f911dc28cf65d9d9075ee64ccedd8e0612be2914bcc1f216c1713bcb38",
+    "destination": "ctf-osint/social-media.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-osint/web-and-dns.md",
+    "original_git_blob_sha256": "91d15f88378b33832b8f091355aba0df4fb4bcb9ba2dcf249391f31cb9f8f4ab",
+    "baseline_worktree_sha256": "91d15f88378b33832b8f091355aba0df4fb4bcb9ba2dcf249391f31cb9f8f4ab",
+    "destination": "ctf-osint/web-and-dns.md",
+    "status": "corrected",
+    "reason": "Removed shared-network enumeration/lateral movement directive while retaining offline address correlation."
+  },
+  {
+    "old_path": "ctf-pwn/INDEX.md",
+    "original_git_blob_sha256": "b4afe6c9c63e59ff26fe301b9264c8214c14d1df860b3744cd500b0d897a8fce",
+    "baseline_worktree_sha256": "b4afe6c9c63e59ff26fe301b9264c8214c14d1df860b3744cd500b0d897a8fce",
+    "destination": "ctf-pwn/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-pwn/SKILL.md",
+    "original_git_blob_sha256": "b911afb0bce30b5d28d87a960980a9626d3947644291daf5cf9f0bada75e632a",
+    "baseline_worktree_sha256": "b911afb0bce30b5d28d87a960980a9626d3947644291daf5cf9f0bada75e632a",
+    "destination": "ctf-pwn/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-pwn/personal-learnings.md",
+      "ctf-pwn/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-pwn/advanced-exploits-2.md",
+    "original_git_blob_sha256": "2fc80b1e912ac52909311e5e70ccd56d1f66fd3f8d6846b19002926fece0f4d0",
+    "baseline_worktree_sha256": "2fc80b1e912ac52909311e5e70ccd56d1f66fd3f8d6846b19002926fece0f4d0",
+    "destination": "ctf-pwn/advanced-exploits-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/advanced-exploits-3.md",
+    "original_git_blob_sha256": "2b019474302dc6d8a49bf3c9c0e1d727c6d4cb16471521d269e7e2e3cd4ca6f8",
+    "baseline_worktree_sha256": "2b019474302dc6d8a49bf3c9c0e1d727c6d4cb16471521d269e7e2e3cd4ca6f8",
+    "destination": "ctf-pwn/advanced-exploits-3.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/advanced-exploits-4.md",
+    "original_git_blob_sha256": "eb4224ca61564bb5bf773b5b4a4d26a1f08a928019dacd7f4bbf062fd63fbb1a",
+    "baseline_worktree_sha256": "eb4224ca61564bb5bf773b5b4a4d26a1f08a928019dacd7f4bbf062fd63fbb1a",
+    "destination": "ctf-pwn/advanced-exploits-4.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/advanced-exploits-5.md",
+    "original_git_blob_sha256": "b6a02539c1b15756f4c2ffdf5c880c3fa487ebe85a58980ab5ecfee4efd1fb0d",
+    "baseline_worktree_sha256": "b6a02539c1b15756f4c2ffdf5c880c3fa487ebe85a58980ab5ecfee4efd1fb0d",
+    "destination": "ctf-pwn/advanced-exploits-5.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/advanced-exploits.md",
+    "original_git_blob_sha256": "22236c503c204e8337064ea1fe6e024ca0a1b5a450f83ae24955e66957fb790f",
+    "baseline_worktree_sha256": "22236c503c204e8337064ea1fe6e024ca0a1b5a450f83ae24955e66957fb790f",
+    "destination": "ctf-pwn/advanced-exploits.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/advanced.md",
+    "original_git_blob_sha256": "e744d11d37518e494a410f6584487bd3d09c1486168a03dfd850c62f6c82a4ff",
+    "baseline_worktree_sha256": "e744d11d37518e494a410f6584487bd3d09c1486168a03dfd850c62f6c82a4ff",
+    "destination": "ctf-pwn/advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/agents/openai.yaml",
+    "original_git_blob_sha256": "13228f428dd11ab177d25d697ae558be5c33ec4aefd4ea0b60090471d82ae2a1",
+    "baseline_worktree_sha256": "13228f428dd11ab177d25d697ae558be5c33ec4aefd4ea0b60090471d82ae2a1",
+    "destination": "ctf-pwn/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/field-notes.md",
+    "original_git_blob_sha256": "325b8d6ded61e97fe0015b085335d5fc5360ec78aefa02b3214dd37378e2e648",
+    "baseline_worktree_sha256": "325b8d6ded61e97fe0015b085335d5fc5360ec78aefa02b3214dd37378e2e648",
+    "destination": "ctf-pwn/field-notes.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/format-string.md",
+    "original_git_blob_sha256": "88e18727c321111621fc8b6725828977235a036a00fb3db0d194a20995981a13",
+    "baseline_worktree_sha256": "88e18727c321111621fc8b6725828977235a036a00fb3db0d194a20995981a13",
+    "destination": "ctf-pwn/format-string.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/heap-fsop.md",
+    "original_git_blob_sha256": "bc8bc268a1363ca44c1c2d075aee7d77afc23a323e17ed35534b1f2878276ce3",
+    "baseline_worktree_sha256": "bc8bc268a1363ca44c1c2d075aee7d77afc23a323e17ed35534b1f2878276ce3",
+    "destination": "ctf-pwn/heap-fsop.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/heap-techniques-2.md",
+    "original_git_blob_sha256": "04d6188b44fc00c1406bff9700e6d7d5e16f3b1c549bd7fade2af2f7011c2d8e",
+    "baseline_worktree_sha256": "04d6188b44fc00c1406bff9700e6d7d5e16f3b1c549bd7fade2af2f7011c2d8e",
+    "destination": "ctf-pwn/heap-techniques-2.md",
+    "status": "corrected",
+    "reason": "Replaced invalid hex placeholder with a required measured-address variable"
+  },
+  {
+    "old_path": "ctf-pwn/heap-techniques.md",
+    "original_git_blob_sha256": "fe1432ac61e1e42dd8eb3d787e4f3eb32aa228cf04112b778d276cd70915bb83",
+    "baseline_worktree_sha256": "fe1432ac61e1e42dd8eb3d787e4f3eb32aa228cf04112b778d276cd70915bb83",
+    "destination": "ctf-pwn/heap-techniques.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/kernel-bypass.md",
+    "original_git_blob_sha256": "dec4c66c7d2c98d0b10a5a682aa7761504e5a9e3b3699f5785f0e0da42878de8",
+    "baseline_worktree_sha256": "dec4c66c7d2c98d0b10a5a682aa7761504e5a9e3b3699f5785f0e0da42878de8",
+    "destination": "ctf-pwn/kernel-bypass.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/kernel-techniques.md",
+    "original_git_blob_sha256": "891c9e7b5566ee8f7e596f5a50c86bf3f4c02b7c719e12c751ef3b108fa8f5e0",
+    "baseline_worktree_sha256": "891c9e7b5566ee8f7e596f5a50c86bf3f4c02b7c719e12c751ef3b108fa8f5e0",
+    "destination": "ctf-pwn/kernel-techniques.md",
+    "status": "corrected",
+    "reason": "Replaced invalid hex placeholder with the required leak variable"
+  },
+  {
+    "old_path": "ctf-pwn/kernel.md",
+    "original_git_blob_sha256": "28339ab69b904cadf00071d5a913d516c921a68d7a7d0ca024d8df4ba4651886",
+    "baseline_worktree_sha256": "28339ab69b904cadf00071d5a913d516c921a68d7a7d0ca024d8df4ba4651886",
+    "destination": "ctf-pwn/kernel.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/overflow-basics.md",
+    "original_git_blob_sha256": "35a2de4f244992324dac6fd636c35bb65c75ac5a93bbd46932a00ca96288fa82",
+    "baseline_worktree_sha256": "35a2de4f244992324dac6fd636c35bb65c75ac5a93bbd46932a00ca96288fa82",
+    "destination": "ctf-pwn/overflow-basics.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/rop-advanced.md",
+    "original_git_blob_sha256": "17f64733c91db8b461892106f6af49e736ffd99d8794fe96a9f279925e410d3a",
+    "baseline_worktree_sha256": "17f64733c91db8b461892106f6af49e736ffd99d8794fe96a9f279925e410d3a",
+    "destination": "ctf-pwn/rop-advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-pwn/rop-and-shellcode.md",
+    "original_git_blob_sha256": "f0c06c00ccfbedadb7dbb25311474ef473f7948d526fbe6fd952152773b1a4cf",
+    "baseline_worktree_sha256": "f0c06c00ccfbedadb7dbb25311474ef473f7948d526fbe6fd952152773b1a4cf",
+    "destination": "ctf-pwn/rop-and-shellcode.md",
+    "status": "corrected",
+    "reason": "Removed accidental top-level Markdown indentation from Python code"
+  },
+  {
+    "old_path": "ctf-pwn/sandbox-escape.md",
+    "original_git_blob_sha256": "cae775f5fe81f001f146fcd2b455ddd9f2e5452ec5252c9db4ded47627c95d7b",
+    "baseline_worktree_sha256": "cae775f5fe81f001f146fcd2b455ddd9f2e5452ec5252c9db4ded47627c95d7b",
+    "destination": "ctf-pwn/sandbox-escape.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/INDEX.md",
+    "original_git_blob_sha256": "52afacd2791dd73415a5b8bdc33bb8e89977c5ad0dd23000bbb103f651839e84",
+    "baseline_worktree_sha256": "52afacd2791dd73415a5b8bdc33bb8e89977c5ad0dd23000bbb103f651839e84",
+    "destination": "ctf-reverse/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-reverse/SKILL.md",
+    "original_git_blob_sha256": "96fc1132140fa001219be0558408836d5dc7dd4bd29865a4b2e83f08fe064511",
+    "baseline_worktree_sha256": "96fc1132140fa001219be0558408836d5dc7dd4bd29865a4b2e83f08fe064511",
+    "destination": "ctf-reverse/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-reverse/personal-learnings.md",
+      "ctf-reverse/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-reverse/agents/openai.yaml",
+    "original_git_blob_sha256": "c78c849bb30088d15500c91706ffb4fc402fe8fa77fb72a10fce2c867f610d54",
+    "baseline_worktree_sha256": "c78c849bb30088d15500c91706ffb4fc402fe8fa77fb72a10fce2c867f610d54",
+    "destination": "ctf-reverse/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/anti-analysis-ctf.md",
+    "original_git_blob_sha256": "b85b326b6d690f25682e8cab541d34aaddfa92027585edc66b2af00e1f6bfb9b",
+    "baseline_worktree_sha256": "b85b326b6d690f25682e8cab541d34aaddfa92027585edc66b2af00e1f6bfb9b",
+    "destination": "ctf-reverse/anti-analysis-ctf.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/anti-analysis.md",
+    "original_git_blob_sha256": "b427538be6c434a1e6fd56c1fa0eb093029d32f95b761a8ebf0115ebb2ea0194",
+    "baseline_worktree_sha256": "b427538be6c434a1e6fd56c1fa0eb093029d32f95b761a8ebf0115ebb2ea0194",
+    "destination": "ctf-reverse/anti-analysis.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/field-notes.md",
+    "original_git_blob_sha256": "640afb782d7f796e66214b616779d41463527068fd53e1ee22581774ca6de365",
+    "baseline_worktree_sha256": "640afb782d7f796e66214b616779d41463527068fd53e1ee22581774ca6de365",
+    "destination": "ctf-reverse/field-notes.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/languages-compiled.md",
+    "original_git_blob_sha256": "3d38ea882a4cf6f196e53b2c016a6c4e519945465a65b0fdea0d5ed8ea820bf1",
+    "baseline_worktree_sha256": "3d38ea882a4cf6f196e53b2c016a6c4e519945465a65b0fdea0d5ed8ea820bf1",
+    "destination": "ctf-reverse/languages-compiled.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/languages-platforms.md",
+    "original_git_blob_sha256": "fec8c72f0b5d281e47cf2a9a91d63bf65cf48f5213bcbfcb21a3f3a52c9e2dd7",
+    "baseline_worktree_sha256": "fec8c72f0b5d281e47cf2a9a91d63bf65cf48f5213bcbfcb21a3f3a52c9e2dd7",
+    "destination": "ctf-reverse/languages-platforms.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/languages.md",
+    "original_git_blob_sha256": "66088f06eb67e1b88dfe8116228d1e93c2f73f3eaafa82de4fd7d2fd5936c0ac",
+    "baseline_worktree_sha256": "66088f06eb67e1b88dfe8116228d1e93c2f73f3eaafa82de4fd7d2fd5936c0ac",
+    "destination": "ctf-reverse/languages.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/patterns-ctf-2.md",
+    "original_git_blob_sha256": "29acfb9ee8a4acfaa32dd672e00ebc15ba2ea5e91c83f8f94351a8c36507b5ea",
+    "baseline_worktree_sha256": "29acfb9ee8a4acfaa32dd672e00ebc15ba2ea5e91c83f8f94351a8c36507b5ea",
+    "destination": "ctf-reverse/patterns-ctf-2.md",
+    "status": "corrected",
+    "reason": "Removed accidental top-level Markdown indentation from Python code"
+  },
+  {
+    "old_path": "ctf-reverse/patterns-ctf-3.md",
+    "original_git_blob_sha256": "6e8ab2a59fb28f3d6a75242126706126328834b5836facddd05b417fe13768fe",
+    "baseline_worktree_sha256": "6e8ab2a59fb28f3d6a75242126706126328834b5836facddd05b417fe13768fe",
+    "destination": "ctf-reverse/patterns-ctf-3.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/patterns-ctf.md",
+    "original_git_blob_sha256": "b93168106d4570f54be41b15e6a6ef7eac145c3eab9ea00644dbc5da043a6374",
+    "baseline_worktree_sha256": "b93168106d4570f54be41b15e6a6ef7eac145c3eab9ea00644dbc5da043a6374",
+    "destination": "ctf-reverse/patterns-ctf.md",
+    "status": "corrected",
+    "reason": "Repaired orphaned branch and initialized the original value used in the hash sketch"
+  },
+  {
+    "old_path": "ctf-reverse/patterns-runtime.md",
+    "original_git_blob_sha256": "64ca04328f2c29dbba570df493ab734f9d7c513eb12fd3700d7ebdcd8de8121f",
+    "baseline_worktree_sha256": "64ca04328f2c29dbba570df493ab734f9d7c513eb12fd3700d7ebdcd8de8121f",
+    "destination": "ctf-reverse/patterns-runtime.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/patterns.md",
+    "original_git_blob_sha256": "202711ebeca929ec7887d219eeab3349184cfd02a45d5eebc08ea53b8e7ef9df",
+    "baseline_worktree_sha256": "202711ebeca929ec7887d219eeab3349184cfd02a45d5eebc08ea53b8e7ef9df",
+    "destination": "ctf-reverse/patterns.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/platforms-hardware.md",
+    "original_git_blob_sha256": "691b311dd75cf97369b5cda44fe6ea7e56f9d1666e416ef96f518c1566e727dd",
+    "baseline_worktree_sha256": "691b311dd75cf97369b5cda44fe6ea7e56f9d1666e416ef96f518c1566e727dd",
+    "destination": "ctf-reverse/platforms-hardware.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/platforms.md",
+    "original_git_blob_sha256": "19bdd1c79d362786c653ed9e865b48996955cc4d7a07077fd56c2e2979e99c45",
+    "baseline_worktree_sha256": "19bdd1c79d362786c653ed9e865b48996955cc4d7a07077fd56c2e2979e99c45",
+    "destination": "ctf-reverse/platforms.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/tools-advanced-2.md",
+    "original_git_blob_sha256": "90d2de606eb0095573cc85897f5ff9115e2cce481a07e993f80bc543241af2c2",
+    "baseline_worktree_sha256": "90d2de606eb0095573cc85897f5ff9115e2cce481a07e993f80bc543241af2c2",
+    "destination": "ctf-reverse/tools-advanced-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/tools-advanced.md",
+    "original_git_blob_sha256": "1f3bb83f43781197791b2a42e9c9e94aff126f09abe6927b1cfdf83745cb87f9",
+    "baseline_worktree_sha256": "1f3bb83f43781197791b2a42e9c9e94aff126f09abe6927b1cfdf83745cb87f9",
+    "destination": "ctf-reverse/tools-advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/tools-dynamic.md",
+    "original_git_blob_sha256": "186b45167ba49e66cd7bc8cba14ab06eaceaab85c073617549e8a33a2fb5f0ad",
+    "baseline_worktree_sha256": "186b45167ba49e66cd7bc8cba14ab06eaceaab85c073617549e8a33a2fb5f0ad",
+    "destination": "ctf-reverse/tools-dynamic.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/tools-emulation.md",
+    "original_git_blob_sha256": "1236eb601d90ec3610a57801dc4920ebe3b151e7b8a359829e79293576fa1152",
+    "baseline_worktree_sha256": "1236eb601d90ec3610a57801dc4920ebe3b151e7b8a359829e79293576fa1152",
+    "destination": "ctf-reverse/tools-emulation.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-reverse/tools.md",
+    "original_git_blob_sha256": "2287a9a6e7b26a92d1c1166c4833876320bbefbb33ac61c81b743ec0cb4dde92",
+    "baseline_worktree_sha256": "2287a9a6e7b26a92d1c1166c4833876320bbefbb33ac61c81b743ec0cb4dde92",
+    "destination": "ctf-reverse/tools.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/INDEX.md",
+    "original_git_blob_sha256": "8599c92ee51eb0ccc28c3d9153917237ba67731b24296938b9878872a657928e",
+    "baseline_worktree_sha256": "8599c92ee51eb0ccc28c3d9153917237ba67731b24296938b9878872a657928e",
+    "destination": "ctf-web/INDEX.md",
+    "status": "generated",
+    "reason": "Regenerated compact symptom index; all reference headings remain discoverable through lookup_knowledge.py."
+  },
+  {
+    "old_path": "ctf-web/LEARNED.md",
+    "original_git_blob_sha256": "356122989fcb13940416b4888f7e0d6c4c1fd8f32ec02404dbfbb2dd5b9ef580",
+    "baseline_worktree_sha256": "356122989fcb13940416b4888f7e0d6c4c1fd8f32ec02404dbfbb2dd5b9ef580",
+    "destination": "ctf-web/LEARNED.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/SKILL.md",
+    "original_git_blob_sha256": "f77dfd4d7f94f1a11cf29ce1ce54fa471c91e16941032f5a8886ec54ccf31e2f",
+    "baseline_worktree_sha256": "f77dfd4d7f94f1a11cf29ce1ce54fa471c91e16941032f5a8886ec54ccf31e2f",
+    "destination": "ctf-web/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-web/personal-learnings.md",
+      "ctf-web/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "ctf-web/agents/openai.yaml",
+    "original_git_blob_sha256": "9f3bc01529ec641e5f915c2c1cd4a76c2f7490f3b05091edc09d9d9e0b06ef3e",
+    "baseline_worktree_sha256": "9f3bc01529ec641e5f915c2c1cd4a76c2f7490f3b05091edc09d9d9e0b06ef3e",
+    "destination": "ctf-web/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/auth-and-access-2.md",
+    "original_git_blob_sha256": "f1d08ad37727905fd42c7f356b5fc0d8d20c7929cf65a307dbf20c4ea6beadc0",
+    "baseline_worktree_sha256": "f1d08ad37727905fd42c7f356b5fc0d8d20c7929cf65a307dbf20c4ea6beadc0",
+    "destination": "ctf-web/auth-and-access-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/auth-and-access.md",
+    "original_git_blob_sha256": "514fc63ce44c59385c3b444919d52e79975d9c619f5a6925abb0db8b47e0a403",
+    "baseline_worktree_sha256": "514fc63ce44c59385c3b444919d52e79975d9c619f5a6925abb0db8b47e0a403",
+    "destination": "ctf-web/auth-and-access.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/auth-infra.md",
+    "original_git_blob_sha256": "6ec52bfda9846a4fe6274907bdb7ca7a3fd1d78519c0617a1ebc8fcc3f01fe42",
+    "baseline_worktree_sha256": "6ec52bfda9846a4fe6274907bdb7ca7a3fd1d78519c0617a1ebc8fcc3f01fe42",
+    "destination": "ctf-web/auth-infra.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/auth-jwt.md",
+    "original_git_blob_sha256": "243bb55cc9f42768b21e924c97582a477fab6a8a35263593bc185037b027e836",
+    "baseline_worktree_sha256": "243bb55cc9f42768b21e924c97582a477fab6a8a35263593bc185037b027e836",
+    "destination": "ctf-web/auth-jwt.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/client-side-advanced.md",
+    "original_git_blob_sha256": "7c65316cc20d316d25be843b4361029f7bbca2eae876804b4e6d805f0087615e",
+    "baseline_worktree_sha256": "7c65316cc20d316d25be843b4361029f7bbca2eae876804b4e6d805f0087615e",
+    "destination": "ctf-web/client-side-advanced.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/client-side.md",
+    "original_git_blob_sha256": "92e6a77729764dbeb1f4e606568ce2b501e6fcd66b4756dd970675090c56d14b",
+    "baseline_worktree_sha256": "92e6a77729764dbeb1f4e606568ce2b501e6fcd66b4756dd970675090c56d14b",
+    "destination": "ctf-web/client-side.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/cves.md",
+    "original_git_blob_sha256": "4e6adc877610cf13bc41f71e0e50ce042f52dc0d37670659b45c530a6d54acaa",
+    "baseline_worktree_sha256": "4e6adc877610cf13bc41f71e0e50ce042f52dc0d37670659b45c530a6d54acaa",
+    "destination": "ctf-web/cves.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/field-notes.md",
+    "original_git_blob_sha256": "a6687c21267bcb3020ea83bd3f9b25311adce34a9581a529331f1a68f62e039c",
+    "baseline_worktree_sha256": "a6687c21267bcb3020ea83bd3f9b25311adce34a9581a529331f1a68f62e039c",
+    "destination": "ctf-web/field-notes.md",
+    "status": "corrected",
+    "reason": "Labeled mixed template-language payloads as literal data, not Python programs"
+  },
+  {
+    "old_path": "ctf-web/node-and-prototype.md",
+    "original_git_blob_sha256": "de30de884029aab1b65d25d9fd0ca61b4347105a64424a4ed46ff66f410277e7",
+    "baseline_worktree_sha256": "de30de884029aab1b65d25d9fd0ca61b4347105a64424a4ed46ff66f410277e7",
+    "destination": "ctf-web/node-and-prototype.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side-2.md",
+    "original_git_blob_sha256": "fa53acda126079661311576d94c20316ed6c1928498fdfb366fc2379b2f812f9",
+    "baseline_worktree_sha256": "fa53acda126079661311576d94c20316ed6c1928498fdfb366fc2379b2f812f9",
+    "destination": "ctf-web/server-side-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side-advanced-2.md",
+    "original_git_blob_sha256": "727234cf00069374d74dd5355bfd69cd47afcddb0aa1c9bca4acaa0ba3220d36",
+    "baseline_worktree_sha256": "727234cf00069374d74dd5355bfd69cd47afcddb0aa1c9bca4acaa0ba3220d36",
+    "destination": "ctf-web/server-side-advanced-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side-advanced-3.md",
+    "original_git_blob_sha256": "b65cc497588ec11af4191a2f203c2804c9fad2a0e7ff06cc797d862af3eeb866",
+    "baseline_worktree_sha256": "b65cc497588ec11af4191a2f203c2804c9fad2a0e7ff06cc797d862af3eeb866",
+    "destination": "ctf-web/server-side-advanced-3.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side-advanced-4.md",
+    "original_git_blob_sha256": "6cf29f51a0508f2d4be308a2927363794de29f09b37580a1c067b0c6660a5e38",
+    "baseline_worktree_sha256": "6cf29f51a0508f2d4be308a2927363794de29f09b37580a1c067b0c6660a5e38",
+    "destination": "ctf-web/server-side-advanced-4.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side-advanced.md",
+    "original_git_blob_sha256": "c2bb665ff6ee9c062f9c4990471c1c429f2aeaeb22c77c27a4c64b55b1034cb6",
+    "baseline_worktree_sha256": "c2bb665ff6ee9c062f9c4990471c1c429f2aeaeb22c77c27a4c64b55b1034cb6",
+    "destination": "ctf-web/server-side-advanced.md",
+    "status": "corrected",
+    "reason": "Removed accidental top-level Markdown indentation from Python code"
+  },
+  {
+    "old_path": "ctf-web/server-side-deser.md",
+    "original_git_blob_sha256": "5eeb5002a2b18f63b0c27e5c96278622c206449aa8703c2a136d5eb87b257eb2",
+    "baseline_worktree_sha256": "5eeb5002a2b18f63b0c27e5c96278622c206449aa8703c2a136d5eb87b257eb2",
+    "destination": "ctf-web/server-side-deser.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side-exec-2.md",
+    "original_git_blob_sha256": "11422a677bc8706a950bd310e0e863fa4744cd026b26109d8c3ce9254f508c14",
+    "baseline_worktree_sha256": "11422a677bc8706a950bd310e0e863fa4744cd026b26109d8c3ce9254f508c14",
+    "destination": "ctf-web/server-side-exec-2.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side-exec.md",
+    "original_git_blob_sha256": "5c89386f84209d10671dd3d38cfc43e99c2d5ae31f02d11715cd4e59186d3e88",
+    "baseline_worktree_sha256": "5c89386f84209d10671dd3d38cfc43e99c2d5ae31f02d11715cd4e59186d3e88",
+    "destination": "ctf-web/server-side-exec.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/server-side.md",
+    "original_git_blob_sha256": "943e8257f162e1d1f8dac34f4cedff7a46a3913c8d9a248e897b6f4cab1021dc",
+    "baseline_worktree_sha256": "943e8257f162e1d1f8dac34f4cedff7a46a3913c8d9a248e897b6f4cab1021dc",
+    "destination": "ctf-web/server-side.md",
+    "status": "corrected",
+    "reason": "Labeled mixed template-language payloads as literal data, not Python programs; Removed accidental top-level Markdown indentation from Python code"
+  },
+  {
+    "old_path": "ctf-web/sql-injection.md",
+    "original_git_blob_sha256": "9dc02ea70a5125a26414446e5cb6ec70fdb553950686a7bc0d6e3d48a7c38afa",
+    "baseline_worktree_sha256": "9dc02ea70a5125a26414446e5cb6ec70fdb553950686a7bc0d6e3d48a7c38afa",
+    "destination": "ctf-web/sql-injection.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-web/web3.md",
+    "original_git_blob_sha256": "db5291625a2b8fed1b21ba8c226d3e5c1e53ed6e9bd5237bbf37ef8b6d6f9b32",
+    "baseline_worktree_sha256": "db5291625a2b8fed1b21ba8c226d3e5c1e53ed6e9bd5237bbf37ef8b6d6f9b32",
+    "destination": "ctf-web/web3.md",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "ctf-writeup/SKILL.md",
+    "original_git_blob_sha256": "37774fa50f09c35b001d896a1975fe979715ac4a8f85532e505b2142c68c7058",
+    "baseline_worktree_sha256": "37774fa50f09c35b001d896a1975fe979715ac4a8f85532e505b2142c68c7058",
+    "destination": "ctf-writeup/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "ctf-writeup/triage-reference.md",
+      "docs/WORKFLOW.md"
+    ]
+  },
+  {
+    "old_path": "docs/OPERATIONS.md",
+    "original_git_blob_sha256": "25afc560c7269ba26adb24df5fd27e01c33667f6d192c9833afd948a2090555c",
+    "baseline_worktree_sha256": "25afc560c7269ba26adb24df5fd27e01c33667f6d192c9833afd948a2090555c",
+    "destination": "docs/OPERATIONS.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "find-skills/SKILL.md",
+    "original_git_blob_sha256": "5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+    "baseline_worktree_sha256": "5df70a7a474aaed217246277e17882e3eb9025077189026dfb028a713b480926",
+    "destination": "find-skills/SKILL.md",
+    "status": "metadata-only",
+    "reason": "Quoted the same description as valid YAML; instructions and knowledge body retained."
+  },
+  {
+    "old_path": "install.sh",
+    "original_git_blob_sha256": "033961cc65f42baa9a5e98e0186b40e7e77b2b57bba6005049717cc63d4959bc",
+    "baseline_worktree_sha256": "033961cc65f42baa9a5e98e0186b40e7e77b2b57bba6005049717cc63d4959bc",
+    "destination": "install.sh",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "knowledge/accepted/2026-07-22-http2-downgrade-desync.json",
+    "original_git_blob_sha256": "1a27dbf3f593f4d7bf310748c2eea6e0710ccffe3350eeb9711e9915e0986cfd",
+    "baseline_worktree_sha256": "1a27dbf3f593f4d7bf310748c2eea6e0710ccffe3350eeb9711e9915e0986cfd",
+    "destination": "knowledge/accepted/2026-07-22-http2-downgrade-desync.json",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "knowledge/accepted/2026-07-22-java-ghost-bits.json",
+    "original_git_blob_sha256": "62f8b048dff5087db00e69db888479642b0043c619c8e97d21039a4ad3962167",
+    "baseline_worktree_sha256": "62f8b048dff5087db00e69db888479642b0043c619c8e97d21039a4ad3962167",
+    "destination": "knowledge/accepted/2026-07-22-java-ghost-bits.json",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "knowledge/enrichment-report.json",
+    "original_git_blob_sha256": "6249d613e802561065a9e27c962b8281ace942d52880a4c4a582cd195508b464",
+    "baseline_worktree_sha256": "6249d613e802561065a9e27c962b8281ace942d52880a4c4a582cd195508b464",
+    "destination": "knowledge/enrichment-report.json",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "knowledge/inbox/.gitkeep",
+    "original_git_blob_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "baseline_worktree_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "destination": "knowledge/inbox/.gitkeep",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "knowledge/integrity-manifest.json",
+    "original_git_blob_sha256": "f7034996ebbac4fdb5c07287e027e8e7f097d9511cb41c490ea8758be5b06888",
+    "baseline_worktree_sha256": "f7034996ebbac4fdb5c07287e027e8e7f097d9511cb41c490ea8758be5b06888",
+    "destination": "knowledge/integrity-manifest.json",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "knowledge/learning-ledger.jsonl",
+    "original_git_blob_sha256": "1e915351a132beb109e4dce7589ff88295d74c0fb88448be384c7db753e1c5ea",
+    "baseline_worktree_sha256": "1e915351a132beb109e4dce7589ff88295d74c0fb88448be384c7db753e1c5ea",
+    "destination": "knowledge/learning-ledger.jsonl",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "knowledge/rejected/.gitkeep",
+    "original_git_blob_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "baseline_worktree_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "destination": "knowledge/rejected/.gitkeep",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "knowledge/sources.lock.json",
+    "original_git_blob_sha256": "c8c5c14741aee3dadd446aecebdbd10c82dd548c67dd175c281e543190c5dac5",
+    "baseline_worktree_sha256": "c8c5c14741aee3dadd446aecebdbd10c82dd548c67dd175c281e543190c5dac5",
+    "destination": "knowledge/sources.lock.json",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "knowledge/sources.yaml",
+    "original_git_blob_sha256": "411c176e4cbbe40d8b3b74b276163db0f1aa73029af60c85545890e29c6b162a",
+    "baseline_worktree_sha256": "411c176e4cbbe40d8b3b74b276163db0f1aa73029af60c85545890e29c6b162a",
+    "destination": "knowledge/sources.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "prompts/ctf-ai-ml.md",
+    "original_git_blob_sha256": "19c0e3679c0420d109354e2b8204165a706924e4a78233c1e4a0ec2939e17081",
+    "baseline_worktree_sha256": "19c0e3679c0420d109354e2b8204165a706924e4a78233c1e4a0ec2939e17081",
+    "destination": "prompts/ctf-ai-ml.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-crypto.md",
+    "original_git_blob_sha256": "ef30f830881feb95de5a9da02aae4465247f4b2543ad52cc9bc9035d192ed08c",
+    "baseline_worktree_sha256": "ef30f830881feb95de5a9da02aae4465247f4b2543ad52cc9bc9035d192ed08c",
+    "destination": "prompts/ctf-crypto.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-forensics.md",
+    "original_git_blob_sha256": "2d1ee53c9e927eafc66c4169423ebde91bf763c10daddedbcec224447c61c913",
+    "baseline_worktree_sha256": "2d1ee53c9e927eafc66c4169423ebde91bf763c10daddedbcec224447c61c913",
+    "destination": "prompts/ctf-forensics.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-malware.md",
+    "original_git_blob_sha256": "41d3b69fdfca462df1bd790aa74667934ae853b176a161b948cd62edb71ddb77",
+    "baseline_worktree_sha256": "41d3b69fdfca462df1bd790aa74667934ae853b176a161b948cd62edb71ddb77",
+    "destination": "prompts/ctf-malware.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-misc.md",
+    "original_git_blob_sha256": "ba6a877ee9e29ff4f2f7d43f14dfa0c3ab45ab8019333814b06554b94aa44485",
+    "baseline_worktree_sha256": "ba6a877ee9e29ff4f2f7d43f14dfa0c3ab45ab8019333814b06554b94aa44485",
+    "destination": "prompts/ctf-misc.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-osint.md",
+    "original_git_blob_sha256": "e4aa30c3f5871089efd180d0fcb7cf0db798aa32f52d92b3877e1702e5e03c48",
+    "baseline_worktree_sha256": "e4aa30c3f5871089efd180d0fcb7cf0db798aa32f52d92b3877e1702e5e03c48",
+    "destination": "prompts/ctf-osint.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-pwn.md",
+    "original_git_blob_sha256": "d1bc082dd1a1db6ddb061be856485cfe7d08cd7ffdd443115444325114b7f5e6",
+    "baseline_worktree_sha256": "d1bc082dd1a1db6ddb061be856485cfe7d08cd7ffdd443115444325114b7f5e6",
+    "destination": "prompts/ctf-pwn.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-reverse.md",
+    "original_git_blob_sha256": "01241608d1f85215249d2df6c4816772a1d4d46c24d241d7069f766c7a4499f3",
+    "baseline_worktree_sha256": "01241608d1f85215249d2df6c4816772a1d4d46c24d241d7069f766c7a4499f3",
+    "destination": "prompts/ctf-reverse.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/ctf-web.md",
+    "original_git_blob_sha256": "6204529d2a0c97f156929d257af152d0209f1b6c387754e3431f5866682fa8cd",
+    "baseline_worktree_sha256": "6204529d2a0c97f156929d257af152d0209f1b6c387754e3431f5866682fa8cd",
+    "destination": "prompts/ctf-web.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "prompts/solve-challenge.md",
+    "original_git_blob_sha256": "d68bb33ab04d354a589aae7e322bc498db67698eea9d5fa575537fa74e300533",
+    "baseline_worktree_sha256": "d68bb33ab04d354a589aae7e322bc498db67698eea9d5fa575537fa74e300533",
+    "destination": "prompts/solve-challenge.md",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "pyproject.toml",
+    "original_git_blob_sha256": "8fe1826c37463d476c18279a7c61ab66b7d50fce72dab780b0515b80a33f267a",
+    "baseline_worktree_sha256": "8fe1826c37463d476c18279a7c61ab66b7d50fce72dab780b0515b80a33f267a",
+    "destination": "pyproject.toml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "schemas/learning.schema.json",
+    "original_git_blob_sha256": "c6d83c42e76ad429de6c78aaef0f86a5554bafa1ca8eeab5cd281ea83f60e55e",
+    "baseline_worktree_sha256": "c6d83c42e76ad429de6c78aaef0f86a5554bafa1ca8eeab5cd281ea83f60e55e",
+    "destination": "schemas/learning.schema.json",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "schemas/unsolved-status.schema.json",
+    "original_git_blob_sha256": "833e5872179cc47f64bceb5d7a43e879a7dfc815dd16180d5acd4c13d58c2a90",
+    "baseline_worktree_sha256": "833e5872179cc47f64bceb5d7a43e879a7dfc815dd16180d5acd4c13d58c2a90",
+    "destination": "schemas/unsolved-status.schema.json",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "scripts/append_learning.py",
+    "original_git_blob_sha256": "949fce6240c750ea1e2799cda230124e061fdd820f253d52ac0514e5028da017",
+    "baseline_worktree_sha256": "949fce6240c750ea1e2799cda230124e061fdd820f253d52ac0514e5028da017",
+    "destination": "scripts/append_learning.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/capture_learning.py",
+    "original_git_blob_sha256": "523677ec261032baf859f6d197d873d88b54bc440761ea2eb2ad5fcff1620ba8",
+    "baseline_worktree_sha256": "523677ec261032baf859f6d197d873d88b54bc440761ea2eb2ad5fcff1620ba8",
+    "destination": "scripts/capture_learning.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/check_repository_safety.py",
+    "original_git_blob_sha256": "c8f2fd365d24d10ff930bd520f772d4f35858606b9d1e89ab81d2bc97e62dc30",
+    "baseline_worktree_sha256": "c8f2fd365d24d10ff930bd520f772d4f35858606b9d1e89ab81d2bc97e62dc30",
+    "destination": "scripts/check_repository_safety.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/classify_challenge.py",
+    "original_git_blob_sha256": "846113a2fbca9df410d5b12b0fe3a8b6d58d8a9041373e64c9991dce1a5c3c71",
+    "baseline_worktree_sha256": "846113a2fbca9df410d5b12b0fe3a8b6d58d8a9041373e64c9991dce1a5c3c71",
+    "destination": "scripts/classify_challenge.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/classify_learning.py",
+    "original_git_blob_sha256": "5e4fcf11eaf69a30281e87fbe0c0658f7de61319fa0a5aa621fa456b7bc7923d",
+    "baseline_worktree_sha256": "5e4fcf11eaf69a30281e87fbe0c0658f7de61319fa0a5aa621fa456b7bc7923d",
+    "destination": "scripts/classify_learning.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "scripts/detect_duplicates.py",
+    "original_git_blob_sha256": "c8d6d36874fc627f7988064e6318780e7c92534006efac883fdc3176e826a0f7",
+    "baseline_worktree_sha256": "c8d6d36874fc627f7988064e6318780e7c92534006efac883fdc3176e826a0f7",
+    "destination": "scripts/detect_duplicates.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "scripts/enrich_from_sources.py",
+    "original_git_blob_sha256": "287c8a3bb659979d2a4e68ac29bc83438ce2884b07915372bda8014fd24fd7ea",
+    "baseline_worktree_sha256": "287c8a3bb659979d2a4e68ac29bc83438ce2884b07915372bda8014fd24fd7ea",
+    "destination": "scripts/enrich_from_sources.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/generate_prompt.py",
+    "original_git_blob_sha256": "fd1d0cd938956e526ee451f22af574c0280bcb2ea2f70ffaddb624b6e077c226",
+    "baseline_worktree_sha256": "fd1d0cd938956e526ee451f22af574c0280bcb2ea2f70ffaddb624b6e077c226",
+    "destination": "scripts/generate_prompt.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "scripts/human_review_gate.py",
+    "original_git_blob_sha256": "030d851fc5876cf7908a709f5f31cfbb5f0bc0a373d70013f96d7fe39735ba6a",
+    "baseline_worktree_sha256": "030d851fc5876cf7908a709f5f31cfbb5f0bc0a373d70013f96d7fe39735ba6a",
+    "destination": "scripts/human_review_gate.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "scripts/install_ctf_tools.sh",
+    "original_git_blob_sha256": "0b8c9a92ce20b3ec2e2e1a3012c0e97342bbdaf9acca0e96842a59cc349fd3f1",
+    "baseline_worktree_sha256": "0b8c9a92ce20b3ec2e2e1a3012c0e97342bbdaf9acca0e96842a59cc349fd3f1",
+    "destination": "scripts/install_ctf_tools.sh",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/learning_lib.py",
+    "original_git_blob_sha256": "6f5a44e13a1971bf7015dc61a3b377126f22caf913ed76f2b6dde4c6ea4be127",
+    "baseline_worktree_sha256": "6f5a44e13a1971bf7015dc61a3b377126f22caf913ed76f2b6dde4c6ea4be127",
+    "destination": "scripts/learning_lib.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/rebuild_indexes.py",
+    "original_git_blob_sha256": "12baf1a3bdfa2816fcbf3d78223813e30c37c57ffad860db46a8b6245cc9f01f",
+    "baseline_worktree_sha256": "12baf1a3bdfa2816fcbf3d78223813e30c37c57ffad860db46a8b6245cc9f01f",
+    "destination": "scripts/rebuild_indexes.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/validate_skills.py",
+    "original_git_blob_sha256": "3dd27318a2cb8dae816a2e0f3143686e1bb6a2a6bb8866aad4c16351aae1d77f",
+    "baseline_worktree_sha256": "3dd27318a2cb8dae816a2e0f3143686e1bb6a2a6bb8866aad4c16351aae1d77f",
+    "destination": "scripts/validate_skills.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "scripts/verify_append_only.py",
+    "original_git_blob_sha256": "477b73d8548ae3b94b5eb76a40422f8bf2a63005d0c5088c5ac2f42ffde2e86d",
+    "baseline_worktree_sha256": "477b73d8548ae3b94b5eb76a40422f8bf2a63005d0c5088c5ac2f42ffde2e86d",
+    "destination": "scripts/verify_append_only.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "solve-challenge/SKILL.md",
+    "original_git_blob_sha256": "03675b8059e8046f89111753007fade5374dabf0d4f34cf254ac9f582f84e10a",
+    "baseline_worktree_sha256": "03675b8059e8046f89111753007fade5374dabf0d4f34cf254ac9f582f84e10a",
+    "destination": "solve-challenge/SKILL.md",
+    "status": "reorganized",
+    "reason": "Operational entrypoint rewritten; substantive original sections individually mapped in section-map.json.",
+    "destinations": [
+      "docs/WORKFLOW.md",
+      "solve-challenge/personal-learnings.md",
+      "solve-challenge/triage-reference.md"
+    ]
+  },
+  {
+    "old_path": "solve-challenge/agents/openai.yaml",
+    "original_git_blob_sha256": "6ee33356a797d88bb3a741d05a50bdecf160271b52c03867102a2aa01bd2c3d6",
+    "baseline_worktree_sha256": "6ee33356a797d88bb3a741d05a50bdecf160271b52c03867102a2aa01bd2c3d6",
+    "destination": "solve-challenge/agents/openai.yaml",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "tests/conftest.py",
+    "original_git_blob_sha256": "ce76a63833a978a3e9768dc556b5304609e9c82a0c8e317db3d2f5bd7414130c",
+    "baseline_worktree_sha256": "ce76a63833a978a3e9768dc556b5304609e9c82a0c8e317db3d2f5bd7414130c",
+    "destination": "tests/conftest.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "tests/test_classification.py",
+    "original_git_blob_sha256": "4a7bad3f22d9c10b8184f0ea30eed759fe516ba23779d0688a96f580f56a1716",
+    "baseline_worktree_sha256": "4a7bad3f22d9c10b8184f0ea30eed759fe516ba23779d0688a96f580f56a1716",
+    "destination": "tests/test_classification.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "tests/test_human_review.py",
+    "original_git_blob_sha256": "8501bbfa85ed3a6522ec85504144c85148783d9da760c2a00068a2bccf365336",
+    "baseline_worktree_sha256": "8501bbfa85ed3a6522ec85504144c85148783d9da760c2a00068a2bccf365336",
+    "destination": "tests/test_human_review.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "tests/test_indexes.py",
+    "original_git_blob_sha256": "5fa2c2af4d67c208228c5f830a3f3d7b1618decfddfb466031474c70cbdc3d5b",
+    "baseline_worktree_sha256": "5fa2c2af4d67c208228c5f830a3f3d7b1618decfddfb466031474c70cbdc3d5b",
+    "destination": "tests/test_indexes.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "tests/test_installer.py",
+    "original_git_blob_sha256": "376f48448cc1f1113b8abd8d056f9180e2de8abc557f7b4a6072cbe1d5838880",
+    "baseline_worktree_sha256": "376f48448cc1f1113b8abd8d056f9180e2de8abc557f7b4a6072cbe1d5838880",
+    "destination": "tests/test_installer.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "tests/test_integrity.py",
+    "original_git_blob_sha256": "19a7264366d896e061dd3bd781c2f9526ca27d8d6f323d35430b719dc148167b",
+    "baseline_worktree_sha256": "19a7264366d896e061dd3bd781c2f9526ca27d8d6f323d35430b719dc148167b",
+    "destination": "tests/test_integrity.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "tests/test_learning.py",
+    "original_git_blob_sha256": "e0989f80cad43b819e5a77cc7cf4a2e63f3aab85102fa0ddb74e9e55d2a8bcb6",
+    "baseline_worktree_sha256": "e0989f80cad43b819e5a77cc7cf4a2e63f3aab85102fa0ddb74e9e55d2a8bcb6",
+    "destination": "tests/test_learning.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "tests/test_prompts.py",
+    "original_git_blob_sha256": "5d2e15e9433537ee077b721ac39f613ae5ddbfbc69d2bec68c3f314e81f9ea01",
+    "baseline_worktree_sha256": "5d2e15e9433537ee077b721ac39f613ae5ddbfbc69d2bec68c3f314e81f9ea01",
+    "destination": "tests/test_prompts.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "tests/test_provenance.py",
+    "original_git_blob_sha256": "0f7d47b42f402b37826d21d73d22f6a376beb114887131af5bfd195820ff888c",
+    "baseline_worktree_sha256": "0f7d47b42f402b37826d21d73d22f6a376beb114887131af5bfd195820ff888c",
+    "destination": "tests/test_provenance.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  },
+  {
+    "old_path": "tests/test_quality.py",
+    "original_git_blob_sha256": "59baf3b5513e1d6ab5a2eb593a0728dca5e47aca4e64a7e872ff10b5160635db",
+    "baseline_worktree_sha256": "59baf3b5513e1d6ab5a2eb593a0728dca5e47aca4e64a7e872ff10b5160635db",
+    "destination": "tests/test_quality.py",
+    "status": "implemented",
+    "reason": "Reviewed workflow/helper/validation contract updated; original implementation remains recoverable in inactive baseline archive."
+  },
+  {
+    "old_path": "tests/test_skills.py",
+    "original_git_blob_sha256": "d26b0b9e07831a31616417c428e19b38b37333def1f0418984387a295d18212f",
+    "baseline_worktree_sha256": "d26b0b9e07831a31616417c428e19b38b37333def1f0418984387a295d18212f",
+    "destination": "tests/test_skills.py",
+    "status": "retained",
+    "reason": "Original content unchanged except line ending normalization."
+  }
+]

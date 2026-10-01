@@ -1,854 +1,900 @@
 {
-  "schema_version": 1,
-  "created_at": "2026-07-22",
-  "policy": "Existing bytes are immutable; append-only growth is permitted after protected_original_byte_length.",
+  "schema_version": 2,
+  "policy": "preserve audited knowledge and trace deliberate moves/corrections; future additions may append to protected references",
+  "baseline_commit": "d95fd4433d0656f5de29b04a64e28801c01f127c",
+  "original_file_count": 193,
+  "archive": {
+    "path": "knowledge/migration/original-baseline.zip",
+    "sha256": "fc9ecf13cef4a12cf104206815bd129598229ffe4e8161db552bce3d1c97d4fc"
+  },
+  "section_map": "knowledge/migration/section-map.json",
+  "file_map": "knowledge/migration/file-map.json",
+  "audited_metadata": [
+    {
+      "path": "knowledge/migration/baseline.json",
+      "sha256": "80fabb37337e229447834063ef2feb4ce0e3d7a9b7d91f425377be91429f09d2"
+    },
+    {
+      "path": "knowledge/migration/section-map.json",
+      "sha256": "8865bd0ba36a491ae39b90af21c658b57d47c115405513b5e55bfa17ae66da3d"
+    },
+    {
+      "path": "knowledge/migration/file-map.json",
+      "sha256": "f65ffa717d5f45dcf7d036c4883b864314e36049817b32032681ce1e0da463fa"
+    },
+    {
+      "path": "knowledge/migration/corrections.json",
+      "sha256": "6b04cc85469381cecd16b79c05116a26017bb705e4ece474d9725e6ea6861049"
+    },
+    {
+      "path": "knowledge/migration/upstream-comparison.json",
+      "sha256": "e7dca9ca100378fb1899fe5e27400fec0f21e3e5e8e9e067a288dad57e6b9217"
+    },
+    {
+      "path": "knowledge/migration/upstream-decisions.json",
+      "sha256": "d39bdd7247896aa4d365da95672c89c8ea24b14676f62149ea7cb91cfd0c22ff"
+    },
+    {
+      "path": "knowledge/migration/installed-comparison.json",
+      "sha256": "4b43475ca8862f7f241e05cc3257e69e5887a8ef0f3d2805a2a74391beac727d"
+    },
+    {
+      "path": "knowledge/migration/legacy-integrity-manifest.json",
+      "sha256": "273e4b5f53dd9fb38c1e587fd3bac57949c899340dc7b7b2951cb22dc33b6dd4"
+    }
+  ],
   "protected_files": [
     {
-      "path": "README.md",
-      "size": 394,
-      "sha256": "bf6230c45d64fceb9805ae705b38600c4dc56a95499615a1343f6c4c82e5e07c",
-      "protected_original_byte_length": 394,
-      "protected_prefix_sha256": "bf6230c45d64fceb9805ae705b38600c4dc56a95499615a1343f6c4c82e5e07c"
-    },
-    {
-      "path": "ctf-ai-ml/SKILL.md",
-      "size": 7062,
-      "sha256": "83fc0f06fa4fa146a40b95eab82e95100f8341f33e9c77eeda003dd6d5b700e8",
-      "protected_original_byte_length": 7062,
-      "protected_prefix_sha256": "83fc0f06fa4fa146a40b95eab82e95100f8341f33e9c77eeda003dd6d5b700e8"
-    },
-    {
       "path": "ctf-ai-ml/adversarial-ml.md",
-      "size": 25943,
-      "sha256": "f40e626221fcfc5461968f7e1c25180bf830b0ea8c71c5834eb0a10f8554aa2c",
-      "protected_original_byte_length": 25943,
-      "protected_prefix_sha256": "f40e626221fcfc5461968f7e1c25180bf830b0ea8c71c5834eb0a10f8554aa2c"
+      "protected_original_byte_length": 26340,
+      "sha256": "7c4f6eacc35892c74a2d947789b15149fc990a40c372b9311c9c1c9365bb87db",
+      "protected_prefix_sha256": "7c4f6eacc35892c74a2d947789b15149fc990a40c372b9311c9c1c9365bb87db"
     },
     {
       "path": "ctf-ai-ml/llm-attacks.md",
-      "size": 20471,
-      "sha256": "8338d986970f4d5d928f957cf52cba309a1a39cab971314c0d8c76bd31cca3f6",
       "protected_original_byte_length": 20471,
+      "sha256": "8338d986970f4d5d928f957cf52cba309a1a39cab971314c0d8c76bd31cca3f6",
       "protected_prefix_sha256": "8338d986970f4d5d928f957cf52cba309a1a39cab971314c0d8c76bd31cca3f6"
     },
     {
       "path": "ctf-ai-ml/model-attacks.md",
-      "size": 17983,
-      "sha256": "f7393fd2397d515ff5a41f0f2c604d4572cffcc3392bb706f749b6e811eadebf",
-      "protected_original_byte_length": 17983,
-      "protected_prefix_sha256": "f7393fd2397d515ff5a41f0f2c604d4572cffcc3392bb706f749b6e811eadebf"
+      "protected_original_byte_length": 19050,
+      "sha256": "e80881162cc16fb97fd1a4f547880013e744532da85d4e81f47cd821ca78570a",
+      "protected_prefix_sha256": "e80881162cc16fb97fd1a4f547880013e744532da85d4e81f47cd821ca78570a"
     },
     {
-      "path": "ctf-crypto/SKILL.md",
-      "size": 41065,
-      "sha256": "7142fadcb7e6dcd9026ba902bf5ec58ecb518337dac07789d2ff9fb6dda16fcb",
-      "protected_original_byte_length": 41065,
-      "protected_prefix_sha256": "7142fadcb7e6dcd9026ba902bf5ec58ecb518337dac07789d2ff9fb6dda16fcb"
+      "path": "ctf-ai-ml/modern-playbook.md",
+      "protected_original_byte_length": 5403,
+      "sha256": "c6c61e6c9a7588ebb6b214db423af7a363c0780349fa19f95263be9da3502488",
+      "protected_prefix_sha256": "c6c61e6c9a7588ebb6b214db423af7a363c0780349fa19f95263be9da3502488"
+    },
+    {
+      "path": "ctf-ai-ml/triage-reference.md",
+      "protected_original_byte_length": 6716,
+      "sha256": "6fd36507fdd0f09950e8169bfdcb1298053780df16697185355475aaac714a89",
+      "protected_prefix_sha256": "6fd36507fdd0f09950e8169bfdcb1298053780df16697185355475aaac714a89"
     },
     {
       "path": "ctf-crypto/advanced-math.md",
-      "size": 28754,
-      "sha256": "2bfe59c99c102eb424ad2e1dc3e4718b900d0abbc2595b294eb7d246fa89cc05",
-      "protected_original_byte_length": 28754,
-      "protected_prefix_sha256": "2bfe59c99c102eb424ad2e1dc3e4718b900d0abbc2595b294eb7d246fa89cc05"
+      "protected_original_byte_length": 29469,
+      "sha256": "85d7fa59c43fbfc30d7714df95d9814826b1202106de23356111cb12bd8f3a29",
+      "protected_prefix_sha256": "85d7fa59c43fbfc30d7714df95d9814826b1202106de23356111cb12bd8f3a29"
     },
     {
       "path": "ctf-crypto/classic-ciphers.md",
-      "size": 29119,
-      "sha256": "9942b88579c0e78e4c3d94d761e477cb97aac9bb76b61dd9e3cf770fa0b9bc95",
-      "protected_original_byte_length": 29119,
-      "protected_prefix_sha256": "9942b88579c0e78e4c3d94d761e477cb97aac9bb76b61dd9e3cf770fa0b9bc95"
+      "protected_original_byte_length": 29211,
+      "sha256": "2dc223b7737639300775150ab3ce103802f9705c533a0b14b51a16db012691db",
+      "protected_prefix_sha256": "2dc223b7737639300775150ab3ce103802f9705c533a0b14b51a16db012691db"
+    },
+    {
+      "path": "ctf-crypto/dh-attacks.md",
+      "protected_original_byte_length": 6469,
+      "sha256": "2e627591c56292e22161162c8df7875f8eb25976ef8ec53e465ff31d60e8024f",
+      "protected_prefix_sha256": "2e627591c56292e22161162c8df7875f8eb25976ef8ec53e465ff31d60e8024f"
     },
     {
       "path": "ctf-crypto/ecc-attacks.md",
-      "size": 14571,
-      "sha256": "616da05046e5b348211e6cdc9553fa5a0c509a2ed4f34e22dd7505b5c0e1878c",
-      "protected_original_byte_length": 14571,
-      "protected_prefix_sha256": "616da05046e5b348211e6cdc9553fa5a0c509a2ed4f34e22dd7505b5c0e1878c"
+      "protected_original_byte_length": 14836,
+      "sha256": "4191c04510830c6fc077a28c6bff8e95548b8f7b8e8c9c71dd0835ba487ef779",
+      "protected_prefix_sha256": "4191c04510830c6fc077a28c6bff8e95548b8f7b8e8c9c71dd0835ba487ef779"
     },
     {
       "path": "ctf-crypto/exotic-crypto-2.md",
-      "size": 18553,
-      "sha256": "2a28b2a7725c36ce8fbf5e4e42137d95ff7a13e886110101f785804719a012e0",
       "protected_original_byte_length": 18553,
+      "sha256": "2a28b2a7725c36ce8fbf5e4e42137d95ff7a13e886110101f785804719a012e0",
       "protected_prefix_sha256": "2a28b2a7725c36ce8fbf5e4e42137d95ff7a13e886110101f785804719a012e0"
     },
     {
       "path": "ctf-crypto/exotic-crypto.md",
-      "size": 24610,
-      "sha256": "09da72b07a6aaf3ee72854263df4fcff89b06e10a4216d7d00b34655506c251f",
       "protected_original_byte_length": 24610,
+      "sha256": "09da72b07a6aaf3ee72854263df4fcff89b06e10a4216d7d00b34655506c251f",
       "protected_prefix_sha256": "09da72b07a6aaf3ee72854263df4fcff89b06e10a4216d7d00b34655506c251f"
     },
     {
       "path": "ctf-crypto/historical.md",
-      "size": 4613,
-      "sha256": "feb06b3ac5a981082b9a20223f02db21d93a100df39b7b5dba4b578677cbef52",
       "protected_original_byte_length": 4613,
+      "sha256": "feb06b3ac5a981082b9a20223f02db21d93a100df39b7b5dba4b578677cbef52",
       "protected_prefix_sha256": "feb06b3ac5a981082b9a20223f02db21d93a100df39b7b5dba4b578677cbef52"
     },
     {
       "path": "ctf-crypto/lattice-and-lwe.md",
-      "size": 16292,
-      "sha256": "3dd0feadef36f111a8713914a6713263b440928595157ad0bc336d6c88e7d7a1",
       "protected_original_byte_length": 16292,
+      "sha256": "3dd0feadef36f111a8713914a6713263b440928595157ad0bc336d6c88e7d7a1",
       "protected_prefix_sha256": "3dd0feadef36f111a8713914a6713263b440928595157ad0bc336d6c88e7d7a1"
     },
     {
       "path": "ctf-crypto/modern-ciphers-2.md",
-      "size": 29470,
-      "sha256": "5094d470951f20350a5fb00352c478eb2d55084f45bd52b39679f3beaede5cc8",
       "protected_original_byte_length": 29470,
+      "sha256": "5094d470951f20350a5fb00352c478eb2d55084f45bd52b39679f3beaede5cc8",
       "protected_prefix_sha256": "5094d470951f20350a5fb00352c478eb2d55084f45bd52b39679f3beaede5cc8"
     },
     {
       "path": "ctf-crypto/modern-ciphers-3.md",
-      "size": 25706,
-      "sha256": "87a99046d2652a97e44db425c775a13fa25472be2bb400433ea853e618f04acf",
       "protected_original_byte_length": 25706,
+      "sha256": "87a99046d2652a97e44db425c775a13fa25472be2bb400433ea853e618f04acf",
       "protected_prefix_sha256": "87a99046d2652a97e44db425c775a13fa25472be2bb400433ea853e618f04acf"
     },
     {
+      "path": "ctf-crypto/modern-ciphers-4.md",
+      "protected_original_byte_length": 13380,
+      "sha256": "c0a7692eada4f90677fd64136b0452dbe9f9c4f54c8e4709ceaa68acaf420c5e",
+      "protected_prefix_sha256": "c0a7692eada4f90677fd64136b0452dbe9f9c4f54c8e4709ceaa68acaf420c5e"
+    },
+    {
       "path": "ctf-crypto/modern-ciphers.md",
-      "size": 32711,
-      "sha256": "393db921d566a693a901530018eed2770696d6c965241b72392436c9c48bcfb3",
       "protected_original_byte_length": 32711,
+      "sha256": "393db921d566a693a901530018eed2770696d6c965241b72392436c9c48bcfb3",
       "protected_prefix_sha256": "393db921d566a693a901530018eed2770696d6c965241b72392436c9c48bcfb3"
     },
     {
+      "path": "ctf-crypto/modern-playbook.md",
+      "protected_original_byte_length": 7184,
+      "sha256": "77786d7773425a57ac63c3d1403323ac4d5d5bbf89d24be09d2d7c35b22fb6ff",
+      "protected_prefix_sha256": "77786d7773425a57ac63c3d1403323ac4d5d5bbf89d24be09d2d7c35b22fb6ff"
+    },
+    {
+      "path": "ctf-crypto/personal-learnings.md",
+      "protected_original_byte_length": 2662,
+      "sha256": "6199054e512cb36767b828028c51e0d8664acd60a903ef8dfa7865fb78ce971c",
+      "protected_prefix_sha256": "6199054e512cb36767b828028c51e0d8664acd60a903ef8dfa7865fb78ce971c"
+    },
+    {
+      "path": "ctf-crypto/post-quantum.md",
+      "protected_original_byte_length": 2693,
+      "sha256": "8ae338b825209e4d7fe4936e9cbc2414646d59a58e27e2279032f41e3cdc7a14",
+      "protected_prefix_sha256": "8ae338b825209e4d7fe4936e9cbc2414646d59a58e27e2279032f41e3cdc7a14"
+    },
+    {
       "path": "ctf-crypto/prng-attacks.md",
-      "size": 12462,
-      "sha256": "0ff096a8f662cd9e4108c583b26cc5396a97f30220a7b6b67fb3f1f91ded214d",
       "protected_original_byte_length": 12462,
+      "sha256": "0ff096a8f662cd9e4108c583b26cc5396a97f30220a7b6b67fb3f1f91ded214d",
       "protected_prefix_sha256": "0ff096a8f662cd9e4108c583b26cc5396a97f30220a7b6b67fb3f1f91ded214d"
     },
     {
       "path": "ctf-crypto/prng.md",
-      "size": 25400,
-      "sha256": "f28a60327da64dc7a2972af743fce5a45508fbf1a258b24d3da7c1d9aabb160c",
       "protected_original_byte_length": 25400,
+      "sha256": "f28a60327da64dc7a2972af743fce5a45508fbf1a258b24d3da7c1d9aabb160c",
       "protected_prefix_sha256": "f28a60327da64dc7a2972af743fce5a45508fbf1a258b24d3da7c1d9aabb160c"
     },
     {
       "path": "ctf-crypto/rsa-attacks-2.md",
-      "size": 36670,
-      "sha256": "edeb806bdd6537b9c0f4cbda544716016e6cb0900887084131590d6233b10507",
-      "protected_original_byte_length": 36670,
-      "protected_prefix_sha256": "edeb806bdd6537b9c0f4cbda544716016e6cb0900887084131590d6233b10507"
+      "protected_original_byte_length": 36668,
+      "sha256": "3e7ffaa79657286cb230d0465a4de7af4bcfd05bcb2cbd95a0132622ed484b04",
+      "protected_prefix_sha256": "3e7ffaa79657286cb230d0465a4de7af4bcfd05bcb2cbd95a0132622ed484b04"
     },
     {
       "path": "ctf-crypto/rsa-attacks.md",
-      "size": 18920,
-      "sha256": "05df863ec256b2841a1852fd277d14519832d6d5d3edb0124f797e732efe7ffd",
-      "protected_original_byte_length": 18920,
-      "protected_prefix_sha256": "05df863ec256b2841a1852fd277d14519832d6d5d3edb0124f797e732efe7ffd"
+      "protected_original_byte_length": 19393,
+      "sha256": "cbcda4b4254bd78137638da1081500f1f47389e3290240938e03e9e94d51621e",
+      "protected_prefix_sha256": "cbcda4b4254bd78137638da1081500f1f47389e3290240938e03e9e94d51621e"
     },
     {
       "path": "ctf-crypto/stream-ciphers.md",
-      "size": 18180,
-      "sha256": "63638591c8e9113324b1e6fbe689e98a15c5e7de309cef170739659b513a44f6",
       "protected_original_byte_length": 18180,
+      "sha256": "63638591c8e9113324b1e6fbe689e98a15c5e7de309cef170739659b513a44f6",
       "protected_prefix_sha256": "63638591c8e9113324b1e6fbe689e98a15c5e7de309cef170739659b513a44f6"
     },
     {
+      "path": "ctf-crypto/triage-reference.md",
+      "protected_original_byte_length": 31053,
+      "sha256": "7396abfe71fb23a1a300e04bfd2153302b4deace726dc573f0ca1afbe6ac4190",
+      "protected_prefix_sha256": "7396abfe71fb23a1a300e04bfd2153302b4deace726dc573f0ca1afbe6ac4190"
+    },
+    {
+      "path": "ctf-crypto/upstream-2026.md",
+      "protected_original_byte_length": 105822,
+      "sha256": "6285468ca297ef740483e041318239b6d3bd8dd3340bd083479a1484f94c709b",
+      "protected_prefix_sha256": "6285468ca297ef740483e041318239b6d3bd8dd3340bd083479a1484f94c709b"
+    },
+    {
       "path": "ctf-crypto/zkp-and-advanced.md",
-      "size": 20338,
-      "sha256": "a75350ff2548b769761f9c71bf159a287257ca327ca2b77ce1a8e7aecc4dcfd6",
-      "protected_original_byte_length": 20338,
-      "protected_prefix_sha256": "a75350ff2548b769761f9c71bf159a287257ca327ca2b77ce1a8e7aecc4dcfd6"
+      "protected_original_byte_length": 20336,
+      "sha256": "f6c8c8fd666d7d0d524c36581103ea2752efefdb1ac306351728fe1713a62bae",
+      "protected_prefix_sha256": "f6c8c8fd666d7d0d524c36581103ea2752efefdb1ac306351728fe1713a62bae"
     },
     {
       "path": "ctf-forensics/3d-printing.md",
-      "size": 4210,
-      "sha256": "692cbb9502427693aab97be70a06cb84b7db7c777e9f37d9554dd9ffa595d3f8",
       "protected_original_byte_length": 4210,
+      "sha256": "692cbb9502427693aab97be70a06cb84b7db7c777e9f37d9554dd9ffa595d3f8",
       "protected_prefix_sha256": "692cbb9502427693aab97be70a06cb84b7db7c777e9f37d9554dd9ffa595d3f8"
     },
     {
-      "path": "ctf-forensics/SKILL.md",
-      "size": 50545,
-      "sha256": "8f155355468946340dab4a390f4fa636b133260c99e599b180a781d753445948",
-      "protected_original_byte_length": 50545,
-      "protected_prefix_sha256": "8f155355468946340dab4a390f4fa636b133260c99e599b180a781d753445948"
-    },
-    {
       "path": "ctf-forensics/disk-advanced.md",
-      "size": 21034,
-      "sha256": "3ac76f151c22a99ed59acf82681d49c1a3b024e612e05701e26c58edce1f2018",
       "protected_original_byte_length": 21034,
+      "sha256": "3ac76f151c22a99ed59acf82681d49c1a3b024e612e05701e26c58edce1f2018",
       "protected_prefix_sha256": "3ac76f151c22a99ed59acf82681d49c1a3b024e612e05701e26c58edce1f2018"
     },
     {
       "path": "ctf-forensics/disk-and-memory.md",
-      "size": 20086,
-      "sha256": "1c239b45e22c191754bcd3dd79ba2c0a9699f3bf6a72be1526d7c40744694ecb",
       "protected_original_byte_length": 20086,
+      "sha256": "1c239b45e22c191754bcd3dd79ba2c0a9699f3bf6a72be1526d7c40744694ecb",
       "protected_prefix_sha256": "1c239b45e22c191754bcd3dd79ba2c0a9699f3bf6a72be1526d7c40744694ecb"
     },
     {
       "path": "ctf-forensics/disk-recovery.md",
-      "size": 31594,
-      "sha256": "5ec827477b486c3ebe07e07cd49b01c7806330486f6f025696527691e4763c6c",
       "protected_original_byte_length": 31594,
+      "sha256": "5ec827477b486c3ebe07e07cd49b01c7806330486f6f025696527691e4763c6c",
       "protected_prefix_sha256": "5ec827477b486c3ebe07e07cd49b01c7806330486f6f025696527691e4763c6c"
     },
     {
       "path": "ctf-forensics/linux-forensics.md",
-      "size": 18983,
-      "sha256": "ecd6108d6fe44dd83530f3d7fed7ccf7d2e5703ae48c4f06fc4e65e43e081798",
       "protected_original_byte_length": 18983,
+      "sha256": "ecd6108d6fe44dd83530f3d7fed7ccf7d2e5703ae48c4f06fc4e65e43e081798",
       "protected_prefix_sha256": "ecd6108d6fe44dd83530f3d7fed7ccf7d2e5703ae48c4f06fc4e65e43e081798"
     },
     {
+      "path": "ctf-forensics/modern-playbook.md",
+      "protected_original_byte_length": 5829,
+      "sha256": "430fdb3096c51d38ef65e9e5e7b727a566b3269c9658e6c75f494bcf15d50f00",
+      "protected_prefix_sha256": "430fdb3096c51d38ef65e9e5e7b727a566b3269c9658e6c75f494bcf15d50f00"
+    },
+    {
       "path": "ctf-forensics/network-advanced.md",
-      "size": 26373,
-      "sha256": "643807da97c3e4bf68cf5e8719c3adddde8426ef8c86342a23f033bbf2032bbe",
       "protected_original_byte_length": 26373,
+      "sha256": "643807da97c3e4bf68cf5e8719c3adddde8426ef8c86342a23f033bbf2032bbe",
       "protected_prefix_sha256": "643807da97c3e4bf68cf5e8719c3adddde8426ef8c86342a23f033bbf2032bbe"
     },
     {
       "path": "ctf-forensics/network.md",
-      "size": 22311,
-      "sha256": "3a3f98f07821a70e7ab516ca2b76f2f35f2ac37043ec31a2e0eda64b22481a9f",
       "protected_original_byte_length": 22311,
+      "sha256": "3a3f98f07821a70e7ab516ca2b76f2f35f2ac37043ec31a2e0eda64b22481a9f",
       "protected_prefix_sha256": "3a3f98f07821a70e7ab516ca2b76f2f35f2ac37043ec31a2e0eda64b22481a9f"
     },
     {
       "path": "ctf-forensics/peripheral-capture.md",
-      "size": 12369,
-      "sha256": "377fcfa7f219586494616670d18f681354afc0fa21410b6dbe1378bd0fce1c6f",
       "protected_original_byte_length": 12369,
+      "sha256": "377fcfa7f219586494616670d18f681354afc0fa21410b6dbe1378bd0fce1c6f",
       "protected_prefix_sha256": "377fcfa7f219586494616670d18f681354afc0fa21410b6dbe1378bd0fce1c6f"
     },
     {
+      "path": "ctf-forensics/personal-learnings.md",
+      "protected_original_byte_length": 13383,
+      "sha256": "2df447ba3bff405423d8d7c41c4f83ef351a9cab3a113b02d7556ba166e8d535",
+      "protected_prefix_sha256": "2df447ba3bff405423d8d7c41c4f83ef351a9cab3a113b02d7556ba166e8d535"
+    },
+    {
       "path": "ctf-forensics/signals-and-hardware.md",
-      "size": 29146,
-      "sha256": "3bb2bcf6346a5bd2ad0d2bce67d22668f8d402f966a25be2016edcb915becd64",
       "protected_original_byte_length": 29146,
+      "sha256": "3bb2bcf6346a5bd2ad0d2bce67d22668f8d402f966a25be2016edcb915becd64",
       "protected_prefix_sha256": "3bb2bcf6346a5bd2ad0d2bce67d22668f8d402f966a25be2016edcb915becd64"
     },
     {
       "path": "ctf-forensics/steganography.md",
-      "size": 30660,
-      "sha256": "2774d7a8e9333b8e52c02eb5d47e027d54a6db54107543f011c55cea20354114",
-      "protected_original_byte_length": 30660,
-      "protected_prefix_sha256": "2774d7a8e9333b8e52c02eb5d47e027d54a6db54107543f011c55cea20354114"
+      "protected_original_byte_length": 30642,
+      "sha256": "61327f4da799e68d18a4501e75484a86bd27e790b1cdf7580f9031839fcaf1e4",
+      "protected_prefix_sha256": "61327f4da799e68d18a4501e75484a86bd27e790b1cdf7580f9031839fcaf1e4"
     },
     {
       "path": "ctf-forensics/stego-advanced-2.md",
-      "size": 20921,
-      "sha256": "14d28c569fe3325b978d4007bc5eeb678d0b8750f98e10f8f0584dae051f64de",
       "protected_original_byte_length": 20921,
+      "sha256": "14d28c569fe3325b978d4007bc5eeb678d0b8750f98e10f8f0584dae051f64de",
       "protected_prefix_sha256": "14d28c569fe3325b978d4007bc5eeb678d0b8750f98e10f8f0584dae051f64de"
     },
     {
       "path": "ctf-forensics/stego-advanced.md",
-      "size": 19975,
-      "sha256": "4ca43f439d9acb71f607535e1e91fd411384adf5153f87d76cf440e4a545f794",
       "protected_original_byte_length": 19975,
+      "sha256": "4ca43f439d9acb71f607535e1e91fd411384adf5153f87d76cf440e4a545f794",
       "protected_prefix_sha256": "4ca43f439d9acb71f607535e1e91fd411384adf5153f87d76cf440e4a545f794"
     },
     {
       "path": "ctf-forensics/stego-image.md",
-      "size": 30398,
-      "sha256": "8b12770c2be57443e854345d55e47663fee8de70f5ded751759414a107c30f49",
       "protected_original_byte_length": 30398,
+      "sha256": "8b12770c2be57443e854345d55e47663fee8de70f5ded751759414a107c30f49",
       "protected_prefix_sha256": "8b12770c2be57443e854345d55e47663fee8de70f5ded751759414a107c30f49"
     },
     {
+      "path": "ctf-forensics/triage-reference.md",
+      "protected_original_byte_length": 30429,
+      "sha256": "1882d9e8bf00f10733827975021c5f301930111315602ebfbb5f60060cc05c2b",
+      "protected_prefix_sha256": "1882d9e8bf00f10733827975021c5f301930111315602ebfbb5f60060cc05c2b"
+    },
+    {
       "path": "ctf-forensics/windows.md",
-      "size": 22479,
-      "sha256": "c23e7de4e511aa106059e6e00019ff4f264e1893a78839613ab477fc3cee2ace",
       "protected_original_byte_length": 22479,
+      "sha256": "c23e7de4e511aa106059e6e00019ff4f264e1893a78839613ab477fc3cee2ace",
       "protected_prefix_sha256": "c23e7de4e511aa106059e6e00019ff4f264e1893a78839613ab477fc3cee2ace"
     },
     {
-      "path": "ctf-malware/SKILL.md",
-      "size": 8379,
-      "sha256": "3a73e3ea43b2a39d146e4af7616b8a8ed29a92c77485ce3a85788512bebf7a67",
-      "protected_original_byte_length": 8379,
-      "protected_prefix_sha256": "3a73e3ea43b2a39d146e4af7616b8a8ed29a92c77485ce3a85788512bebf7a67"
+      "path": "ctf-malware/c2-and-protocols.md",
+      "protected_original_byte_length": 11355,
+      "sha256": "b34d05234c089f8b0d6fe08f073faf575c45214556cb103e260835e50b33ad26",
+      "protected_prefix_sha256": "b34d05234c089f8b0d6fe08f073faf575c45214556cb103e260835e50b33ad26"
     },
     {
-      "path": "ctf-malware/c2-and-protocols.md",
-      "size": 12404,
-      "sha256": "d337c645f00d1f34f23568ea65d46abd64077d3ebaa4d44f4f85f93ad030c926",
-      "protected_original_byte_length": 12404,
-      "protected_prefix_sha256": "d337c645f00d1f34f23568ea65d46abd64077d3ebaa4d44f4f85f93ad030c926"
+      "path": "ctf-malware/modern-playbook.md",
+      "protected_original_byte_length": 5236,
+      "sha256": "a520001e5215f36d450aefc11e16b04e7ea3d65376d7fcab74cae91df383378a",
+      "protected_prefix_sha256": "a520001e5215f36d450aefc11e16b04e7ea3d65376d7fcab74cae91df383378a"
     },
     {
       "path": "ctf-malware/pe-and-dotnet.md",
-      "size": 3041,
-      "sha256": "6f6f17a5ec07c57c82e0919998261c15229051401594602b39c6ae47a349e6b4",
       "protected_original_byte_length": 3041,
+      "sha256": "6f6f17a5ec07c57c82e0919998261c15229051401594602b39c6ae47a349e6b4",
       "protected_prefix_sha256": "6f6f17a5ec07c57c82e0919998261c15229051401594602b39c6ae47a349e6b4"
     },
     {
       "path": "ctf-malware/scripts-and-obfuscation.md",
-      "size": 15778,
-      "sha256": "d70cad7d3a5c0b41daff407b131a309235323526f5ff74afe5e640a8e8c9a434",
       "protected_original_byte_length": 15778,
+      "sha256": "d70cad7d3a5c0b41daff407b131a309235323526f5ff74afe5e640a8e8c9a434",
       "protected_prefix_sha256": "d70cad7d3a5c0b41daff407b131a309235323526f5ff74afe5e640a8e8c9a434"
     },
     {
-      "path": "ctf-misc/SKILL.md",
-      "size": 32399,
-      "sha256": "8c5f7a432fff2e0f842a03dfa0b5fd1826b04ce10aaf352203cab32edd8c0c2d",
-      "protected_original_byte_length": 32399,
-      "protected_prefix_sha256": "8c5f7a432fff2e0f842a03dfa0b5fd1826b04ce10aaf352203cab32edd8c0c2d"
+      "path": "ctf-malware/triage-reference.md",
+      "protected_original_byte_length": 6013,
+      "sha256": "59e6b99d5fee8d8dcc13de836127f5bb98ac1a4ee90f449f8b4cab44e5531c51",
+      "protected_prefix_sha256": "59e6b99d5fee8d8dcc13de836127f5bb98ac1a4ee90f449f8b4cab44e5531c51"
     },
     {
       "path": "ctf-misc/bashjails.md",
-      "size": 13965,
-      "sha256": "efd81ae50cbbb82356ec6b09a2920bb5b04e1c7f85dcb0c6787ba7166fdeded8",
       "protected_original_byte_length": 13965,
+      "sha256": "efd81ae50cbbb82356ec6b09a2920bb5b04e1c7f85dcb0c6787ba7166fdeded8",
       "protected_prefix_sha256": "efd81ae50cbbb82356ec6b09a2920bb5b04e1c7f85dcb0c6787ba7166fdeded8"
     },
     {
       "path": "ctf-misc/ctfd-navigation.md",
-      "size": 14795,
-      "sha256": "04b31fe69a64bd4543b3441160ded9921f6ac55c51931ece38b3f54f6d4eacbf",
-      "protected_original_byte_length": 14795,
-      "protected_prefix_sha256": "04b31fe69a64bd4543b3441160ded9921f6ac55c51931ece38b3f54f6d4eacbf"
+      "protected_original_byte_length": 795,
+      "sha256": "cece284d6fb7be68f1975b4596c919f278d7edd3e0200012665f3ca168504879",
+      "protected_prefix_sha256": "cece284d6fb7be68f1975b4596c919f278d7edd3e0200012665f3ca168504879"
     },
     {
       "path": "ctf-misc/dns.md",
-      "size": 9698,
-      "sha256": "04be1c7d9ce7560fb861d3a17b227997c6919614e65101994ef5615d756ba8c4",
       "protected_original_byte_length": 9698,
+      "sha256": "04be1c7d9ce7560fb861d3a17b227997c6919614e65101994ef5615d756ba8c4",
       "protected_prefix_sha256": "04be1c7d9ce7560fb861d3a17b227997c6919614e65101994ef5615d756ba8c4"
     },
     {
       "path": "ctf-misc/encodings-advanced.md",
-      "size": 19845,
-      "sha256": "5c2b2e3ddb6421b0246d3aea8a03aba1a5900ec3208863969cc94b0b285b5beb",
       "protected_original_byte_length": 19845,
+      "sha256": "5c2b2e3ddb6421b0246d3aea8a03aba1a5900ec3208863969cc94b0b285b5beb",
       "protected_prefix_sha256": "5c2b2e3ddb6421b0246d3aea8a03aba1a5900ec3208863969cc94b0b285b5beb"
     },
     {
       "path": "ctf-misc/encodings.md",
-      "size": 15646,
-      "sha256": "2d3a79409a4ca99de17710facb5a240431e616aa4ca052513a5ea5efba27b7e7",
       "protected_original_byte_length": 15646,
+      "sha256": "2d3a79409a4ca99de17710facb5a240431e616aa4ca052513a5ea5efba27b7e7",
       "protected_prefix_sha256": "2d3a79409a4ca99de17710facb5a240431e616aa4ca052513a5ea5efba27b7e7"
     },
     {
       "path": "ctf-misc/games-and-vms-2.md",
-      "size": 10488,
-      "sha256": "9475ab08dd561a8d3db502ba0d5ebf650d612a1dd287706e72d45675baf73477",
       "protected_original_byte_length": 10488,
+      "sha256": "9475ab08dd561a8d3db502ba0d5ebf650d612a1dd287706e72d45675baf73477",
       "protected_prefix_sha256": "9475ab08dd561a8d3db502ba0d5ebf650d612a1dd287706e72d45675baf73477"
     },
     {
       "path": "ctf-misc/games-and-vms-3.md",
-      "size": 32416,
-      "sha256": "399b8ea917f7bb0616f768689b11d8cea03de201e956ed2a6479cb72b0d67d7b",
-      "protected_original_byte_length": 32416,
-      "protected_prefix_sha256": "399b8ea917f7bb0616f768689b11d8cea03de201e956ed2a6479cb72b0d67d7b"
+      "protected_original_byte_length": 33465,
+      "sha256": "4fec551500146b0dd7bb219afef25f84919c1ea587b230a9d5b0e708fc79240f",
+      "protected_prefix_sha256": "4fec551500146b0dd7bb219afef25f84919c1ea587b230a9d5b0e708fc79240f"
     },
     {
       "path": "ctf-misc/games-and-vms-4.md",
-      "size": 11466,
-      "sha256": "290523ba755d0440bed56095c361b279ccdc221ee8844c18f154962cc07581b0",
       "protected_original_byte_length": 11466,
+      "sha256": "290523ba755d0440bed56095c361b279ccdc221ee8844c18f154962cc07581b0",
       "protected_prefix_sha256": "290523ba755d0440bed56095c361b279ccdc221ee8844c18f154962cc07581b0"
     },
     {
       "path": "ctf-misc/games-and-vms.md",
-      "size": 21085,
-      "sha256": "874dffbe3584051b7244a4f2827631dc1a6e9ab40feac65401d6b0172b8745aa",
       "protected_original_byte_length": 21085,
+      "sha256": "874dffbe3584051b7244a4f2827631dc1a6e9ab40feac65401d6b0172b8745aa",
       "protected_prefix_sha256": "874dffbe3584051b7244a4f2827631dc1a6e9ab40feac65401d6b0172b8745aa"
     },
     {
       "path": "ctf-misc/linux-privesc.md",
-      "size": 18452,
-      "sha256": "d7550c94cd9330cd052f947dea15c65bb29dfe3dbd01fcfb52b44e1a3035b83e",
       "protected_original_byte_length": 18452,
+      "sha256": "d7550c94cd9330cd052f947dea15c65bb29dfe3dbd01fcfb52b44e1a3035b83e",
       "protected_prefix_sha256": "d7550c94cd9330cd052f947dea15c65bb29dfe3dbd01fcfb52b44e1a3035b83e"
     },
     {
+      "path": "ctf-misc/modern-playbook.md",
+      "protected_original_byte_length": 6134,
+      "sha256": "6477da7261a7035a00486fc450e758f47de95b4b22c39d74d859ab0dabc0cb76",
+      "protected_prefix_sha256": "6477da7261a7035a00486fc450e758f47de95b4b22c39d74d859ab0dabc0cb76"
+    },
+    {
+      "path": "ctf-misc/personal-learnings.md",
+      "protected_original_byte_length": 5891,
+      "sha256": "8fca003e6718ef7cdd40ad57c54d54c3f403071517dfedcf7c281cde1c63e7c2",
+      "protected_prefix_sha256": "8fca003e6718ef7cdd40ad57c54d54c3f403071517dfedcf7c281cde1c63e7c2"
+    },
+    {
       "path": "ctf-misc/pyjails.md",
-      "size": 24827,
-      "sha256": "77e7cbb9d415584075ff5aa4a37381921c9c0fb82fc592f168ebe9921f7917ed",
-      "protected_original_byte_length": 24827,
-      "protected_prefix_sha256": "77e7cbb9d415584075ff5aa4a37381921c9c0fb82fc592f168ebe9921f7917ed"
+      "protected_original_byte_length": 24825,
+      "sha256": "25118ff318c42c4f82f55da5dce0d0f9ea25d0760058f94818592be95a2410d8",
+      "protected_prefix_sha256": "25118ff318c42c4f82f55da5dce0d0f9ea25d0760058f94818592be95a2410d8"
     },
     {
       "path": "ctf-misc/rf-sdr.md",
-      "size": 3994,
-      "sha256": "ea61aa6d6eeba16923b6482df80c43ace8352179854ce4292b9246853af5bc04",
-      "protected_original_byte_length": 3994,
-      "protected_prefix_sha256": "ea61aa6d6eeba16923b6482df80c43ace8352179854ce4292b9246853af5bc04"
+      "protected_original_byte_length": 3999,
+      "sha256": "77bb2549a8ce950019adfb407259f4beba394d0be1bebf8ef194043b0dc38e9b",
+      "protected_prefix_sha256": "77bb2549a8ce950019adfb407259f4beba394d0be1bebf8ef194043b0dc38e9b"
     },
     {
-      "path": "ctf-osint/SKILL.md",
-      "size": 9597,
-      "sha256": "104efd446852434be032f231a81004bdd1e04c81482a930e6f381090dafab806",
-      "protected_original_byte_length": 9597,
-      "protected_prefix_sha256": "104efd446852434be032f231a81004bdd1e04c81482a930e6f381090dafab806"
+      "path": "ctf-misc/triage-reference.md",
+      "protected_original_byte_length": 22010,
+      "sha256": "2df6858d9f00b82b172a7550e64b236b9ab26567d403d41fe8038846c82ca7c7",
+      "protected_prefix_sha256": "2df6858d9f00b82b172a7550e64b236b9ab26567d403d41fe8038846c82ca7c7"
+    },
+    {
+      "path": "ctf-misc/upstream-2026.md",
+      "protected_original_byte_length": 17942,
+      "sha256": "28fae8a4b0061db0b30f59abdb8c0440e03d11fdace97d306a0f922b6f7f42ce",
+      "protected_prefix_sha256": "28fae8a4b0061db0b30f59abdb8c0440e03d11fdace97d306a0f922b6f7f42ce"
     },
     {
       "path": "ctf-osint/geolocation-and-media.md",
-      "size": 24545,
-      "sha256": "fccc5584a162504f53be9ca8eb3c619223e0a1e993acce64e2654fc7be8a7257",
-      "protected_original_byte_length": 24545,
-      "protected_prefix_sha256": "fccc5584a162504f53be9ca8eb3c619223e0a1e993acce64e2654fc7be8a7257"
+      "protected_original_byte_length": 24503,
+      "sha256": "15ba9963eddd59df179c747c289999dc39dbc61203ca6bc2599aaf8ebbd7b6e9",
+      "protected_prefix_sha256": "15ba9963eddd59df179c747c289999dc39dbc61203ca6bc2599aaf8ebbd7b6e9"
+    },
+    {
+      "path": "ctf-osint/modern-playbook.md",
+      "protected_original_byte_length": 5939,
+      "sha256": "3ae5462994de1e21910f9c953dc7927c7507e4824dcdc0a638504b6862578a0c",
+      "protected_prefix_sha256": "3ae5462994de1e21910f9c953dc7927c7507e4824dcdc0a638504b6862578a0c"
     },
     {
       "path": "ctf-osint/social-media.md",
-      "size": 13905,
-      "sha256": "ed1b1936c2e1a12ab66a1e07b2c3fb3c869b1fe5924cc7b30cf95b0f682a14e0",
       "protected_original_byte_length": 13905,
+      "sha256": "ed1b1936c2e1a12ab66a1e07b2c3fb3c869b1fe5924cc7b30cf95b0f682a14e0",
       "protected_prefix_sha256": "ed1b1936c2e1a12ab66a1e07b2c3fb3c869b1fe5924cc7b30cf95b0f682a14e0"
     },
     {
-      "path": "ctf-osint/web-and-dns.md",
-      "size": 14443,
-      "sha256": "9c33b7a0988d184d070ee6add4416a0ef87cee4e27489b4fb6be2bd5f09191cf",
-      "protected_original_byte_length": 14443,
-      "protected_prefix_sha256": "9c33b7a0988d184d070ee6add4416a0ef87cee4e27489b4fb6be2bd5f09191cf"
+      "path": "ctf-osint/triage-reference.md",
+      "protected_original_byte_length": 7403,
+      "sha256": "b321467e852710fa621ec2aebd597e0328f8efa61d1113cf500eb0f561c70923",
+      "protected_prefix_sha256": "b321467e852710fa621ec2aebd597e0328f8efa61d1113cf500eb0f561c70923"
     },
     {
-      "path": "ctf-pwn/SKILL.md",
-      "size": 19789,
-      "sha256": "71d36fc1eb5bb18aa407e0a2cb89a2f2ab690a6144c9dd15ddc35a31de9dfd47",
-      "protected_original_byte_length": 19789,
-      "protected_prefix_sha256": "71d36fc1eb5bb18aa407e0a2cb89a2f2ab690a6144c9dd15ddc35a31de9dfd47"
+      "path": "ctf-osint/web-and-dns.md",
+      "protected_original_byte_length": 14168,
+      "sha256": "122d6fb4aebcdc7ab6cd0f790732c375b94f22ed63bd8a4d46b8d8bbb937e95a",
+      "protected_prefix_sha256": "122d6fb4aebcdc7ab6cd0f790732c375b94f22ed63bd8a4d46b8d8bbb937e95a"
     },
     {
       "path": "ctf-pwn/advanced-exploits-2.md",
-      "size": 30287,
-      "sha256": "dcc7b0e171fd1ee60a49fc8563e6d0096bbe93cda4199ec5ff29e3fd7e433678",
       "protected_original_byte_length": 30287,
+      "sha256": "dcc7b0e171fd1ee60a49fc8563e6d0096bbe93cda4199ec5ff29e3fd7e433678",
       "protected_prefix_sha256": "dcc7b0e171fd1ee60a49fc8563e6d0096bbe93cda4199ec5ff29e3fd7e433678"
     },
     {
       "path": "ctf-pwn/advanced-exploits-3.md",
-      "size": 33229,
-      "sha256": "0a378aa4bcdd24e895c0994996d8e2fc37d7de6774306906e25d9f865b5a49aa",
       "protected_original_byte_length": 33229,
+      "sha256": "0a378aa4bcdd24e895c0994996d8e2fc37d7de6774306906e25d9f865b5a49aa",
       "protected_prefix_sha256": "0a378aa4bcdd24e895c0994996d8e2fc37d7de6774306906e25d9f865b5a49aa"
     },
     {
       "path": "ctf-pwn/advanced-exploits-4.md",
-      "size": 31214,
-      "sha256": "3b0c77247da9e7aeb1566f9dc5ef892cb180934ab4e60d7e5a4255e92d09f6b5",
       "protected_original_byte_length": 31214,
+      "sha256": "3b0c77247da9e7aeb1566f9dc5ef892cb180934ab4e60d7e5a4255e92d09f6b5",
       "protected_prefix_sha256": "3b0c77247da9e7aeb1566f9dc5ef892cb180934ab4e60d7e5a4255e92d09f6b5"
     },
     {
       "path": "ctf-pwn/advanced-exploits-5.md",
-      "size": 6291,
-      "sha256": "fe5b9e44cb22a99963b43a575527ba05e643ff64a6e0e424358d24ca6a376f98",
       "protected_original_byte_length": 6291,
+      "sha256": "fe5b9e44cb22a99963b43a575527ba05e643ff64a6e0e424358d24ca6a376f98",
       "protected_prefix_sha256": "fe5b9e44cb22a99963b43a575527ba05e643ff64a6e0e424358d24ca6a376f98"
     },
     {
       "path": "ctf-pwn/advanced-exploits.md",
-      "size": 35834,
-      "sha256": "4e2733869d6651932fe96248b2d1240be79f919458c5e9b0b24c3600ed4c19be",
       "protected_original_byte_length": 35834,
+      "sha256": "4e2733869d6651932fe96248b2d1240be79f919458c5e9b0b24c3600ed4c19be",
       "protected_prefix_sha256": "4e2733869d6651932fe96248b2d1240be79f919458c5e9b0b24c3600ed4c19be"
     },
     {
       "path": "ctf-pwn/advanced.md",
-      "size": 14624,
-      "sha256": "5e9bf0274def31a7288d0d2aaa0e1ffa66fb0d03dc53a124a96b60dcbb030328",
       "protected_original_byte_length": 14624,
+      "sha256": "5e9bf0274def31a7288d0d2aaa0e1ffa66fb0d03dc53a124a96b60dcbb030328",
       "protected_prefix_sha256": "5e9bf0274def31a7288d0d2aaa0e1ffa66fb0d03dc53a124a96b60dcbb030328"
     },
     {
       "path": "ctf-pwn/field-notes.md",
-      "size": 26325,
-      "sha256": "7b0cda57fc8bbd242da7de1612ee71714b76f175ca361365fc3ebf13a7208406",
       "protected_original_byte_length": 26325,
+      "sha256": "7b0cda57fc8bbd242da7de1612ee71714b76f175ca361365fc3ebf13a7208406",
       "protected_prefix_sha256": "7b0cda57fc8bbd242da7de1612ee71714b76f175ca361365fc3ebf13a7208406"
     },
     {
       "path": "ctf-pwn/format-string.md",
-      "size": 33125,
-      "sha256": "d01c7fe4096a3a8f40471cb6a83a054f9bc774ce2e547129de2d801a103b5340",
       "protected_original_byte_length": 33125,
+      "sha256": "d01c7fe4096a3a8f40471cb6a83a054f9bc774ce2e547129de2d801a103b5340",
       "protected_prefix_sha256": "d01c7fe4096a3a8f40471cb6a83a054f9bc774ce2e547129de2d801a103b5340"
     },
     {
       "path": "ctf-pwn/heap-fsop.md",
-      "size": 15194,
-      "sha256": "a8ee87cb638a4fdab8c73c870ab70e6c141b5a8c047302c0503a8e844e565e96",
       "protected_original_byte_length": 15194,
+      "sha256": "a8ee87cb638a4fdab8c73c870ab70e6c141b5a8c047302c0503a8e844e565e96",
       "protected_prefix_sha256": "a8ee87cb638a4fdab8c73c870ab70e6c141b5a8c047302c0503a8e844e565e96"
     },
     {
       "path": "ctf-pwn/heap-techniques-2.md",
-      "size": 20242,
-      "sha256": "85a2c63701ae27c5e2c46d70d1476d2391edc0e7fa62a5aa1be294531a866b1f",
-      "protected_original_byte_length": 20242,
-      "protected_prefix_sha256": "85a2c63701ae27c5e2c46d70d1476d2391edc0e7fa62a5aa1be294531a866b1f"
+      "protected_original_byte_length": 20259,
+      "sha256": "093effd841c1195de8d120d63835b7aca944f34bfa7e07c77aa365591cb5e038",
+      "protected_prefix_sha256": "093effd841c1195de8d120d63835b7aca944f34bfa7e07c77aa365591cb5e038"
     },
     {
       "path": "ctf-pwn/heap-techniques.md",
-      "size": 24908,
-      "sha256": "09f9c5953fb01cf88fa0dba127dd927c0caab2ed2d6f6a1e9bb4bf6ed68f968b",
       "protected_original_byte_length": 24908,
+      "sha256": "09f9c5953fb01cf88fa0dba127dd927c0caab2ed2d6f6a1e9bb4bf6ed68f968b",
       "protected_prefix_sha256": "09f9c5953fb01cf88fa0dba127dd927c0caab2ed2d6f6a1e9bb4bf6ed68f968b"
     },
     {
       "path": "ctf-pwn/kernel-bypass.md",
-      "size": 15313,
-      "sha256": "693e1c7a9f246dbc98f464cb34ff3cfa019822e5e9289c9c8dec730e4035e451",
       "protected_original_byte_length": 15313,
+      "sha256": "693e1c7a9f246dbc98f464cb34ff3cfa019822e5e9289c9c8dec730e4035e451",
       "protected_prefix_sha256": "693e1c7a9f246dbc98f464cb34ff3cfa019822e5e9289c9c8dec730e4035e451"
     },
     {
       "path": "ctf-pwn/kernel-techniques.md",
-      "size": 19054,
-      "sha256": "bed9e9a2ffe3d04dc32062ce7ea556e6f21c2434bb594d2f3f2f4c920d78d0f0",
-      "protected_original_byte_length": 19054,
-      "protected_prefix_sha256": "bed9e9a2ffe3d04dc32062ce7ea556e6f21c2434bb594d2f3f2f4c920d78d0f0"
+      "protected_original_byte_length": 19070,
+      "sha256": "f977924d185f27e3550aaefdfe8864d7dbb4c04101dcd2eb89c1cfdf425c0a0a",
+      "protected_prefix_sha256": "f977924d185f27e3550aaefdfe8864d7dbb4c04101dcd2eb89c1cfdf425c0a0a"
     },
     {
       "path": "ctf-pwn/kernel.md",
-      "size": 28699,
-      "sha256": "ed2570aa9a0181d39c5d5e9711aa07ecbc1b4826ac38bb88f956195175353ca2",
       "protected_original_byte_length": 28699,
+      "sha256": "ed2570aa9a0181d39c5d5e9711aa07ecbc1b4826ac38bb88f956195175353ca2",
       "protected_prefix_sha256": "ed2570aa9a0181d39c5d5e9711aa07ecbc1b4826ac38bb88f956195175353ca2"
     },
     {
+      "path": "ctf-pwn/modern-playbook.md",
+      "protected_original_byte_length": 6231,
+      "sha256": "861f1ba67b744eedff09cb5c58798b7dd12f21d5b0d7778a3c115b820b1f5d49",
+      "protected_prefix_sha256": "861f1ba67b744eedff09cb5c58798b7dd12f21d5b0d7778a3c115b820b1f5d49"
+    },
+    {
       "path": "ctf-pwn/overflow-basics.md",
-      "size": 26821,
-      "sha256": "43ca77cb31ba787b428d821e923d48d151bc160e3aeddbc76c090978265920f7",
       "protected_original_byte_length": 26821,
+      "sha256": "43ca77cb31ba787b428d821e923d48d151bc160e3aeddbc76c090978265920f7",
       "protected_prefix_sha256": "43ca77cb31ba787b428d821e923d48d151bc160e3aeddbc76c090978265920f7"
     },
     {
+      "path": "ctf-pwn/personal-learnings.md",
+      "protected_original_byte_length": 1247,
+      "sha256": "ecfaea63783cd3c393c13e61c951181d113b79d346851e1220b835dc02bd19b4",
+      "protected_prefix_sha256": "ecfaea63783cd3c393c13e61c951181d113b79d346851e1220b835dc02bd19b4"
+    },
+    {
       "path": "ctf-pwn/rop-advanced.md",
-      "size": 32959,
-      "sha256": "ecda7954b4ba9eaed98850e10b2ff3ab4eb0da42cc06768b790a7bc2a7592e4a",
       "protected_original_byte_length": 32959,
+      "sha256": "ecda7954b4ba9eaed98850e10b2ff3ab4eb0da42cc06768b790a7bc2a7592e4a",
       "protected_prefix_sha256": "ecda7954b4ba9eaed98850e10b2ff3ab4eb0da42cc06768b790a7bc2a7592e4a"
     },
     {
       "path": "ctf-pwn/rop-and-shellcode.md",
-      "size": 28791,
-      "sha256": "61a2454a91764d97b64d58f27c7b8212b8ac008c8a7e01df1b5cabc6b106c869",
-      "protected_original_byte_length": 28791,
-      "protected_prefix_sha256": "61a2454a91764d97b64d58f27c7b8212b8ac008c8a7e01df1b5cabc6b106c869"
+      "protected_original_byte_length": 28758,
+      "sha256": "735204ddc1a323abae7a5bdee2d648833c83717700adb834aae15a9cb45d6026",
+      "protected_prefix_sha256": "735204ddc1a323abae7a5bdee2d648833c83717700adb834aae15a9cb45d6026"
     },
     {
       "path": "ctf-pwn/sandbox-escape.md",
-      "size": 15428,
-      "sha256": "ac0f98f63ef9c9f736f219a59f28a54ace9d605c73bde43f6750cda0c7f6dcfd",
       "protected_original_byte_length": 15428,
+      "sha256": "ac0f98f63ef9c9f736f219a59f28a54ace9d605c73bde43f6750cda0c7f6dcfd",
       "protected_prefix_sha256": "ac0f98f63ef9c9f736f219a59f28a54ace9d605c73bde43f6750cda0c7f6dcfd"
     },
     {
-      "path": "ctf-reverse/SKILL.md",
-      "size": 16321,
-      "sha256": "d3d4bdb38048fc8f0823c3a21faa7baf42b18ec481651e71a564f61a5f0db120",
-      "protected_original_byte_length": 16321,
-      "protected_prefix_sha256": "d3d4bdb38048fc8f0823c3a21faa7baf42b18ec481651e71a564f61a5f0db120"
+      "path": "ctf-pwn/triage-reference.md",
+      "protected_original_byte_length": 9896,
+      "sha256": "ef28086d1f3d9e8de30c306c52f19cf78d08144b19cb75b1a81b4d56a334d1a0",
+      "protected_prefix_sha256": "ef28086d1f3d9e8de30c306c52f19cf78d08144b19cb75b1a81b4d56a334d1a0"
+    },
+    {
+      "path": "ctf-pwn/upstream-2026.md",
+      "protected_original_byte_length": 3366,
+      "sha256": "01022c22ed751a8cd73a330e40e152d23753e21ff080090fa7286e96a738d56c",
+      "protected_prefix_sha256": "01022c22ed751a8cd73a330e40e152d23753e21ff080090fa7286e96a738d56c"
     },
     {
       "path": "ctf-reverse/anti-analysis-ctf.md",
-      "size": 10958,
-      "sha256": "765391aea65cc073bf805622c5b6e77b18f130501865f73e4592224087bdc22c",
       "protected_original_byte_length": 10958,
+      "sha256": "765391aea65cc073bf805622c5b6e77b18f130501865f73e4592224087bdc22c",
       "protected_prefix_sha256": "765391aea65cc073bf805622c5b6e77b18f130501865f73e4592224087bdc22c"
     },
     {
       "path": "ctf-reverse/anti-analysis.md",
-      "size": 23818,
-      "sha256": "5df2569a02d060bd3066d5ececbaac7953317c264657b873f38722e40cf01f7b",
       "protected_original_byte_length": 23818,
+      "sha256": "5df2569a02d060bd3066d5ececbaac7953317c264657b873f38722e40cf01f7b",
       "protected_prefix_sha256": "5df2569a02d060bd3066d5ececbaac7953317c264657b873f38722e40cf01f7b"
     },
     {
       "path": "ctf-reverse/field-notes.md",
-      "size": 32679,
-      "sha256": "6730e90e1b875bf70a8e5d6760dded192d743485fefefa3a654365e7454202c3",
       "protected_original_byte_length": 32679,
+      "sha256": "6730e90e1b875bf70a8e5d6760dded192d743485fefefa3a654365e7454202c3",
       "protected_prefix_sha256": "6730e90e1b875bf70a8e5d6760dded192d743485fefefa3a654365e7454202c3"
     },
     {
       "path": "ctf-reverse/languages-compiled.md",
-      "size": 27264,
-      "sha256": "9916d12612f4acd34a4b0c84b3334f68759de7398a9e159045ff5fab601eaf1c",
       "protected_original_byte_length": 27264,
+      "sha256": "9916d12612f4acd34a4b0c84b3334f68759de7398a9e159045ff5fab601eaf1c",
       "protected_prefix_sha256": "9916d12612f4acd34a4b0c84b3334f68759de7398a9e159045ff5fab601eaf1c"
     },
     {
       "path": "ctf-reverse/languages-platforms.md",
-      "size": 28990,
-      "sha256": "98ee43b6c250c4c189bcabbc4408a0c63cdd9b3541308019db1078e7ea436b93",
       "protected_original_byte_length": 28990,
+      "sha256": "98ee43b6c250c4c189bcabbc4408a0c63cdd9b3541308019db1078e7ea436b93",
       "protected_prefix_sha256": "98ee43b6c250c4c189bcabbc4408a0c63cdd9b3541308019db1078e7ea436b93"
     },
     {
       "path": "ctf-reverse/languages.md",
-      "size": 23468,
-      "sha256": "f065b7bbab7f269c0b1c4238cdf6424134930f32904ab480319c2d7f58a2deaa",
       "protected_original_byte_length": 23468,
+      "sha256": "f065b7bbab7f269c0b1c4238cdf6424134930f32904ab480319c2d7f58a2deaa",
       "protected_prefix_sha256": "f065b7bbab7f269c0b1c4238cdf6424134930f32904ab480319c2d7f58a2deaa"
     },
     {
+      "path": "ctf-reverse/modern-playbook.md",
+      "protected_original_byte_length": 7596,
+      "sha256": "c0b38642668ab8879feec9954a8e207438d08454f4b5a59f64cca038efaac287",
+      "protected_prefix_sha256": "c0b38642668ab8879feec9954a8e207438d08454f4b5a59f64cca038efaac287"
+    },
+    {
       "path": "ctf-reverse/patterns-ctf-2.md",
-      "size": 19276,
-      "sha256": "8f5d39380a11b26cfba08f72e796c284464931eac33c761b2608557706d2735c",
-      "protected_original_byte_length": 19276,
-      "protected_prefix_sha256": "8f5d39380a11b26cfba08f72e796c284464931eac33c761b2608557706d2735c"
+      "protected_original_byte_length": 19255,
+      "sha256": "91cd9bc9ffed3d9733cd22888a65424c2bef74f1bc36a0df3b9d84d7f3f93aec",
+      "protected_prefix_sha256": "91cd9bc9ffed3d9733cd22888a65424c2bef74f1bc36a0df3b9d84d7f3f93aec"
     },
     {
       "path": "ctf-reverse/patterns-ctf-3.md",
-      "size": 38811,
-      "sha256": "a877bf89d5610f81112cdd02dd56260e82371ea4ec612b580bae68df95b96083",
       "protected_original_byte_length": 38811,
+      "sha256": "a877bf89d5610f81112cdd02dd56260e82371ea4ec612b580bae68df95b96083",
       "protected_prefix_sha256": "a877bf89d5610f81112cdd02dd56260e82371ea4ec612b580bae68df95b96083"
     },
     {
       "path": "ctf-reverse/patterns-ctf.md",
-      "size": 30764,
-      "sha256": "fdc7f03538336bba962ccb84ad51af3d208e8ebe53536f97cae2080eece9ced1",
-      "protected_original_byte_length": 30764,
-      "protected_prefix_sha256": "fdc7f03538336bba962ccb84ad51af3d208e8ebe53536f97cae2080eece9ced1"
+      "protected_original_byte_length": 30856,
+      "sha256": "305af41f926481852d2ae887254afdd1897c0d0ded9591b85e7911690a7906b1",
+      "protected_prefix_sha256": "305af41f926481852d2ae887254afdd1897c0d0ded9591b85e7911690a7906b1"
     },
     {
       "path": "ctf-reverse/patterns-runtime.md",
-      "size": 12280,
-      "sha256": "d48ba0d017493db44417cb4cffb128286d77dc032d4038b45ff07addf51c8495",
       "protected_original_byte_length": 12280,
+      "sha256": "d48ba0d017493db44417cb4cffb128286d77dc032d4038b45ff07addf51c8495",
       "protected_prefix_sha256": "d48ba0d017493db44417cb4cffb128286d77dc032d4038b45ff07addf51c8495"
     },
     {
       "path": "ctf-reverse/patterns.md",
-      "size": 20387,
-      "sha256": "d6c3ce394122c47a77e95b3147e1c559d95030516c46cf36bf2e6b384e249314",
       "protected_original_byte_length": 20387,
+      "sha256": "d6c3ce394122c47a77e95b3147e1c559d95030516c46cf36bf2e6b384e249314",
       "protected_prefix_sha256": "d6c3ce394122c47a77e95b3147e1c559d95030516c46cf36bf2e6b384e249314"
     },
     {
+      "path": "ctf-reverse/personal-learnings.md",
+      "protected_original_byte_length": 3888,
+      "sha256": "6bda1f019316ffb9872475dcbc72218e6820ff379355b2319714d93a24d49ff9",
+      "protected_prefix_sha256": "6bda1f019316ffb9872475dcbc72218e6820ff379355b2319714d93a24d49ff9"
+    },
+    {
       "path": "ctf-reverse/platforms-hardware.md",
-      "size": 16239,
-      "sha256": "f2548b021226489270e669ad99f0a4d10fbd0df59d7a3d2fe85de01a42366e36",
       "protected_original_byte_length": 16239,
+      "sha256": "f2548b021226489270e669ad99f0a4d10fbd0df59d7a3d2fe85de01a42366e36",
       "protected_prefix_sha256": "f2548b021226489270e669ad99f0a4d10fbd0df59d7a3d2fe85de01a42366e36"
     },
     {
       "path": "ctf-reverse/platforms.md",
-      "size": 23005,
-      "sha256": "e7592cabda16bfce9ab57c8f1f57bcc03ac1d68a725fe420643d8d3c54ca64f3",
       "protected_original_byte_length": 23005,
+      "sha256": "e7592cabda16bfce9ab57c8f1f57bcc03ac1d68a725fe420643d8d3c54ca64f3",
       "protected_prefix_sha256": "e7592cabda16bfce9ab57c8f1f57bcc03ac1d68a725fe420643d8d3c54ca64f3"
     },
     {
       "path": "ctf-reverse/tools-advanced-2.md",
-      "size": 14829,
-      "sha256": "2e7bcf73790eaa0f2fdaa289155704bfdb0ca899e617267811b04cd62b307eea",
       "protected_original_byte_length": 14829,
+      "sha256": "2e7bcf73790eaa0f2fdaa289155704bfdb0ca899e617267811b04cd62b307eea",
       "protected_prefix_sha256": "2e7bcf73790eaa0f2fdaa289155704bfdb0ca899e617267811b04cd62b307eea"
     },
     {
       "path": "ctf-reverse/tools-advanced.md",
-      "size": 12375,
-      "sha256": "8ac3db030d0d6daf366de53005d12d9720b952ae8aa6216c97926111d8fa0b36",
       "protected_original_byte_length": 12375,
+      "sha256": "8ac3db030d0d6daf366de53005d12d9720b952ae8aa6216c97926111d8fa0b36",
       "protected_prefix_sha256": "8ac3db030d0d6daf366de53005d12d9720b952ae8aa6216c97926111d8fa0b36"
     },
     {
       "path": "ctf-reverse/tools-dynamic.md",
-      "size": 24249,
-      "sha256": "f999c7279538fc22ae746483cf95770b3d4c72508a13ea48572e8ccd077ffe6e",
       "protected_original_byte_length": 24249,
+      "sha256": "f999c7279538fc22ae746483cf95770b3d4c72508a13ea48572e8ccd077ffe6e",
       "protected_prefix_sha256": "f999c7279538fc22ae746483cf95770b3d4c72508a13ea48572e8ccd077ffe6e"
     },
     {
       "path": "ctf-reverse/tools-emulation.md",
-      "size": 12985,
-      "sha256": "8eec4b79a61f5f32211d09fb8537b663e637281be4060012a980609cc85afb80",
       "protected_original_byte_length": 12985,
+      "sha256": "8eec4b79a61f5f32211d09fb8537b663e637281be4060012a980609cc85afb80",
       "protected_prefix_sha256": "8eec4b79a61f5f32211d09fb8537b663e637281be4060012a980609cc85afb80"
     },
     {
       "path": "ctf-reverse/tools.md",
-      "size": 15891,
-      "sha256": "3934f59cf3bd15cbc4050a3fc1f41dd750d4fe8f9f455c42daa0e1d2a5380c01",
       "protected_original_byte_length": 15891,
+      "sha256": "3934f59cf3bd15cbc4050a3fc1f41dd750d4fe8f9f455c42daa0e1d2a5380c01",
       "protected_prefix_sha256": "3934f59cf3bd15cbc4050a3fc1f41dd750d4fe8f9f455c42daa0e1d2a5380c01"
     },
     {
-      "path": "ctf-web/SKILL.md",
-      "size": 14512,
-      "sha256": "6d9a3b797a7fc6cb2ec7f314e5a794096f9b9078014a9f476b782c3ef857ec25",
-      "protected_original_byte_length": 14512,
-      "protected_prefix_sha256": "6d9a3b797a7fc6cb2ec7f314e5a794096f9b9078014a9f476b782c3ef857ec25"
+      "path": "ctf-reverse/triage-reference.md",
+      "protected_original_byte_length": 3747,
+      "sha256": "fdb04578d4b31b2ced90fc221800bc5c03d45b7b4b12516fecc488a86eefdfc8",
+      "protected_prefix_sha256": "fdb04578d4b31b2ced90fc221800bc5c03d45b7b4b12516fecc488a86eefdfc8"
+    },
+    {
+      "path": "ctf-reverse/unicorn-emulation.md",
+      "protected_original_byte_length": 49575,
+      "sha256": "17b5a52df3a82905d816509ec7926ffab8e3035534f6406b5d5d987570b2f16a",
+      "protected_prefix_sha256": "17b5a52df3a82905d816509ec7926ffab8e3035534f6406b5d5d987570b2f16a"
     },
     {
       "path": "ctf-web/auth-and-access-2.md",
-      "size": 5200,
-      "sha256": "24e93275084ccaeea6210542b6209c44577049133c3232b8ea929feb7812252e",
       "protected_original_byte_length": 5200,
+      "sha256": "24e93275084ccaeea6210542b6209c44577049133c3232b8ea929feb7812252e",
       "protected_prefix_sha256": "24e93275084ccaeea6210542b6209c44577049133c3232b8ea929feb7812252e"
     },
     {
       "path": "ctf-web/auth-and-access.md",
-      "size": 35533,
-      "sha256": "a7595a88837c016003ed0d6524eaa235fe4b17a78e732cdcf71263b5a7b5d85f",
       "protected_original_byte_length": 35533,
+      "sha256": "a7595a88837c016003ed0d6524eaa235fe4b17a78e732cdcf71263b5a7b5d85f",
       "protected_prefix_sha256": "a7595a88837c016003ed0d6524eaa235fe4b17a78e732cdcf71263b5a7b5d85f"
     },
     {
       "path": "ctf-web/auth-infra.md",
-      "size": 14438,
-      "sha256": "e8ba4a113772dbde018323c36acf3a9c9dc7861d4f096138880d83219ed3fc9c",
       "protected_original_byte_length": 14438,
+      "sha256": "e8ba4a113772dbde018323c36acf3a9c9dc7861d4f096138880d83219ed3fc9c",
       "protected_prefix_sha256": "e8ba4a113772dbde018323c36acf3a9c9dc7861d4f096138880d83219ed3fc9c"
     },
     {
       "path": "ctf-web/auth-jwt.md",
-      "size": 8918,
-      "sha256": "2e3d1b74646356830354f0023b43f60cb9777347c50c6d1ee7b2b5664e98d9cd",
       "protected_original_byte_length": 8918,
+      "sha256": "2e3d1b74646356830354f0023b43f60cb9777347c50c6d1ee7b2b5664e98d9cd",
       "protected_prefix_sha256": "2e3d1b74646356830354f0023b43f60cb9777347c50c6d1ee7b2b5664e98d9cd"
     },
     {
       "path": "ctf-web/client-side-advanced.md",
-      "size": 37895,
-      "sha256": "d6dc8885a8d4aa436e1d07a44438df0744c7c119ffe7ea2c46e4246c9e94d479",
       "protected_original_byte_length": 37895,
+      "sha256": "d6dc8885a8d4aa436e1d07a44438df0744c7c119ffe7ea2c46e4246c9e94d479",
       "protected_prefix_sha256": "d6dc8885a8d4aa436e1d07a44438df0744c7c119ffe7ea2c46e4246c9e94d479"
     },
     {
       "path": "ctf-web/client-side.md",
-      "size": 22068,
-      "sha256": "0d7aa7b2c7b3eca7c4e1fffb71b4bbae107ca5523b6c4e447570154a29b501c5",
       "protected_original_byte_length": 22068,
+      "sha256": "0d7aa7b2c7b3eca7c4e1fffb71b4bbae107ca5523b6c4e447570154a29b501c5",
       "protected_prefix_sha256": "0d7aa7b2c7b3eca7c4e1fffb71b4bbae107ca5523b6c4e447570154a29b501c5"
     },
     {
       "path": "ctf-web/cves.md",
-      "size": 16014,
-      "sha256": "64aeeaa1cff5c9709e159e1e2e6b1aa8ed42d557903660911eafee1131dfefa1",
       "protected_original_byte_length": 16014,
+      "sha256": "64aeeaa1cff5c9709e159e1e2e6b1aa8ed42d557903660911eafee1131dfefa1",
       "protected_prefix_sha256": "64aeeaa1cff5c9709e159e1e2e6b1aa8ed42d557903660911eafee1131dfefa1"
     },
     {
       "path": "ctf-web/field-notes.md",
-      "size": 35879,
-      "sha256": "c37710ebc89fb9140016908e26a57fd7732e1bcd8756c677b8b64b085da417a0",
-      "protected_original_byte_length": 35879,
-      "protected_prefix_sha256": "c37710ebc89fb9140016908e26a57fd7732e1bcd8756c677b8b64b085da417a0"
+      "protected_original_byte_length": 35877,
+      "sha256": "069ebb3ca0742aba187f3e216bb11e4b2babb3cbcdeb59c0c27d8827de3a75e6",
+      "protected_prefix_sha256": "069ebb3ca0742aba187f3e216bb11e4b2babb3cbcdeb59c0c27d8827de3a75e6"
+    },
+    {
+      "path": "ctf-web/LEARNED.md",
+      "protected_original_byte_length": 4198,
+      "sha256": "6b383ade4e01df26cc0b67b72901fad6defc7c0de1ca98d31fcdb4fa51725360",
+      "protected_prefix_sha256": "6b383ade4e01df26cc0b67b72901fad6defc7c0de1ca98d31fcdb4fa51725360"
+    },
+    {
+      "path": "ctf-web/modern-playbook.md",
+      "protected_original_byte_length": 7189,
+      "sha256": "8a0e782dfe21a9d7caa0d6894c4bb1f21c27ba2aa29ae70c58a54b91bf8eb659",
+      "protected_prefix_sha256": "8a0e782dfe21a9d7caa0d6894c4bb1f21c27ba2aa29ae70c58a54b91bf8eb659"
     },
     {
       "path": "ctf-web/node-and-prototype.md",
-      "size": 6842,
-      "sha256": "6f11446630103706b35d05270a16653a57cc1ce3f906df630674653a79f6d976",
       "protected_original_byte_length": 6842,
+      "sha256": "6f11446630103706b35d05270a16653a57cc1ce3f906df630674653a79f6d976",
       "protected_prefix_sha256": "6f11446630103706b35d05270a16653a57cc1ce3f906df630674653a79f6d976"
     },
     {
+      "path": "ctf-web/pat-reference.md",
+      "protected_original_byte_length": 13002,
+      "sha256": "c8651bcb41200e30a572357fb697d074d9a6143e53aa2ecdfd4c2ef4def83b8d",
+      "protected_prefix_sha256": "c8651bcb41200e30a572357fb697d074d9a6143e53aa2ecdfd4c2ef4def83b8d"
+    },
+    {
+      "path": "ctf-web/personal-learnings.md",
+      "protected_original_byte_length": 4433,
+      "sha256": "52c67a3523986ba061f0fb43b432002d9475472d966d7fa272b2d11a0d04ce02",
+      "protected_prefix_sha256": "52c67a3523986ba061f0fb43b432002d9475472d966d7fa272b2d11a0d04ce02"
+    },
+    {
+      "path": "ctf-web/python-requests.md",
+      "protected_original_byte_length": 3356,
+      "sha256": "18b98d785463ecbbbf886b830f452d65922941e9de6ef7f3b642cf96697c2437",
+      "protected_prefix_sha256": "18b98d785463ecbbbf886b830f452d65922941e9de6ef7f3b642cf96697c2437"
+    },
+    {
       "path": "ctf-web/server-side-2.md",
-      "size": 15855,
-      "sha256": "ce0eb122074072478a42105c81d4f6df2b67e2ebd65f6b184924a633795dc42f",
       "protected_original_byte_length": 15855,
+      "sha256": "ce0eb122074072478a42105c81d4f6df2b67e2ebd65f6b184924a633795dc42f",
       "protected_prefix_sha256": "ce0eb122074072478a42105c81d4f6df2b67e2ebd65f6b184924a633795dc42f"
     },
     {
       "path": "ctf-web/server-side-advanced-2.md",
-      "size": 26297,
-      "sha256": "0089fc8baaec73144eda29d52a4e35945d8d76ea33f8befd26238528f25edc4a",
       "protected_original_byte_length": 26297,
+      "sha256": "0089fc8baaec73144eda29d52a4e35945d8d76ea33f8befd26238528f25edc4a",
       "protected_prefix_sha256": "0089fc8baaec73144eda29d52a4e35945d8d76ea33f8befd26238528f25edc4a"
     },
     {
       "path": "ctf-web/server-side-advanced-3.md",
-      "size": 7099,
-      "sha256": "c123ef5df7196da750f9eb2538c406eab03933732ae7dccb657a24710f12e867",
       "protected_original_byte_length": 7099,
+      "sha256": "c123ef5df7196da750f9eb2538c406eab03933732ae7dccb657a24710f12e867",
       "protected_prefix_sha256": "c123ef5df7196da750f9eb2538c406eab03933732ae7dccb657a24710f12e867"
     },
     {
       "path": "ctf-web/server-side-advanced-4.md",
-      "size": 22250,
-      "sha256": "11aa3d4ac279117dcc9b0b97a741a98dc365b37e68ed276afe7d288dfe8225ff",
       "protected_original_byte_length": 22250,
+      "sha256": "11aa3d4ac279117dcc9b0b97a741a98dc365b37e68ed276afe7d288dfe8225ff",
       "protected_prefix_sha256": "11aa3d4ac279117dcc9b0b97a741a98dc365b37e68ed276afe7d288dfe8225ff"
     },
     {
       "path": "ctf-web/server-side-advanced.md",
-      "size": 16184,
-      "sha256": "a91041527bc3c9b03f8089cfd65fb45b943a1271c8491876953d16dc61e616cd",
-      "protected_original_byte_length": 16184,
-      "protected_prefix_sha256": "a91041527bc3c9b03f8089cfd65fb45b943a1271c8491876953d16dc61e616cd"
+      "protected_original_byte_length": 16130,
+      "sha256": "d24e72555946ebe9e09ec309e6303807ee19bf220d666e87d73dff1da53dfed9",
+      "protected_prefix_sha256": "d24e72555946ebe9e09ec309e6303807ee19bf220d666e87d73dff1da53dfed9"
     },
     {
       "path": "ctf-web/server-side-deser.md",
-      "size": 22411,
-      "sha256": "483d30757b441c6dea9bceb940efd5cbc2c3c324d0efda242a46b30f7e2c3d3b",
       "protected_original_byte_length": 22411,
+      "sha256": "483d30757b441c6dea9bceb940efd5cbc2c3c324d0efda242a46b30f7e2c3d3b",
       "protected_prefix_sha256": "483d30757b441c6dea9bceb940efd5cbc2c3c324d0efda242a46b30f7e2c3d3b"
     },
     {
       "path": "ctf-web/server-side-exec-2.md",
-      "size": 39536,
-      "sha256": "ece194a62fa077c933cc6cc83b46dc143eb1b97b4de22f7db80e8d70b7abe3d7",
       "protected_original_byte_length": 39536,
+      "sha256": "ece194a62fa077c933cc6cc83b46dc143eb1b97b4de22f7db80e8d70b7abe3d7",
       "protected_prefix_sha256": "ece194a62fa077c933cc6cc83b46dc143eb1b97b4de22f7db80e8d70b7abe3d7"
     },
     {
       "path": "ctf-web/server-side-exec.md",
-      "size": 21998,
-      "sha256": "b95360a2a18b0f484d0d18ad31c703a11ded5a2f049e6e3a521579298f9c83b0",
       "protected_original_byte_length": 21998,
+      "sha256": "b95360a2a18b0f484d0d18ad31c703a11ded5a2f049e6e3a521579298f9c83b0",
       "protected_prefix_sha256": "b95360a2a18b0f484d0d18ad31c703a11ded5a2f049e6e3a521579298f9c83b0"
     },
     {
       "path": "ctf-web/server-side.md",
-      "size": 30125,
-      "sha256": "2fb3a9245a5dc3b317f3e96b0c21a23c4717dc12c95e7cf6e185bb1e7b4a7b98",
-      "protected_original_byte_length": 30125,
-      "protected_prefix_sha256": "2fb3a9245a5dc3b317f3e96b0c21a23c4717dc12c95e7cf6e185bb1e7b4a7b98"
+      "protected_original_byte_length": 30099,
+      "sha256": "2dd0432a16ffad184f99a4dcd2e2bc0dc0f154763e5c7d2fa8e18d4670779803",
+      "protected_prefix_sha256": "2dd0432a16ffad184f99a4dcd2e2bc0dc0f154763e5c7d2fa8e18d4670779803"
     },
     {
       "path": "ctf-web/sql-injection.md",
-      "size": 38723,
-      "sha256": "7c9857aa0e2bcf21f765f4314821b1cc5e1c51cbe816c168b9741608eb1e7ae2",
       "protected_original_byte_length": 38723,
+      "sha256": "7c9857aa0e2bcf21f765f4314821b1cc5e1c51cbe816c168b9741608eb1e7ae2",
       "protected_prefix_sha256": "7c9857aa0e2bcf21f765f4314821b1cc5e1c51cbe816c168b9741608eb1e7ae2"
     },
     {
+      "path": "ctf-web/triage-reference.md",
+      "protected_original_byte_length": 5034,
+      "sha256": "8b0b0a6fb6fad5d38debe31e6e566ec30814a8a509b0df30b965e829a5bbe276",
+      "protected_prefix_sha256": "8b0b0a6fb6fad5d38debe31e6e566ec30814a8a509b0df30b965e829a5bbe276"
+    },
+    {
       "path": "ctf-web/web3.md",
-      "size": 15870,
-      "sha256": "feb9fd8a498a14c413a7673c7d9dad8c690866096053f28d5a6b7315f9b9a0dd",
       "protected_original_byte_length": 15870,
+      "sha256": "feb9fd8a498a14c413a7673c7d9dad8c690866096053f28d5a6b7315f9b9a0dd",
       "protected_prefix_sha256": "feb9fd8a498a14c413a7673c7d9dad8c690866096053f28d5a6b7315f9b9a0dd"
     },
     {
-      "path": "ctf-writeup/SKILL.md",
-      "size": 6335,
-      "sha256": "bd686185500309c33e59424d426d0004f6a4c96a5746765ea608fda05b85dc48",
-      "protected_original_byte_length": 6335,
-      "protected_prefix_sha256": "bd686185500309c33e59424d426d0004f6a4c96a5746765ea608fda05b85dc48"
-    },
-    {
-      "path": "find-skills/SKILL.md",
-      "size": 5446,
-      "sha256": "1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a",
-      "protected_original_byte_length": 5446,
-      "protected_prefix_sha256": "1e85f6f9686e145aca4a124e3b704b9bbea9aa87e08515c1e352eee70f6e6e7a"
-    },
-    {
-      "path": "install.sh",
-      "size": 544,
-      "sha256": "6d235c9ac13ee69b034507521f8ecb5cf8729b945d494d6099333e066a46ea61",
-      "protected_original_byte_length": 544,
-      "protected_prefix_sha256": "6d235c9ac13ee69b034507521f8ecb5cf8729b945d494d6099333e066a46ea61"
-    },
-    {
-      "path": "solve-challenge/SKILL.md",
-      "size": 10184,
-      "sha256": "b6d10d5d5b576e53d62c149943248079aeee7b15a4b67cfedaa04bafff2ba7f1",
-      "protected_original_byte_length": 10184,
-      "protected_prefix_sha256": "b6d10d5d5b576e53d62c149943248079aeee7b15a4b67cfedaa04bafff2ba7f1"
+      "path": "ctf-writeup/triage-reference.md",
+      "protected_original_byte_length": 4722,
+      "sha256": "1963fd24080700fc6531594623972089a84c32270ddfb7d3f8d3157c69945d88",
+      "protected_prefix_sha256": "1963fd24080700fc6531594623972089a84c32270ddfb7d3f8d3157c69945d88"
     }
   ]
 }

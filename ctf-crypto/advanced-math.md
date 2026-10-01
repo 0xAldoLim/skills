@@ -39,18 +39,24 @@ Isogeny-based crypto challenges are often **graph traversal problems in disguise
 
 **Pathfinding in isogeny graphs:**
 ```python
+# Local heuristic sketch: requires a bounded graph-neighbor function.
+import random
+
 # Height estimation via random walks to leaves
 def estimate_height(j, neighbors_func, trials=100):
     min_depth = float('inf')
     for _ in range(trials):
         depth, curr = 0, j
-        while True:
+        while depth < 1000:
             nbrs = neighbors_func(curr)
             if len(nbrs) <= 1:  # leaf node
                 break
             curr = random.choice(nbrs)
             depth += 1
-        min_depth = min(min_depth, depth)
+        if depth < 1000:
+            min_depth = min(min_depth, depth)
+    if min_depth == float("inf"):
+        raise ValueError("no leaf reached within the local walk budget")
     return min_depth
 
 # Find path between two nodes via LCA
@@ -58,6 +64,7 @@ def find_path(start, end):
     # Ascend from both nodes tracking heights
     # Find least common ancestor
     # Concatenate: path_up(start) + reversed(path_up(end))
+    raise NotImplementedError("requires the challenge graph model and parent/height relation")
 ```
 
 **Complex multiplication (CM) curves:**
@@ -184,27 +191,9 @@ def pohlig_hellman(g, h, p):
 
 ## LLL Algorithm for Approximate GCD
 
-**Pattern (Grinch's Cryptological Defense):** Server gives hints `h_i = f * p_i + n_i` where f is the flag, p_i are small primes, n_i is small noise.
+Signal: several integers share a large hidden divisor with bounded additive errors. Write `h_i = f*p_i + e_i` and establish independent bounds on f, multipliers and errors before selecting an AGCD embedding. First test pairwise gcds and bounded multiplier enumeration if the multipliers are tiny. Verify every candidate against every original hint and its error bound.
 
-**Lattice construction:**
-```python
-from sage.all import *
-
-# Collect 3 hints from server
-# h_i = f * p_i + n_i (noise is small)
-# Construct lattice where short vector reveals primes
-
-M = matrix(ZZ, [
-    [1, 0, 0, h1],
-    [0, 1, 0, h2],
-    [0, 0, 1, h3],
-    [0, 0, 0, -1]  # Scaling factor
-])
-
-reduced = M.LLL()
-# Short vector contains p1, p2, p3
-# Recover f = (h1 - n1) / p1
-```
+The old basis with rows `[1,0,0,h1]`, `[0,1,0,h2]`, `[0,0,1,h3]`, `[0,0,0,-1]` has determinant -1. It spans all integer vectors, so LLL can return unit vectors regardless of the hints; it does not recover multipliers. Use a scaled, justified AGCD construction for the actual leakage model, not that basis. LLL is heuristic here; failure is not evidence that no common factor exists.
 
 ## Merkle-Hellman Knapsack Cryptosystem via LLL (ASIS 2014)
 
@@ -237,48 +226,22 @@ for row in res:
 
 ## Coppersmith's Method (Close Private Keys)
 
-**Pattern (Duality of Key):** Two RSA key pairs with d1 ≈ d2 (small difference).
-
-**Attack:**
-```python
-# From e1*d1 ≡ 1 mod φ and e2*d2 ≡ 1 mod φ:
-# d2 - d1 ≡ (e1*e2)^(-1) * (e1 - e2) mod p
-
-# Construct polynomial f(x) = (r - x) mod p where x = d2-d1
-# Use Coppersmith small_roots() to find x
-
-R.<x> = PolynomialRing(Zmod(N))
-r = inverse_mod(e1*e2, N) * (e1 - e2) % N
-f = r - x
-roots = f.small_roots(X=2^128, beta=0.5)  # Adjust bounds
-# x = d2 - d1, recover p from gcd(f(x), N)
-```
+Close private exponents alone do not imply a usable polynomial modulo either RSA prime. With a common totient, subtraction yields `(d2-d1)*e1*e2 = e1-e2 (mod phi)`. That relation cannot be changed to modulo p or N without an additional challenge-specific divisibility premise. Establish the exact key-generation equations, common modulus/totient and small unknowns; then derive a valid polynomial or multivariate lattice and re-encrypt a recovered message. Pivot to key-generation analysis when the required modular relation is absent.
 
 ## Coppersmith's Method (Structured Primes, LACTF 2026)
 
-**Pattern (six-seven-again):** p = base + 10^k · x where base is fully known, x is small.
+Signal: a factor is `p = base + scale*x`, with known base/scale and bounded x. Check `gcd(scale,N)` first; an inverse exists only when this is 1. Use a monic polynomial over Z/NZ and the unknown-divisor bound approximately `X < N^(beta^2/degree - epsilon)`, where the sought divisor is at least `N^beta`; this differs from the full-modulus bound. Treat heuristic parameter choices as experiments, never universal guarantees.
 
-**Condition:** x < N^{1/e} for degree-e polynomial (≈ N^0.25 for linear).
-
-**Attack:**
-```python
-# p = base + 10^k * x, so x ≡ -base * (10^k)^{-1} (mod p)
-# Since p | N, construct polynomial with root x mod N
+```sage
 R.<x> = PolynomialRing(Zmod(N))
-inv_10k = inverse_mod(10^k, N)
-f = x + (base * inv_10k) % N  # Must be monic!
-roots = f.small_roots(X=2^70, beta=0.5)
-if roots:
-    x_val = int(roots[0])
-    p = base + 10^k * x_val
-    q = N // p
+f = (base + scale*x).monic()
+for root in f.small_roots(X=X, beta=beta):
+    candidate = int(base + scale*root)
+    if 1 < candidate < N and N % candidate == 0:
+        p, q = candidate, N // candidate
 ```
 
-**Key details:**
-- Polynomial MUST be monic (leading coefficient 1)
-- `beta=0.5` means we're looking for a factor ≥ N^0.5
-- `X` parameter is upper bound on root size
-- Works for any "partially known prime" pattern
+The organizer [six-seven-again solver](https://github.com/uclaacm/lactf-archive/blob/3379d4a7b36680764a34e7dc817cc3c94c244764162/2026/crypto/six-seven-again/solve.sage) uses an unbalanced factor setting and beta=0.3. Derive beta and X from the actual factor sizes. Sage syntax requires Sage; use `**`, not Python XOR `^`, in ordinary Python.
 
 ## Clock Group (x^2+y^2=1 mod p) DLP (LACTF 2026)
 
@@ -518,34 +481,7 @@ def poly_crt(remainders, moduli):
 
 ## Manger's RSA Padding Oracle Attack (Nullcon 2026)
 
-**Setup:**
-- Key `k < 2^64` (small), RSA modulus `n` is large (1337+ bits)
-- Oracle: "invalid padding" = `decrypt < threshold`, "error" = `decrypt >= threshold`
-- No modular wrap-around because `k << n`
-
-**Attack (simplified Manger's):**
-```python
-# Phase 1: Find f1 where k * f1 >= threshold
-f1 = 1
-while oracle(encrypt(f1)) == "below":  # multiply ciphertext by f1^e mod n
-    f1 *= 2
-# f1/2 < threshold/k <= f1, so k is in [threshold/f1, threshold/(f1/2)]
-
-# Phase 2: Binary search for exact key
-lo, hi = 0, threshold
-while lo < hi:
-    mid = (lo + hi) // 2
-    f_test = ceil(threshold, mid + 1)  # f such that k*f >= threshold iff k > mid
-    if oracle(encrypt(f_test)) == "above":
-        hi = mid
-    else:
-        lo = mid + 1
-key = lo  # ~64 queries for 64-bit key
-```
-
-**Total queries:** ~128 (64 for phase 1 + 64 for phase 2).
-
----
+A threshold oracle distinguishes whether `m*f mod N` is below B. Verify that predicate using known plaintexts; a generic padding error or timing difference is not enough. Maintain exact integer intervals and modular wrap counts. For each multiplier f and possible quotient r, intersect the current interval with `r*N <= m*f < r*N+B` (below) or `r*N+B <= m*f < (r+1)*N` (above), using integer ceil/floor bounds. Choose a new f that splits the remaining intervals and respect the instance query budget. The old single binary-search interval used reversed updates and ignored wraparound. Even a small m does not prevent m*f wrapping. Re-encrypt the final singleton; retain ambiguous intervals when the oracle is noisy.
 
 ## LWE Lattice Attack via CVP (EHAX 2026)
 
@@ -769,7 +705,7 @@ assert bin(x).count('1') <= 11
 
 **Pattern (Bro, do you even lift?):** Challenge gives a polynomial `P(x)` whose unique root mod `N = p^k` is the flag, where `p` is a small known prime and `k` is large (e.g. `p ~ 2^16`, `k = 100`). Brute force over `p^k` is hopeless, but Hensel's lemma lifts any simple root mod `p` to a unique root mod `p^k` via Newton iteration: given `P(r) ≡ 0 mod p^i`, the lift is `r' = r - P(r) * inverse(P'(r), p) mod p^(i+1)`. Factor out the intermediate reductions to `mod p^(i+1)` each step or the integers blow up exponentially.
 
-```python
+```sage
 # sage
 R.<x> = PolynomialRing(ZZ)
 pol   = ...           # polynomial with huge coefficients

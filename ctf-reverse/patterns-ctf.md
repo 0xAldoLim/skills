@@ -648,12 +648,15 @@ def on_dispatch():
     print(f"{decode(op)}\t({'|'.join(hex(x) for x in top)})")
 
 # Replay the dumped trace in plain Python; no bytecode parsing, no shuffle logic:
-elif line.startswith('save at (0x51)'):
-    return stack[top] == expected_hash   # calculated hash lands at mem[0x51]
+def replay_saved(line, stack, top, expected_hash):
+    if line.startswith('save at (0x51)'):
+        return stack[top] == expected_hash
+    return None   # calculated hash lands at mem[0x51]
 
 # Diff trace("abcd") vs trace("dcba") -> the same mul/mod sequence shows up,
 # revealing the real algorithm:
 def calc_hash(x, mod):
+    x_original = x
     for _ in range(8):
         x = x * x % mod
     return x * x_original % mod

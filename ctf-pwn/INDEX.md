@@ -13,26 +13,36 @@ Use this index after category selection. Open only the reference whose signal ma
 | heap allocator | [heap-techniques.md](heap-techniques.md) |
 | kernel target | [kernel.md](kernel.md) |
 
+## Targeted retrieval
+
+Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category ctf-pwn --limit 5`.
+Results include exact section lines. Read that range before loading another reference.
+Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.
+
 ## File catalog
 
-- [advanced-exploits-2.md](advanced-exploits-2.md) — Table of Contents; Bytecode Validator Bypass via Self-Modification (srdnlenCTF 2026); io_uring UAF with SQE Injection (ApoorvCTF 2026); Integer Truncation Bypass int32 to int16 (ApoorvCTF 2026); GC Null-Reference Cascading Corruption (DiceCTF 2026); Leakless Libc via Multi-fgets stdout FILE Overwrite (Midnightflag 2026)
-- [advanced-exploits-3.md](advanced-exploits-3.md) — Table of Contents; Stack Variable Overlap / Carry Corruption OOB (srdnlenCTF 2026); 1-Byte Overflow via 8-bit Loop Counter (srdnlenCTF 2026); Game AI Arithmetic Mean OOB Read (BSidesSF 2024); Arbitrary Read/Write to Shell via GOT Overwrite (BSidesSF 2026); Stack Leak via __environ and memcpy Overflow (BSidesSF 2026)
-- [advanced-exploits-4.md](advanced-exploits-4.md) — Table of Contents; Windows SEH Overwrite + pushad VirtualAlloc ROP (RainbowTwo HTB); SeDebugPrivilege to SYSTEM (RainbowTwo HTB); ARM Buffer Overflow with Thumb Shellcode (HackIM 2016); Forth Interpreter Command Execution (32C3 2015); GF(2) Gaussian Elimination for Multi-Pass Tcache Poisoning (Midnight Flag 2026)
-- [advanced-exploits-5.md](advanced-exploits-5.md) — Table of Contents; Chip-8 Emulator Out-of-Bounds Memory for ret2libc (IceCTF 2018); Double-Precision Float Quicksort Canary Repositioning (CSAW 2018); Bloom Filter abs(INT_MIN) Negative Index OOB Write (DragonCTF Teaser 2018)
-- [advanced-exploits.md](advanced-exploits.md) — Table of Contents; VM Signed Comparison Bug (0xFun 2026); BF JIT Unbalanced Bracket to RWX Shellcode (VuwCTF 2025); Type Confusion in Interpreter (VuwCTF 2025); Off-by-One Index to Size Corruption (VuwCTF 2025); Double win() Call Pattern (VuwCTF 2025)
-- [advanced.md](advanced.md) — Table of Contents; Seccomp Advanced Techniques; openat2 Bypass (New Age Pattern); Conditional Buffer Address Restrictions; Shellcode Construction Without Relocations (pwntools); Seccomp Analysis from Disassembly
-- [field-notes.md](field-notes.md) — Table of Contents; Heap Exploitation; Additional Exploit Notes; talloc Pool Header Forgery; JIT Compilation Exploits; Type Confusion in Interpreters
-- [format-string.md](format-string.md) — Table of Contents; Format String Basics; Argument Retargeting (Non-Positional %n Trick); Blind Pwn (No Binary Provided); Format String with Filter Bypass; Format String Canary + PIE Leak
-- [heap-fsop.md](heap-fsop.md) — Table of Contents; Fastbin stdout Vtable Two-Stage Hijack for PIE + Full RELRO (ASIS CTF 2017); _IO_buf_base Null Byte Overwrite for stdin Hijack (Tokyo Westerns 2017); glibc 2.24+ _IO_FILE Vtable Validation Bypass (HITCON 2017); Unsorted Bin Attack on stdin _IO_buf_end (HITCON 2017); Unsorted Bin Corruption via mp_ Structure (HITCON 2017)
-- [heap-techniques-2.md](heap-techniques-2.md) — Table of Contents; UAF Vtable Pointer Encoding Shell Argument (BCTF 2017); Uninitialized Chunk Residue Pointer Leak (picoCTF 2018); tcache strcpy Null-Byte Overflow + Backward Consolidation (HITCON 2018); Adjacent-Struct fn-Pointer Overflow for Libc Leak + GOT Overwrite (RITSEC 2018); Hidden Menu Option 1337 for Tcache Poisoning (FireShell 2019)
-- [heap-techniques.md](heap-techniques.md) — Table of Contents; House of Apple 2 — FSOP for glibc 2.34+ (0xFun 2026); setcontext Variant for SUID Binaries (Midnight Flag 2026); House of Einherjar — Off-by-One Null Byte (0xFun 2026); Heap Exploitation; Heap Grooming via Application Operations (Codegate 2013)
-- [kernel-bypass.md](kernel-bypass.md) — Table of Contents; KASLR and FGKASLR Bypass; KASLR Bypass via Stack Leak (hxp CTF 2020); FGKASLR Bypass (hxp CTF 2020); KPTI Bypass Methods; Method 1: swapgs_restore Trampoline
-- [kernel-techniques.md](kernel-techniques.md) — Table of Contents; tty_struct RIP Hijack and kROP; kROP via Fake Vtable on tty_struct; AAW via ioctl Register Control; userfaultfd Race Stabilization; Alternative Race Techniques (uffd Disabled)
-- [kernel.md](kernel.md) — Table of Contents; Environment Setup and Recon; QEMU Debug Environment; Extracting vmlinux; Kernel Config Checks; FGKASLR Detection
-- [overflow-basics.md](overflow-basics.md) — Table of Contents; Stack Buffer Overflow; ret2win with Parameter (Magic Value Check); Stack Alignment (16-byte Requirement); Offset Calculation from Disassembly; Input Filtering (memmem checks)
-- [rop-advanced.md](rop-advanced.md) — Table of Contents; Double Stack Pivot to BSS via leave;ret (Midnightflag 2026); SROP with UTF-8 Payload Constraints (DiceCTF 2026); Seccomp Bypass; RETF Architecture Switch for Seccomp Bypass (Midnightflag 2026); Stack Shellcode with Input Reversal
-- [rop-and-shellcode.md](rop-and-shellcode.md) — Table of Contents; ROP Chain Building; Two-Stage ret2libc (Leak + Shell); Raw Syscall ROP (When system() Fails); rdx Control in ROP Chains; Shell Interaction After execve
-- [sandbox-escape.md](sandbox-escape.md) — Table of Contents; Python Sandbox Escape; VM Exploitation (Custom Bytecode); FUSE/CUSE Character Device Exploitation; Busybox/Restricted Shell Escalation; Shell Tricks
+- [advanced-exploits-2.md](advanced-exploits-2.md) — Bytecode Validator Bypass via Self-Modification (srdnlenCTF 2026); io_uring UAF with SQE Injection (ApoorvCTF 2026); Integer Truncation Bypass int32 to int16 (ApoorvCTF 2026); 6 further searchable sections
+- [advanced-exploits-3.md](advanced-exploits-3.md) — Stack Variable Overlap / Carry Corruption OOB (srdnlenCTF 2026); 1-Byte Overflow via 8-bit Loop Counter (srdnlenCTF 2026); Game AI Arithmetic Mean OOB Read (BSidesSF 2024); 9 further searchable sections
+- [advanced-exploits-4.md](advanced-exploits-4.md) — Windows SEH Overwrite + pushad VirtualAlloc ROP (RainbowTwo HTB); SeDebugPrivilege to SYSTEM (RainbowTwo HTB); ARM Buffer Overflow with Thumb Shellcode (HackIM 2016); 13 further searchable sections
+- [advanced-exploits-5.md](advanced-exploits-5.md) — Chip-8 Emulator Out-of-Bounds Memory for ret2libc (IceCTF 2018); Double-Precision Float Quicksort Canary Repositioning (CSAW 2018); Bloom Filter abs(INT_MIN) Negative Index OOB Write (DragonCTF Teaser 2018)
+- [advanced-exploits.md](advanced-exploits.md) — VM Signed Comparison Bug (0xFun 2026); BF JIT Unbalanced Bracket to RWX Shellcode (VuwCTF 2025); Type Confusion in Interpreter (VuwCTF 2025); 21 further searchable sections
+- [advanced.md](advanced.md) — Seccomp Advanced Techniques; rdx Control in ROP Chains; Use-After-Free (UAF) Exploitation; 10 further searchable sections
+- [field-notes.md](field-notes.md) — Heap Exploitation; Additional Exploit Notes; Useful Commands
+- [format-string.md](format-string.md) — Format String Basics; Argument Retargeting (Non-Positional %n Trick); Blind Pwn (No Binary Provided); 17 further searchable sections
+- [heap-fsop.md](heap-fsop.md) — Fastbin stdout Vtable Two-Stage Hijack for PIE + Full RELRO (ASIS CTF 2017); _IO_buf_base Null Byte Overwrite for stdin Hijack (Tokyo Westerns 2017); glibc 2.24+ _IO_FILE Vtable Validation Bypass (HITCON 2017); 4 further searchable sections
+- [heap-techniques-2.md](heap-techniques-2.md) — UAF Vtable Pointer Encoding Shell Argument (BCTF 2017); Uninitialized Chunk Residue Pointer Leak (picoCTF 2018); tcache strcpy Null-Byte Overflow + Backward Consolidation (HITCON 2018); 8 further searchable sections
+- [heap-techniques.md](heap-techniques.md) — House of Apple 2 — FSOP for glibc 2.34+ (0xFun 2026); House of Einherjar — Off-by-One Null Byte (0xFun 2026); Heap Exploitation; 9 further searchable sections
+- [kernel-bypass.md](kernel-bypass.md) — KASLR and FGKASLR Bypass; KPTI Bypass Methods; SMEP / SMAP Bypass; 6 further searchable sections
+- [kernel-techniques.md](kernel-techniques.md) — tty_struct RIP Hijack and kROP; userfaultfd Race Stabilization; SLUB Allocator Internals; 6 further searchable sections
+- [kernel.md](kernel.md) — Environment Setup and Recon; Useful Kernel Structures for Heap Spray; Kernel Stack Overflow and Canary Leak; 8 further searchable sections
+- [modern-playbook.md](modern-playbook.md) — Safe Rust compiler lifetime bug becomes UAF; One payload interpreted by two child binaries; Patched eBPF rotate range unsoundness; 3 further searchable sections
+- [overflow-basics.md](overflow-basics.md) — Stack Buffer Overflow; Struct Pointer Overwrite (Heap Menu Challenges); Signed Integer Bypass (Negative Quantity); 14 further searchable sections
+- [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-19
+- [rop-advanced.md](rop-advanced.md) — Double Stack Pivot to BSS via leave;ret (Midnightflag 2026); SROP with UTF-8 Payload Constraints (DiceCTF 2026); Seccomp Bypass; 15 further searchable sections
+- [rop-and-shellcode.md](rop-and-shellcode.md) — ROP Chain Building; ret2csu — __libc_csu_init Gadgets (Crypto-Cat); Bad Character Bypass via XOR Encoding in ROP (Crypto-Cat); 10 further searchable sections
+- [sandbox-escape.md](sandbox-escape.md) — Python Sandbox Escape; VM Exploitation (Custom Bytecode); FUSE/CUSE Character Device Exploitation; 4 further searchable sections
+- [triage-reference.md](triage-reference.md) — Quick Start Commands; Source Code Red Flags; Race Condition Exploitation; 14 further searchable sections
+- [upstream-2026.md](upstream-2026.md) — Largebin insertion prerequisites; glibc 2.39 tcache layout and calloc; House of Tangerine: research routing; 2 further searchable sections
 
 ## Cross-category pivots
 

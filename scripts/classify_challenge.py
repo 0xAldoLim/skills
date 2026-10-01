@@ -13,7 +13,7 @@ from typing import Any
 SIGNALS: dict[str, tuple[str, ...]] = {
     "ctf-forensics": ("pcap", "pcapng", "memory dump", "disk image", "evtx", "volatility", "steganography", "spectrogram", "packet timing", "deleted file"),
     "ctf-web": ("http", "https", "next.js", "javascript chunk", "sql injection", "xss", "ssti", "ssrf", "jwt", "cookie", "graphql", "template"),
-    "ctf-pwn": ("buffer overflow", "format string", "heap", "rop", "shellcode", "ret2libc", "crash", "remote service", "seccomp"),
+    "ctf-pwn": ("buffer overflow", "format string", "heap", "rop", "shellcode", "ret2libc", "memory corruption", "use after free", "crash", "seccomp"),
     "ctf-crypto": ("rsa", "aes", "ecc", "cipher", "encrypt", "modulus", "lattice", "lwe", "nonce", "signature", "prng"),
     "ctf-reverse": ("elf", "binary", "apk", "wasm", "firmware", "bytecode", "custom vm", "obfuscated", "decompile", "disassemble"),
     "ctf-osint": ("identify landmark", "geolocate", "social media", "username", "wayback", "whois", "public records", "reverse image"),
@@ -35,11 +35,14 @@ EXTENSION_SIGNALS = {
 def collect_facts(description: str, workspace: Path | None = None, remote: str | None = None) -> dict[str, Any]:
     files: list[dict[str, Any]] = []
     if workspace and workspace.exists():
-        for path in sorted(workspace.iterdir()):
-            if not path.is_file():
+        for path in sorted(workspace.rglob('*')):
+            if not path.is_file() or path.is_symlink() or any(part in {'.git','solve','output','work'} for part in path.relative_to(workspace).parts):
                 continue
             suffix = "".join(path.suffixes[-2:]).lower() if len(path.suffixes) > 1 else path.suffix.lower()
-            files.append({"name": path.name, "suffix": suffix, "size": path.stat().st_size})
+            with path.open('rb') as handle: magic=handle.read(8)
+            files.append({"name": path.relative_to(workspace).as_posix(), "suffix": suffix, "size": path.stat().st_size,
+                          "magic": 'native' if magic.startswith((b'\x7fELF',b'MZ')) else 'wasm' if magic.startswith(b'\x00asm') else None})
+            if len(files) >= 200: break
     flag_match = re.search(r"(?:flag format|format)\s*[:=]\s*([^\n]+)", description, re.I)
     title_match = re.search(r"(?:title|challenge)\s*[:=]\s*([^\n]+)", description, re.I)
     return {
@@ -57,19 +60,20 @@ def classify(facts: dict[str, Any]) -> dict[str, Any]:
     evidence: dict[str, list[str]] = {category: [] for category in SIGNALS}
     for category, terms in SIGNALS.items():
         for term in terms:
-            if term in text:
+            if re.search(r'(?<!\w)'+re.escape(term)+r'(?!\w)', text):
                 scores[category] += 2
                 evidence[category].append(f"text signal: {term}")
     for file in facts.get("files", []):
         suffix = file["suffix"]
         category = EXTENSION_SIGNALS.get(suffix) or EXTENSION_SIGNALS.get(Path(file["name"]).suffix.lower())
+        if file.get('magic') in {'native','wasm'}: category='ctf-reverse'
         if category:
             scores[category] += 3
             evidence[category].append(f"artifact: {file['name']}")
-    has_native = any(Path(f["name"]).suffix.lower() in {".elf", ".so", ".exe", ".dll"} or not Path(f["name"]).suffix for f in facts.get("files", []))
-    if has_native and facts.get("remote_target"):
-        scores["ctf-pwn"] += 4
-        evidence["ctf-pwn"].append("native artifact plus remote target")
+    has_native = any(f.get('magic') == 'native' or Path(f["name"]).suffix.lower() in {".elf", ".so", ".exe", ".dll"} for f in facts.get("files", []))
+    if has_native and any(term in text for term in ('buffer overflow','memory corruption','use after free','format string','ret2libc')):
+        scores["ctf-pwn"] += 3
+        evidence["ctf-pwn"].append("native artifact plus exploitation primitive")
     if has_native and any(term in text for term in ("custom cipher", "crypto routine", "modular arithmetic")):
         scores["ctf-reverse"] += 3
         scores["ctf-crypto"] += 2

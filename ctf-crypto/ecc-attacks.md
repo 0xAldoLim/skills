@@ -333,13 +333,17 @@ a = (S1 - S2) * pow(h1 - h2, -1, L) % L   # recovered scalar
 
 **Pattern:** Challenge publishes an "elliptic curve" that is actually singular — its discriminant is zero. Compute the singularity by finding the double root of `f(x) = x^3 + ax + b`. Map the curve to either the additive group `(GF(p), +)` (cusp) or the multiplicative group `GF(p)^*` (node) where DLP is easy.
 
-```python
+```sage
 # Find singular point r
 P.<x> = PolynomialRing(GF(p))
 f = x^3 + a*x + b
-r = (f.derivative()).roots()[0][0]
+singular = [root for root, multiplicity in f.derivative().roots() if f(root) == 0]
+if not singular:
+    raise ValueError("curve is not singular under these parameters")
+r = singular[0]
 # Shift curve so singularity is at origin
-# Then map (x, y) -> (x - r) / y  for nodal singularity
+# Derive the nodal multiplicative or cuspidal additive normalization for this curve.
+# Nonsplit nodes may require a quadratic extension; do not use a universal (x-r)/y map.
 ```
 
 **Key insight:** Discriminant `-16(4a^3 + 27b^2)` zero means singular. Singular curves are either cusps (map to `(GF(p), +)`) or nodes (map to `GF(p)^*`) — both with polynomial-time DLP.

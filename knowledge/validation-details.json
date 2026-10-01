@@ -1,0 +1,119 @@
+{
+  "host": "Windows with bundled Python and validation venv",
+  "json_files": 30,
+  "yaml_files": 13,
+  "cli_help": [
+    {
+      "path": "ctf-web/scripts/async_fuzz.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/append_learning.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/audit_snippets.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/capture_learning.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/check_repository_safety.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/classify_challenge.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/classify_learning.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/crypto_helpers.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/detect_duplicates.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/enrich_from_sources.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/extract_archive.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/generate_prompt.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/human_review_gate.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/install_tools.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/instance_health.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/lookup_knowledge.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/poly1305_helper.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/pwn_payloads.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/rebuild_indexes.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/triage_artifacts.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/validate_skills.py",
+      "exit_code": 0,
+      "usage_present": true
+    },
+    {
+      "path": "scripts/verify_append_only.py",
+      "exit_code": 0,
+      "usage_present": true
+    }
+  ],
+  "errors": [],
+  "status": "passed"
+}
