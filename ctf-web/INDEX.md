@@ -45,6 +45,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [server-side-exec.md](server-side-exec.md) — Ruby Code Injection; Ruby ObjectSpace Memory Scanning for Flag Extraction (Tokyo Westerns 2016); Perl open() RCE; 17 further searchable sections
 - [server-side.md](server-side.md) — PHP Type Juggling; PHP File Inclusion / php://filter; SQL Injection; 9 further searchable sections
 - [sql-injection.md](sql-injection.md) — Backslash Escape Quote Bypass; Hex Encoding for Quote Bypass; Second-Order SQL Injection; 24 further searchable sections
+- [tools-mcp.md](tools-mcp.md) — Playwright MCP (Browser Automation); Burp Suite MCP (Wire-Level Exploitation); When to Use Burp MCP vs curl vs Playwright MCP
 - [triage-reference.md](triage-reference.md) — First-Pass Workflow; Quick Start Commands; First Questions to Answer; 5 further searchable sections
 - [web3.md](web3.md) — Challenge Infrastructure Pattern; EIP-1967 Proxy Pattern Exploitation; ABI Coder v1 vs v2 - Dirty Address Bypass; 10 further searchable sections
 

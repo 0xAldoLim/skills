@@ -22,6 +22,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [geolocation-and-media.md](geolocation-and-media.md) — Image Analysis; Reverse Image Search; Companion-Photo and Vehicle-ID Correlation; 17 further searchable sections
 - [modern-playbook.md](modern-playbook.md) — Video frame reveals a public URL; Regional sighting map beats generic image search; Unlisted collaboration exposed by public activity; 3 further searchable sections
 - [social-media.md](social-media.md) — Twitter/X Account Tracking; Tumblr Investigation; BlueSky Advanced Search; 9 further searchable sections
+- [tools-mcp.md](tools-mcp.md) — Setup; Rendered-Page Reading & Screenshots; Reverse-Image & Map Search Flows; 2 further searchable sections
 - [triage-reference.md](triage-reference.md) — Quick Start Commands; String Identification; Twitter/X Account Tracking; 21 further searchable sections
 - [web-and-dns.md](web-and-dns.md) — Google Dorking; Google Docs/Sheets in OSINT; DNS Reconnaissance; 14 further searchable sections
 

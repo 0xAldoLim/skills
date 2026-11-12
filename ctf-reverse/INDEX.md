@@ -12,6 +12,9 @@ Use this index after category selection. Open only the reference whose signal ma
 | anti-debug or anti-VM | [anti-analysis.md](anti-analysis.md) |
 | custom VM or transform | [patterns.md](patterns.md) |
 | language or framework | [languages.md](languages.md) |
+| scripted radare2, r2pipe, patching, or ESIL | [radare2-r2pipe.md](radare2-r2pipe.md) |
+| mixed boolean-arithmetic or MBA | [mba-simplification.md](mba-simplification.md) |
+| IDA, Ghidra, or JADX MCP | [tools-mcp.md](tools-mcp.md) |
 
 ## Targeted retrieval
 
@@ -27,6 +30,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [languages-compiled.md](languages-compiled.md) — Go Binary Reversing; Rust Binary Reversing; Swift Binary Reversing; 4 further searchable sections
 - [languages-platforms.md](languages-platforms.md) — Roblox Place File Analysis; Godot Game Asset Extraction; Rust serde_json Schema Recovery; 16 further searchable sections
 - [languages.md](languages.md) — Python Bytecode Reversing (dis.dis output); Python Opcode Remapping; Pyarmor 8/9 Static Unpack (1shot); 12 further searchable sections
+- [mba-simplification.md](mba-simplification.md) — MBA Simplification with msynth
 - [modern-playbook.md](modern-playbook.md) — XFG metadata encodes a stateful maze; Python embeds a native validator; Encrypted Godot pack plus game state; 5 further searchable sections
 - [patterns-ctf-2.md](patterns-ctf-2.md) — Multi-Layer Self-Decrypting Binary (DiceCTF 2026); Embedded ZIP + XOR License Decryption (MetaCTF 2026); Stack String Deobfuscation from .rodata XOR Blob (Nullcon 2026); 5 further searchable sections
 - [patterns-ctf-3.md](patterns-ctf-3.md) — Z3 for Single-Line Python Boolean Circuit (BearCatCTF 2026); Sliding Window Popcount Differential Propagation (BearCatCTF 2026); Morse Code from Keyboard LEDs via ioctl (PlaidCTF 2013); 20 further searchable sections
@@ -36,10 +40,12 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-19
 - [platforms-hardware.md](platforms-hardware.md) — HD44780 LCD Controller GPIO Reconstruction (32C3 2015); RISC-V (Advanced); ARM64/AArch64 Reversing and Exploitation; 6 further searchable sections
 - [platforms.md](platforms.md) — macOS / iOS Reversing; Embedded / IoT Firmware RE; Kernel Driver Reversing; 7 further searchable sections
+- [radare2-r2pipe.md](radare2-r2pipe.md) — When to script radare2; Batch mode without an interactive shell; Patching bytes with wx in batch mode; 6 further searchable sections
 - [tools-advanced-2.md](tools-advanced-2.md) — Advanced GDB Techniques; Advanced Ghidra Scripting; Patching Strategies; 4 further searchable sections
 - [tools-advanced.md](tools-advanced.md) — VMProtect Analysis; Themida / WinLicense Analysis; Binary Diffing; 7 further searchable sections
 - [tools-dynamic.md](tools-dynamic.md) — Frida (Dynamic Instrumentation); angr (Symbolic Execution); lldb (LLVM Debugger); 6 further searchable sections
 - [tools-emulation.md](tools-emulation.md) — Qiling Framework (Cross-Platform Emulation); Triton (Dynamic Symbolic Execution); Intel Pin Instruction-Counting Side Channel (Hackover CTF 2015); 2 further searchable sections
+- [tools-mcp.md](tools-mcp.md) — Golden Rule: Pseudocode First, Assembly Only When It Fails; IDA Pro MCP (Agent-Driven Decompilation); Ghidra MCP (Free Decompiler, Autonomous RE); 2 further searchable sections
 - [tools.md](tools.md) — GDB; Radare2; Ghidra; 12 further searchable sections
 - [triage-reference.md](triage-reference.md) — Problem-Solving Workflow; Quick Wins (Try First!); Initial Analysis; 7 further searchable sections
 - [unicorn-emulation.md](unicorn-emulation.md) — When Unicorn Beats GDB / angr / Qiling; Setup Scaffold; Hook Cookbook; 16 further searchable sections

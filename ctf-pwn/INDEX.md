@@ -12,6 +12,8 @@ Use this index after category selection. Open only the reference whose signal ma
 | format string | [format-string.md](format-string.md) |
 | heap allocator | [heap-techniques.md](heap-techniques.md) |
 | kernel target | [kernel.md](kernel.md) |
+| Linux route selection or leak/primitive choice | [attack-playbook.md](attack-playbook.md) |
+| static signals or payload templates | [scripts/README.md](scripts/README.md) |
 
 ## Targeted retrieval
 
@@ -27,6 +29,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [advanced-exploits-5.md](advanced-exploits-5.md) — Chip-8 Emulator Out-of-Bounds Memory for ret2libc (IceCTF 2018); Double-Precision Float Quicksort Canary Repositioning (CSAW 2018); Bloom Filter abs(INT_MIN) Negative Index OOB Write (DragonCTF Teaser 2018)
 - [advanced-exploits.md](advanced-exploits.md) — VM Signed Comparison Bug (0xFun 2026); BF JIT Unbalanced Bracket to RWX Shellcode (VuwCTF 2025); Type Confusion in Interpreter (VuwCTF 2025); 21 further searchable sections
 - [advanced.md](advanced.md) — Seccomp Advanced Techniques; rdx Control in ROP Chains; Use-After-Free (UAF) Exploitation; 10 further searchable sections
+- [attack-playbook.md](attack-playbook.md) — Recon; Leak Selection; Control-Flow and Write Targets; 2 further searchable sections
 - [field-notes.md](field-notes.md) — Heap Exploitation; Additional Exploit Notes; Useful Commands
 - [format-string.md](format-string.md) — Format String Basics; Argument Retargeting (Non-Positional %n Trick); Blind Pwn (No Binary Provided); 17 further searchable sections
 - [heap-fsop.md](heap-fsop.md) — Fastbin stdout Vtable Two-Stage Hijack for PIE + Full RELRO (ASIS CTF 2017); _IO_buf_base Null Byte Overwrite for stdin Hijack (Tokyo Westerns 2017); glibc 2.24+ _IO_FILE Vtable Validation Bypass (HITCON 2017); 4 further searchable sections
@@ -41,6 +44,9 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [rop-advanced.md](rop-advanced.md) — Double Stack Pivot to BSS via leave;ret (Midnightflag 2026); SROP with UTF-8 Payload Constraints (DiceCTF 2026); Seccomp Bypass; 15 further searchable sections
 - [rop-and-shellcode.md](rop-and-shellcode.md) — ROP Chain Building; ret2csu — __libc_csu_init Gadgets (Crypto-Cat); Bad Character Bypass via XOR Encoding in ROP (Crypto-Cat); 10 further searchable sections
 - [sandbox-escape.md](sandbox-escape.md) — Python Sandbox Escape; VM Exploitation (Custom Bytecode); FUSE/CUSE Character Device Exploitation; 4 further searchable sections
+- [scripts/README.md](scripts/README.md) — Safety contract; Files
+- [static-signals.md](static-signals.md) — Supporting category knowledge
+- [tools-mcp.md](tools-mcp.md) — WinDbg MCP (Windows Crash Dumps, Live & Kernel Debugging); IDA / Ghidra MCP for Exploit Development
 - [triage-reference.md](triage-reference.md) — Quick Start Commands; Source Code Red Flags; Race Condition Exploitation; 14 further searchable sections
 - [upstream-2026.md](upstream-2026.md) — Largebin insertion prerequisites; glibc 2.39 tcache layout and calloc; House of Tangerine: research routing; 2 further searchable sections
 
