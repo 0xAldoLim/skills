@@ -12,6 +12,7 @@ Use this index after category selection. Open only the reference whose signal ma
 | upload or execution | [server-side-exec.md](server-side-exec.md) |
 | XSS, CSP, admin bot | [client-side.md](client-side.md) |
 | JWT, OAuth, authz | [auth-and-access.md](auth-and-access.md) |
+| cloud, container or API boundary | [cloud-and-api.md](cloud-and-api.md) |
 
 ## Targeted retrieval
 
@@ -27,6 +28,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [auth-jwt.md](auth-jwt.md) — Algorithm None; Algorithm Confusion (RS256 to HS256); Weak Secret Brute-Force; 7 further searchable sections
 - [client-side-advanced.md](client-side-advanced.md) — Unicode Case Folding XSS Bypass (UNbreakable 2026); CSS Font Glyph Width + Container Query Exfiltration (UNbreakable 2026); Hyperscript CDN CSP Bypass (UNbreakable 2026); 16 further searchable sections
 - [client-side.md](client-side.md) — XSS Payloads; DOMPurify Bypass via Trusted Backend Routes; JavaScript String Replace Exploitation; 17 further searchable sections
+- [cloud-and-api.md](cloud-and-api.md) — Identify the intended boundary; Cheap tests; Scope discipline; 2 further searchable sections
 - [cves.md](cves.md) — CVE-2025-29927: Next.js Middleware Bypass; CVE-2025-0167: Curl .netrc Credential Leakage; Uvicorn CRLF Injection (Unpatched N-Day); 21 further searchable sections
 - [field-notes.md](field-notes.md) — Reconnaissance; SQL Injection Quick Reference; XSS Quick Reference; 62 further searchable sections
 - [LEARNED.md](LEARNED.md) — Java char-to-byte narrowing as a normalization bypass; HTTP/2 downgrade desynchronization as a request-smuggling variant

@@ -11,15 +11,15 @@ from typing import Any
 
 
 SIGNALS: dict[str, tuple[str, ...]] = {
-    "ctf-forensics": ("pcap", "pcapng", "memory dump", "disk image", "evtx", "volatility", "steganography", "spectrogram", "packet timing", "deleted file"),
-    "ctf-web": ("http", "https", "next.js", "javascript chunk", "sql injection", "xss", "ssti", "ssrf", "jwt", "cookie", "graphql", "template"),
-    "ctf-pwn": ("buffer overflow", "format string", "heap", "rop", "shellcode", "ret2libc", "memory corruption", "use after free", "crash", "seccomp"),
-    "ctf-crypto": ("rsa", "aes", "ecc", "cipher", "encrypt", "modulus", "lattice", "lwe", "nonce", "signature", "prng"),
-    "ctf-reverse": ("elf", "binary", "apk", "wasm", "firmware", "bytecode", "custom vm", "obfuscated", "decompile", "disassemble"),
-    "ctf-osint": ("identify landmark", "geolocate", "social media", "username", "wayback", "whois", "public records", "reverse image"),
-    "ctf-malware": ("malware", "c2", "beacon", "ransomware", "process injection", "packed pe", "yara", "trojan"),
-    "ctf-ai-ml": ("machine learning", "neural network", "model extraction", "adversarial example", "prompt injection", "lora"),
-    "ctf-misc": ("pyjail", "bash jail", "esolang", "unicode puzzle", "qr puzzle", "rf", "sdr", "logic puzzle", "restricted shell"),
+    "ctf-forensics": ("pcap", "pcapng", "memory dump", "disk image", "evtx", "volatility", "steganography", "stego", "spectrogram", "packet timing", "deleted file", "wireshark", "carving", "usb", "bluetooth", "exif", "audio", "video"),
+    "ctf-web": ("http", "https", "next.js", "javascript chunk", "sql injection", "xss", "ssti", "ssrf", "xxe", "jwt", "cookie", "graphql", "template", "oauth", "saml", "csrf", "deserialization", "prototype pollution", "request smuggling", "cache poisoning", "admin bot", "api"),
+    "ctf-pwn": ("buffer overflow", "stack overflow", "format string", "heap", "rop", "srop", "shellcode", "ret2libc", "ret2win", "memory corruption", "use after free", "uaf", "tcache", "crash", "seccomp", "kernel module", "sandbox escape"),
+    "ctf-crypto": ("rsa", "aes", "ecb", "cbc", "gcm", "aead", "ecc", "cipher", "encrypt", "modulus", "lattice", "lwe", "hnp", "coppersmith", "nonce", "signature", "prng", "mersenne", "diffie", "discrete log", "oracle", "ntru", "kyber"),
+    "ctf-reverse": ("elf", "binary", "apk", "wasm", "macho", ".net", "dotnet", "firmware", "bytecode", "custom vm", "obfuscated", "packed", "decompile", "disassemble", "anti-debug", "ghidra", "pyinstaller"),
+    "ctf-osint": ("identify landmark", "geolocate", "social media", "username", "wayback", "whois", "public records", "reverse image", "satellite", "map", "archive", "metadata", "flight", "vessel", "certificate transparency"),
+    "ctf-malware": ("malware", "c2", "beacon", "ransomware", "process injection", "packed pe", "yara", "trojan", "macro", "powershell", "shellcode", "unpack", "config extraction", "anti-vm"),
+    "ctf-ai-ml": ("machine learning", "neural network", "model extraction", "adversarial example", "prompt injection", "lora", "llm", "rag", "tokenizer", "tensor", "huggingface", "agent security"),
+    "ctf-misc": ("pyjail", "bash jail", "esolang", "brainfuck", "unicode puzzle", "qr", "rf", "sdr", "logic puzzle", "restricted shell", "encoding", "base64", "constraint", "z3", "game", "puzzle"),
 }
 
 EXTENSION_SIGNALS = {

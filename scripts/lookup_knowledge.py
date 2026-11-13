@@ -62,7 +62,7 @@ def search(root: Path, query: str, category: str | None = None, limit: int = 5):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("query")
-    parser.add_argument("--category", choices=["ctf-" + name for name in ("web", "pwn", "crypto", "reverse", "forensics", "osint", "malware", "misc", "ai-ml")])
+    parser.add_argument("--category", choices=["ctf-" + name for name in ("common", "web", "pwn", "crypto", "reverse", "forensics", "osint", "malware", "misc", "ai-ml")])
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--limit", type=int, default=5)
     args = parser.parse_args()

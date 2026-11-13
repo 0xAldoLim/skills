@@ -12,6 +12,7 @@ Use this index after category selection. Open only the reference whose signal ma
 | LWE, HNP, short errors | [lattice-and-lwe.md](lattice-and-lwe.md) |
 | PRNG or predictable state | [prng.md](prng.md) |
 | ECC or nonce reuse | [ecc-attacks.md](ecc-attacks.md) |
+| custom or unfamiliar cryptosystem | [custom-systems.md](custom-systems.md) |
 
 ## Targeted retrieval
 
@@ -23,6 +24,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 
 - [advanced-math.md](advanced-math.md) — Elliptic Curve Isogenies; Pohlig-Hellman Attack (Weak ECC); Baby-Step Giant-Step for General DLP; 16 further searchable sections
 - [classic-ciphers.md](classic-ciphers.md) — Vigenere Cipher; Atbash Cipher; Polybius Square Cipher (Qiwi-Infosec 2016); 14 further searchable sections
+- [custom-systems.md](custom-systems.md) — Recover the interface; Classify the structure; Attack the implementation, not only the math; 5 further searchable sections
 - [dh-attacks.md](dh-attacks.md) — Triage: Is This Classic DH?; Trivial Generator Values (g = 0, 1, p-1); Pohlig-Hellman When p-1 Is Smooth; 2 further searchable sections
 - [ecc-attacks.md](ecc-attacks.md) — Small Subgroup Attacks; Invalid Curve Attacks; Singular Curves; 11 further searchable sections
 - [exotic-crypto-2.md](exotic-crypto-2.md) — BB-84 Quantum Key Distribution MITM Attack (PlaidCTF 2017); ElGamal Trivial DLP When B = p-1 (Hack.lu 2017); Paillier LSB Oracle via Homomorphic Doubling (CODE BLUE 2017); 11 further searchable sections

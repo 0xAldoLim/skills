@@ -6,12 +6,15 @@ Run the bundle's helpers by their resolved installation path, not relative to th
 python3 <bundle>/scripts/install_tools.py core web --dry-run
 python3 <bundle>/scripts/install_tools.py core web --missing-only
 python3 <bundle>/scripts/install_tools.py crypto --verify
+python3 <bundle>/scripts/install_tools.py --doctor
 python3 <bundle>/scripts/install_tools.py all --dry-run
 # Heavy packages are explicitly selected:
 python3 <bundle>/scripts/install_tools.py heavy --dry-run
 ```
 
-The installer checks dpkg status, Python distribution metadata and actual module imports. It installs missing apt packages and creates an isolated Python venv, respecting Kali's externally managed system Python. It never uses sudo pip, curl-to-shell, or automatic heavy category dependencies. A package failure includes its command and keeps the plan reviewable. It does not run apt update automatically; refresh stale repository metadata when diagnostics justify it. Tool/package availability varies by Kali snapshot: verify rather than assuming installation succeeded.
+The installer checks dpkg status, Python distribution metadata and actual module imports. It installs missing apt packages and creates an isolated Python venv, respecting Kali's externally managed system Python. It never uses sudo pip, curl-to-shell, or automatic heavy category dependencies. A package failure includes its command and keeps the plan reviewable. It does not run apt update automatically; refresh stale repository metadata when diagnostics justify it. `--doctor` is read-only and reports platform, package manager, shell, venv and missing selected tools. Tool/package availability varies by Kali snapshot: verify rather than assuming installation succeeded.
+
+Cross-platform notes: WSL should use the Linux path inside the distribution; do not mix Windows Python with Linux packages. Windows supports offline artifacts and pure-Python work plus `--dry-run`/`--doctor`; apt installs need WSL or a Linux VM. macOS should use Homebrew/venv equivalents; the installer reports apt unavailability instead of failing silently.
 
 | Need | Cheap/default | Fallback / heavy step |
 |---|---|---|

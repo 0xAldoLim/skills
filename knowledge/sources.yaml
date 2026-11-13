@@ -2,7 +2,7 @@ version: 1
 sources:
   - id: ljagiello-ctf-skills
     repository: https://github.com/ljagiello/ctf-skills
-    commit: d19f35fd3dd2e126108752aee84c657c888126d3
+    commit: a16e19a652606b10952eb42617742bedea9f2497
     license: MIT
     purpose: concept and overlap comparison
   - id: yaklang-hack-skills

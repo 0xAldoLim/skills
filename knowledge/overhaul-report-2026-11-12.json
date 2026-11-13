@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-12",
+  "repository": "https://github.com/0xAldoLim/skills",
+  "baseline_commit": "8636995",
+  "delivery": "Standalone Agent Skills overhaul; deterministic validation before commit and push. No PRESTIGE runtime dependency.",
+  "architecture": {
+    "router": "solve-challenge",
+    "shared_contract": "ctf-common",
+    "categories": [
+      "ctf-ai-ml",
+      "ctf-crypto",
+      "ctf-forensics",
+      "ctf-malware",
+      "ctf-misc",
+      "ctf-osint",
+      "ctf-pwn",
+      "ctf-reverse",
+      "ctf-web"
+    ],
+    "modes": [
+      "FAST",
+      "standard",
+      "EXPERT"
+    ],
+    "state": [
+      "solve/STATE.md",
+      "solve/HYPOTHESES.md",
+      "solve/evidence.jsonl"
+    ]
+  },
+  "new_references": [
+    "ctf-common/references/adversarial-content.md",
+    "ctf-common/references/verification.md",
+    "ctf-common/references/workflow.md",
+    "ctf-common/references/novel-problems.md",
+    "ctf-common/references/research.md",
+    "ctf-common/references/scope.md",
+    "ctf-common/references/instance-health.md",
+    "ctf-common/references/tooling.md",
+    "ctf-crypto/custom-systems.md",
+    "ctf-misc/strange-formats.md",
+    "ctf-forensics/wireless-bluetooth.md",
+    "ctf-osint/verification-and-ethics.md",
+    "ctf-ai-ml/agent-security.md",
+    "ctf-web/cloud-and-api.md",
+    "ctf-reverse/hardware-and-fpga.md"
+  ],
+  "helpers": [
+    "scripts/ctf_state.py",
+    "scripts/scan_untrusted.py",
+    "scripts/plan_solve.py",
+    "scripts/token_audit.py",
+    "scripts/install_tools.py --doctor",
+    "install.sh --harness=agents|claude|opencode|all"
+  ],
+  "upstream": {
+    "ljagiello_head": "a16e19a652606b10952eb42617742bedea9f2497",
+    "integrated_content": "e79be2925d1612e8a97070d6201e300286672370",
+    "head_diff": "evals/package.json and evals/package-lock.json only",
+    "decision": "no new skill content; pwnable.tw/audio reviewed but already covered locally"
+  },
+  "research_ledger": "knowledge/research-frameworks.json",
+  "token_baseline": "knowledge/validation/token-baseline.json",
+  "validation": {
+    "pytest": {
+      "passed": 108,
+      "skipped": 4,
+      "failed": 0
+    },
+    "validator": "passed",
+    "indexes": "current",
+    "safety": "passed",
+    "integrity": "142 protected references intact",
+    "token_audit": "passed",
+    "ruff_F": "passed"
+  },
+  "model_evaluation": "not run; no private corpus or authorized paid inference",
+  "known_limitations": [
+    "scanner is heuristic and advisory",
+    "checker provenance remains an operator/human decision",
+    "routing is heuristic for hybrids",
+    "heavy tool tiers and every Windows/WSL package combination were not exercised",
+    "no model solve-rate or token claim"
+  ],
+  "commit": "see git log -1"
+}

@@ -12,6 +12,7 @@ Use this index after category selection. Open only the reference whose signal ma
 | encoding or QR | [encodings.md](encodings.md) |
 | RF or SDR | [rf-sdr.md](rf-sdr.md) |
 | game, toy VM, or constraint | [games-and-vms.md](games-and-vms.md) |
+| invented language or strange format | [strange-formats.md](strange-formats.md) |
 
 ## Targeted retrieval
 
@@ -35,6 +36,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [personal-learnings.md](personal-learnings.md) — Local Learnings Appended 2026-04-23; Local Learnings Appended 2026-04-24; Local Learnings Appended 2026-04-24; 3 further searchable sections
 - [pyjails.md](pyjails.md) — Identifying Jail Type; Systematic Enumeration; Oracle-Based Challenges; 20 further searchable sections
 - [rf-sdr.md](rf-sdr.md) — IQ File Formats; Analysis Pipeline; QAM-16 Demodulation with Carrier + Timing Recovery; 2 further searchable sections
+- [strange-formats.md](strange-formats.md) — First pass; Transformation inference; Invented languages and esolangs; 5 further searchable sections
 - [triage-reference.md](triage-reference.md) — Quick Start Commands; General Tips; Common Encodings; 37 further searchable sections
 - [upstream-2026.md](upstream-2026.md) — 2024 Hardening Note — rbash Is NOT a Security Boundary; Audit-Hook (PEP 551/578) Trampoline Escapes; Filter'd Length-Limit Re-evaluation (JailCTF 2024 — M=14); 1 further searchable sections
 

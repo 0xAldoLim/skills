@@ -1,0 +1,67 @@
+{
+  "generated_at": "2026-11-12",
+  "commit": "8636995",
+  "method": "ceil(characters/4)",
+  "skills": {
+    "ctf-ai-ml": {
+      "body_chars": 5054,
+      "body_tokens": 1264,
+      "description_chars": 220
+    },
+    "ctf-crypto": {
+      "body_chars": 4677,
+      "body_tokens": 1170,
+      "description_chars": 232
+    },
+    "ctf-forensics": {
+      "body_chars": 4391,
+      "body_tokens": 1098,
+      "description_chars": 209
+    },
+    "ctf-malware": {
+      "body_chars": 4270,
+      "body_tokens": 1068,
+      "description_chars": 216
+    },
+    "ctf-misc": {
+      "body_chars": 4492,
+      "body_tokens": 1123,
+      "description_chars": 225
+    },
+    "ctf-osint": {
+      "body_chars": 4274,
+      "body_tokens": 1069,
+      "description_chars": 218
+    },
+    "ctf-pwn": {
+      "body_chars": 4530,
+      "body_tokens": 1133,
+      "description_chars": 220
+    },
+    "ctf-reverse": {
+      "body_chars": 4372,
+      "body_tokens": 1093,
+      "description_chars": 216
+    },
+    "ctf-web": {
+      "body_chars": 4563,
+      "body_tokens": 1141,
+      "description_chars": 180
+    },
+    "ctf-writeup": {
+      "body_chars": 1456,
+      "body_tokens": 364,
+      "description_chars": 163
+    },
+    "find-skills": {
+      "body_chars": 5086,
+      "body_tokens": 1272,
+      "description_chars": 303
+    },
+    "solve-challenge": {
+      "body_chars": 4641,
+      "body_tokens": 1161,
+      "description_chars": 223
+    }
+  }
+}

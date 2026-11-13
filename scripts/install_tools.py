@@ -38,6 +38,50 @@ def python_installed(interpreter: Path, package: str, module: str) -> bool:
     return result.returncode == 0
 
 
+def diagnose(tiers: list[str], venv: Path) -> dict:
+    manifest = json.loads(Path(__file__).with_name('tool_manifest.json').read_text(encoding='utf-8'))
+    apt, python = selected_packages(manifest, tiers or ['core'])
+    interpreter = venv / 'bin' / 'python'
+    command = 'where' if os.name == 'nt' else 'which'
+    versions = {}
+    for tool in sorted(set(apt.values())):
+        path = shutil.which(tool)
+        if not path:
+            versions[tool] = None
+            continue
+        try:
+            result = subprocess.run([path, '--version'], capture_output=True, text=True, timeout=5)
+            output = (result.stdout or result.stderr).strip().splitlines()
+            versions[tool] = output[0][:200] if output else 'present'
+        except (OSError, subprocess.TimeoutExpired):
+            versions[tool] = 'present (version check failed)'
+    return {
+        'platform': sys.platform,
+        'os_release': _os_release(),
+        'python': sys.version.split()[0],
+        'package_manager': {'apt-get': shutil.which('apt-get'), 'dpkg-query': shutil.which('dpkg-query'),
+                            'brew': shutil.which('brew'), 'winget': shutil.which('winget')},
+        'shell': {'sh': shutil.which('sh'), 'bash': shutil.which('bash'), 'powershell': shutil.which('pwsh')},
+        'venv': {'path': str(venv), 'python': str(interpreter), 'exists': interpreter.is_file()},
+        'selected_tiers': tiers or ['core'],
+        'missing_apt': [name for name, tool in apt.items() if not apt_installed(name) or not shutil.which(tool)],
+        'missing_python': [name for name, module in python.items() if not python_installed(interpreter, name, module)],
+        'tool_versions': versions,
+        'command': command,
+        'note': 'Doctor is read-only. apt installs require Kali/Debian or WSL; Windows can use --dry-run/--doctor and a Linux environment for ELF work.',
+    }
+
+
+def _os_release() -> str:
+    for path in (Path('/etc/os-release'), Path('/usr/lib/os-release')):
+        if path.is_file():
+            try:
+                return path.read_text(encoding='utf-8', errors='replace').strip()
+            except OSError:
+                return 'unreadable'
+    return 'unknown'
+
+
 def resolve_sage(apt: dict, missing: list[str]) -> tuple[list[str], dict | None]:
     """Honor an existing Sage and diagnose snapshots without an apt candidate."""
     if 'sagemath' not in apt:
@@ -61,8 +105,12 @@ def main() -> int:
     parser.add_argument('--dry-run', action='store_true')
     parser.add_argument('--verify', action='store_true')
     parser.add_argument('--missing-only', action='store_true', help='default behavior; never reinstall healthy packages')
+    parser.add_argument('--doctor', action='store_true', help='read-only platform/dependency diagnostics')
     parser.add_argument('--venv', type=Path, default=Path.home()/'.local/share/ctf-tools/venv')
     args = parser.parse_args()
+    if args.doctor:
+        print(json.dumps(diagnose(args.tiers, args.venv), indent=2))
+        return 0
     manifest = json.loads(Path(__file__).with_name('tool_manifest.json').read_text(encoding='utf-8'))
     try:
         apt, python = selected_packages(manifest, args.tiers or ['core'])

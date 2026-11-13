@@ -10,6 +10,7 @@ Use this index after category selection. Open only the reference whose signal ma
 | social media or username | [social-media.md](social-media.md) |
 | image geolocation or landmark | [geolocation-and-media.md](geolocation-and-media.md) |
 | DNS, archive, public web | [web-and-dns.md](web-and-dns.md) |
+| cross-source verification or ethics | [verification-and-ethics.md](verification-and-ethics.md) |
 
 ## Targeted retrieval
 
@@ -24,6 +25,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [social-media.md](social-media.md) — Twitter/X Account Tracking; Tumblr Investigation; BlueSky Advanced Search; 9 further searchable sections
 - [tools-mcp.md](tools-mcp.md) — Setup; Rendered-Page Reading & Screenshots; Reverse-Image & Map Search Flows; 2 further searchable sections
 - [triage-reference.md](triage-reference.md) — Quick Start Commands; String Identification; Twitter/X Account Tracking; 21 further searchable sections
+- [verification-and-ethics.md](verification-and-ethics.md) — Evidence chain; Cross-source verification; Geolocation; 4 further searchable sections
 - [web-and-dns.md](web-and-dns.md) — Google Dorking; Google Docs/Sheets in OSINT; DNS Reconnaissance; 14 further searchable sections
 
 ## Cross-category pivots

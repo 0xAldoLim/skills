@@ -9,15 +9,16 @@ from lookup_knowledge import sections
 
 
 CATEGORY_ROUTES: dict[str, list[tuple[str, str]]] = {
-    "ctf-ai-ml": [("adversarial inputs, perturbations", "adversarial-ml.md"), ("model extraction or inversion", "model-attacks.md"), ("LLM, prompt, or LoRA attacks", "llm-attacks.md")],
-    "ctf-crypto": [("RSA, modulus, signatures", "rsa-attacks.md"), ("AES, modes, MACs, oracles", "modern-ciphers.md"), ("LWE, HNP, short errors", "lattice-and-lwe.md"), ("PRNG or predictable state", "prng.md"), ("ECC or nonce reuse", "ecc-attacks.md")],
-    "ctf-forensics": [("PCAP, protocol, timing", "network.md"), ("disk or memory image", "disk-and-memory.md"), ("image steganography", "stego-image.md"), ("audio or signal", "stego-advanced.md"), ("Windows artifacts", "windows.md")],
+    "ctf-common": [("untrusted instructions, fake flags, decoys", "references/adversarial-content.md"), ("candidate verification and provenance", "references/verification.md"), ("FAST/EXPERT, recovery and budgets", "references/workflow.md"), ("unfamiliar artifact or transformation", "references/novel-problems.md"), ("scope and instance health", "references/scope.md"), ("tool tiers and isolation", "references/tooling.md")],
+    "ctf-ai-ml": [("adversarial inputs, perturbations", "adversarial-ml.md"), ("model extraction or inversion", "model-attacks.md"), ("LLM, prompt, or LoRA attacks", "llm-attacks.md"), ("RAG, tool output, agent trust boundary", "agent-security.md")],
+    "ctf-crypto": [("RSA, modulus, signatures", "rsa-attacks.md"), ("AES, modes, MACs, oracles", "modern-ciphers.md"), ("LWE, HNP, short errors", "lattice-and-lwe.md"), ("PRNG or predictable state", "prng.md"), ("ECC or nonce reuse", "ecc-attacks.md"), ("custom or unfamiliar cryptosystem", "custom-systems.md")],
+    "ctf-forensics": [("PCAP, protocol, timing", "network.md"), ("disk or memory image", "disk-and-memory.md"), ("image steganography", "stego-image.md"), ("audio or signal", "stego-advanced.md"), ("Windows artifacts", "windows.md"), ("Bluetooth, Wi-Fi or wireless capture", "wireless-bluetooth.md")],
     "ctf-malware": [("obfuscated script or shellcode", "scripts-and-obfuscation.md"), ("C2 traffic or encrypted protocol", "c2-and-protocols.md"), ("PE, .NET, or config extraction", "pe-and-dotnet.md")],
-    "ctf-misc": [("Python jail", "pyjails.md"), ("restricted shell", "bashjails.md"), ("encoding or QR", "encodings.md"), ("RF or SDR", "rf-sdr.md"), ("game, toy VM, or constraint", "games-and-vms.md")],
-    "ctf-osint": [("social media or username", "social-media.md"), ("image geolocation or landmark", "geolocation-and-media.md"), ("DNS, archive, public web", "web-and-dns.md")],
+    "ctf-misc": [("Python jail", "pyjails.md"), ("restricted shell", "bashjails.md"), ("encoding or QR", "encodings.md"), ("RF or SDR", "rf-sdr.md"), ("game, toy VM, or constraint", "games-and-vms.md"), ("invented language or strange format", "strange-formats.md")],
+    "ctf-osint": [("social media or username", "social-media.md"), ("image geolocation or landmark", "geolocation-and-media.md"), ("DNS, archive, public web", "web-and-dns.md"), ("cross-source verification or ethics", "verification-and-ethics.md")],
     "ctf-pwn": [("stack overflow or ret2win", "overflow-basics.md"), ("ROP or shellcode", "rop-and-shellcode.md"), ("format string", "format-string.md"), ("heap allocator", "heap-techniques.md"), ("kernel target", "kernel.md"), ("Linux route selection or leak/primitive choice", "attack-playbook.md"), ("static signals or payload templates", "scripts/README.md")],
-    "ctf-reverse": [("tool selection and static triage", "tools.md"), ("dynamic hooks or symbolic execution", "tools-dynamic.md"), ("anti-debug or anti-VM", "anti-analysis.md"), ("custom VM or transform", "patterns.md"), ("language or framework", "languages.md"), ("scripted radare2, r2pipe, patching, or ESIL", "radare2-r2pipe.md"), ("mixed boolean-arithmetic or MBA", "mba-simplification.md"), ("IDA, Ghidra, or JADX MCP", "tools-mcp.md")],
-    "ctf-web": [("SQL injection", "sql-injection.md"), ("SSTI, SSRF, LFI", "server-side.md"), ("upload or execution", "server-side-exec.md"), ("XSS, CSP, admin bot", "client-side.md"), ("JWT, OAuth, authz", "auth-and-access.md")],
+    "ctf-reverse": [("tool selection and static triage", "tools.md"), ("dynamic hooks or symbolic execution", "tools-dynamic.md"), ("anti-debug or anti-VM", "anti-analysis.md"), ("custom VM or transform", "patterns.md"), ("language or framework", "languages.md"), ("scripted radare2, r2pipe, patching, or ESIL", "radare2-r2pipe.md"), ("mixed boolean-arithmetic or MBA", "mba-simplification.md"), ("IDA, Ghidra, or JADX MCP", "tools-mcp.md"), ("hardware, FPGA or HDL artifact", "hardware-and-fpga.md")],
+    "ctf-web": [("SQL injection", "sql-injection.md"), ("SSTI, SSRF, LFI", "server-side.md"), ("upload or execution", "server-side-exec.md"), ("XSS, CSP, admin bot", "client-side.md"), ("JWT, OAuth, authz", "auth-and-access.md"), ("cloud, container or API boundary", "cloud-and-api.md")],
 }
 
 
@@ -44,9 +45,10 @@ def build_index(root: Path, category: str) -> str:
             lines.append(f"| {signal} | [{filename}]({filename}) |")
     lines.extend(["", "## Targeted retrieval", "",
         f"Run `python3 <bundle>/scripts/lookup_knowledge.py '<evidence>' --category {category} --limit 5`.",
-        "Results include exact section lines. Read that range before loading another reference.",
-        "Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.",
-        "", "## File catalog", ""])
+        "Results include exact section lines. Read that range before loading another reference."])
+    if (directory / "modern-playbook.md").is_file():
+        lines.append("Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md); preserve earlier variants in the catalog.")
+    lines.extend(["", "## File catalog", ""])
     for path in sorted(directory.rglob("*.md"), key=lambda item: item.relative_to(directory).as_posix().casefold()):
         if path.name in {"INDEX.md", "SKILL.md"}:
             continue

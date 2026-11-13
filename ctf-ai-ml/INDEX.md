@@ -10,6 +10,7 @@ Use this index after category selection. Open only the reference whose signal ma
 | adversarial inputs, perturbations | [adversarial-ml.md](adversarial-ml.md) |
 | model extraction or inversion | [model-attacks.md](model-attacks.md) |
 | LLM, prompt, or LoRA attacks | [llm-attacks.md](llm-attacks.md) |
+| RAG, tool output, agent trust boundary | [agent-security.md](agent-security.md) |
 
 ## Targeted retrieval
 
@@ -20,6 +21,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 ## File catalog
 
 - [adversarial-ml.md](adversarial-ml.md) — Adversarial Example Generation (FGSM, PGD, C&W); Adversarial Patch Generation; Evasion Attacks on ML Classifiers (Foundational); 4 further searchable sections
+- [agent-security.md](agent-security.md) — Map the trust boundaries; Test families; RAG-specific; 3 further searchable sections
 - [llm-attacks.md](llm-attacks.md) — Prompt Injection (Foundational); LLM Jailbreaking (Foundational); Token Smuggling (Foundational); 2 further searchable sections
 - [model-attacks.md](model-attacks.md) — Model loading prerequisite; ML Model Weight Perturbation Negation (DiceCTF 2026); ML Model Inversion via Gradient Descent (BSidesSF 2025); 4 further searchable sections
 - [modern-playbook.md](modern-playbook.md) — Indirect nickname injection reaches a tool; Agent tool injection chains into backend SQL; Weights encode integer characters; 2 further searchable sections

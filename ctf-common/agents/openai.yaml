@@ -1,0 +1,6 @@
+interface:
+  display_name: "CTF Shared Contract"
+  short_description: "Scope, evidence, verification and routing contract"
+  default_prompt: "Use $ctf-common to load the shared CTF solving contract, then continue with the selected category skill."
+policy:
+  allow_implicit_invocation: true

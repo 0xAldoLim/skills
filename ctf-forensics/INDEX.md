@@ -12,6 +12,7 @@ Use this index after category selection. Open only the reference whose signal ma
 | image steganography | [stego-image.md](stego-image.md) |
 | audio or signal | [stego-advanced.md](stego-advanced.md) |
 | Windows artifacts | [windows.md](windows.md) |
+| Bluetooth, Wi-Fi or wireless capture | [wireless-bluetooth.md](wireless-bluetooth.md) |
 
 ## Targeted retrieval
 
@@ -38,6 +39,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [stego-image.md](stego-image.md) — JPEG Unused Quantization Table LSB Steganography (EHAX 2026); BMP Bitplane QR Code Extraction + Steghide (BYPASS CTF 2025); Image Jigsaw Puzzle Reassembly via Edge Matching (BYPASS CTF 2025); 16 further searchable sections
 - [triage-reference.md](triage-reference.md) — Quick Start Commands; Log Analysis; Windows Event Logs (.evtx); 16 further searchable sections
 - [windows.md](windows.md) — Windows Event Logs (.evtx); Registry Analysis; SAM Database Analysis; 20 further searchable sections
+- [wireless-bluetooth.md](wireless-bluetooth.md) — Identify the layer; Cheap discriminators; Decode order; 2 further searchable sections
 
 ## Cross-category pivots
 

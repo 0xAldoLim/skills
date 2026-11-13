@@ -18,6 +18,7 @@ jobs:
       - run: python scripts/verify_append_only.py
       - run: python scripts/validate_skills.py
       - run: python scripts/rebuild_indexes.py --check
+      - run: python scripts/token_audit.py --check
       - run: python scripts/check_repository_safety.py
       - run: python scripts/audit_snippets.py
       - run: python scripts/install_tools.py all --dry-run

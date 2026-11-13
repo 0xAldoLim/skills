@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate filesystem skill discovery, metadata, links, and invocation hints."""
+"""Validate Agent Skills discovery, portable metadata, links and CTF contracts."""
 
 from __future__ import annotations
 
@@ -8,9 +8,12 @@ import re
 from pathlib import Path
 from typing import Any
 
-
 MAJOR = {"ctf-ai-ml", "ctf-crypto", "ctf-forensics", "ctf-malware", "ctf-misc", "ctf-osint", "ctf-pwn", "ctf-reverse", "ctf-web"}
+SUPPORT = {"ctf-common"}
+USER_FACING_SUPPORT = {"solve-challenge", "ctf-writeup"}
+NAME_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 LINK_RE = re.compile(r"(?<!!)\[[^\]]+\]\(([^)]+)\)")
+CLAUDE_ONLY = {"$ARGUMENTS": "argument substitution is host-specific", "!`": "dynamic shell injection is host-specific", "${CLAUDE_": "CLAUDE_* variables are host-specific"}
 
 
 def parse_scalar(value: str) -> str:
@@ -41,6 +44,27 @@ def parse_frontmatter(path: Path) -> tuple[dict[str, Any], list[str]]:
     for field in ("name", "description"):
         if not metadata.get(field):
             errors.append(f"missing required frontmatter field: {field}")
+    name = str(metadata.get("name", ""))
+    if name and (len(name) > 64 or not NAME_RE.fullmatch(name)):
+        errors.append(f"invalid skill name {name!r}: use lowercase kebab-case, 1-64 chars")
+    if name and name != path.parent.name:
+        errors.append(f"name {name!r} does not match directory {path.parent.name!r}")
+    description = str(metadata.get("description", ""))
+    if description and len(description) > 1024:
+        errors.append("description exceeds 1024 characters")
+    compatibility = metadata.get("compatibility")
+    if compatibility is not None and len(str(compatibility)) > 500:
+        errors.append("compatibility exceeds 500 characters")
+    metadata_map = metadata.get("metadata")
+    if metadata_map is not None:
+        if not isinstance(metadata_map, dict):
+            errors.append("metadata must be a mapping")
+        else:
+            for key, value in metadata_map.items():
+                if not isinstance(key, str) or not isinstance(value, str):
+                    errors.append("metadata keys and values must be strings")
+    if metadata.get("license") is not None and not isinstance(metadata.get("license"), str):
+        errors.append("license must be a string")
     return metadata, errors
 
 
@@ -78,20 +102,24 @@ def validate(root: Path) -> list[str]:
         metadata, metadata_errors = parse_frontmatter(path)
         errors.extend(f"{path.relative_to(root)}: {error}" for error in metadata_errors)
         name = str(metadata.get("name", ""))
-        if name and name != path.parent.name:
-            errors.append(f"{path.relative_to(root)}: name {name!r} does not match directory {path.parent.name!r}")
         if name in seen:
             errors.append(f"duplicate skill identifier {name!r}: {seen[name].relative_to(root)} and {path.relative_to(root)}")
         elif name:
             seen[name] = path
-        if name in MAJOR:
-            body = path.read_text(encoding="utf-8")
-            if "allowed-tools" in metadata or "Claude Code" in str(metadata.get("compatibility", "")):
-                errors.append(f"{name}: obsolete agent-specific execution metadata")
+        body = path.read_text(encoding="utf-8")
+        for needle, why in CLAUDE_ONLY.items():
+            if needle in body:
+                errors.append(f"{name}: contains host-specific construct {needle!r} ({why})")
+        if "allowed-tools" in metadata:
+            errors.append(f"{name}: allowed-tools is experimental and not portable across harnesses")
+        if name in MAJOR | SUPPORT | USER_FACING_SUPPORT:
             invocation = metadata.get("metadata", {}).get("user-invocable")
             if str(invocation).lower() != "true":
                 errors.append(f"{name}: explicit invocation must be enabled")
-            for requirement in ("../docs/SCOPE.md", "../docs/INSTANCE_HEALTH.md", "../docs/WORKFLOW.md", "../docs/LEARNING.md", "--auto", "at most two", "verified", "exact active"):
+            if not metadata.get("license"):
+                errors.append(f"{name}: missing license")
+        if name in MAJOR:
+            for requirement in ("../ctf-common/SKILL.md", "INDEX.md", "## Triage from evidence", "## Verify and finish"):
                 if requirement not in body:
                     errors.append(f"{name}: missing execution contract {requirement!r}")
             index = path.parent / "INDEX.md"
@@ -113,10 +141,17 @@ def validate(root: Path) -> list[str]:
                     errors.append(f"{name}: default_prompt must explicitly mention ${name}")
                 if "allow_implicit_invocation: true" not in agent_text:
                     errors.append(f"{name}: implicit invocation policy is not enabled")
+        if name == "ctf-common":
+            agent = path.parent / "agents" / "openai.yaml"
+            if not agent.is_file():
+                errors.append("ctf-common: missing agents/openai.yaml")
+        if name == "solve-challenge" and "ctf-common/SKILL.md" not in body:
+            errors.append("solve-challenge: must route through ctf-common")
     missing = MAJOR - seen.keys()
     errors.extend(f"missing required category skill: {name}" for name in sorted(missing))
-    if "solve-challenge" not in seen:
-        errors.append("missing dispatcher skill: solve-challenge")
+    for required in ("solve-challenge", "ctf-common"):
+        if required not in seen:
+            errors.append(f"missing required skill: {required}")
     errors.extend(validate_links(root))
     return errors
 

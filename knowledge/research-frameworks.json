@@ -1,0 +1,294 @@
+{
+  "version": 1,
+  "retrieved": "2026-11-12",
+  "sources": [
+    {
+      "id": "ljagiello-ctf-skills",
+      "title": "CTF skills",
+      "author": "Lukasz Jagiello and contributors",
+      "url": "https://github.com/ljagiello/ctf-skills",
+      "kind": "repository",
+      "commit": "a16e19a652606b10952eb42617742bedea9f2497",
+      "previous_integration_commit": "e79be2925d1612e8a97070d6201e300286672370",
+      "retrieved": "2026-11-12",
+      "license": "MIT",
+      "principles": [
+        "category-specific technique catalogs with a short entrypoint",
+        "reviewed scripts and tool references",
+        "symptom-based routing"
+      ],
+      "local_implementation": [
+        "preserved reverse/pwn imports at the e79be292 pin",
+        "new references and scripts are independently written or retain their upstream notice",
+        "category entrypoints rewritten for portable Agent Skills hosts"
+      ],
+      "status": "reviewed_head_no_skill_taxonomy_change",
+      "notes": "Between e79be292 and a16e19a only evals/package-lock.json and evals/package.json changed. No new skill content was available to integrate. The upstream pwnable.tw writeup tree and ctf-misc/audio.md were reviewed; local references already cover their primitives, so no duplicate import was made. ctf-similar-search remains rejected for exact-solution retrieval and an external API key."
+    },
+    {
+      "id": "opencode-for-ctf",
+      "title": "opencode-for-ctf",
+      "author": "h1kibi and contributors",
+      "url": "https://github.com/h1kibi/Opencode-for-CTF",
+      "kind": "repository",
+      "commit": "6b432a43dd33edf211865da45ba50b99593408f1",
+      "retrieved": "2026-11-12",
+      "license": "MIT",
+      "principles": [
+        "FAST and EXPERT lanes",
+        "evidence-first closure with candidate versus oracle-verified states",
+        "explicit phase and route budgets",
+        "thin category controllers with lazy references"
+      ],
+      "local_implementation": [
+        "FAST/EXPERT selection in ctf-common and plan_solve.py",
+        "candidate provenance and verification ledger in ctf-common and ctf_state.py",
+        "bounded hypothesis and payload-family budgets",
+        "short category entrypoints with symptom indexes"
+      ],
+      "status": "adopted_principles_not_code",
+      "notes": "The plugin runtime, agents, MCP tools and TeamProbe orchestration are not required or copied; this repository stays standalone."
+    },
+    {
+      "id": "dcipher-nyuctf-agents",
+      "title": "D-CIPHER multi-agent CTF solver",
+      "author": "Udeshi et al.; NYU-LLM-CTF",
+      "url": "https://github.com/NYU-LLM-CTF/nyuctf_agents",
+      "kind": "repository",
+      "commit": "612190f298ae9e604f00370019beed4ba1f372f6",
+      "retrieved": "2026-07-17",
+      "license": "MIT",
+      "principles": [
+        "separate planning from execution",
+        "explicit evaluation of each task result",
+        "environment feedback changes the next step"
+      ],
+      "local_implementation": [
+        "one-test-at-a-time loop in ctf-common/references/workflow.md",
+        "failure-layer classification and progress check",
+        "compact state/hypothesis templates"
+      ],
+      "status": "adopted_principles_not_runtime",
+      "notes": "No planner/executor agent hierarchy is required; the same discipline is expressed as a compact solving contract."
+    },
+    {
+      "id": "enigma",
+      "title": "EnIGMA: Interactive Tools Substantially Assist LM Agents in Finding Security Vulnerabilities",
+      "author": "Abramovich et al.",
+      "url": "https://arxiv.org/abs/2409.16165",
+      "kind": "paper",
+      "venue": "ICML 2025",
+      "retrieved": "2026-11-12",
+      "license": "arXiv paper license; no text copied",
+      "principles": [
+        "interactive debugger and terminal tools materially help",
+        "persistent tool state and grounded observations",
+        "models can self-generate hallucinated observations"
+      ],
+      "local_implementation": [
+        "interactive tool ladder in references/tooling.md and category skills",
+        "state ledger separates observations from inference",
+        "verification requires observed output, not model narration"
+      ],
+      "status": "adopted_principles_not_runtime",
+      "notes": "No debugger runtime is bundled. The skills prefer scripted non-interactive tool use and only describe interactive workflows when available."
+    },
+    {
+      "id": "ctfagent-ctfknow",
+      "title": "Measuring and Augmenting Large Language Models for Solving Capture-the-Flag Challenges",
+      "author": "Ji, Wu, Jiang, Ma, Li and Wang",
+      "url": "https://yan5ui.github.io/CCSCTF-Web/",
+      "kind": "paper",
+      "venue": "ACM CCS 2025",
+      "retrieved": "2026-11-12",
+      "license": "project page CC BY-SA 4.0; paper/source access is separate",
+      "principles": [
+        "technical retrieval helps, but application to the specific scenario is the bottleneck",
+        "environment feedback and adaptation matter more than static knowledge",
+        "two-stage retrieval can narrow techniques before action"
+      ],
+      "local_implementation": [
+        "symptom indexes plus lookup_knowledge.py for targeted retrieval",
+        "cheap discriminator and failure-layer adaptation",
+        "research only when the current model is insufficient"
+      ],
+      "status": "adopted_principles_not_code",
+      "notes": "CTFAgent source is gated; no code or prompt was copied."
+    },
+    {
+      "id": "pentestgpt",
+      "title": "PentestGPT",
+      "author": "GreyDGL and contributors",
+      "url": "https://github.com/GreyDGL/PentestGPT",
+      "kind": "repository",
+      "commit": "e8b1bb77d1ac00329675cec3b060aba971ec1ac8",
+      "retrieved": "2026-07-14",
+      "license": "MIT",
+      "principles": [
+        "durable task state",
+        "phased problem solving",
+        "tool leases and explicit progress tracking"
+      ],
+      "local_implementation": [
+        "STATE.md/HYPOTHESES.md and evidence.jsonl",
+        "recovery after compaction or instance refresh",
+        "bounded branch budgets"
+      ],
+      "status": "adopted_principles_not_runtime",
+      "notes": "No task-lease runtime or agent backend is bundled."
+    },
+    {
+      "id": "ctfusion",
+      "title": "CTFusion: A CTF-based Benchmark for LLM Agent Evaluation",
+      "author": "Lee, Bae and Yun; KAIST HackingLab",
+      "url": "https://github.com/kaist-hacking/CTFusion",
+      "kind": "repository",
+      "commit": "167982004c2eff9975872654ed9e883c7c8f9d52",
+      "retrieved": "2026-06-12",
+      "license": "MIT",
+      "principles": [
+        "fair A/B comparisons need independent environments",
+        "track per-agent results and flag provenance",
+        "live evaluation reduces contamination but needs scope discipline"
+      ],
+      "local_implementation": [
+        "deterministic skill/route/prompt tests",
+        "docs/EVALUATION.md describes an optional A/B/C model protocol",
+        "no CTFd, platform submission or live-competition automation is included"
+      ],
+      "status": "adopted_evaluation_principles",
+      "notes": "No comparative model run was performed for this overhaul."
+    },
+    {
+      "id": "agentlsd",
+      "title": "AgentLSD: Evaluating AI Security Agents Under Adversarial Task Contamination",
+      "author": "Golinelli, Drago, Boffa, Bergadano and Crispo",
+      "url": "https://arxiv.org/abs/2609.19140",
+      "kind": "paper",
+      "venue": "AISec 2026",
+      "retrieved": "2026-11-12",
+      "license": "arXiv paper license; no text or trap implementation copied",
+      "principles": [
+        "task contamination includes non-instructional false evidence, not only prompt injection",
+        "trap families: goal hijack, false authority, false validation, exploration bait, time sink",
+        "traps increase turns and reasoning tokens even when the flag is still found",
+        "preserve provenance and require independent evidence before accepting success"
+      ],
+      "local_implementation": [
+        "ctf-common/references/adversarial-content.md trap protocol",
+        "scan_untrusted.py advisory scanner",
+        "candidate origin and verification ledger",
+        "explicit decoy budget and intended-task preservation"
+      ],
+      "status": "adopted_principles",
+      "notes": "Finite deterministic tests do not establish universal trap immunity; the scanner is heuristic and advisory."
+    },
+    {
+      "id": "ctf-abacus",
+      "title": "How Do LLM Agents Actually Get the Flag? Trace-Level Provenance for Agentic Offensive Security Evaluation",
+      "author": "Milner et al.",
+      "url": "https://arxiv.org/abs/2608.26237",
+      "kind": "paper",
+      "venue": "arXiv 2026",
+      "retrieved": "2026-11-12",
+      "license": "arXiv paper license; no text or code copied",
+      "principles": [
+        "flag provenance matters: intended exploit, exposure, recall, lookup, guess or unsupported claim",
+        "recovered flags are not all demonstrated exploitation",
+        "record where the value first appeared and what action produced it"
+      ],
+      "local_implementation": [
+        "verification provenance ladder",
+        "candidate origin labels and first-appearance note",
+        "reporting distinguishes checker/derivation/runtime/static/model",
+        "optional trace fields in ctf_state.py"
+      ],
+      "status": "adopted_principles",
+      "notes": "The skills do not claim that a recovered flag implies the intended exploit."
+    },
+    {
+      "id": "arditi-refusal-direction",
+      "title": "Refusal in Language Models Is Mediated by a Single Direction",
+      "author": "Arditi, Obeso, Syed, Paleka, Panickssery, Gurnee and Nanda",
+      "url": "https://arxiv.org/abs/2406.11717",
+      "kind": "paper",
+      "venue": "arXiv 2024",
+      "retrieved": "2026-11-12",
+      "license": "arXiv paper license; no text or method copied",
+      "principles": [
+        "refusal behavior is brittle in studied open models",
+        "white-box activation work is a research topic, not a CTF-solving shortcut"
+      ],
+      "local_implementation": [
+        "treated only as background in docs/RESEARCH.md"
+      ],
+      "status": "not_adopted_for_solving",
+      "notes": "No abliteration, refusal bypass, provider-control evasion or capability claim is implemented. CTF analysis of authorized malicious artifacts is handled by instruction-source separation, not by disabling model safety."
+    },
+    {
+      "id": "prestige-reference",
+      "title": "PRESTIGE",
+      "author": "0xAldoLim",
+      "url": "https://github.com/0xAldoLim/prestige",
+      "kind": "repository",
+      "commit": "dba1dd4",
+      "retrieved": "2026-11-12",
+      "license": "MIT",
+      "principles": [
+        "evidence before confidence",
+        "FAST to EXPERT escalation",
+        "candidate verification separate from model assertion",
+        "operator-controlled scope and budgets"
+      ],
+      "local_implementation": [
+        "standalone solving contract and state ledger",
+        "no runtime dependency, MCP server, Docker or model gateway"
+      ],
+      "status": "reference_only",
+      "notes": "PRESTIGE is not required to install or use these skills. Its working tree was not modified."
+    },
+    {
+      "id": "hacksynth",
+      "title": "HackSynth: LLM Agent and Evaluation Framework for Autonomous Penetration Testing",
+      "author": "Muzsai, Imolai and Lukacs",
+      "url": "https://github.com/aielte-research/HackSynth",
+      "kind": "repository",
+      "commit": "48a41f795dda186df66561c4fd2b58ae84e3e4f8",
+      "retrieved": "2025-06-24",
+      "license": "AGPL-3.0; no code copied",
+      "principles": [
+        "planner and summarizer modules with iterative command feedback",
+        "explicit benchmark and budget configuration",
+        "separate command generation from feedback reduction"
+      ],
+      "local_implementation": [
+        "compact observation summaries and one-test-at-a-time loop",
+        "explicit budgets and state checkpoints"
+      ],
+      "status": "adopted_principles_not_code",
+      "notes": "The paper is arXiv:2412.01778. AGPL code was not copied; only the general planner/summarizer and feedback-loop idea was considered."
+    },
+    {
+      "id": "grayswan-indirect-prompt-injection",
+      "title": "How Vulnerable Are AI Agents to Indirect Prompt Injections? Insights from a Large-Scale Public Competition",
+      "author": "Dziemian et al.; Gray Swan AI and collaborators",
+      "url": "https://arxiv.org/abs/2603.15714",
+      "kind": "paper",
+      "venue": "arXiv 2026",
+      "retrieved": "2026-11-12",
+      "license": "arXiv paper license; no text or attack implementation copied",
+      "principles": [
+        "indirect prompt injection in tool-calling, coding and computer-use agents",
+        "concealment: a successful attack may leave no clue in the final user-facing response",
+        "inspect tool actions and side effects, not only the final answer"
+      ],
+      "local_implementation": [
+        "adversarial protocol checks side effects and tool calls",
+        "verification requires observed action/support, not a clean final message",
+        "agent-security reference maps write/read boundaries and canaries"
+      ],
+      "status": "adopted_principles",
+      "notes": "Gray Swan's public research page was reviewed; no attack payloads or benchmark data were copied."
+    }
+  ]
+}

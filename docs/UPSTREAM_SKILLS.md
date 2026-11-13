@@ -1,34 +1,38 @@
 # Upstream skills integration
 
-Source: [`ljagiello/ctf-skills`](https://github.com/ljagiello/ctf-skills)
-commit `e79be2925d1612e8a97070d6201e300286672370` (MIT).
-Owner checkout before integration: `1d51e0f4a289cb1b6e7326d41db4e6f6ad54516d`.
+Source: [`ljagiello/ctf-skills`](https://github.com/ljagiello/ctf-skills), MIT.
 
-## Integrated after review
+| Pin | Meaning |
+|---|---|
+| `e79be2925d1612e8a97070d6201e300286672370` | Skill content previously integrated |
+| `a16e19a652606b10952eb42617742bedea9f2497` | HEAD fetched 2026-11-12 |
+
+## HEAD comparison
+
+`git diff --stat e79be292..a16e19a` changes only `evals/package.json` and `evals/package-lock.json` (dependency overrides). There is no new skill taxonomy or reference content to integrate. The previous observed `a16e19a` is still current.
+
+The full taxonomy was reviewed: 12 upstream skills (the same nine CTF categories plus `solve-challenge`, `ctf-writeup` and `ctf-similar-search`). Local `ctf-common` is an independent addition.
+
+## Previously integrated
 
 | File | Reason |
-| --- | --- |
-| `ctf-reverse/radare2-r2pipe.md` | Scripted radare2, patching, ESIL and r2ghidra workflows not covered by the existing reverse references |
-| `ctf-reverse/mba-simplification.md` | Concrete msynth/SiMBA workflow and mandatory equivalence checking |
-| `ctf-reverse/tools-mcp.md` | IDA/Ghidra/JADX MCP reference; no executable integration is enabled automatically |
-| `ctf-pwn/attack-playbook.md` | Route-selection view from recon to leak/control-flow technique |
+|---|---|
+| `ctf-reverse/radare2-r2pipe.md` | Scripted radare2, patching, ESIL and r2ghidra workflows |
+| `ctf-reverse/mba-simplification.md` | msynth/SiMBA workflow with mandatory equivalence checking |
+| `ctf-reverse/tools-mcp.md` | IDA/Ghidra/JADX MCP reference; no executable integration |
+| `ctf-pwn/attack-playbook.md` | Route selection from recon to leak/control-flow technique |
 | `ctf-pwn/static-signals.md` | Static-signal triage linked from the playbook |
 | `ctf-pwn/scripts/*.py` | Reviewed payload templates; localhost defaults, explicit remote opt-in |
 
-All copied content remains upstream-attributed and MIT-licensed. The scripts
-received a safety header and a `scripts/README.md` contract.
+All copied content remains upstream-attributed and MIT-licensed. Scripts retain a safety header and `scripts/README.md` contract.
 
-## Rejected
+## Reviewed, not imported
 
-- `ctf-similar-search/`: requires a Tavily API key and retrieves external
-  writeups. It would authorize solution lookup and network access outside the
-  owner's scope rules. The owner's research broker and scope policy take
-  precedence.
-- Upstream `evals/`: evaluation fixtures are upstream-specific and are not part
-  of the runtime skill corpus.
+- `ctf-pwn/pwnable-tw/` (43 challenge writeups, ~12k lines): the underlying primitives are already covered by the local heap, ROP, FSOP, kernel and sandbox references. Importing challenge-specific writeups would add substantial context without a demonstrated capability gain, and would duplicate protected material.
+- `ctf-misc/audio.md`: local `ctf-forensics/signals-and-hardware.md`, `stego-advanced.md` and `ctf-misc/encodings-advanced.md` already cover Morse/SSTV/spectrogram/DTMF-style workflows.
+- `ctf-similar-search/`: requires a Tavily API key and retrieves external writeups. It would authorize exact-solution lookup and network access outside the owner's live-solve rules. Rejected.
+- Upstream `evals/`: upstream-specific evaluation fixtures; not part of the runtime skill corpus.
 
-## Retrieval
+## License and notices
 
-`scripts/rebuild_indexes.py` routes r2pipe, MBA, MCP, and Linux exploit-route
-signals to the new references. The scripts are discoverable through the pwn file
-catalog and are never run automatically.
+MIT license and copyright notice are retained in `LICENSE`. Individual imported files keep their upstream provenance. New references are independently written paraphrases or original work; no third-party exploit code was copied into them.

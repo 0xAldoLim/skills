@@ -1,97 +1,85 @@
-# CTF skills repository overhaul
+# Implementation report
 
-Completed implementation from personal commit `d95fd4433d0656f5de29b04a64e28801c01f127c`. Commit and push were explicitly requested after the local overhaul was validated. Existing installed skills were not modified.
+Status: complete for the deterministic scope. Commit: see `git log -1` (the report is committed with the change).
 
-## 1. Architecture changes
+## What changed
 
-Nine operational roots and the dispatcher now inventory locally, establish scope/health, test cheap evidence-backed hypotheses, retrieve targeted references, verify a flag and capture qualified knowledge. Persistent STATE/HYPOTHESES/findings and adaptive modes avoid restarting hard solves.
+- Added a shared `ctf-common` skill and references for scope, untrusted content, evidence/verification, FAST/EXPERT workflow, novel problems, research, instance health and tooling.
+- Rewrote the nine category entrypoints and the `solve-challenge` router to load the shared contract and keep only category-specific triage/execution.
+- Added seven focused references for gaps: custom cryptosystems, strange/invented formats, wireless/Bluetooth, OSINT cross-source verification, agent/RAG security, cloud/API boundaries and hardware/FPGA.
+- Added executable helpers: `ctf_state.py` (evidence/hypothesis/candidate/verification ledger), `scan_untrusted.py` (advisory trap scanner), `plan_solve.py` (FAST/standard/EXPERT), `token_audit.py` (prompt-cost budget), and `install_tools.py --doctor`.
+- Made the installer harness-aware: `~/.agents/skills`, `~/.claude/skills`, `~/.config/opencode/skills`, or all three; safe preflight, backups, copy/link modes.
+- Updated the Agent Skills metadata, indexes, prompts, README and maintainer documentation.
+- Added deterministic tests for metadata, links, routing, traps, fake flags, state bounds, cross-harness installation and the research/source ledger.
 
-## 2. Upstream synchronization
+The full inventory and rationale are in [AUDIT.md](AUDIT.md). The machine-readable summary is [overhaul-report-2026-11-12.json](../knowledge/overhaul-report-2026-11-12.json).
 
-Fetched upstream main at `c332c7be1b27cb64639a20124ac55ba916adef92` on 2026-10-01. Recorded 42 imports of sections/references and reviewed 102 overlapping changes. Personal additions remain authoritative. [Complete decisions](../knowledge/migration/upstream-decisions.json) retain source and destination.
+## Research
 
-## 3. Research
+Reviewed and pinned:
 
-Reviewed 54 contributing CTF technical source URLs: 50 technical writeup URLs and 4 solver-source URLs. Produced 56 cards across 20 competitions and all nine categories. Reviewed 12 separate primary documentation/foundation sources. Unique regional URLs: Indonesia 6; Malaysia 4. English, Indonesian and Malay searches were used. Downloads, catalogs and pointer pages are counted separately; notes are source-reviewed, not end-to-end reproduced. [Research ledger](../knowledge/research-sources.json).
+- OpenCode-for-CTF `6b432a43`
+- D-CIPHER / nyuctf_agents `612190f2`
+- EnIGMA arXiv:2409.16165
+- CTFAgent / CTFKnow (CCS 2025)
+- PentestGPT `e8b1bb77`
+- CTFusion `16798200`
+- AgentLSD arXiv:2609.19140
+- CTF-ABACUS arXiv:2608.26237
+- Gray Swan indirect prompt injection arXiv:2603.15714
+- HackSynth `48a41f79`
+- Arditi et al. arXiv:2406.11717 (background only; no refusal bypass)
+- ljagiello/ctf-skills HEAD `a16e19a` vs integrated `e79be292`
+- PRESTIGE as a research reference only
 
-| Category | New cards |
-|---|---:|
-| ctf-ai-ml | 5 |
-| ctf-crypto | 7 |
-| ctf-forensics | 6 |
-| ctf-malware | 5 |
-| ctf-misc | 6 |
-| ctf-osint | 6 |
-| ctf-pwn | 6 |
-| ctf-reverse | 8 |
-| ctf-web | 7 |
+The ljagiello HEAD diff contains only `evals` dependency files; no skill content changed. Details and adoption decisions: [RESEARCH.md](RESEARCH.md), [research-frameworks.json](../knowledge/research-frameworks.json).
 
-Competitions: 0CTF 2024, CSAW CTF 2024 Qualifiers, DEF CON CTF 2025 Qualifiers, DownUnderCTF 2024, DownUnderCTF 2025, GEMASTIK 2024 Qualifiers, Google CTF 2024 Quals, HITCON CTF 2024, HTB Cyber Apocalypse 2024, HTB Cyber Apocalypse 2025, Hack.lu CTF 2024, IDSECCONF 2025 Finals, Insomni'hack 2025, LA CTF 2026, PlaidCTF 2025, SECCON 13 Online CTF (2024), SekaiCTF 2025, Siber Siaga CTF 2025 Finals, UIUCTF 2024, Wargames.MY 2024.
+## Prompt-injection and provenance defenses
 
-## 4. Knowledge improvements
+- Challenge content is labeled data, never an instruction source.
+- Trap families from AgentLSD are handled explicitly: goal hijack, false authority, false validation, exploration bait, time sink.
+- Concealment is accounted for: inspect tool calls/side effects, not only the final answer (Gray Swan).
+- Candidate provenance is ranked: checker/derivation/commitment > runtime/derived > static > model.
+- `ctf_state.py` refuses `claim`, `format`, `regex`, `scan`, `readme`, `model` and `tool` as verification methods, and refuses to verify a `claim`-origin candidate.
+- `scan_untrusted.py` is advisory and does not block legitimate analysis of malicious code, credentials or flags.
+- Tests cover a forged README/system message, a fake "verified" claim, a decoy flag and a benign security sentence.
 
-Added prerequisite/evidence variants including shared-polynomial MPC, tensor/tokenizer IDs, sparse packet/disk reconstruction, GIF timing, layered session crypto, Go metadata and ABI-specific integer wrap. 43 correction entries address faulty math, allocator/CET assumptions, AEAD serialization, unsafe model loading and malformed code. [Correction ledger](../knowledge/migration/corrections.json).
+## Token efficiency
 
-## 5. Personal knowledge preservation
+Entrypoint bodies dropped 18.5-42.0% (category skills 32.3-42.0%, router 18.5%). Repeated category loads are ~620-800 estimated tokens instead of ~1100-1260. The first category load now includes the one-time ~1266-token shared contract, so it is not lower than a bare old category file; it replaces duplicated/linked safety material and adds trust/verification/state guidance. Full measurements and interpretation: [TOKEN_BUDGET.md](TOKEN_BUDGET.md).
 
-All 193 original tracked files and 238 root sections are accounted for: 191 relocated, 43 superseded workflow sections and four corrected root sections. All 19 personal sections remain verbatim. Existing LEARNED and accepted records remain; 142 reference prefixes are protected. [Section map](../knowledge/migration/section-map.json), [file map](../knowledge/migration/file-map.json), and inactive baseline archive provide recovery. No unexplained removal.
+## Tooling
 
-## 6. Token efficiency
+- `install.sh` supports three harness roots, `--copy`, `--replace`, `--dry-run`, `SKILLS_DIR` and safe backups.
+- `install_tools.py` retains core/category/heavy tiers, missing-only, dry-run, verify, Sage fallback and adds read-only `--doctor`.
+- Heavy stacks were not installed. No Docker, PRESTIGE, MCP or model gateway is required to load or use the skills.
 
-Short entrypoints, nine symptom indexes, bounded section lookup and reusable helpers reduce repeated context and code. Root-size measurements below use characters, not billing tokens.
+## Validation
 
-| Entry point | Original characters | Current characters | Reduction |
-|---|---:|---:|---:|
-| ctf-ai-ml | 7449 | 5458 | 26.7% |
-| ctf-crypto | 41415 | 5109 | 87.7% |
-| ctf-forensics | 50932 | 4803 | 90.6% |
-| ctf-malware | 8804 | 4687 | 46.8% |
-| ctf-misc | 32722 | 4915 | 85.0% |
-| ctf-osint | 10049 | 4691 | 53.3% |
-| ctf-pwn | 20207 | 4947 | 75.5% |
-| ctf-reverse | 16727 | 4789 | 71.4% |
-| ctf-web | 15012 | 4940 | 67.1% |
-| ctf-writeup | 6307 | 1735 | 72.5% |
-| solve-challenge | 13430 | 5052 | 62.4% |
+Local Kali Linux, Python 3.13.12:
 
-## 7. Kali tooling
-
-Installer supports core plus nine category tiers and an explicit heavy tier, isolated Python venv, dry-run/verify/missing-only, and actual dpkg/import checks. Skill installation uses complete-directory symlinks or standalone copies, conflict preflight and sibling backups. Kali 2026.3 needed C/C++ compilers, CMake and pkg-config for Unicorn on Python 3.14; those prerequisites now belong to pwn/reverse tiers. Sage had no apt candidate, so plans report an actionable fallback and accept an existing Sage environment. Heavy stacks were not installed.
-
-```json
-{
-  "platform": "Linux-6.18.40.1-microsoft-standard-WSL2-x86_64-with-glibc2.43",
-  "python": "3.14.7",
-  "os_release": "PRETTY_NAME=\"Kali GNU/Linux Rolling\"\nNAME=\"Kali GNU/Linux\"\nVERSION_ID=\"2026.3\"\nVERSION=\"2026.3\"\nVERSION_CODENAME=kali-rolling\nID=kali\nID_LIKE=debian\nHOME_URL=\"https://www.kali.org/\"\nSUPPORT_URL=\"https://forums.kali.org/\"\nBUG_REPORT_URL=\"https://bugs.kali.org/\"\nANSI_COLOR=\"1;31\"\n",
-  "container_image": "kalilinux/kali-rolling@sha256:d1d7e581ed60b0bbf9cb8a4bc853526355978f3b943d3a1d7dc7ce209e4231b6"
-}
+```text
+pytest:                 108 passed, 4 skipped (pwntools absent)
+validate_skills.py:     passed
+rebuild_indexes --check: current
+check_repository_safety: passed
+verify_append_only:     142 protected references intact
+audit_snippets:         0 syntax errors; 1082 contextual Python fences; 11 Sage fences
+token_audit --check:    passed
+ruff -F:                passed
 ```
 
-## 8. Challenge-instance scope
+The 4 skips are optional pwntools payload-generation checks; the pure-Python payload ABI checks still pass. CI is configured for Ubuntu Python 3.11/3.12; remote CI status must be checked after push.
 
-Every category and the dispatcher allow justified tests of the supplied instance and forbid competition platform/shared infrastructure targeting. Recovered addresses or secrets never add authorization; intended escapes stop at ambiguous shared boundaries.
+## Real-model evaluation
 
-## 9. Expired-instance handling
+Not run. No private challenge corpus, no authorized paid inference and no live competition were used. No solve-rate, token or elapsed-time improvement is claimed. The protocol for a future A/B/C comparison is in [EVALUATION.md](EVALUATION.md).
 
-Baseline plus at most two confirmation probes; repeated expiry/proxy/connectivity evidence requests refresh. A single 404/500 or silent TCP remains ambiguous. State and solver survive refresh. Local fixtures exercise verified TLS behavior, redirect refusal and bounded deadlines.
+## Remaining limitations
 
-## 10. Automatic learning
-
-Strong verified, understood, reproducible and useful novel methods or material prerequisite variants promote automatically. Concept/body comparison replaces title-only suppression; numbers and encoded bytes retain meaning. Exclusive locking/rollback prevents partial promotions. Secrets, flags, ephemeral targets and unverified guesses are excluded.
-
-## 11. Validation
-
-Windows current results: `{"tests": 97, "failures": 0, "errors": 0, "skipped": 4, "passed": 93, "status": "passed", "result_file": "windows-junit.xml"}`. Kali current results: `{"tests": 97, "failures": 0, "errors": 0, "skipped": 0, "passed": 97, "status": "passed", "result_file": "kali-junit.xml"}`. [Windows JUnit](../knowledge/validation/windows-junit.xml), [Kali JUnit](../knowledge/validation/kali-junit.xml), [core readiness](../knowledge/validation/kali-core-readiness.json), [package versions](../knowledge/validation/kali-package-versions.json). Snippet audit: 1,075 Python fences parse, 11 Sage fences require Sage, zero syntax errors. Contextual templates and historical exploits are not claimed as fully executed. Integrity tampering, archive guards, learning transactions, schema, health fixtures, known-answer crypto and Linux pwntools receive targeted tests. GitHub Actions is configured for Ubuntu Python 3.11/3.12 and was not run remotely.
-
-## 12. Files changed
-
-280 changed/added files, listed with status in the [machine report](../knowledge/overhaul-report.json). Original source remains recoverable; significant modifications have migration/correction reasons.
-
-## 13. Remaining meaningful gaps
-
-- DEF CON finals, in-window TCTF, technically valuable picoCTF and DiceCTF need deeper selected source review; catalog/pointer coverage was not promoted as knowledge.
-- Malaysia contributions are primarily English with Malay-context sources; search used Malay but fully Malay technical writeups remain underrepresented.
-- Independent reproduction of the 56 historical technique cards is still needed before claiming each exploit works on another runtime.
-- Heavy Sage/GNU Radio/GPU/architecture/kernel stacks and all-category apt availability require focused validation on the actual user setup.
-- Novelty scoring is a conservative explicit feature comparison, not a trained semantic embedding guarantee.
-- Historical long references remain substantial and context dependent; targeted retrieval is improved, while full technical correctness of every legacy snippet cannot be claimed.
+- Scanner heuristics miss paraphrases, images and encoded instructions; findings are not proof and clean scans are not immunity.
+- The state helper records that a verification method was used; it cannot establish that the underlying checker is trustworthy.
+- Routing is heuristic for hybrid challenges.
+- Heavy Sage/Ghidra/QEMU/GPU stacks and every Windows/WSL package combination were not exercised.
+- Historical references remain large and are only partially reproduced; targeted retrieval reduces context but does not guarantee every legacy snippet runs.
+- The upstream pwnable.tw writeup tree was reviewed but not imported; its primitives are covered locally.

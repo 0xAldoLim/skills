@@ -3,11 +3,14 @@ name: ctf-writeup
 description: "Create a concise reproducible CTF writeup for submission or handoff after a solve. Use only when a writeup is requested; ordinary solves report a short proof path."
 license: MIT
 compatibility: Local solve artifacts and a verified result.
+metadata:
+  user-invocable: "true"
+  version: "2.0"
 ---
 
 # Write the requested CTF solution
 
-Read the description, solve/STATE.md, solver scripts and actual verification evidence. Reproduce feasible local steps; distinguish observed behavior, inference, unintended solve and unverified claims. If the flag was not verified, say so explicitly and record the blocker. Use [the existing submission template](triage-reference.md) where its sections fit the request.
+Read the description, solve/STATE.md, solver scripts and actual verification evidence. Use the [verification provenance ladder](../ctf-common/references/verification.md) to distinguish a checker/derivation from a static or model-supplied value. Reproduce feasible local steps; distinguish observed behavior, inference, unintended solve and unverified claims. If the flag was not verified, say so explicitly and record the blocker. Use [the existing submission template](triage-reference.md) where its sections fit the request.
 
 Lead with the challenge, core primitive and result. Explain the clue, cheapest discriminator, prerequisites and short chain. Include exact commands, relevant tool/runtime versions, script paths, expected output and failure/pivot conditions. Link external sources used without copying them. Historical writeup research is permitted for repository enrichment; do not search exact active solutions while preparing a live-competition solve.
 

@@ -1,0 +1,18 @@
+{
+  "kind": "challenge_instance",
+  "target": "https://target.example:8443/",
+  "assignment": "Exact URL or host/port supplied in the operator's challenge description",
+  "boundary": "Per-team application container",
+  "excluded": [
+    "scoreboard",
+    "submission API",
+    "shared host",
+    "other teams",
+    "neighboring addresses"
+  ],
+  "remote_budget": {
+    "requests": 100,
+    "concurrency": 2,
+    "stop_on": "boundary or instance failure"
+  }
+}

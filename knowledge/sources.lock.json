@@ -1,12 +1,13 @@
 {
   "version": 1,
-  "generated_at": "2026-07-22",
+  "generated_at": "2026-11-12",
   "sources": [
     {
       "id": "ljagiello-ctf-skills",
       "repository": "https://github.com/ljagiello/ctf-skills",
-      "commit": "d19f35fd3dd2e126108752aee84c657c888126d3",
-      "license": "MIT"
+      "commit": "a16e19a652606b10952eb42617742bedea9f2497",
+      "license": "MIT",
+      "integrated_commit": "e79be2925d1612e8a97070d6201e300286672370"
     },
     {
       "id": "yaklang-hack-skills",
@@ -17,10 +18,11 @@
   ],
   "upstream_sync": {
     "repository": "https://github.com/ljagiello/ctf-skills",
-    "commit": "c332c7be1b27cb64639a20124ac55ba916adef92",
-    "retrieved": "2026-10-01",
+    "commit": "a16e19a652606b10952eb42617742bedea9f2497",
+    "integrated_commit": "e79be2925d1612e8a97070d6201e300286672370",
+    "retrieved": "2026-11-12",
     "license": "MIT",
     "decisions": "migration/upstream-decisions.json",
-    "note": "Historic source pins above still describe the two original accepted enrichment records."
+    "note": "HEAD advanced from e79be292 to a16e19a only in evals dependency files; no skill taxonomy or reference content changed. Historic source pins for the two original accepted enrichment records remain."
   }
 }

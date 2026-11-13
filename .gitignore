@@ -4,3 +4,8 @@ __pycache__/
 .ruff_cache/
 .coverage
 htmlcov/
+solve/
+output/
+work/
+agent_flag.txt
+*.flag

@@ -15,6 +15,7 @@ Use this index after category selection. Open only the reference whose signal ma
 | scripted radare2, r2pipe, patching, or ESIL | [radare2-r2pipe.md](radare2-r2pipe.md) |
 | mixed boolean-arithmetic or MBA | [mba-simplification.md](mba-simplification.md) |
 | IDA, Ghidra, or JADX MCP | [tools-mcp.md](tools-mcp.md) |
+| hardware, FPGA or HDL artifact | [hardware-and-fpga.md](hardware-and-fpga.md) |
 
 ## Targeted retrieval
 
@@ -27,6 +28,7 @@ Start modern parser/runtime cases with [modern-playbook.md](modern-playbook.md);
 - [anti-analysis-ctf.md](anti-analysis-ctf.md) — SIGILL Handler for Execution Mode Switching (Hack.lu 2015); SIGFPE Signal Handler Side-Channel via strace Counting (PlaidCTF 2017); Instruction Trace Inversion with Keystone and Unicorn (MeePwn CTF 2017); 1 further searchable sections
 - [anti-analysis.md](anti-analysis.md) — Linux Anti-Debug (Advanced); Windows Anti-Debug (Advanced); Anti-VM / Anti-Sandbox; 4 further searchable sections
 - [field-notes.md](field-notes.md) — Binary Types; Anti-Debugging Bypass; Specialized Patterns; 1 further searchable sections
+- [hardware-and-fpga.md](hardware-and-fpga.md) — Identify the artifact; Recover the logic; Firmware and debug; 2 further searchable sections
 - [languages-compiled.md](languages-compiled.md) — Go Binary Reversing; Rust Binary Reversing; Swift Binary Reversing; 4 further searchable sections
 - [languages-platforms.md](languages-platforms.md) — Roblox Place File Analysis; Godot Game Asset Extraction; Rust serde_json Schema Recovery; 16 further searchable sections
 - [languages.md](languages.md) — Python Bytecode Reversing (dis.dis output); Python Opcode Remapping; Pyarmor 8/9 Static Unpack (1shot); 12 further searchable sections
