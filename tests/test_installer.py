@@ -15,7 +15,13 @@ def run_installer(destination: Path, *options: str):
         # Git for Windows starts with a host PATH; initialize its POSIX tools.
         bash = Path(os.environ.get('ProgramFiles','C:/Program Files'))/'Git/bin/bash.exe'
         if not bash.exists(): pytest.skip('Git Bash is required for shell installer tests on Windows')
-        env['SKILLS_DIR'] = os.path.relpath(destination, ROOT).replace('\\','/')
+        try:
+            env['SKILLS_DIR'] = os.path.relpath(destination, ROOT).replace('\\','/')
+        except ValueError:
+            # Different drives (e.g. repo on F:, temp on C:) have no relative path;
+            # hand Git Bash an MSYS absolute path such as /c/Users/... instead.
+            drive, rest = os.path.splitdrive(str(destination.resolve()))
+            env['SKILLS_DIR'] = '/' + drive.rstrip(':').lower() + rest.replace('\\','/')
         command = [str(bash), '-c', 'export PATH=/usr/bin:/bin:$PATH; exec sh "$@"', 'ctf-installer', *command[1:]]
     return subprocess.run(command,cwd=ROOT,env=env,capture_output=True,text=True,timeout=180)
 
