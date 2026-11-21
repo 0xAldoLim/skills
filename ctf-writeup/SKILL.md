@@ -14,6 +14,12 @@ Read the description, solve/STATE.md, solver scripts and actual verification evi
 
 Lead with the challenge, core primitive and result. Explain the clue, cheapest discriminator, prerequisites and short chain. Include exact commands, relevant tool/runtime versions, script paths, expected output and failure/pivot conditions. Link external sources used without copying them. Historical writeup research is permitted for repository enrichment; do not search exact active solutions while preparing a live-competition solve.
 
+## Proof screenshots (recommended, not required)
+
+Where you can, back the writeup with visual proof: screenshots of the running app or service (wrong input rejected, correct flag accepted), plus rendered captures of the key static-analysis output (strings, disassembly or decompiler views), command-line runs and logs from dynamic analysis, and the solver output. Prefer fresh captures reproduced while writing over recalled output. Save them under `images/` next to the writeup, keep the raw text behind each capture in `logs/`, and embed them inline at the step they prove. Redact tokens, passwords and instance IDs in images just as in text.
+
+If the challenge file, binary or live instance needed to capture proof was not provided, ask the user for the appropriate sources (file path, instance URL or their own screenshots). Proof is a strong plus, never a gate: if the user declines or the sources aren't available, still write the requested writeup, mark which claims are unverified or uncaptured, and never refuse or stall the writeup because proof or sources are missing.
+
 Do not contact or submit to CTFd, scoreboard or organizer APIs automatically. Keep the writeup within the supplied challenge instance boundary; include shared-boundary or expiry evidence when it affected the solve. Do not expose tokens, passwords, instance IDs or unrelated secrets; retain the requested flag in the competition writeup, not reusable learning records.
 
 Write one Markdown artifact in output/ (or the user's chosen path) and report it concisely. After a verified solve capture novel reusable methodology with the existing [learning pipeline](../docs/LEARNING.md), never the flag. Never auto-push.
